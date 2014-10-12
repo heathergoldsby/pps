@@ -1,0 +1,43 @@
+import os ;
+local HOME = [ os.environ HOME ] ;
+
+use-project /libea : ../ealib/libea ;
+
+
+
+exe stripes :
+    src/stripes.cpp
+    /libea//libea
+    /libea//libea_runner
+    : <include>./include <link>static
+    ;
+
+install dist : stripes : <location>$(HOME)/bin ;
+
+exe stripes_control :
+    src/stripes_control.cpp
+    /libea//libea
+    /libea//libea_runner
+    : <include>./include <link>static
+    ;
+
+install dist : stripes_control : <location>$(HOME)/bin ;
+
+exe stripes_location :
+    src/stripes_location.cpp
+    /libea//libea
+    /libea//libea_runner
+    : <include>./include <link>static
+    ;
+
+install dist : stripes_location : <location>$(HOME)/bin ;
+
+exe stripes_multi :
+    src/stripes_multi.cpp
+    /libea//libea
+    /libea//libea_runner
+    : <include>./include <link>static
+    ;
+
+install dist : stripes_multi : <location>$(HOME)/bin ;
+
