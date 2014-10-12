@@ -208,7 +208,7 @@ public:
     
     virtual void gather_events(EA& ea) {
 //        add_event<lod_event>(ea);
-//        add_event<subpopulation_founder_event>(ea);
+        add_event<subpopulation_founder_event>(ea);
 //        add_event<datafiles::mrca_lineage>(ea);
         add_event<stripes_replication_evo_plane>(ea);
         add_event<task_performed_tracking>(ea);
