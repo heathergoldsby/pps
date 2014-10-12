@@ -190,8 +190,7 @@ public:
         add_option<TOURNAMENT_SELECTION_N>(this);
         add_option<TOURNAMENT_SELECTION_K>(this);
         
-        add_option<IS_PROPAGULE>(this);
-        add_option<PROPAGULE_COST>(this);
+
     }
     
     virtual void gather_tools() {

@@ -1,10 +1,11 @@
 #include <ea/digital_evolution.h>
 #include <ea/cmdline_interface.h>
-#include <ea/digital_evolution/ancestors/multi_birth_selfrep_not_ancestor.h>
-#include <ea/digital_evolution/ancestors/multi_birth_selfrep_not_nand_ancestor.h>
+//#include <ea/digital_evolution/ancestors/multi_birth_selfrep_not_ancestor.h>
+//#include <ea/digital_evolution/ancestors/multi_birth_selfrep_not_nand_ancestor.h>
 #include <ea/subpopulation_founder.h>
 #include <ea/line_of_descent.h>
 //#include "lod_knockouts.h"
+#include "multibirth_not_nand_prop_ancestor.h"
 
 
 
@@ -61,13 +62,16 @@ struct lifecycle : public default_lifecycle {
         //        append_isa<set_epigenetic_info>(ea);
         
         // SOMA
-        append_isa<inc_propagule_size>(ea);
-        append_isa<dec_propagule_size>(ea);
-        append_isa<get_propagule_size>(ea);
-        //
-        append_isa<become_soma>(ea);
-        //        append_isa<if_soma>(ea);
-        //        append_isa<if_germ>(ea);
+//        append_isa<inc_propagule_size>(ea);
+//        append_isa<dec_propagule_size>(ea);
+//        append_isa<get_propagule_size>(ea);
+//        //
+//        append_isa<become_soma>(ea);
+//        //        append_isa<if_soma>(ea);
+//        //        append_isa<if_germ>(ea);
+        
+        append_isa<create_propagule>(ea);
+        append_isa<deploy_propagule>(ea);
         
         add_event<task_resource_consumption>(ea);
         add_event<task_switching_cost>(ea);
@@ -126,7 +130,7 @@ typedef digital_evolution
 < lifecycle
 , recombination::asexual
 , round_robin
-, multibirth_selfrep_not_nand_ancestor // multibirth_selfrep_not_nand_ancestor
+, multibirth_not_nand_prop_ancestor // multibirth_selfrep_not_nand_ancestor
 , empty_facing_neighbor
 , dont_stop
 , generate_single_ancestor
@@ -160,6 +164,7 @@ public:
         add_option<POPULATION_SIZE>(this);
         add_option<REPRESENTATION_SIZE>(this);
         add_option<SCHEDULER_TIME_SLICE>(this);
+        add_option<SCHEDULER_RESOURCE_SLICE>(this);
         add_option<MUTATION_PER_SITE_P>(this);
         add_option<MUTATION_INSERTION_P>(this);
         add_option<MUTATION_DELETION_P>(this);
@@ -189,6 +194,8 @@ public:
         add_option<PROP_SIZE_OPTION>(this);
         add_option<PROP_SIZE_BOUND>(this);
         
+        add_option<IS_PROPAGULE>(this);
+        add_option<PROPAGULE_COST>(this);
         
     }
     
@@ -203,9 +210,8 @@ public:
         add_event<lod_event>(ea);
         add_event<subpopulation_founder_event>(ea);
         add_event<datafiles::mrca_lineage>(ea);
-        add_event<stripes_replication_evo_ps>(ea);
+        add_event<stripes_replication_evo_plane>(ea);
         add_event<task_performed_tracking>(ea);
-        add_event<stripes_replication_evo_ps>(ea);
         
         
         //        add_event<task_switch_tracking>(ea);

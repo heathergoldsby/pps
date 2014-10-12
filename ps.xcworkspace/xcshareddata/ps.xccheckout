@@ -12,6 +12,8 @@
 	<dict>
 		<key>40CDBA693880A33BD8D53784F96767EF7B588934</key>
 		<string>https://github.com/dknoester/ps.git</string>
+		<key>AB89A3C371509AF453775220E1522E69A35ADDCC</key>
+		<string>https://github.com/heathergoldsby/pps.git</string>
 		<key>F4E43731183036190F477CF4C99425A6516F08D2</key>
 		<string>https://github.com/dknoester/ealib.git</string>
 	</dict>
@@ -20,16 +22,18 @@
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>40CDBA693880A33BD8D53784F96767EF7B588934</key>
+		<string>../../ps</string>
+		<key>AB89A3C371509AF453775220E1522E69A35ADDCC</key>
 		<string>..</string>
 		<key>F4E43731183036190F477CF4C99425A6516F08D2</key>
 		<string>../../ealib</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/dknoester/ps.git</string>
+	<string>https://github.com/heathergoldsby/pps.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>40CDBA693880A33BD8D53784F96767EF7B588934</string>
+	<string>AB89A3C371509AF453775220E1522E69A35ADDCC</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
@@ -39,6 +43,14 @@
 			<string>F4E43731183036190F477CF4C99425A6516F08D2</string>
 			<key>IDESourceControlWCCName</key>
 			<string>ealib</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>AB89A3C371509AF453775220E1522E69A35ADDCC</string>
+			<key>IDESourceControlWCCName</key>
+			<string>pps</string>
 		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
