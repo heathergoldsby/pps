@@ -629,7 +629,7 @@ struct stripes_replication_evo_plane : end_of_update_event<MEA> {
                     }
                     
                     // mutate it:
-                    configurable_per_site m(get<GERM_MUTATION_PER_SITE_P>(ea));
+                    configurable_per_site m(get<GERM_MUTATION_PER_SITE_P>(mea));
                     
                     // now add a new individual built from each of the propagules to the
                     // subpopulation:
