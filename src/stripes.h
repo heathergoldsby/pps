@@ -628,6 +628,8 @@ struct stripes_replication_evo_plane : end_of_update_event<MEA> {
                         }
                     }
                     
+                    // mutate it:
+                    configurable_per_site m(get<GERM_MUTATION_PER_SITE_P>(ea));
                     
                     // now add a new individual built from each of the propagules to the
                     // subpopulation:
@@ -641,7 +643,7 @@ struct stripes_replication_evo_plane : end_of_update_event<MEA> {
                         inherits_from(**k, *q, *p);
                         
                         // mutate
-                        mutate(*q,*p);
+                        mutate(*q,m,*p);
                         
                         p->insert(p->end(),q);
                     }
@@ -661,6 +663,7 @@ struct stripes_replication_evo_plane : end_of_update_event<MEA> {
                     i->resources().reset();
                     put<MC_RESOURCE_UNITS>(0,*i);
                     put<MULTICELL_REP_TIME>(0,*i);
+                    
                     
                     i->clear(); // kills existing population
                     i->env().clear(*i);
