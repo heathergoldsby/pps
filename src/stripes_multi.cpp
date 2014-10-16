@@ -1,7 +1,7 @@
 #include <ea/digital_evolution.h>
 #include <ea/cmdline_interface.h>
 //#include <ea/digital_evolution/ancestors/multi_birth_selfrep_not_ancestor.h>
-//#include <ea/digital_evolution/ancestors/multi_birth_selfrep_not_nand_ancestor.h>
+#include <ea/digital_evolution/ancestors/multi_birth_selfrep_not_nand_ancestor.h>
 #include <ea/subpopulation_founder.h>
 #include <ea/line_of_descent.h>
 #include <ea/generational_models/periodic_competition.h>
@@ -16,8 +16,8 @@ using namespace ealib;
 #include "movie_multi.h"
 #include "location_analysis.h"
 #include "subpopulation_propagule.h"
-#include "subpopulation_propagule_plane.h"
-#include "multibirth_not_nand_prop_ancestor.h"
+//#include "subpopulation_propagule_plane.h"
+//#include "multibirth_not_nand_prop_ancestor.h"
 
 //! Configuration object for an EA.
 struct lifecycle : public default_lifecycle {
@@ -132,7 +132,7 @@ typedef digital_evolution
 < lifecycle
 , recombination::asexual
 , round_robin
-, multibirth_not_nand_prop_ancestor // multibirth_selfrep_not_nand_ancestor
+, multibirth_selfrep_not_nand_ancestor
 , empty_facing_neighbor
 , dont_stop
 , generate_single_ancestor
@@ -142,7 +142,7 @@ typedef metapopulation
 < sea_type
 , permute_stripes
 , mutation::operators::no_mutation
-, subpopulation_propagule_plane // subpopulation_propagule
+, subpopulation_propagule
 , generational_models::periodic_competition< >
 , ancestors::default_subpopulation
 , dont_stop
@@ -185,10 +185,14 @@ public:
         add_option<GERM_MUTATION_PER_SITE_P>(this);
         
         // stripes
-        add_option<ANCESTOR>(this);
         add_option<METAPOP_COMPETITION_PERIOD>(this);
         add_option<TOURNAMENT_SELECTION_N>(this);
         add_option<TOURNAMENT_SELECTION_K>(this);
+        add_option<STRIPE_FIT_FUNC>(this);
+        add_option<FIT_MAX>(this);
+        add_option<FIT_MIN>(this);
+        add_option<FIT_GAMMA>(this);
+        add_option<RES_UPDATE>(this);
         
 
     }
@@ -203,7 +207,7 @@ public:
         add_event<lod_event>(ea);
         add_event<subpopulation_founder_event>(ea);
         add_event<datafiles::mrca_lineage>(ea);
-        add_event<stripes_replication_evo_ps>(ea);
+//        add_event<stripes_replication_evo_ps>(ea);
 
         
         
