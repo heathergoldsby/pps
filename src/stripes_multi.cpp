@@ -81,7 +81,7 @@ struct lifecycle : public default_lifecycle {
         //        append_isa<if_germ>(ea);
         
         add_event<task_resource_consumption>(ea);
-//        add_event<task_switching_cost>(ea);
+        add_event<task_switching_cost>(ea);
         add_event<ts_birth_event>(ea);
         
         typedef typename EA::task_library_type::task_ptr_type task_ptr_type;
@@ -218,7 +218,7 @@ public:
         //        add_event<datafiles::fitness_dat>(ea);
         //add_event<permute_stripes>(ea);
         add_event<task_performed_tracking>(ea);
-        //add_event<task_switch_tracking>(ea);
+        add_event<task_switch_tracking>(ea);
         //        //add_event<propagule_size_tracking>(ea);
         //        //add_event<reward_tracking>(ea);
     }
