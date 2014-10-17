@@ -6,6 +6,7 @@
 #include <ea/line_of_descent.h>
 #include <ea/generational_models/periodic_competition.h>
 #include <ea/generational_models/moran_process.h>
+#include <ea/datafiles/fitness.h>
 #include "lod_knockouts.h"
 
 
@@ -207,6 +208,7 @@ public:
         add_event<lod_event>(ea);
         add_event<subpopulation_founder_event>(ea);
         add_event<datafiles::mrca_lineage>(ea);
+        add_event<datafiles::fitness_dat>(ea);
 //        add_event<stripes_replication_evo_ps>(ea);
 
         
@@ -214,7 +216,7 @@ public:
         //        add_event<ts_replication_propagule>(this,ea);
         //        add_event<ps_size_propagule2>(this,ea);
         //        add_event<datafiles::fitness_dat>(ea);
-        //        add_event<permute_stripes>(ea);
+        //add_event<permute_stripes>(ea);
         add_event<task_performed_tracking>(ea);
         //add_event<task_switch_tracking>(ea);
         //        //add_event<propagule_size_tracking>(ea);
