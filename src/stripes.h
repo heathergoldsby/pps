@@ -65,7 +65,7 @@ LIBEA_MD_DECL(PROP_SIZE_BOUND, "ea.stripes.propagule_size_bound", int);
 DIGEVO_INSTRUCTION_DECL(create_propagule) {
     p->hw().add_cost(get<PROPAGULE_COST>(ea));
     
-    if (ea.rng().p() < get<PROPAGULE_FAIL_PROB>(ea)) {
+    if (ea.rng().p() > get<PROPAGULE_FAIL_PROB>(ea)) {
         put<IS_PROPAGULE>(1, *p);
     }
     
@@ -626,7 +626,7 @@ struct stripes_replication_evo_plane : end_of_update_event<MEA> {
                 
                 int prop_total_cost = get<PROPAGULE_BASE_COST>(*i) + propagule.size() * get<PROPAGULE_PER_CELL_COST>(*i);
                 
-                if (get<MC_RESOURCE_UNITS>(*i) > prop_total_cost){
+                if ((get<MC_RESOURCE_UNITS>(*i) > prop_total_cost) && (propagule.size() > 0)){
                     
                     /* get germs... */
                     
