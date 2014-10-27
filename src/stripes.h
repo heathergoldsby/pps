@@ -42,6 +42,10 @@ LIBEA_MD_DECL(NUM_PROPAGULE_CELL, "ea.stripes.num_propagule_cell", int);
 
 LIBEA_MD_DECL(IS_PROPAGULE, "ea.stripes.is_propagule", int); // 0 - no, 1 - cost paid, 2 - transfer
 LIBEA_MD_DECL(PROPAGULE_COST, "ea.stripes.propagule_cost", int);
+LIBEA_MD_DECL(PROPAGULE_BASE_COST, "ea.stripes.propagule_base_cost", int);
+LIBEA_MD_DECL(PROPAGULE_PER_CELL_COST, "ea.stripes.propagule_per_cellcost", int);
+LIBEA_MD_DECL(PROPAGULE_FAIL_PROB, "ea.stripes.propagule_fail_prob", int);
+
 LIBEA_MD_DECL(GERM_STATUS, "ea.stripes.germ_status", int);
 
 
@@ -59,14 +63,17 @@ LIBEA_MD_DECL(PROP_SIZE_BOUND, "ea.stripes.propagule_size_bound", int);
 
 //! create_propagule - creates the propagule cell
 DIGEVO_INSTRUCTION_DECL(create_propagule) {
-    if (get<IS_PROPAGULE>(*p, 0) == 0) {
-        p->hw().add_cost(get<PROPAGULE_COST>(ea));
+    p->hw().add_cost(get<PROPAGULE_COST>(ea));
+    
+    if (ea.rng().p() < get<PROPAGULE_FAIL_PROB>(ea)) {
         put<IS_PROPAGULE>(1, *p);
     }
+    
 }
 
 //! deploys the propagule to the holding tank
 DIGEVO_INSTRUCTION_DECL(deploy_propagule) {
+    
     if (get<IS_PROPAGULE>(*p, 0) == 1) {
         put<IS_PROPAGULE>(2, *p);
     }
@@ -607,8 +614,19 @@ struct stripes_replication_evo_plane : end_of_update_event<MEA> {
                 // track time since group rep
                 get<MULTICELL_REP_TIME>(*i,0) +=1;
                 
+                // figure out which individuals from the parent comprise the propagule:
+                typedef typename MEA::subpopulation_type::population_type propagule_type;
+                propagule_type propagule;
                 
-                if (get<MC_RESOURCE_UNITS>(*i) > get<GROUP_REP_THRESHOLD>(*i)){
+                for(typename propagule_type::iterator j=i->population().begin(); j!=i->population().end(); ++j) {
+                    if (get<IS_PROPAGULE>(**j, 0) == 2) {
+                        propagule.push_back(*j);
+                    }
+                }
+                
+                int prop_total_cost = get<PROPAGULE_BASE_COST>(*i) + propagule.size() * get<PROPAGULE_PER_CELL_COST>(*i);
+                
+                if (get<MC_RESOURCE_UNITS>(*i) > prop_total_cost){
                     
                     /* get germs... */
                     
@@ -618,15 +636,7 @@ struct stripes_replication_evo_plane : end_of_update_event<MEA> {
                     p->initialize(mea.md());
                     p->reset_rng(mea.rng().seed());
                     
-                    // figure out which individuals from the parent comprise the propagule:
-                    typedef typename MEA::subpopulation_type::population_type propagule_type;
-                    propagule_type propagule;
                     
-                    for(typename propagule_type::iterator j=i->population().begin(); j!=i->population().end(); ++j) {
-                        if (get<IS_PROPAGULE>(**j, 0) == 2) {
-                            propagule.push_back(*j);
-                        }
-                    }
                     
                     // mutate it:
                     configurable_per_site m(get<GERM_MUTATION_PER_SITE_P>(mea));
