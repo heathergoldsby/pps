@@ -198,6 +198,7 @@ public:
         add_option<PROPAGULE_BASE_COST>(this);
         add_option<PROPAGULE_PER_CELL_COST>(this);
         add_option<PROPAGULE_FAIL_PROB>(this);
+        add_option<PROPAGULE_COST>(this);
         
     }
     

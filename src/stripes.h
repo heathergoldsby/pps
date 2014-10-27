@@ -43,7 +43,7 @@ LIBEA_MD_DECL(NUM_PROPAGULE_CELL, "ea.stripes.num_propagule_cell", int);
 LIBEA_MD_DECL(IS_PROPAGULE, "ea.stripes.is_propagule", int); // 0 - no, 1 - cost paid, 2 - transfer
 LIBEA_MD_DECL(PROPAGULE_COST, "ea.stripes.propagule_cost", int);
 LIBEA_MD_DECL(PROPAGULE_BASE_COST, "ea.stripes.propagule_base_cost", int);
-LIBEA_MD_DECL(PROPAGULE_PER_CELL_COST, "ea.stripes.propagule_per_cellcost", int);
+LIBEA_MD_DECL(PROPAGULE_PER_CELL_COST, "ea.stripes.propagule_per_cell_cost", int);
 LIBEA_MD_DECL(PROPAGULE_FAIL_PROB, "ea.stripes.propagule_fail_prob", int);
 
 LIBEA_MD_DECL(GERM_STATUS, "ea.stripes.germ_status", int);
