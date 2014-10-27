@@ -190,6 +190,7 @@ public:
         add_option<TOURNAMENT_SELECTION_N>(this);
         add_option<TOURNAMENT_SELECTION_K>(this);
         add_option<STRIPE_FIT_FUNC>(this);
+        add_option<PROPAGULE_COST>(this);
         add_option<FIT_MAX>(this);
         add_option<FIT_MIN>(this);
         add_option<FIT_GAMMA>(this);
