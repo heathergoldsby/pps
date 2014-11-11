@@ -199,6 +199,8 @@ public:
         add_option<PROPAGULE_PER_CELL_COST>(this);
         add_option<PROPAGULE_FAIL_PROB>(this);
         add_option<PROPAGULE_COST>(this);
+        add_option<DEATH_PROB>(this);
+        add_option<SL_PERIOD>(this);
         
     }
     
@@ -215,6 +217,8 @@ public:
 //        add_event<datafiles::mrca_lineage>(ea);
         add_event<stripes_replication_evo_plane>(ea);
         add_event<task_performed_tracking>(ea);
+        add_event<random_death>(ea);
+        add_event<swap_locations>(ea);
         
         
         //        add_event<task_switch_tracking>(ea);

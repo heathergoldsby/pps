@@ -60,6 +60,9 @@ LIBEA_MD_DECL(PROP_SIZE, "ea.stripes.propagule_size", double);
 LIBEA_MD_DECL(PROP_SIZE_OPTION, "ea.stripes.propagule_size_option", int);
 LIBEA_MD_DECL(PROP_SIZE_BOUND, "ea.stripes.propagule_size_bound", int);
 
+LIBEA_MD_DECL(DEATH_PROB, "ea.stripes.death_prob", double);
+LIBEA_MD_DECL(SL_PERIOD, "ea.stripes.swap_location_period", int);
+
 
 //! create_propagule - creates the propagule cell
 DIGEVO_INSTRUCTION_DECL(create_propagule) {
@@ -386,6 +389,81 @@ void eval_permute_three_stripes(EA& ea) {
     //    put<STRIPE_FIT>(rescaled_fit,ea);
     
 }
+
+
+
+//! Kill a subset of the population....
+template <typename EA>
+struct swap_locations : end_of_update_event<EA> {
+    //! Constructor.
+    swap_locations(EA& ea) : end_of_update_event<EA>(ea), _df("swap.dat") {}
+    
+    
+    //! Destructor.
+    virtual ~swap_locations() {
+    }
+    
+    virtual void operator()(EA& ea) {
+        
+        int sl = get<SL_PERIOD>(ea,1);
+        if ((ea.current_update() % sl) == 0) {
+            
+            // go through each multicell...
+            for(typename EA::iterator i=ea.begin(); i!=ea.end(); ++i) {
+            
+                int s = get<POPULATION_SIZE>(*i);
+                std::size_t pos1 = i->rng()(s);
+                std::size_t pos2 = i->rng()(s);
+            
+                i->env().swap_locations(pos1, pos2);
+            
+            }
+        
+        }
+    }
+    
+    datafile _df;
+    
+};
+
+
+
+//! Kill a subset of the population....
+template <typename EA>
+struct random_death : end_of_update_event<EA> {
+    //! Constructor.
+    random_death(EA& ea) : end_of_update_event<EA>(ea), _df("random_death.dat") {
+        _df.add_field("update")
+        .add_field("pop_size")
+        .add_field("num_killed");
+    }
+    
+    
+    //! Destructor.
+    virtual ~random_death() {
+    }
+    
+    //! Perform germline replication among populations.
+    virtual void operator()(EA& ea) {
+        
+                // go through each multicell...
+                for(typename EA::iterator i=ea.begin(); i!=ea.end(); ++i) {
+                    for(typename EA::subpopulation_type::population_type::iterator j=i->population().begin(); j!=i->population().end(); ++j) {
+                        // get prob...
+                        if (ea.rng().p() < get<DEATH_PROB>(ea)) {
+                            (*j)->alive() = false;
+                            i->events().death(**j,*i);
+                        }
+                    }
+                    
+                }
+    
+        }
+    
+    datafile _df;
+
+};
+
 
 
 //! Performs multicell replication using germ lines.
