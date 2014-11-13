@@ -201,6 +201,7 @@ public:
         add_option<PROPAGULE_COST>(this);
         add_option<DEATH_PROB>(this);
         add_option<SL_PERIOD>(this);
+        add_option<NUM_SWAPS>(this);
         
     }
     

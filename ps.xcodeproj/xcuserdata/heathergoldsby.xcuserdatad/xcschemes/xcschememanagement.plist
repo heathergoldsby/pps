@@ -17,12 +17,12 @@
 		<key>stripes_evo_ps.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>22</integer>
+			<integer>4</integer>
 		</dict>
 		<key>stripes_evo_ps_plane.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>23</integer>
+			<integer>5</integer>
 		</dict>
 		<key>stripes_location.xcscheme</key>
 		<dict>

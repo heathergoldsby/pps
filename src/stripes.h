@@ -62,6 +62,7 @@ LIBEA_MD_DECL(PROP_SIZE_BOUND, "ea.stripes.propagule_size_bound", int);
 
 LIBEA_MD_DECL(DEATH_PROB, "ea.stripes.death_prob", double);
 LIBEA_MD_DECL(SL_PERIOD, "ea.stripes.swap_location_period", int);
+LIBEA_MD_DECL(NUM_SWAPS, "ea.stripes.num_swaps", int);
 
 
 //! create_propagule - creates the propagule cell
@@ -410,12 +411,16 @@ struct swap_locations : end_of_update_event<EA> {
             
             // go through each multicell...
             for(typename EA::iterator i=ea.begin(); i!=ea.end(); ++i) {
+                
+                for (int j=0; j<get<NUM_SWAPS>(ea,0); ++j) {
+                    
+                    int s = get<POPULATION_SIZE>(*i);
+                    std::size_t pos1 = i->rng()(s);
+                    std::size_t pos2 = i->rng()(s);
             
-                int s = get<POPULATION_SIZE>(*i);
-                std::size_t pos1 = i->rng()(s);
-                std::size_t pos2 = i->rng()(s);
-            
-                i->env().swap_locations(pos1, pos2);
+                    i->env().swap_locations(pos1, pos2);
+                }
+
             
             }
         
