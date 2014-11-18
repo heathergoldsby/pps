@@ -7,14 +7,14 @@
 #include <ea/generational_models/periodic_competition.h>
 #include <ea/generational_models/moran_process.h>
 #include <ea/datafiles/fitness.h>
-#include "lod_knockouts.h"
+//#include "lod_knockouts.h"
 
 
 using namespace ealib;
 
 #include "stripes.h"
 #include "multi_founder.h"
-#include "movie_multi.h"
+//#include "movie_multi.h"
 #include "location_analysis.h"
 #include "subpopulation_propagule.h"
 //#include "subpopulation_propagule_plane.h"
@@ -206,9 +206,9 @@ public:
     }
     
     virtual void gather_events(EA& ea) {
-        add_event<lod_event>(ea);
+//        add_event<lod_event>(ea);
         add_event<subpopulation_founder_event>(ea);
-        add_event<datafiles::mrca_lineage>(ea);
+//        add_event<datafiles::mrca_lineage>(ea);
         add_event<datafiles::fitness_dat>(ea);
 //        add_event<stripes_replication_evo_ps>(ea);
 

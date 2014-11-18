@@ -2,9 +2,9 @@
 #include <ea/cmdline_interface.h>
 #include <ea/digital_evolution/ancestors/multi_birth_selfrep_not_ancestor.h>
 #include <ea/digital_evolution/ancestors/multi_birth_selfrep_not_nand_ancestor.h>
-#include <ea/line_of_descent.h>
-#include "lod_knockouts.h"
-#include "movie.h"
+//#include <ea/line_of_descent.h>
+//#include "lod_knockouts.h"
+//#include "movie.h"
 
 
 using namespace ealib;
@@ -167,19 +167,23 @@ public:
         add_option<TOURNAMENT_SELECTION_N>(this);
         add_option<TOURNAMENT_SELECTION_K>(this);
         
+        add_option<DEATH_PROB>(this);
+        add_option<SL_PERIOD>(this);
+        add_option<NUM_SWAPS>(this);
+        
         
     }
     
     virtual void gather_tools() {
-        add_tool<ealib::analysis::movie>(this);
+//        add_tool<ealib::analysis::movie>(this);
     }
     
     virtual void gather_events(EA& ea) {
         add_event<permute_stripes>(ea);
         add_event<task_performed_tracking>(ea);
         add_event<task_switch_tracking>(ea);
-        add_event<lod_event>(ea);
-        add_event<datafiles::mrca_lineage>(ea);
+//        add_event<lod_event>(ea);
+//        add_event<datafiles::mrca_lineage>(ea);
         add_event<population_founder_event>(ea);
     }
 };
