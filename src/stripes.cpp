@@ -185,6 +185,9 @@ public:
 //        add_event<lod_event>(ea);
 //        add_event<datafiles::mrca_lineage>(ea);
         add_event<population_founder_event>(ea);
+        add_event<random_death>(ea);
+        add_event<swap_locations>(ea);
+        
     }
 };
 LIBEA_CMDLINE_INSTANCE(mea_type, cli);
