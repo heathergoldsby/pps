@@ -196,6 +196,10 @@ public:
         add_option<FIT_GAMMA>(this);
         add_option<RES_UPDATE>(this);
         
+        add_option<DEATH_PROB>(this);
+        add_option<SL_PERIOD>(this);
+        add_option<NUM_SWAPS>(this);
+        
 
     }
     
@@ -220,6 +224,9 @@ public:
         //add_event<permute_stripes>(ea);
         add_event<task_performed_tracking>(ea);
         add_event<task_switch_tracking>(ea);
+        
+        add_event<random_death>(ea);
+        add_event<swap_locations>(ea);
         //        //add_event<propagule_size_tracking>(ea);
         //        //add_event<reward_tracking>(ea);
     }
