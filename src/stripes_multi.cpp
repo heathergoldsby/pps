@@ -13,9 +13,9 @@
 using namespace ealib;
 
 #include "stripes.h"
-#include "multi_founder.h"
-//#include "movie_multi.h"
-#include "location_analysis.h"
+//#include "multi_founder.h"
+#include "movie.h"
+//#include "location_analysis.h"
 #include "subpopulation_propagule.h"
 //#include "subpopulation_propagule_plane.h"
 //#include "multibirth_not_nand_prop_ancestor.h"
@@ -207,6 +207,7 @@ public:
         //        add_tool<ealib::analysis::movie_multi>(this);
         //        add_tool<ealib::analysis::lod_knockouts>(this);
         //        add_tool<ealib::analysis::location_analysis>(this);
+        add_tool<ealib::analysis::movie_for_competitions>(this);
     }
     
     virtual void gather_events(EA& ea) {
