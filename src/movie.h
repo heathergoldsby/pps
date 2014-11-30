@@ -23,13 +23,14 @@ namespace ealib {
         LIBEA_ANALYSIS_TOOL(movie_for_competitions) {
             
             int update_max = get<METAPOP_COMPETITION_PERIOD>(ea);
-            typename EA::individual_type best;
-            typename EA::individual_type tmp;
             int max_fit = 0;
+            typename EA::individual_type best;
+            
             for(typename EA::iterator i=ea.begin(); i!=ea.end(); ++i) {
-                tmp = *i;
+                typename EA::individual_type tmp(*i->traits().founder());
+                
                 for (int j=0; j<=update_max; ++j) {
-                    tmp.traits().founder()->update();
+                    tmp.update();
                 }
                 
                 // Run for prescribed number of updates...
@@ -47,19 +48,24 @@ namespace ealib {
                 }
             }
             
+
             datafile df("movie.dat");
             df.write(get<SPATIAL_X>(ea));
             df.write(get<SPATIAL_Y>(ea));
             df.endl();
 
+            typename EA::individual_type best_founder(*best.traits().founder());
+
             for (int j=0; j<=update_max; ++j) {
-                best.traits().founder()->update();
+                best_founder.update();
                 df.write(j);
                 // grab info based on location...
                 for (int x=0; x < get<SPATIAL_X>(ea); ++x) {
                     for (int y=0; y<get<SPATIAL_Y>(ea); ++y){
                         
-                        typename EA::individual_type::environment_type::location_type* l = &best.traits().founder()->env().location(x,y);
+                        //typename EA::individual_type::environment_type::location_type* l = &best_founder.traits().founder()->env().location(x,y);
+                        typename EA::individual_type::environment_type::location_type* l = &best_founder.env().location(x,y);
+
                         
                         if (l->occupied()) {
                             std::string lt = get<LAST_TASK>(*(l->inhabitant()),"");
