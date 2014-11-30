@@ -13,7 +13,7 @@ using namespace ealib;
 
 #include "stripes.h"
 //#include "multi_founder.h"
-//#include "movie.h"
+#include "movie_evo_plane.h"
 //#include "location_analysis.h"
 
 
@@ -209,6 +209,7 @@ public:
         //        add_tool<ealib::analysis::movie_res>(this);
         //        add_tool<ealib::analysis::lod_knockouts>(this);
         //        add_tool<ealib::analysis::location_analysis>(this);
+        add_tool<ealib::analysis::movie_evo_plane>(this);
         
     }
     

@@ -85,6 +85,7 @@
 		48542FBA19E0E1880030F097 /* stripes_evo_plane.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = stripes_evo_plane.cpp; sourceTree = "<group>"; };
 		487ACE221934BC8E0016340B /* lod_knockouts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = lod_knockouts.h; sourceTree = "<group>"; };
 		487ACE231934F7C60016340B /* movie.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = movie.h; sourceTree = "<group>"; };
+		488B205F1A2AC20400C3571D /* movie_evo_plane.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = movie_evo_plane.h; sourceTree = "<group>"; };
 		48A1E129183F8ED70023C478 /* stripes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = stripes.h; sourceTree = "<group>"; };
 		48AC8AB0193762F600DA6945 /* movie_multi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = movie_multi.h; sourceTree = "<group>"; };
 		48AC8AB11937639900DA6945 /* stripes_multi.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = stripes_multi.cpp; sourceTree = "<group>"; };
@@ -182,6 +183,7 @@
 				487ACE221934BC8E0016340B /* lod_knockouts.h */,
 				42DF06891945418600C9A364 /* subpopulation_propagule.h */,
 				487ACE231934F7C60016340B /* movie.h */,
+				488B205F1A2AC20400C3571D /* movie_evo_plane.h */,
 				48C5840D19365A6900C02CA1 /* multi_founder.h */,
 				48AC8AB0193762F600DA6945 /* movie_multi.h */,
 				48FF4C941938A2C9001F0183 /* location_analysis.h */,
