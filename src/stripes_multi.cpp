@@ -1,24 +1,19 @@
 #include <ea/digital_evolution.h>
 #include <ea/cmdline_interface.h>
-//#include <ea/digital_evolution/ancestors/multi_birth_selfrep_not_ancestor.h>
 #include <ea/digital_evolution/ancestors/multi_birth_selfrep_not_nand_ancestor.h>
 #include <ea/subpopulation_founder.h>
 #include <ea/line_of_descent.h>
 #include <ea/generational_models/periodic_competition.h>
 #include <ea/generational_models/moran_process.h>
 #include <ea/datafiles/fitness.h>
-//#include "lod_knockouts.h"
 
 
 using namespace ealib;
 
 #include "stripes.h"
-//#include "multi_founder.h"
 #include "movie.h"
-//#include "location_analysis.h"
 #include "subpopulation_propagule.h"
-//#include "subpopulation_propagule_plane.h"
-//#include "multibirth_not_nand_prop_ancestor.h"
+
 
 //! Configuration object for an EA.
 struct lifecycle : public default_lifecycle {
@@ -97,22 +92,6 @@ struct lifecycle : public default_lifecycle {
         task_nand->consumes(resB);
     }
     
-    //    //! Called to generate the initial EA population.
-    //    template <typename EA>
-    //    void initial_population(EA& ea) {
-    //        // add founder to initial population
-    //        int ancest = get<ANCESTOR>(ea, 0);
-    //        switch (ancest) {
-    //            case 0:
-    //                generate_ancestors(multibirth_selfrep_not_ancestor(), 1, ea);
-    //                break;
-    //            case 1:
-    //                generate_ancestors(multibirth_selfrep_not_nand_ancestor(), 1, ea);
-    //                break;
-    //        }
-    //
-    //
-    //    }
     
 };
 
@@ -173,7 +152,6 @@ public:
         add_option<MUTATION_UNIFORM_INT_MAX>(this);
         add_option<RUN_UPDATES>(this);
         add_option<RUN_EPOCHS>(this);
-//        add_option<CHECKPOINT_PREFIX>(this);
         add_option<RNG_SEED>(this);
         add_option<RECORDING_PERIOD>(this);
         
@@ -204,32 +182,18 @@ public:
     }
     
     virtual void gather_tools() {
-        //        add_tool<ealib::analysis::movie_multi>(this);
-        //        add_tool<ealib::analysis::lod_knockouts>(this);
-        //        add_tool<ealib::analysis::location_analysis>(this);
         add_tool<ealib::analysis::movie_for_competitions>(this);
     }
     
     virtual void gather_events(EA& ea) {
-//        add_event<lod_event>(ea);
         add_event<subpopulation_founder_event>(ea);
-//        add_event<datafiles::mrca_lineage>(ea);
         add_event<datafiles::fitness_dat>(ea);
-//        add_event<stripes_replication_evo_ps>(ea);
 
-        
-        
-        //        add_event<ts_replication_propagule>(this,ea);
-        //        add_event<ps_size_propagule2>(this,ea);
-        //        add_event<datafiles::fitness_dat>(ea);
-        //add_event<permute_stripes>(ea);
         add_event<task_performed_tracking>(ea);
         add_event<task_switch_tracking>(ea);
         
         add_event<random_death>(ea);
         add_event<swap_locations>(ea);
-        //        //add_event<propagule_size_tracking>(ea);
-        //        //add_event<reward_tracking>(ea);
     }
 };
 LIBEA_CMDLINE_INSTANCE(mea_type, cli);

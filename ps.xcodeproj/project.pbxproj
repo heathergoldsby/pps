@@ -10,10 +10,7 @@
 		42DC570C1940DCEB005044F1 /* libea.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DC570A1940C99D005044F1 /* libea.a */; };
 		480052BA19EA18460063B13B /* libea.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DC570A1940C99D005044F1 /* libea.a */; };
 		480052C019EA18750063B13B /* stripes_evo_plane.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48542FBA19E0E1880030F097 /* stripes_evo_plane.cpp */; };
-		48460687192D1E2E005579F9 /* stripes_control.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48460676192D1D9D005579F9 /* stripes_control.cpp */; };
-		48460698192D2015005579F9 /* stripes_location.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48460688192D1F22005579F9 /* stripes_location.cpp */; };
 		48542FB319E0DE900030F097 /* libea.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DC570A1940C99D005044F1 /* libea.a */; };
-		48542FB919E0DEAE0030F097 /* stripes_evo_ps.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48542FAE19E0DD210030F097 /* stripes_evo_ps.cpp */; };
 		48FF4C9319379E49001F0183 /* stripes_multi.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48AC8AB11937639900DA6945 /* stripes_multi.cpp */; };
 /* End PBXBuildFile section */
 
@@ -66,7 +63,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		3E667D7817ABDFE400A42924 /* stripes.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = stripes.cpp; sourceTree = "<group>"; };
 		42441A7E158616AF009863BE /* ps.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ps.xcconfig; sourceTree = "<group>"; };
 		42441A7F158616AF009863BE /* libea_defaults.cfg */ = {isa = PBXFileReference; lastKnownFileType = text; path = libea_defaults.cfg; sourceTree = "<group>"; };
 		42441A80158616AF009863BE /* Jamroot */ = {isa = PBXFileReference; lastKnownFileType = text; path = Jamroot; sourceTree = "<group>"; };
@@ -76,22 +72,15 @@
 		480052BF19EA18460063B13B /* stripes_evo_ps_plane */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = stripes_evo_ps_plane; sourceTree = BUILT_PRODUCTS_DIR; };
 		481F84C019DD8E46000EDBE8 /* subpopulation_propagule_plane.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = subpopulation_propagule_plane.h; sourceTree = "<group>"; };
 		481F84C119DD91AC000EDBE8 /* multibirth_not_nand_prop_ancestor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = multibirth_not_nand_prop_ancestor.h; sourceTree = "<group>"; };
-		48460676192D1D9D005579F9 /* stripes_control.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = stripes_control.cpp; sourceTree = "<group>"; };
 		48460686192D1DFC005579F9 /* stripes_control */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = stripes_control; sourceTree = BUILT_PRODUCTS_DIR; };
-		48460688192D1F22005579F9 /* stripes_location.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = stripes_location.cpp; sourceTree = "<group>"; };
 		48460697192D1FFE005579F9 /* stripes_location */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = stripes_location; sourceTree = BUILT_PRODUCTS_DIR; };
-		48542FAE19E0DD210030F097 /* stripes_evo_ps.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = stripes_evo_ps.cpp; sourceTree = "<group>"; };
 		48542FB819E0DE900030F097 /* stripes_evo_ps */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = stripes_evo_ps; sourceTree = BUILT_PRODUCTS_DIR; };
 		48542FBA19E0E1880030F097 /* stripes_evo_plane.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = stripes_evo_plane.cpp; sourceTree = "<group>"; };
-		487ACE221934BC8E0016340B /* lod_knockouts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = lod_knockouts.h; sourceTree = "<group>"; };
 		487ACE231934F7C60016340B /* movie.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = movie.h; sourceTree = "<group>"; };
 		488B205F1A2AC20400C3571D /* movie_evo_plane.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = movie_evo_plane.h; sourceTree = "<group>"; };
 		48A1E129183F8ED70023C478 /* stripes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = stripes.h; sourceTree = "<group>"; };
-		48AC8AB0193762F600DA6945 /* movie_multi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = movie_multi.h; sourceTree = "<group>"; };
 		48AC8AB11937639900DA6945 /* stripes_multi.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = stripes_multi.cpp; sourceTree = "<group>"; };
-		48C5840D19365A6900C02CA1 /* multi_founder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = multi_founder.h; sourceTree = "<group>"; };
 		48FF4C9219379E17001F0183 /* stripes_multi */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = stripes_multi; sourceTree = BUILT_PRODUCTS_DIR; };
-		48FF4C941938A2C9001F0183 /* location_analysis.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = location_analysis.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,19 +163,11 @@
 			isa = PBXGroup;
 			children = (
 				48A1E129183F8ED70023C478 /* stripes.h */,
-				3E667D7817ABDFE400A42924 /* stripes.cpp */,
 				48AC8AB11937639900DA6945 /* stripes_multi.cpp */,
-				48460676192D1D9D005579F9 /* stripes_control.cpp */,
-				48460688192D1F22005579F9 /* stripes_location.cpp */,
-				48542FAE19E0DD210030F097 /* stripes_evo_ps.cpp */,
 				48542FBA19E0E1880030F097 /* stripes_evo_plane.cpp */,
-				487ACE221934BC8E0016340B /* lod_knockouts.h */,
-				42DF06891945418600C9A364 /* subpopulation_propagule.h */,
 				487ACE231934F7C60016340B /* movie.h */,
 				488B205F1A2AC20400C3571D /* movie_evo_plane.h */,
-				48C5840D19365A6900C02CA1 /* multi_founder.h */,
-				48AC8AB0193762F600DA6945 /* movie_multi.h */,
-				48FF4C941938A2C9001F0183 /* location_analysis.h */,
+				42DF06891945418600C9A364 /* subpopulation_propagule.h */,
 				481F84C019DD8E46000EDBE8 /* subpopulation_propagule_plane.h */,
 				481F84C119DD91AC000EDBE8 /* multibirth_not_nand_prop_ancestor.h */,
 			);
@@ -332,7 +313,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48460687192D1E2E005579F9 /* stripes_control.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,7 +320,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48460698192D2015005579F9 /* stripes_location.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,7 +327,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48542FB919E0DEAE0030F097 /* stripes_evo_ps.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

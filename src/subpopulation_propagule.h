@@ -70,6 +70,20 @@ struct subpopulation_propagule {
             mutate(*q,*p);
             
             p->insert(p->end(),q);
+            
+            for (int k=1; k<get<NUM_PROPAGULE_CELL>(mea); ++k) {
+                // check if this is a valid way to copy an individual
+                typename MEA::subpopulation_type::individual_ptr_type o(q);
+                p->insert(p->end(), o);
+             //// Broken code.... just there for inspiration if needed.
+             ////                // move to random location
+             ////                std::size_t pos = (*i)->ea().rng()(s);
+             ////                (*i)->ea().env().move_ind(k, pos);
+             ////
+             ////                // add org as founders
+             ////                (*i)->ea().founder().insert((*i)->ea().founder().end(), (*i)->ea().copy_individual(*o));
+             }
+
         }
         
         offspring.insert(offspring.end(),p);
