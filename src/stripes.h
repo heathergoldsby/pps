@@ -64,6 +64,7 @@ LIBEA_MD_DECL(DEATH_PROB, "ea.stripes.death_prob", double);
 LIBEA_MD_DECL(SL_PERIOD, "ea.stripes.swap_location_period", int);
 LIBEA_MD_DECL(NUM_SWAPS, "ea.stripes.num_swaps", int);
 
+LIBEA_MD_DECL(PROP_COUNT, "ea.stripes.prop_count", int);
 
 //! create_propagule - creates the propagule cell
 DIGEVO_INSTRUCTION_DECL(create_propagule) {
@@ -80,6 +81,7 @@ DIGEVO_INSTRUCTION_DECL(deploy_propagule) {
     
     if (get<IS_PROPAGULE>(*p, 0) == 1) {
         put<IS_PROPAGULE>(2, *p);
+        get<PROP_COUNT>(ea,0) += 1;
     }
 }
 
@@ -104,7 +106,14 @@ DIGEVO_INSTRUCTION_DECL(become_soma) {
     put<GERM_STATUS>(false,*p);
 }
 
-    
+
+//! Execute the next instruction if the multicell does not have a propagule cell
+DIGEVO_INSTRUCTION_DECL(if_prop_cell_absent) {
+    if(get<PROP_COUNT>(ea,0)) {
+        hw.advanceHead(Hardware::IP);
+    }
+}
+
 
 
 

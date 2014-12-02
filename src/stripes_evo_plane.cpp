@@ -55,6 +55,7 @@ struct lifecycle : public default_lifecycle {
         append_isa<if_not_equal>(ea);
         append_isa<jump_head>(ea);
         append_isa<is_neighbor>(ea);
+        append_isa<if_prop_cell_absent>(ea);
         //        append_isa<is_origin>(ea);
         
         //        append_isa<get_xy>(ea);
