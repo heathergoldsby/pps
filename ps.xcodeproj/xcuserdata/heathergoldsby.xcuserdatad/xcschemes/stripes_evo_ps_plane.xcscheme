@@ -61,6 +61,10 @@
       <CommandLineArguments>
          <CommandLineArgument
             argument = "-c stripes_evo_plane.cfg"
+            isEnabled = "NO">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "-l checkpoint-1000000.xml.gz --analyze movie_evo_plane"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>

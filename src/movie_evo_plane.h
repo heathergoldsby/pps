@@ -52,7 +52,8 @@ namespace ealib {
                     
                     typename EA::individual_type best_founder(*i->traits().founder());
                     
-                    for (int j=0; j<=ea.current_update(); ++j) {
+                    int num_updates = get<MULTICELL_REP_TIME>(*i);
+                    for (int j=0; j<=num_updates; ++j) {
                         best_founder.update();
                         df.write(j);
                         // grab info based on location...
