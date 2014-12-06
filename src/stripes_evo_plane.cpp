@@ -73,6 +73,7 @@ struct lifecycle : public default_lifecycle {
         
         append_isa<create_propagule>(ea);
         append_isa<deploy_propagule>(ea);
+        append_isa<if_prop_cell_absent>(ea);
         
         add_event<task_resource_consumption>(ea);
         add_event<task_switching_cost>(ea);
