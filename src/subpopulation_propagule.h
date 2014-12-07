@@ -55,6 +55,9 @@ struct subpopulation_propagule {
                                              std::back_inserter(propagule),
                                              prop_size);
         
+        
+        int s = get<POPULATION_SIZE>(mea);
+        
         // now add a new individual built from each of the propagules to the
         // subpopulation:
         for(typename propagule_type::iterator i=propagule.begin(); i!=propagule.end(); ++i) {
@@ -77,8 +80,8 @@ struct subpopulation_propagule {
                 p->insert(p->end(), o);
              //// Broken code.... just there for inspiration if needed.
              ////                // move to random location
-             ////                std::size_t pos = (*i)->ea().rng()(s);
-             ////                (*i)->ea().env().move_ind(k, pos);
+                std::size_t pos = p->rng()(s);
+                p->env().swap_locations(k, pos);
              ////
              ////                // add org as founders
              ////                (*i)->ea().founder().insert((*i)->ea().founder().end(), (*i)->ea().copy_individual(*o));
