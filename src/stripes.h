@@ -474,6 +474,17 @@ struct stripes_replication_evo_plane : end_of_update_event<MEA> {
                         mutate(*q,m,*p);
                         
                         p->insert(p->end(),q);
+                        // location is NOT inherited. lots of mutations
+                        
+//                        int s = get<POPULATION_SIZE>(*i);
+//                        std::size_t pos = i->rng()(s);
+//                        
+//                        typename MEA::individual_type::individual_ptr_type o1 = i->copy_individual(*j);
+//                        o1->hw().initialize();
+//                        i->insert(i->end(), o1);
+//                        i->env().swap_locations(count, pos);
+//                        ++count;
+                        
                     }
                     
                     offspring.insert(offspring.end(),p);
@@ -495,19 +506,18 @@ struct stripes_replication_evo_plane : end_of_update_event<MEA> {
                     
                     i->clear(); // kills existing population
                     i->env().clear(*i);
-                    int count =0;
                     
                     for(typename MEA::individual_type::iterator j=i->traits().founder()->begin(); j!=i->traits().founder()->end(); ++j) {
-                        int s = get<POPULATION_SIZE>(*i);
-                        std::size_t pos = i->rng()(s);
-                        
                         typename MEA::individual_type::individual_ptr_type o1 = i->copy_individual(*j);
                         o1->hw().initialize();
                         i->insert(i->end(), o1);
-                        i->env().swap_locations(count, pos);
-                        ++count;
                     }
                     
+                    // shuffle the population
+//                    int s = get<POPULATION_SIZE>(*i);
+//                    std::size_t pos = i->rng()(s);
+//                    i->env().swap_locations(0, pos);
+
                     
                     // i == parent individual;
                     typename MEA::population_type parent_pop, offspring_pop;
