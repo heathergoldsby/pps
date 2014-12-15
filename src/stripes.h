@@ -376,7 +376,7 @@ struct random_death : end_of_update_event<EA> {
                 for(typename EA::iterator i=ea.begin(); i!=ea.end(); ++i) {
                     for(typename EA::subpopulation_type::population_type::iterator j=i->population().begin(); j!=i->population().end(); ++j) {
                         // get prob...
-                        if (ea.rng().p() < get<DEATH_PROB>(ea)) {
+                        if (ea.rng().p() < get<DEATH_PROB>(ea,0)) {
                             (*j)->alive() = false;
                             i->events().death(**j,*i);
                         }
@@ -436,15 +436,16 @@ struct stripes_replication_evo_plane : end_of_update_event<MEA> {
                 typedef typename MEA::subpopulation_type::population_type propagule_type;
                 propagule_type propagule;
                 
-                for(typename propagule_type::iterator j=i->population().begin(); j!=i->population().end(); ++j) {
-                    if (get<IS_PROPAGULE>(**j, 0) == 2) {
-                        propagule.push_back(*j);
-                    }
-                }
+//                // count propagules
+//                for(typename propagule_type::iterator j=i->population().begin(); j!=i->population().end(); ++j) {
+//                    if (get<IS_PROPAGULE>(**j, 0) == 2) {
+//                        propagule.push_back(*j);
+//                    }
+//                }
                 
-                int prop_total_cost = get<PROPAGULE_BASE_COST>(*i) + propagule.size() * get<PROPAGULE_PER_CELL_COST>(*i);
+                int prop_total_cost = get<PROPAGULE_BASE_COST>(*i) + get<PROP_COUNT>(*i,0) * get<PROPAGULE_PER_CELL_COST>(*i);
                 
-                if ((get<MC_RESOURCE_UNITS>(*i) > prop_total_cost) && (propagule.size() > 0)){
+                if ((get<MC_RESOURCE_UNITS>(*i) > prop_total_cost) && (get<PROP_COUNT>(*i,0) > 0)){
                     
                     /* get germs... */
                     
@@ -459,33 +460,58 @@ struct stripes_replication_evo_plane : end_of_update_event<MEA> {
                     // mutate it:
                     configurable_per_site m(get<GERM_MUTATION_PER_SITE_P>(mea));
                     
-                    // now add a new individual built from each of the propagules to the
-                    // subpopulation:
-                    for(typename propagule_type::iterator k=propagule.begin(); k!=propagule.end(); ++k) {
-                        // grab the original part of the propagule's genome; note that it could have been
-                        // changed (implicit-like mutations):
-                        typename MEA::subpopulation_type::genome_type r((*k)->genome().begin(),
-                                                                        (*k)->genome().begin()+(*k)->hw().original_size());
-                        typename MEA::subpopulation_type::individual_ptr_type q = p->make_individual(r);
-                        
-                        inherits_from(**k, *q, *p);
-                        
-                        // mutate
-                        mutate(*q,m,*p);
-                        
-                        p->insert(p->end(),q);
-                        // location is NOT inherited. lots of mutations
-                        
-//                        int s = get<POPULATION_SIZE>(*i);
-//                        std::size_t pos = i->rng()(s);
-//                        
-//                        typename MEA::individual_type::individual_ptr_type o1 = i->copy_individual(*j);
-//                        o1->hw().initialize();
-//                        i->insert(i->end(), o1);
-//                        i->env().swap_locations(count, pos);
-//                        ++count;
-                        
+                    
+                    for(typename propagule_type::iterator j=i->population().begin(); j!=i->population().end(); ++j) {
+                        if (get<IS_PROPAGULE>(**j, 0) == 2) {
+                            typename MEA::subpopulation_type::genome_type r((*j)->genome().begin(),
+                                                                            (*j)->genome().begin()+(*j)->hw().original_size());
+                            typename MEA::subpopulation_type::individual_ptr_type q = p->make_individual(r);
+                            
+                            inherits_from(**j, *q, *p);
+                            
+                            // mutate
+                            mutate(*q,m,*p);
+                            
+                            const position_type pos = (*j)->position();
+                            
+                            //iterator insert_at(iterator i, individual_ptr_type x, const position_type& pos) {
+                            p->insert_at(p->end(), q, pos);
+                            
+                            
+                        }
                     }
+                
+                    
+//                    // now add a new individual built from each of the propagules to the
+//                    // subpopulation:
+//                    for(typename propagule_type::iterator k=propagule.begin(); k!=propagule.end(); ++k) {
+//                        // grab the original part of the propagule's genome; note that it could have been
+//                        // changed (implicit-like mutations):
+//                        typename MEA::subpopulation_type::genome_type r((*k)->genome().begin(),
+//                                                                        (*k)->genome().begin()+(*k)->hw().original_size());
+//                        typename MEA::subpopulation_type::individual_ptr_type q = p->make_individual(r);
+//                        
+//                        inherits_from(**k, *q, *p);
+//                        
+//                        // mutate
+//                        mutate(*q,m,*p);
+//                        
+//                        //		void insert_at(individual_ptr_type p, const position_type& pos, EA& ea) {
+//
+//                        
+//                        p->insert_at(p->end(),0, q);
+//                        // location is NOT inherited. lots of mutations
+//                        
+////                        int s = get<POPULATION_SIZE>(*i);
+////                        std::size_t pos = i->rng()(s);
+////                        
+////                        typename MEA::individual_type::individual_ptr_type o1 = i->copy_individual(*j);
+////                        o1->hw().initialize();
+////                        i->insert(i->end(), o1);
+////                        i->env().swap_locations(count, pos);
+////                        ++count;
+//                        
+//                    }
                     
                     offspring.insert(offspring.end(),p);
                     
@@ -510,7 +536,7 @@ struct stripes_replication_evo_plane : end_of_update_event<MEA> {
                     for(typename MEA::individual_type::iterator j=i->traits().founder()->begin(); j!=i->traits().founder()->end(); ++j) {
                         typename MEA::individual_type::individual_ptr_type o1 = i->copy_individual(*j);
                         o1->hw().initialize();
-                        i->insert(i->end(), o1);
+                        i->insert_at(i->end(), o1, j->position());
                     }
                     
                     // shuffle the population

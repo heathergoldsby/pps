@@ -193,7 +193,7 @@ public:
         add_event<task_switch_tracking>(ea);
         
         add_event<random_death>(ea);
-        add_event<swap_locations>(ea);
+//        add_event<swap_locations>(ea);
     }
 };
 LIBEA_CMDLINE_INSTANCE(mea_type, cli);
