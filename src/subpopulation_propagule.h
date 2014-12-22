@@ -72,16 +72,20 @@ struct subpopulation_propagule {
             // mutate
             mutate(*q,*p);
             
-            p->insert(p->end(),q);
+            std::size_t pos = -1;
+            std::size_t t = p->rng()(s);
+            pos = t;
+            
+            p->insert_at(p->end(),q, pos);
             
             for (int k=1; k<get<NUM_PROPAGULE_CELL>(mea); ++k) {
                 // check if this is a valid way to copy an individual
                 typename MEA::subpopulation_type::individual_ptr_type o(q);
 
-                std::size_t pos = -1;
+                pos = -1;
                 
                 while (pos == -1) {
-                    std::size_t t = p->rng()(s);
+                    t = p->rng()(s);
                     if (!(p->env().location(t).occupied())) {
                         pos = t;
                     }

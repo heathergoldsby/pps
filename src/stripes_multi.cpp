@@ -174,9 +174,6 @@ public:
         add_option<FIT_GAMMA>(this);
         add_option<RES_UPDATE>(this);
         
-        add_option<DEATH_PROB>(this);
-        add_option<SL_PERIOD>(this);
-        add_option<NUM_SWAPS>(this);
         
 
     }
