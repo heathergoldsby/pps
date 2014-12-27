@@ -58,6 +58,8 @@ struct subpopulation_propagule {
         
         int s = get<POPULATION_SIZE>(mea);
         
+        configurable_per_site m(get<GERM_MUTATION_PER_SITE_P>(mea));
+
         // now add a new individual built from each of the propagules to the
         // subpopulation:
         for(typename propagule_type::iterator i=propagule.begin(); i!=propagule.end(); ++i) {
@@ -70,7 +72,8 @@ struct subpopulation_propagule {
             inherits_from(**i, *q, *p);
             
             // mutate
-            mutate(*q,*p);
+            mutate(*q,m,*p);
+
             
             std::size_t pos = -1;
             std::size_t t = p->rng()(s);
