@@ -437,13 +437,15 @@ struct stripes_replication_evo_plane : end_of_update_event<MEA> {
                 propagule_type propagule;
                 
 //                // count propagules
-//                for(typename propagule_type::iterator j=i->population().begin(); j!=i->population().end(); ++j) {
-//                    if (get<IS_PROPAGULE>(**j, 0) == 2) {
-//                        propagule.push_back(*j);
-//                    }
-//                }
+                int num_prop = 0;
+                for(typename propagule_type::iterator j=i->population().begin(); j!=i->population().end(); ++j) {
+                    if (get<IS_PROPAGULE>(**j, 0) == 2) {
+                        ++num_prop;
+                    }
+                }
                 
-                int prop_total_cost = get<PROPAGULE_BASE_COST>(*i) + get<PROP_COUNT>(*i,0) * get<PROPAGULE_PER_CELL_COST>(*i);
+                int prop_total_cost = get<PROPAGULE_BASE_COST>(*i) + (num_prop * get<PROPAGULE_PER_CELL_COST>(*i));
+                
                 
                 if ((get<MC_RESOURCE_UNITS>(*i) > prop_total_cost) && (get<PROP_COUNT>(*i,0) > 0)){
                     
