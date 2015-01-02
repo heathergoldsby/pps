@@ -447,7 +447,7 @@ struct stripes_replication_evo_plane : end_of_update_event<MEA> {
                 int prop_total_cost = get<PROPAGULE_BASE_COST>(*i) + (num_prop * get<PROPAGULE_PER_CELL_COST>(*i));
                 
                 
-                if ((get<MC_RESOURCE_UNITS>(*i) > prop_total_cost) && (get<PROP_COUNT>(*i,0) > 0)){
+                if ((get<MC_RESOURCE_UNITS>(*i) > prop_total_cost) && (num_prop > 0)){
                     
                     /* get germs... */
                     
