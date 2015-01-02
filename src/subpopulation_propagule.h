@@ -22,6 +22,8 @@
 
 #include <algorithm>
 #include <utility>
+#include <iterator>
+
 
 #include <ea/metadata.h>
 
@@ -59,6 +61,12 @@ struct subpopulation_propagule {
         int s = get<POPULATION_SIZE>(mea);
         
         configurable_per_site m(get<GERM_MUTATION_PER_SITE_P>(mea));
+        
+        std::vector<int> open_pos (s);
+        for( int n = 0 ; n < s ; ++n ) {
+            open_pos[ n ] = n;
+        }
+        
 
         // now add a new individual built from each of the propagules to the
         // subpopulation:
@@ -73,28 +81,22 @@ struct subpopulation_propagule {
             
             // mutate
             mutate(*q,m,*p);
-
             
-            std::size_t pos = -1;
-            std::size_t t = p->rng()(s);
-            pos = t;
             
-            p->insert_at(p->end(),q, pos);
+            std::size_t t = p->rng()(open_pos.size());
+            std::size_t pos = open_pos[t];
+            open_pos.erase(open_pos.begin() + t);
+            
+            p->insert_at(p->end(),q, p->env().location(pos).position());
             
             for (int k=1; k<get<NUM_PROPAGULE_CELL>(mea); ++k) {
                 // check if this is a valid way to copy an individual
                 typename MEA::subpopulation_type::individual_ptr_type o(q);
 
-                pos = -1;
-                
-                while (pos == -1) {
-                    t = p->rng()(s);
-                    if (!(p->env().location(t).occupied())) {
-                        pos = t;
-                    }
-                }
-                
-                p->insert_at(p->end(), o, pos);
+                t = p->rng()(open_pos.size());
+                pos = open_pos[t];
+                open_pos.erase(open_pos.begin() + t);
+                p->insert_at(p->end(), o, p->env().location(pos).position());
 
              }
 

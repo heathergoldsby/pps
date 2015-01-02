@@ -536,7 +536,6 @@ struct stripes_replication_evo_plane : end_of_update_event<MEA> {
                     for(typename MEA::individual_type::iterator j=i->traits().founder()->begin(); j!=i->traits().founder()->end(); ++j) {
                         typename MEA::individual_type::individual_ptr_type o1 = i->copy_individual(*j);
                         o1->hw().initialize();
-                        
                         i->insert_at(i->end(), o1, j->position());
                     }
                     
