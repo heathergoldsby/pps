@@ -165,7 +165,7 @@ struct permute_stripes : public fitness_function<unary_fitness<double>, nonstati
                 }
                 
                 // Diagonal stripes
-                if (((x % 2) == 0) && ((y % 2) == 0 )) {
+                if ((x % 2) == (y % 2)) {
                     if(lt == "not") { ++five_fit_not; }
                     if (lt == "nand") { ++six_fit_nand; }
                 } else {
@@ -778,6 +778,7 @@ void eval_permute_stripes(EA& ea) {
     
     
     put<STRIPE_FIT>(rescaled_fit,ea);
+
 }
 
 
