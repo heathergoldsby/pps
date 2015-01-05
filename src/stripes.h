@@ -523,7 +523,7 @@ struct stripes_replication_evo_plane : end_of_update_event<MEA> {
                     multicell_last_fitness.push_back(get<STRIPE_FIT>(*i));
                     multicell_size.push_back(i->size());
                     multicell_last_fitness_pt.push_back(get<STRIPE_FIT_PT>(*i));
-                    multicell_prop_size.push_back(propagule.size());
+                    multicell_prop_size.push_back(num_prop);
                     ++num_rep;
                     
                     // reset parent multicell
