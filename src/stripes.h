@@ -328,7 +328,7 @@ struct swap_locations : end_of_update_event<EA> {
     virtual void operator()(EA& ea) {
         
         int sl = get<SL_PERIOD>(ea,1);
-        if ((ea.current_update() % sl) == 0) {
+        if ((ea.current_update() % sl) == 1) {
             
             // go through each multicell...
             for(typename EA::iterator i=ea.begin(); i!=ea.end(); ++i) {
