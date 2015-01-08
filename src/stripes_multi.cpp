@@ -173,6 +173,11 @@ public:
         add_option<FIT_MIN>(this);
         add_option<FIT_GAMMA>(this);
         add_option<RES_UPDATE>(this);
+        add_option<DEATH_PROB>(this);
+        add_option<SL_PERIOD>(this);
+        add_option<NUM_SWAPS>(this);
+
+
         
         
 
@@ -190,7 +195,7 @@ public:
         add_event<task_switch_tracking>(ea);
         
         add_event<random_death>(ea);
-//        add_event<swap_locations>(ea);
+        add_event<swap_locations>(ea);
     }
 };
 LIBEA_CMDLINE_INSTANCE(mea_type, cli);
