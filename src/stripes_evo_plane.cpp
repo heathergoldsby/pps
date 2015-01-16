@@ -6,6 +6,7 @@
 #include <ea/line_of_descent.h>
 //#include "lod_knockouts.h"
 #include "multibirth_not_nand_prop_ancestor.h"
+#include "multibirth_not_nand_prop_ancestor2.h"
 
 
 
@@ -55,7 +56,7 @@ struct lifecycle : public default_lifecycle {
         append_isa<if_not_equal>(ea);
         append_isa<jump_head>(ea);
         append_isa<is_neighbor>(ea);
-        append_isa<if_prop_cell_absent>(ea);
+//        append_isa<if_prop_cell_absent>(ea);
         //        append_isa<is_origin>(ea);
         
         //        append_isa<get_xy>(ea);
@@ -71,12 +72,14 @@ struct lifecycle : public default_lifecycle {
 //        //        append_isa<if_soma>(ea);
 //        //        append_isa<if_germ>(ea);
         
-        append_isa<create_propagule>(ea);
+//        append_isa<create_propagule>(ea);
         append_isa<deploy_propagule>(ea);
         append_isa<if_prop_cell_absent>(ea);
         
         add_event<task_resource_consumption>(ea);
         add_event<task_switching_cost>(ea);
+        add_event<prop_death_event>(ea);
+
         add_event<ts_birth_event>(ea);
         
         typedef typename EA::task_library_type::task_ptr_type task_ptr_type;
@@ -132,7 +135,7 @@ typedef digital_evolution
 < lifecycle
 , recombination::asexual
 , round_robin
-, multibirth_not_nand_prop_ancestor // multibirth_selfrep_not_nand_ancestor
+, multibirth_not_nand_prop_ancestor2 // multibirth_selfrep_not_nand_ancestor
 , empty_facing_neighbor
 , dont_stop
 , generate_single_ancestor

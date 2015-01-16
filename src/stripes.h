@@ -66,20 +66,21 @@ LIBEA_MD_DECL(NUM_SWAPS, "ea.stripes.num_swaps", int);
 
 LIBEA_MD_DECL(PROP_COUNT, "ea.stripes.prop_count", int);
 
-//! create_propagule - creates the propagule cell
-DIGEVO_INSTRUCTION_DECL(create_propagule) {
-    p->hw().add_cost(get<PROPAGULE_COST>(ea));
-    
-    if (ea.rng().p() > get<PROPAGULE_FAIL_PROB>(ea)) {
-        put<IS_PROPAGULE>(1, *p);
-    }
-    
-}
-
+////! create_propagule - creates the propagule cell
+//DIGEVO_INSTRUCTION_DECL(create_propagule) {
+//    p->hw().add_cost(get<PROPAGULE_COST>(ea));
+//    
+//    if (ea.rng().p() > get<PROPAGULE_FAIL_PROB>(ea)) {
+//        put<IS_PROPAGULE>(1, *p);
+//    }
+//    
+//}
+//
 //! deploys the propagule to the holding tank
 DIGEVO_INSTRUCTION_DECL(deploy_propagule) {
     
-    if (get<IS_PROPAGULE>(*p, 0) == 1) {
+//    if (get<IS_PROPAGULE>(*p, 0) == 1) {
+    if (get<IS_PROPAGULE>(*p,0) != 2) {
         put<IS_PROPAGULE>(2, *p);
         get<PROP_COUNT>(ea,0) += 1;
     }
@@ -436,13 +437,15 @@ struct stripes_replication_evo_plane : end_of_update_event<MEA> {
                 typedef typename MEA::subpopulation_type::population_type propagule_type;
                 propagule_type propagule;
                 
-//                // count propagules
-                int num_prop = 0;
-                for(typename propagule_type::iterator j=i->population().begin(); j!=i->population().end(); ++j) {
-                    if (get<IS_PROPAGULE>(**j, 0) == 2) {
-                        ++num_prop;
-                    }
-                }
+////                // count propagules
+//                int num_prop = 0;
+//                for(typename propagule_type::iterator j=i->population().begin(); j!=i->population().end(); ++j) {
+//                    if (get<IS_PROPAGULE>(**j, 0) == 2) {
+//                        ++num_prop;
+//                    }
+//                }
+                
+                int num_prop = get<PROP_COUNT>(*i,0);
                 
                 int prop_total_cost = get<PROPAGULE_BASE_COST>(*i) + (num_prop * get<PROPAGULE_PER_CELL_COST>(*i));
                 
@@ -530,6 +533,7 @@ struct stripes_replication_evo_plane : end_of_update_event<MEA> {
                     i->resources().reset();
                     put<MC_RESOURCE_UNITS>(0,*i);
                     put<MULTICELL_REP_TIME>(0,*i);
+                    put<PROP_COUNT>(0,*i);
                     
                     
                     i->clear(); // kills existing population
@@ -780,6 +784,30 @@ void eval_permute_stripes(EA& ea) {
     put<STRIPE_FIT>(rescaled_fit,ea);
 
 }
+
+/*! If an organism is a propagule, it updates the number of propagule cells accordingly.
+ */
+template <typename EA>
+struct prop_death_event : death_event<EA> {
+    
+    //! Constructor.
+    prop_death_event(EA& ea) : death_event<EA>(ea) {
+    }
+    
+    //! Destructor.
+    virtual ~prop_death_event() {
+    }
+    
+    /*! Called for every inheritance event. We are using the orientation of the first parent...
+     */
+    virtual void operator()(typename EA::individual_type& offspring, // individual offspring
+                            EA& ea) {
+        if (get<IS_PROPAGULE>(offspring, 0) == 2) {
+            get<PROP_COUNT>(ea,0) -= 1;
+        }
+        
+    }
+};
 
 
 #endif

@@ -42,28 +42,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "src/stripes.h"
-            timestampString = "442434230.733824"
+            timestampString = "443124934.700788"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "331"
-            endingLineNumber = "331"
-            landmarkName = "operator()(EA&amp; ea)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "src/stripes.h"
-            timestampString = "442434242.963235"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "334"
-            endingLineNumber = "334"
-            landmarkName = "operator()(EA&amp; ea)"
+            startingLineNumber = "453"
+            endingLineNumber = "453"
+            landmarkName = "operator()(MEA&amp; mea)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

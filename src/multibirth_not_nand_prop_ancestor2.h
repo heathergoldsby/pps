@@ -17,8 +17,8 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef _EA_DIGITAL_EVOLUTION_ANCESTORS_MULTI_BIRTH_SELFREP_NOT_NAND_ANCESTOR_H_
-#define _EA_DIGITAL_EVOLUTION_ANCESTORS_MULTI_BIRTH_SELFREP_NOT_NAND_ANCESTOR_H_
+#ifndef _EA_DIGITAL_EVOLUTION_ANCESTORS_MULTI_BIRTH_SELFREP_NOT_NAND_ANCESTOR2_H_
+#define _EA_DIGITAL_EVOLUTION_ANCESTORS_MULTI_BIRTH_SELFREP_NOT_NAND_ANCESTOR2_H_
 
 
 #include <ea/digital_evolution.h>
@@ -28,7 +28,7 @@
 namespace ealib {
     /*! Generates a self-replicating ancestor that performs not.
      */
-    struct multibirth_not_nand_prop_ancestor {
+    struct multibirth_not_nand_prop_ancestor2 {
         template <typename EA>
         typename EA::genome_type operator()(EA& ea) {
             typename EA::genome_type repr;
@@ -55,7 +55,8 @@ namespace ealib {
             repr[30] = ea.isa()["output"]; //output
             repr[31] = ea.isa()["donate_res_to_group"]; // donate_res_to_group
             
-//            repr[40] = ea.isa()["create_propagule"]; // create propagule
+            //            repr[40] = ea.isa()["create_propagule"]; // create propagule
+            repr[49] = ea.isa()["if_prop_cell_absent"];
             repr[50] = ea.isa()["deploy_propagule"]; // deploy propagule!
             
             // nand
@@ -65,7 +66,7 @@ namespace ealib {
             repr[77] = ea.isa()["nand"]; // nand
             repr[78] = ea.isa()["output"]; //output
             repr[79] = ea.isa()["donate_res_to_group"]; // donate_res_to_group
-
+            
             
             repr[90] =  ea.isa()["rotate_cw"];
             repr[91] =  ea.isa()["h_search"]; // hsearch

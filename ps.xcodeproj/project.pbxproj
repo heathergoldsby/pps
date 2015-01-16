@@ -72,6 +72,7 @@
 		480052BF19EA18460063B13B /* stripes_evo_ps_plane */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = stripes_evo_ps_plane; sourceTree = BUILT_PRODUCTS_DIR; };
 		481F84C019DD8E46000EDBE8 /* subpopulation_propagule_plane.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = subpopulation_propagule_plane.h; sourceTree = "<group>"; };
 		481F84C119DD91AC000EDBE8 /* multibirth_not_nand_prop_ancestor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = multibirth_not_nand_prop_ancestor.h; sourceTree = "<group>"; };
+		483A070B1A698C1B009FCA88 /* multibirth_not_nand_prop_ancestor2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = multibirth_not_nand_prop_ancestor2.h; sourceTree = "<group>"; };
 		48460686192D1DFC005579F9 /* stripes_control */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = stripes_control; sourceTree = BUILT_PRODUCTS_DIR; };
 		48460697192D1FFE005579F9 /* stripes_location */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = stripes_location; sourceTree = BUILT_PRODUCTS_DIR; };
 		48542FB819E0DE900030F097 /* stripes_evo_ps */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = stripes_evo_ps; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -170,6 +171,7 @@
 				42DF06891945418600C9A364 /* subpopulation_propagule.h */,
 				481F84C019DD8E46000EDBE8 /* subpopulation_propagule_plane.h */,
 				481F84C119DD91AC000EDBE8 /* multibirth_not_nand_prop_ancestor.h */,
+				483A070B1A698C1B009FCA88 /* multibirth_not_nand_prop_ancestor2.h */,
 			);
 			path = src;
 			sourceTree = "<group>";
