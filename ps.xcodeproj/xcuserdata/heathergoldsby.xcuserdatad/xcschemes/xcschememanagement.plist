@@ -24,6 +24,11 @@
 			<key>orderHint</key>
 			<integer>5</integer>
 		</dict>
+		<key>stripes_evo_ps_plane2.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>24</integer>
+		</dict>
 		<key>stripes_location.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -128,6 +133,11 @@
 			<true/>
 		</dict>
 		<key>48542FAF19E0DE900030F097</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>488DA3F51A6B4D6F00BF0B0B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
