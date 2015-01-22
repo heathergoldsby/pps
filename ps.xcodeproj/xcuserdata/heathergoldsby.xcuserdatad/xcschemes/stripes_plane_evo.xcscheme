@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "488DA3F51A6B4D6F00BF0B0B"
-               BuildableName = "stripes_evo_ps_plane2"
-               BlueprintName = "stripes_evo_ps_plane2"
+               BlueprintIdentifier = "481F1C891A7129DA00153768"
+               BuildableName = "stripes_evo_ps_plane2 copy"
+               BlueprintName = "stripes_evo_ps_evo_ancest"
                ReferencedContainer = "container:ps.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -32,9 +32,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "488DA3F51A6B4D6F00BF0B0B"
-            BuildableName = "stripes_evo_ps_plane2"
-            BlueprintName = "stripes_evo_ps_plane2"
+            BlueprintIdentifier = "481F1C891A7129DA00153768"
+            BuildableName = "stripes_evo_ps_plane2 copy"
+            BlueprintName = "stripes_evo_ps_evo_ancest"
             ReferencedContainer = "container:ps.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -52,9 +52,9 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "488DA3F51A6B4D6F00BF0B0B"
-            BuildableName = "stripes_evo_ps_plane2"
-            BlueprintName = "stripes_evo_ps_plane2"
+            BlueprintIdentifier = "481F1C891A7129DA00153768"
+            BuildableName = "stripes_evo_ps_plane2 copy"
+            BlueprintName = "stripes_evo_ps_evo_ancest"
             ReferencedContainer = "container:ps.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -76,9 +76,9 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "488DA3F51A6B4D6F00BF0B0B"
-            BuildableName = "stripes_evo_ps_plane2"
-            BlueprintName = "stripes_evo_ps_plane2"
+            BlueprintIdentifier = "481F1C891A7129DA00153768"
+            BuildableName = "stripes_evo_ps_plane2 copy"
+            BlueprintName = "stripes_evo_ps_evo_ancest"
             ReferencedContainer = "container:ps.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

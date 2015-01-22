@@ -4,6 +4,8 @@
 //#include <ea/digital_evolution/ancestors/multi_birth_selfrep_not_nand_ancestor.h>
 #include <ea/subpopulation_founder.h>
 #include <ea/line_of_descent.h>
+#include <ea/analysis/archive.h>
+
 //#include "lod_knockouts.h"
 #include "multibirth_not_nand_prop_ancestor.h"
 #include "multibirth_not_nand_prop_ancestor2.h"
