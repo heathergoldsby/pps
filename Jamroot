@@ -31,3 +31,12 @@ src/stripes_evo_plane2.cpp
 ;
 
 install dist : stripes_plane2 : <location>$(HOME)/bin ;
+
+exe stripes_plane_ancest :
+src/stripes_evo_plane_evo_ancest.cpp
+/libea//libea
+/libea//libea_runner
+: <include>./include <link>static
+;
+
+install dist : stripes_plane_ancest : <location>$(HOME)/bin ;
