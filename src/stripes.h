@@ -450,7 +450,8 @@ struct stripes_replication_evo_plane : end_of_update_event<MEA> {
                 int prop_total_cost = get<PROPAGULE_BASE_COST>(*i) + (num_prop * get<PROPAGULE_PER_CELL_COST>(*i));
                 
                 
-                if (((get<MC_RESOURCE_UNITS>(*i) > prop_total_cost) && (num_prop > 0)) && ((i->population().size() > num_prop ) || (num_prop == get<POPULATION_SIZE>(*i)))){
+                int num_founder = i->traits().founder()->population().size();
+                if (((get<MC_RESOURCE_UNITS>(*i) > prop_total_cost) && (num_prop > 0)) && ((i->population().size() > num_founder ) || (num_founder == get<POPULATION_SIZE>(*i)))){
                     
                     /* get germs... */
                     
