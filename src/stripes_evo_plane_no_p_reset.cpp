@@ -208,7 +208,6 @@ public:
         add_option<DEATH_PROB>(this);
         add_option<SL_PERIOD>(this);
         add_option<NUM_SWAPS>(this);
-        add_option<JUV_PERIOD>(this);
         
     }
     
@@ -224,7 +223,7 @@ public:
         //        add_event<lod_event>(ea);
         add_event<subpopulation_founder_event>(ea);
         //        add_event<datafiles::mrca_lineage>(ea);
-        add_event<stripes_replication_evo_plane>(ea);
+        add_event<stripes_replication_evo_plane_no_parent_reset>(ea);
         add_event<task_performed_tracking>(ea);
         //        add_event<random_death>(ea);
         //        add_event<swap_locations>(ea);

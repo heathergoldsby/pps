@@ -13,6 +13,8 @@
 		481F1C8D1A7129DA00153768 /* libea.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DC570A1940C99D005044F1 /* libea.a */; };
 		481F1C931A71786600153768 /* stripes_evo_plane_evo_ancest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 481F1C881A7031A400153768 /* stripes_evo_plane_evo_ancest.cpp */; };
 		48542FB319E0DE900030F097 /* libea.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DC570A1940C99D005044F1 /* libea.a */; };
+		488C69011A781B2C000507E3 /* libea.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DC570A1940C99D005044F1 /* libea.a */; };
+		488C69071A781B39000507E3 /* stripes_evo_plane_no_p_reset.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 488C68FC1A781AF2000507E3 /* stripes_evo_plane_no_p_reset.cpp */; };
 		488DA3F91A6B4D6F00BF0B0B /* libea.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DC570A1940C99D005044F1 /* libea.a */; };
 		488DA3FF1A6B4D7B00BF0B0B /* stripes_evo_plane2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 488DA3F41A6B4D3F00BF0B0B /* stripes_evo_plane2.cpp */; };
 		48FF4C9319379E49001F0183 /* stripes_multi.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48AC8AB11937639900DA6945 /* stripes_multi.cpp */; };
@@ -64,6 +66,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
+		488C69021A781B2C000507E3 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 		488DA3FA1A6B4D6F00BF0B0B /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -104,6 +115,8 @@
 		48542FBA19E0E1880030F097 /* stripes_evo_plane.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = stripes_evo_plane.cpp; sourceTree = "<group>"; };
 		487ACE231934F7C60016340B /* movie.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = movie.h; sourceTree = "<group>"; };
 		488B205F1A2AC20400C3571D /* movie_evo_plane.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = movie_evo_plane.h; sourceTree = "<group>"; };
+		488C68FC1A781AF2000507E3 /* stripes_evo_plane_no_p_reset.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = stripes_evo_plane_no_p_reset.cpp; sourceTree = "<group>"; };
+		488C69061A781B2C000507E3 /* stripes_evo_ps_evo_ancest copy */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "stripes_evo_ps_evo_ancest copy"; sourceTree = BUILT_PRODUCTS_DIR; };
 		488DA3F41A6B4D3F00BF0B0B /* stripes_evo_plane2.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = stripes_evo_plane2.cpp; sourceTree = "<group>"; };
 		488DA3FE1A6B4D6F00BF0B0B /* stripes_evo_ps_plane2 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = stripes_evo_ps_plane2; sourceTree = BUILT_PRODUCTS_DIR; };
 		48A1E129183F8ED70023C478 /* stripes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = stripes.h; sourceTree = "<group>"; };
@@ -150,6 +163,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		488C69001A781B2C000507E3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				488C69011A781B2C000507E3 /* libea.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		488DA3F81A6B4D6F00BF0B0B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -191,6 +212,7 @@
 				480052BF19EA18460063B13B /* stripes_evo_ps_plane */,
 				488DA3FE1A6B4D6F00BF0B0B /* stripes_evo_ps_plane2 */,
 				481F1C921A7129DA00153768 /* stripes_plane_evo */,
+				488C69061A781B2C000507E3 /* stripes_evo_ps_evo_ancest copy */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -213,6 +235,7 @@
 				48542FBA19E0E1880030F097 /* stripes_evo_plane.cpp */,
 				488DA3F41A6B4D3F00BF0B0B /* stripes_evo_plane2.cpp */,
 				481F1C881A7031A400153768 /* stripes_evo_plane_evo_ancest.cpp */,
+				488C68FC1A781AF2000507E3 /* stripes_evo_plane_no_p_reset.cpp */,
 				487ACE231934F7C60016340B /* movie.h */,
 				488B205F1A2AC20400C3571D /* movie_evo_plane.h */,
 				42DF06891945418600C9A364 /* subpopulation_propagule.h */,
@@ -320,6 +343,23 @@
 			productReference = 48542FB819E0DE900030F097 /* stripes_evo_ps */;
 			productType = "com.apple.product-type.tool";
 		};
+		488C68FD1A781B2C000507E3 /* stripes_evo_no_p_reset */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 488C69031A781B2C000507E3 /* Build configuration list for PBXNativeTarget "stripes_evo_no_p_reset" */;
+			buildPhases = (
+				488C68FE1A781B2C000507E3 /* Sources */,
+				488C69001A781B2C000507E3 /* Frameworks */,
+				488C69021A781B2C000507E3 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = stripes_evo_no_p_reset;
+			productName = ealife;
+			productReference = 488C69061A781B2C000507E3 /* stripes_evo_ps_evo_ancest copy */;
+			productType = "com.apple.product-type.tool";
+		};
 		488DA3F51A6B4D6F00BF0B0B /* stripes_evo_ps_plane2 */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 488DA3FB1A6B4D6F00BF0B0B /* Build configuration list for PBXNativeTarget "stripes_evo_ps_plane2" */;
@@ -382,6 +422,7 @@
 				480052B619EA18460063B13B /* stripes_evo_ps_plane */,
 				488DA3F51A6B4D6F00BF0B0B /* stripes_evo_ps_plane2 */,
 				481F1C891A7129DA00153768 /* stripes_evo_ps_evo_ancest */,
+				488C68FD1A781B2C000507E3 /* stripes_evo_no_p_reset */,
 			);
 		};
 /* End PBXProject section */
@@ -421,6 +462,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		488C68FE1A781B2C000507E3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				488C69071A781B39000507E3 /* stripes_evo_plane_no_p_reset.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -556,6 +605,28 @@
 			};
 			name = Release;
 		};
+		488C69041A781B2C000507E3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/dk/Documents/repositories/research.hg/src/DerivedData/research/Build/Products/Debug,
+				);
+				PRODUCT_NAME = "stripes_evo_ps_evo_ancest copy";
+			};
+			name = Debug;
+		};
+		488C69051A781B2C000507E3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/dk/Documents/repositories/research.hg/src/DerivedData/research/Build/Products/Debug,
+				);
+				PRODUCT_NAME = "stripes_evo_ps_evo_ancest copy";
+			};
+			name = Release;
+		};
 		488DA3FC1A6B4D6F00BF0B0B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -653,6 +724,15 @@
 			buildConfigurations = (
 				48542FB619E0DE900030F097 /* Debug */,
 				48542FB719E0DE900030F097 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		488C69031A781B2C000507E3 /* Build configuration list for PBXNativeTarget "stripes_evo_no_p_reset" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				488C69041A781B2C000507E3 /* Debug */,
+				488C69051A781B2C000507E3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

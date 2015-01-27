@@ -14,6 +14,11 @@
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
+		<key>stripes_evo_no_p_reset.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>26</integer>
+		</dict>
 		<key>stripes_evo_ps.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -143,6 +148,11 @@
 			<true/>
 		</dict>
 		<key>48542FAF19E0DE900030F097</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>488C68FD1A781B2C000507E3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
