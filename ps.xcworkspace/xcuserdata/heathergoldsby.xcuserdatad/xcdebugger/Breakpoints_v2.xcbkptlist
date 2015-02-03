@@ -4,91 +4,23 @@
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            scope = "0"
+            stopOnStyle = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "src/movie_evo_plane.h"
-            timestampString = "439926004.471704"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
-            landmarkName = "LIBEA_ANALYSIS_TOOL(movie_evo_plane)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "src/movie.h"
-            timestampString = "442002332.432932"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
-            landmarkName = "LIBEA_ANALYSIS_TOOL(movie_for_competitions)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "src/stripes.h"
-            timestampString = "444079394.211829"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "340"
-            endingLineNumber = "340"
-            landmarkName = "operator()(EA&amp; ea)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "stripes_replication_evo_plane&lt;ealib::metapopulation&lt;ealib::digital_evolution&lt;lifecycle, ealib::recombination::asexual, ealib::weighted_round_robin&lt;ealib::access::unit_priority&gt;, ealib::evolved_striped_ancestor, ealib::empty_facing_neighbor, ealib::dont_stop, ealib::generate_single_ancestor, ealib::null_trait&gt;, permute_stripes, ealib::mutation::operators::no_mutation, ealib::quiet_nan, ealib::generational_models::isolated_subpopulations, ealib::ancestors::default_subpopulation, ealib::dont_stop, ealib::fill_metapopulation, ealib::default_lifecycle, subpop_trait&gt; &gt;::stripes_replication_evo_plane(ealib::metapopulation&lt;ealib::digital_evolution&lt;lifecycle, ealib::recombination::asexual, ealib::weighted_round_robin&lt;ealib::access::unit_priority&gt;, ealib::evolved_striped_ancestor, ealib::empty_facing_neighbor, ealib::dont_stop, ealib::generate_single_ancestor, ealib::null_trait&gt;, permute_stripes, ealib::mutation::operators::no_mutation, ealib::quiet_nan, ealib::generational_models::isolated_subpopulations, ealib::ancestors::default_subpopulation, ealib::dont_stop, ealib::fill_metapopulation, ealib::default_lifecycle, subpop_trait&gt;&amp;)"
-                  moduleName = "stripes_plane_evo"
-                  urlString = "file:///Users/heathergoldsby/Desktop/research/code/pps/src/stripes.h"
-                  timestampString = "444079515.672305"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "409"
-                  endingLineNumber = "409"
-                  offsetFromSymbolStart = "20">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "stripes_replication_evo_plane&lt;ealib::metapopulation&lt;ealib::digital_evolution&lt;lifecycle, ealib::recombination::asexual, ealib::weighted_round_robin&lt;ealib::access::unit_priority&gt;, ealib::evolved_striped_ancestor, ealib::empty_facing_neighbor, ealib::dont_stop, ealib::generate_single_ancestor, ealib::null_trait&gt;, permute_stripes, ealib::mutation::operators::no_mutation, ealib::quiet_nan, ealib::generational_models::isolated_subpopulations, ealib::ancestors::default_subpopulation, ealib::dont_stop, ealib::fill_metapopulation, ealib::default_lifecycle, subpop_trait&gt; &gt;::stripes_replication_evo_plane(ealib::metapopulation&lt;ealib::digital_evolution&lt;lifecycle, ealib::recombination::asexual, ealib::weighted_round_robin&lt;ealib::access::unit_priority&gt;, ealib::evolved_striped_ancestor, ealib::empty_facing_neighbor, ealib::dont_stop, ealib::generate_single_ancestor, ealib::null_trait&gt;, permute_stripes, ealib::mutation::operators::no_mutation, ealib::quiet_nan, ealib::generational_models::isolated_subpopulations, ealib::ancestors::default_subpopulation, ealib::dont_stop, ealib::fill_metapopulation, ealib::default_lifecycle, subpop_trait&gt;&amp;)"
-                  moduleName = "stripes_plane_evo"
-                  urlString = "file:///Users/heathergoldsby/Desktop/research/code/pps/src/stripes.h"
-                  timestampString = "444079515.672723"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "400"
-                  endingLineNumber = "400"
-                  offsetFromSymbolStart = "41">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "src/stripes.h"
-            timestampString = "444079549.08863"
+            timestampString = "444673826.602618"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "434"
