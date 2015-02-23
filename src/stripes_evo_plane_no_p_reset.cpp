@@ -7,7 +7,7 @@
 #include <ea/analysis/archive.h>
 
 
-#include "evolved_striped_ancestor.h"
+#include "evolved_striped_ancestor2.h"
 #include "multibirth_not_nand_prop_ancestor.h"
 
 
@@ -137,7 +137,8 @@ typedef digital_evolution
 < lifecycle
 , recombination::asexual
 , round_robin
-, multibirth_not_nand_prop_ancestor //, evolved_striped_ancestor // multibirth_selfrep_not_nand_ancestor
+//, multibirth_not_nand_prop_ancestor //, evolved_striped_ancestor // multibirth_selfrep_not_nand_ancestor
+, evolved_striped_ancestor2
 , empty_facing_neighbor
 , dont_stop
 , generate_single_ancestor
