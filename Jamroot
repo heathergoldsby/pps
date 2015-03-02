@@ -49,3 +49,12 @@ src/stripes_evo_plane_no_p_reset.cpp
 ;
 
 install dist : stripes_plane_ancest_no_p_reset : <location>$(HOME)/bin ;
+
+exe stripes_ep3 :
+src/stripes_ep3.cpp
+/libea//libea
+/libea//libea_runner
+: <include>./include <link>static
+;
+
+install dist : stripes_ep3 : <location>$(HOME)/bin ;
