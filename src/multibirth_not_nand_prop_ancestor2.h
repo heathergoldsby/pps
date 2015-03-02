@@ -26,7 +26,7 @@
 
 
 namespace ealib {
-    /*! Generates a self-replicating ancestor that performs not.
+    /*! Generates a self-replicating ancestor that performs not. Small propagule size.
      */
     struct multibirth_not_nand_prop_ancestor2 {
         template <typename EA>
