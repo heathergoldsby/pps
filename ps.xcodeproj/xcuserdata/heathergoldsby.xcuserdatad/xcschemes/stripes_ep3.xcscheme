@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "480E7EB41AA48D510038B94E"
-               BuildableName = "stripes_evo_no_p_reset copy"
+               BuildableName = "stripes_ep3"
                BlueprintName = "stripes_ep3"
                ReferencedContainer = "container:ps.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "480E7EB41AA48D510038B94E"
-            BuildableName = "stripes_evo_no_p_reset copy"
+            BuildableName = "stripes_ep3"
             BlueprintName = "stripes_ep3"
             ReferencedContainer = "container:ps.xcodeproj">
          </BuildableReference>
@@ -53,7 +53,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "480E7EB41AA48D510038B94E"
-            BuildableName = "stripes_evo_no_p_reset copy"
+            BuildableName = "stripes_ep3"
             BlueprintName = "stripes_ep3"
             ReferencedContainer = "container:ps.xcodeproj">
          </BuildableReference>
@@ -77,7 +77,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "480E7EB41AA48D510038B94E"
-            BuildableName = "stripes_evo_no_p_reset copy"
+            BuildableName = "stripes_ep3"
             BlueprintName = "stripes_ep3"
             ReferencedContainer = "container:ps.xcodeproj">
          </BuildableReference>
