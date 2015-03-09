@@ -20,7 +20,7 @@ namespace ealib {
             
             int count_updates = 0;
             
-            while (count_updates < 10000) {
+            while (count_updates < 1000) {
                 count_updates ++;
                 ea.update();
             }
