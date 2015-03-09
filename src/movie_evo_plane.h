@@ -21,6 +21,14 @@ namespace ealib {
             int count_updates = 0;
             
             while (count_updates < 10000) {
+                ea.update();
+            }
+            
+            
+            
+            count_updates = 0;
+            
+            while (count_updates < 10000) {
                 count_updates ++;
                 for(typename EA::iterator i=ea.begin(); i!=ea.end(); ++i) {
                     i->update();
