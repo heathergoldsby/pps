@@ -58,3 +58,13 @@ src/stripes_ep3.cpp
 ;
 
 install dist : stripes_ep3 : <location>$(HOME)/bin ;
+
+
+exe stripes_split :
+src/stripes_split.cpp
+/libea//libea
+/libea//libea_runner
+: <include>./include <link>static
+;
+
+install dist : stripes_split : <location>$(HOME)/bin ;
