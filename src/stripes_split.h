@@ -99,6 +99,14 @@ struct stripes_split : end_of_update_event<MEA> {
                     // shuffle the population
                     std::random_shuffle(i->population().begin(), i->population().end(), i->rng());
                     
+                    int alive_count = 0;
+                    for(typename propagule_type::iterator j=i->population().begin(); j!=i->population().end(); ++j) {
+                        if ((*j)->alive()) {
+                            alive_count++;
+                        }
+                        
+                    }
+        
                     int num_moved = 0;
                     for(typename propagule_type::iterator j=i->population().begin(); j!=i->population().end(); ++j) {
                         if ((get<IS_PROPAGULE>(**j, 0) == 2) && (*j)->alive()) {
@@ -133,13 +141,7 @@ struct stripes_split : end_of_update_event<MEA> {
                     
                     offspring.insert(offspring.end(),p);
                     
-                    int alive_count = 0;
-                    for(typename propagule_type::iterator j=i->population().begin(); j!=i->population().end(); ++j) {
-                        if ((*j)->alive()) {
-                            alive_count++;
-                        }
 
-                    }
                     
                     // track last fitness AND time to rep
                     multicell_rep.push_back(get<MULTICELL_REP_TIME>(*i));
