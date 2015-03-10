@@ -66,9 +66,12 @@ namespace ealib {
                         typename EA::individual_type best_founder(*i->traits().founder());
                         
                         int num_updates = get<MULTICELL_REP_TIME>(*i);
-                        for (int j=0; j<=num_updates; ++j) {
+//                        for (int j=0; j<=num_updates; ++j) {
+                        int update_count =0;
+                        while (get<MC_RESOURCE_UNITS>(best_founder,0) < prop_total_cost) {
                             best_founder.update();
-                            df.write(j);
+                            df.write(update_count);
+                            ++update_count;
                             // grab info based on location...
                             for (int x=0; x < get<SPATIAL_X>(ea); ++x) {
                                 for (int y=0; y<get<SPATIAL_Y>(ea); ++y){
