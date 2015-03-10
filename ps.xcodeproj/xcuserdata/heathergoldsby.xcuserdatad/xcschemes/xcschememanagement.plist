@@ -54,6 +54,11 @@
 			<key>orderHint</key>
 			<integer>25</integer>
 		</dict>
+		<key>stripes_split.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>28</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -158,6 +163,11 @@
 			<true/>
 		</dict>
 		<key>48542FAF19E0DE900030F097</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4888686F1AAF631200ACAFD9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
