@@ -72,6 +72,16 @@ namespace ealib {
                             best_founder.update();
                             df.write(update_count);
                             ++update_count;
+                            
+                            // Calc fitness for each subpop
+                            eval_permute_stripes(best_founder);
+                            
+                            // copy the stripe fit to the accumulator and also the subpop
+                            double sf =get<STRIPE_FIT>(best_founder);
+                            put<STRIPE_FIT>(sf, best_founder);
+                            get<MC_RESOURCE_UNITS>(best_founder,0) += sf;
+
+                            
                             // grab info based on location...
                             for (int x=0; x < get<SPATIAL_X>(ea); ++x) {
                                 for (int y=0; y<get<SPATIAL_Y>(ea); ++y){
