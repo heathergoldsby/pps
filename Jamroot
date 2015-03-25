@@ -68,3 +68,12 @@ src/stripes_split.cpp
 ;
 
 install dist : stripes_split : <location>$(HOME)/bin ;
+
+exe stripes_ep4 :
+src/stripes_ep4.cpp
+/libea//libea
+/libea//libea_runner
+: <include>./include <link>static
+;
+
+install dist : stripes_ep4 : <location>$(HOME)/bin ;

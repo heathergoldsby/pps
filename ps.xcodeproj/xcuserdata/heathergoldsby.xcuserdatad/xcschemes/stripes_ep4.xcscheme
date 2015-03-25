@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0610"
+   LastUpgradeVersion = "0620"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4888686F1AAF631200ACAFD9"
-               BuildableName = "stripes_split"
-               BlueprintName = "stripes_split"
+               BlueprintIdentifier = "48C835FD1AC2D433004B4D0B"
+               BuildableName = "stripes_split copy"
+               BlueprintName = "stripes_ep4"
                ReferencedContainer = "container:ps.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -32,9 +32,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "4888686F1AAF631200ACAFD9"
-            BuildableName = "stripes_split"
-            BlueprintName = "stripes_split"
+            BlueprintIdentifier = "48C835FD1AC2D433004B4D0B"
+            BuildableName = "stripes_split copy"
+            BlueprintName = "stripes_ep4"
             ReferencedContainer = "container:ps.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -53,15 +53,15 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "4888686F1AAF631200ACAFD9"
-            BuildableName = "stripes_split"
-            BlueprintName = "stripes_split"
+            BlueprintIdentifier = "48C835FD1AC2D433004B4D0B"
+            BuildableName = "stripes_split copy"
+            BlueprintName = "stripes_ep4"
             ReferencedContainer = "container:ps.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "-c stripes_split.cfg"
+            argument = "-c stripes_ep4.cfg"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>
@@ -78,9 +78,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "4888686F1AAF631200ACAFD9"
-            BuildableName = "stripes_split"
-            BlueprintName = "stripes_split"
+            BlueprintIdentifier = "48C835FD1AC2D433004B4D0B"
+            BuildableName = "stripes_split copy"
+            BlueprintName = "stripes_ep4"
             ReferencedContainer = "container:ps.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
