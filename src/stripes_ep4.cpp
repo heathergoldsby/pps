@@ -137,12 +137,14 @@ typedef digital_evolution
 , generate_single_ancestor
 > sea_type;
 
+// , generational_models::periodic_competition < generational_models::meta_moran_process< selection::rank< >, selection::rank< > >, generational_models::isolated_subpopulations > // generational_models::moran_process< >, isolated_subpopulations
+
 typedef metapopulation
 < sea_type
 , permute_stripes
 , mutation::operators::no_mutation
 , subpopulation_propagule_split
-, generational_models::periodic_competition < generational_models::meta_moran_process< selection::rank< >, selection::rank< > >, generational_models::isolated_subpopulations > // generational_models::moran_process< >, isolated_subpopulations
+, generational_models::periodic_competition < generational_models::meta_moran_process< selection::proportionate< >, selection::rank< > >, generational_models::isolated_subpopulations > // generational_models::moran_process< >, isolated_subpopulations
 , ancestors::default_subpopulation
 , dont_stop
 , fill_metapopulation
