@@ -56,6 +56,12 @@ struct subpopulation_propagule_split {
         std::random_shuffle(parents[0]->population().begin(), parents[0]->population().end(), parents[0]->rng());
                 
         int num_moved = 0;
+        int s = get<POPULATION_SIZE>(mea);
+        std::vector<int> open_pos (s);
+        for( int n = 0 ; n < s ; ++n ) {
+            open_pos[ n ] = n;
+        }
+        
         for(typename propagule_type::iterator j=parents[0]->population().begin(); j!=parents[0]->population().end(); ++j) {
             if ((get<IS_PROPAGULE>(**j, 0) == 2) && (*j)->alive()) {
                 typename MEA::subpopulation_type::genome_type r((*j)->genome().begin(),
@@ -63,13 +69,15 @@ struct subpopulation_propagule_split {
                 typename MEA::subpopulation_type::individual_ptr_type q = p->make_individual(r);
                 
                 inherits_from(**j, *q, *p);
+
                 
-                
-                const position_type pos = (*j)->position();
+                std::size_t t = p->rng()(open_pos.size());
+                std::size_t pos = open_pos[t];
+                open_pos.erase(open_pos.begin() + t);
                 
                 
                 //iterator insert_at(iterator i, individual_ptr_type x, const position_type& pos) {
-                p->insert_at(p->end(), q, pos);
+                p->insert_at(p->end(), q, p->env().location(pos).position());
                 
                 (*j)->alive() = false;
                 parents[0]->events().death(**j,*(parents[0]));
