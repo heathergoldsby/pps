@@ -65,7 +65,7 @@
             isEnabled = "NO">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "-l checkpoint-350000.xml.gz"
+            argument = "-l checkpoint-350000.xml.gz  --analyze movie_for_competitions"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>
