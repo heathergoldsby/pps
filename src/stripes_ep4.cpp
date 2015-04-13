@@ -35,6 +35,10 @@ struct lifecycle : public default_lifecycle {
     //! Called as the final step of EA construction (must not depend on configuration parameters)
     template <typename EA>
     void after_initialization(EA& ea) {
+        if(ea.isa().size()) {
+            return;
+        }
+        
         using namespace instructions;
         append_isa<nop_a>(0,ea);
         append_isa<nop_b>(0,ea);
@@ -171,8 +175,8 @@ public:
         add_option<MUTATION_PER_SITE_P>(this);
         add_option<MUTATION_INSERTION_P>(this);
         add_option<MUTATION_DELETION_P>(this);
-        add_option<MUTATION_UNIFORM_INT_MIN>(this);
-        add_option<MUTATION_UNIFORM_INT_MAX>(this);
+//        add_option<MUTATION_UNIFORM_INT_MIN>(this);
+//        add_option<MUTATION_UNIFORM_INT_MAX>(this);
         add_option<RUN_UPDATES>(this);
         add_option<RUN_EPOCHS>(this);
         //        add_option<CHECKPOINT_PREFIX>(this);

@@ -62,6 +62,10 @@
       <CommandLineArguments>
          <CommandLineArgument
             argument = "-c stripes_ep4.cfg  --ea.metapopulation.competition_period=100 --ea.generational_model.moran_process.replacement_rate.p=0.25"
+            isEnabled = "NO">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "-l checkpoint-350000.xml.gz"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>
