@@ -21,6 +21,7 @@
 #include "meta_moran_process.h"
 #include "propagule.h"
 #include "movie.h"
+#include "knockouts.h"
 
 
 
@@ -221,6 +222,7 @@ public:
     
     virtual void gather_tools() {
         add_tool<ealib::analysis::movie_for_competitions>(this);
+        add_tool<ealib::analysis::knockouts_for_competition>(this);
         //add_tool<ealib::analysis::lod_knockouts>(this);
         //        add_tool<ealib::analysis::location_analysis>(this);
 //        add_tool<ealib::analysis::movie_evo_plane>(this);
