@@ -24,6 +24,11 @@
 			<key>orderHint</key>
 			<integer>29</integer>
 		</dict>
+		<key>stripes_ep4_three.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>30</integer>
+		</dict>
 		<key>stripes_evo_no_p_reset.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -153,6 +158,11 @@
 			<true/>
 		</dict>
 		<key>481F1C891A7129DA00153768</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4821FD7C1AFA8D5D00102111</key>
 		<dict>
 			<key>primary</key>
 			<true/>

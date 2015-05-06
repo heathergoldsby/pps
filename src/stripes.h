@@ -225,6 +225,112 @@ std::string get_last_task(int x, int y, EA& ea) {
     return lt;
 }
 
+//! Stripe fitness.
+struct permute_three_stripes : public fitness_function<unary_fitness<double>, nonstationaryS> {
+    template <typename EA>
+    int eval_permute_three_stripes(EA& ea) {
+        double num_correct = 0;
+        
+        
+        //    accumulator_set<double, stats<tag::mean, tag::max> > sfit;
+        int num_neighbors = 4;
+        std::vector<double> not_fit(num_neighbors);
+        std::vector<double> nand_fit(num_neighbors);
+        std::vector<double> ornot_fit(num_neighbors);
+        std::vector<double> total_fit(num_neighbors);
+        
+        int max_x = get<SPATIAL_X>(ea);
+        int max_y = get<SPATIAL_Y>(ea);
+        
+        for (int x=0; x < max_x; ++x) {
+            for (int y=0; y< max_y; ++y){
+                typename EA::environment_type::location_type* l = &ea.env().location(x,y);
+                if (!l->occupied()) {
+                    continue;
+                }
+                
+                std::string lt = get<LAST_TASK>(*(l->inhabitant()),"");
+                if (lt == "" ) { continue; }
+                
+                std::vector<double> temp_t_fit(num_neighbors);
+                
+                // Get the relevant neighbors...
+                // We only check NW (0) , N (1) , NE (2) , E (3) (the rest are covered as the grid moves)
+                int n = y - 1;
+                if (n < 0) {
+                    n += max_y;
+                }
+                int w = x - 1;
+                if (w < 0) { w += max_x; }
+                int e = x + 1;
+                if (e >= max_x) {
+                    e -= max_x;
+                }
+                
+                
+                
+                // NW
+                if (lt == get_last_task(w, n, ea)) { ++temp_t_fit[0]; }
+                
+                // N
+                if (lt == get_last_task(x, n, ea)) { ++temp_t_fit[1]; }
+                
+                // NE
+                if (lt == get_last_task(e, n, ea)) { ++temp_t_fit[2]; }
+                
+                // E
+                if (lt == get_last_task(e, y, ea)) { ++temp_t_fit[3]; }
+                
+                if (lt == "not") {
+                    not_fit[0] += temp_t_fit[0];
+                    not_fit[1] += temp_t_fit[1];
+                    not_fit[2] += temp_t_fit[2];
+                    not_fit[3] += temp_t_fit[3];
+                } else if (lt == "nand") {
+                    nand_fit[0] += temp_t_fit[0];
+                    nand_fit[1] += temp_t_fit[1];
+                    nand_fit[2] += temp_t_fit[2];
+                    nand_fit[3] += temp_t_fit[3];
+                } else if (lt == "ornot") {
+                    ornot_fit[0] += temp_t_fit[0];
+                    ornot_fit[1] += temp_t_fit[1];
+                    ornot_fit[2] += temp_t_fit[2];
+                    ornot_fit[3] += temp_t_fit[3];
+                }
+            }
+        }
+        
+        total_fit[0] = (not_fit[0] + 1) * (nand_fit[0] + 1) * (ornot_fit[0] + 1);
+        total_fit[1] = (not_fit[1] + 1) * (nand_fit[1] + 1) * (ornot_fit[1] + 1);
+        total_fit[2] = (not_fit[2] + 1) * (nand_fit[2] + 1) * (ornot_fit[2] + 1);
+        total_fit[3] = (not_fit[3] + 1) * (nand_fit[3] + 1) * (ornot_fit[3] + 1);
+        
+        double min_fit = 1;
+        double max_fit = pow((get<POPULATION_SIZE>(ea) / 3), 3);
+        
+        double tmp_fit = std::max(total_fit[0], total_fit[1]);
+        tmp_fit = std::max(tmp_fit, total_fit[2]);
+        tmp_fit = std::max(tmp_fit, total_fit[3]);
+        
+        if (tmp_fit < min_fit) {
+            tmp_fit = min_fit;
+        }
+        
+        return tmp_fit;
+    }
+    
+    template <typename SubpopulationEA, typename MetapopulationEA>
+    double operator()(SubpopulationEA& sea, MetapopulationEA& mea) {
+        double f = static_cast<double>(eval_permute_three_stripes(sea));
+        put<STRIPE_FIT>(f,sea);
+        return f;
+    }
+};
+
+
+        
+        
+
 template <typename EA>
 void eval_permute_three_stripes(EA& ea) {
     
