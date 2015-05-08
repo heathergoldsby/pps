@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4821FD7C1AFA8D5D00102111"
-               BuildableName = "stripes_ep4_three"
-               BlueprintName = "stripes_ep4_three"
+               BlueprintIdentifier = "48802FE91AFD281E00CD819A"
+               BuildableName = "stripes_ep4 copy"
+               BlueprintName = "stripes_ep4_fewer_ins"
                ReferencedContainer = "container:ps.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -32,9 +32,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "4821FD7C1AFA8D5D00102111"
-            BuildableName = "stripes_ep4_three"
-            BlueprintName = "stripes_ep4_three"
+            BlueprintIdentifier = "48802FE91AFD281E00CD819A"
+            BuildableName = "stripes_ep4 copy"
+            BlueprintName = "stripes_ep4_fewer_ins"
             ReferencedContainer = "container:ps.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -43,8 +43,7 @@
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
-      useCustomWorkingDirectory = "YES"
-      customWorkingDirectory = "/Users/heathergoldsby/Desktop/research/code/configs/ps/config"
+      useCustomWorkingDirectory = "NO"
       buildConfiguration = "Debug"
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
@@ -53,18 +52,12 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "4821FD7C1AFA8D5D00102111"
-            BuildableName = "stripes_ep4_three"
-            BlueprintName = "stripes_ep4_three"
+            BlueprintIdentifier = "48802FE91AFD281E00CD819A"
+            BuildableName = "stripes_ep4 copy"
+            BlueprintName = "stripes_ep4_fewer_ins"
             ReferencedContainer = "container:ps.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <CommandLineArguments>
-         <CommandLineArgument
-            argument = "-c stripes_ep4.cfg  --ea.metapopulation.competition_period=100 --ea.generational_model.moran_process.replacement_rate.p=0.25"
-            isEnabled = "YES">
-         </CommandLineArgument>
-      </CommandLineArguments>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -78,9 +71,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "4821FD7C1AFA8D5D00102111"
-            BuildableName = "stripes_ep4_three"
-            BlueprintName = "stripes_ep4_three"
+            BlueprintIdentifier = "48802FE91AFD281E00CD819A"
+            BuildableName = "stripes_ep4 copy"
+            BlueprintName = "stripes_ep4_fewer_ins"
             ReferencedContainer = "container:ps.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

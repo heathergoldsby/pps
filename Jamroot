@@ -85,3 +85,12 @@ src/stripes_ep4_3stripe.cpp
 ;
 
 install dist : stripes_ep4_three : <location>$(HOME)/bin ;
+
+exe stripes_ep4_fewer_ins :
+src/stripes_ep4_fewer_ins.cpp
+/libea//libea
+/libea//libea_runner
+: <include>./include <link>static
+;
+
+install dist : stripes_ep4_fewer_ins : <location>$(HOME)/bin ;
