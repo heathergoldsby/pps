@@ -12,7 +12,6 @@
 
 #include "evolved_striped_ancestor2.h"
 #include "multibirth_not_nand_prop_ancestor.h"
-#include "multibirth_not_nand_prop_ancestor2.h"
 
 #include "subpopulation_propagule_split.h"
 

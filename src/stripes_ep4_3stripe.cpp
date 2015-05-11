@@ -11,8 +11,7 @@
 
 
 #include "evolved_striped_ancestor2.h"
-#include "multibirth_not_nand_prop_ancestor.h"
-#include "multibirth_not_nand_prop_ancestor2.h"
+#include "multibirth_not_nand_ornot_prop_ancestor.h"
 
 #include "subpopulation_propagule_split.h"
 
@@ -137,7 +136,7 @@ typedef digital_evolution
 < lifecycle
 , recombination::asexual
 , round_robin
-, multibirth_not_nand_prop_ancestor
+, multibirth_not_nand_ornot_prop_ancestor
 , empty_facing_neighbor
 , dont_stop
 , generate_single_ancestor
