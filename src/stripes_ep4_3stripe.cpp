@@ -105,12 +105,15 @@ struct lifecycle : public default_lifecycle {
         
         task_ptr_type task_not = make_task<tasks::task_not,catalysts::additive<0> >("not", ea);
         task_ptr_type task_nand = make_task<tasks::task_nand,catalysts::additive<0> >("nand", ea);
+        task_ptr_type task_ornot = make_task<tasks::task_ornot,catalysts::additive<0> >("ornot", ea);
         
         resource_ptr_type resA = make_resource("resA", ea);
         resource_ptr_type resB = make_resource("resB", ea);
+        resource_ptr_type resC = make_resource("resC", ea);
         
         task_not->consumes(resA);
         task_nand->consumes(resB);
+        task_ornot->consumes(resC);
         
         
     }
