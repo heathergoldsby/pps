@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "4872FEB61B0B8BB2007B45EB"
-               BuildableName = "stripes_ep4 copy"
+               BuildableName = "stripes_ep4_fix"
                BlueprintName = "stripes_ep4_fix"
                ReferencedContainer = "container:ps.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4872FEB61B0B8BB2007B45EB"
-            BuildableName = "stripes_ep4 copy"
+            BuildableName = "stripes_ep4_fix"
             BlueprintName = "stripes_ep4_fix"
             ReferencedContainer = "container:ps.xcodeproj">
          </BuildableReference>
@@ -54,7 +54,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4872FEB61B0B8BB2007B45EB"
-            BuildableName = "stripes_ep4 copy"
+            BuildableName = "stripes_ep4_fix"
             BlueprintName = "stripes_ep4_fix"
             ReferencedContainer = "container:ps.xcodeproj">
          </BuildableReference>
@@ -79,7 +79,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4872FEB61B0B8BB2007B45EB"
-            BuildableName = "stripes_ep4 copy"
+            BuildableName = "stripes_ep4_fix"
             BlueprintName = "stripes_ep4_fix"
             ReferencedContainer = "container:ps.xcodeproj">
          </BuildableReference>
