@@ -87,12 +87,12 @@ install dist : stripes_ep4_fix : <location>$(HOME)/bin ;
 
 
 exe stripes_ep4_fix_copy :
-src/stripes_ep4_fix_copy.cpp
+src/stripe_ep4_fix_copy.cpp
 /libea//libea
 /libea//libea_runner
 : <include>./include <link>static
 ;
-install dist : stripe_ep4_fix_copy : <location>$(HOME)/bin ;
+install dist : stripes_ep4_fix_copy : <location>$(HOME)/bin ;
 
 exe stripes_ep4_three :
 src/stripes_ep4_3stripe.cpp
