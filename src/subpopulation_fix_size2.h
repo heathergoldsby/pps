@@ -7,8 +7,8 @@
 //
 
 
-#ifndef _SUBPOPULATION_PROPAGULE_FIX_SIZE_COPY_H_
-#define _SUBPOPULATION_PROPAGULE_FIX_SIZE_COPY_H_
+#ifndef _SUBPOPULATION_PROPAGULE_FIX_SIZE2_H_
+#define _SUBPOPULATION_PROPAGULE_FIX_SIZE2_H_
 
 #include <algorithm>
 #include <utility>
@@ -59,6 +59,7 @@ struct subpopulation_propagule_fix_size {
         for(typename propagule_type::iterator j=parents[0]->population().begin(); j!=parents[0]->population().end(); ++j) {
             if  ((*j)->alive() &&
                  (get<IS_PROPAGULE>(**j,0) == 2)) {
+                
                 typename MEA::subpopulation_type::genome_type r((*j)->genome().begin(),
                                                                 (*j)->genome().begin()+(*j)->hw().original_size());
                 typename MEA::subpopulation_type::individual_ptr_type q = p->make_individual(r);
@@ -74,8 +75,8 @@ struct subpopulation_propagule_fix_size {
                 //iterator insert_at(iterator i, individual_ptr_type x, const position_type& pos) {
                 p->insert_at(p->end(), q, p->env().location(pos).position());
                 
-//                (*j)->alive() = false;
-//                parents[0]->events().death(**j,*(parents[0]));
+                //                (*j)->alive() = false;
+                //                parents[0]->events().death(**j,*(parents[0]));
                 
                 
                 ++num_moved;
