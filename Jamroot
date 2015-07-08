@@ -111,3 +111,13 @@ src/stripes_ep4_fewer_ins.cpp
 ;
 
 install dist : stripes_ep4_fewer_ins : <location>$(HOME)/bin ;
+
+exe stripes_multi_mut :
+src/stripes_multi_mut.cpp
+/libea//libea
+/libea//libea_runner
+: <include>./include <link>static
+;
+
+install dist : stripes_multi_mut : <location>$(HOME)/bin ;
+
