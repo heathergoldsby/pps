@@ -31,7 +31,7 @@
  propagule from a parent subpopulation, mutates it, and adds it to an
  offspring subpopulation.
  */
-struct subpopulation_propagule {
+struct subpopulation_propagule3 {
     std::size_t capacity() const { return 1; }
     
     template <typename Population, typename MEA>

@@ -69,6 +69,11 @@
 			<key>orderHint</key>
 			<integer>3</integer>
 		</dict>
+		<key>stripes_multi_mut2.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>33</integer>
+		</dict>
 		<key>stripes_plane_evo.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -193,6 +198,11 @@
 			<true/>
 		</dict>
 		<key>4872FEB61B0B8BB2007B45EB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4873736D1B6A609A009620E3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
