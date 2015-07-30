@@ -1,6 +1,6 @@
 #include <ea/digital_evolution.h>
 #include <ea/cmdline_interface.h>
-#include <ea/digital_evolution/ancestors/multi_birth_selfrep_not_nand_ancestor.h>
+//#include <ea/digital_evolution/ancestors/multi_birth_selfrep_not_nand_ancestor.h>
 #include <ea/subpopulation_founder.h>
 #include <ea/line_of_descent.h>
 #include <ea/generational_models/periodic_competition.h>
@@ -15,6 +15,7 @@ using namespace ealib;
 #include "stripes.h"
 #include "movie.h"
 #include "subpopulation_propagule_split.h"
+#include "multibirth_not_nand_prop_ancestor.h"
 
 
 //! Configuration object for an EA.
@@ -121,7 +122,7 @@ typedef digital_evolution
 < lifecycle
 , recombination::asexual
 , round_robin
-, multibirth_selfrep_not_nand_ancestor
+, multibirth_not_nand_prop_ancestor
 , empty_facing_neighbor
 , dont_stop
 , generate_single_ancestor
