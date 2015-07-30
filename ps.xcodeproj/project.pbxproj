@@ -192,6 +192,8 @@
 		4872FEB41B0B8967007B45EB /* stripes_ep4_fix.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = stripes_ep4_fix.cpp; sourceTree = "<group>"; };
 		4872FEB51B0B8ADF007B45EB /* subpopulation_propagule_fix_size.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = subpopulation_propagule_fix_size.h; sourceTree = "<group>"; };
 		4872FEBF1B0B8BB2007B45EB /* stripes_ep4_fix */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = stripes_ep4_fix; sourceTree = BUILT_PRODUCTS_DIR; };
+		4873736B1B6A5E61009620E3 /* stripes_multi_mut2.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = stripes_multi_mut2.cpp; sourceTree = "<group>"; };
+		4873736C1B6A5E91009620E3 /* subpopulation_propagule3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = subpopulation_propagule3.h; sourceTree = "<group>"; };
 		487ACE231934F7C60016340B /* movie.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = movie.h; sourceTree = "<group>"; };
 		48802FE81AFD27DA00CD819A /* stripes_ep4_fewer_ins.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = stripes_ep4_fewer_ins.cpp; sourceTree = "<group>"; };
 		48802FF21AFD281E00CD819A /* stripes_ep4 copy */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "stripes_ep4 copy"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -381,6 +383,7 @@
 				4888686D1AAF615E00ACAFD9 /* stripes_split.h */,
 				48AC8AB11937639900DA6945 /* stripes_multi.cpp */,
 				4871CD6D1B4D35DD003B758D /* stripes_multi_mut.cpp */,
+				4873736B1B6A5E61009620E3 /* stripes_multi_mut2.cpp */,
 				48542FBA19E0E1880030F097 /* stripes_evo_plane.cpp */,
 				488DA3F41A6B4D3F00BF0B0B /* stripes_evo_plane2.cpp */,
 				481F1C881A7031A400153768 /* stripes_evo_plane_evo_ancest.cpp */,
@@ -396,6 +399,7 @@
 				48EECA3F1ADC32020076F604 /* knockouts.h */,
 				488B205F1A2AC20400C3571D /* movie_evo_plane.h */,
 				42DF06891945418600C9A364 /* subpopulation_propagule.h */,
+				4873736C1B6A5E91009620E3 /* subpopulation_propagule3.h */,
 				4871CD6C1B4D3511003B758D /* subpopulation_propagule2.h */,
 				481F84C019DD8E46000EDBE8 /* subpopulation_propagule_plane.h */,
 				48C836081AC2D673004B4D0B /* subpopulation_propagule_split.h */,

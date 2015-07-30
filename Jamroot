@@ -121,3 +121,15 @@ src/stripes_multi_mut.cpp
 
 install dist : stripes_multi_mut : <location>$(HOME)/bin ;
 
+
+exe stripes_multi_mut2 :
+src/stripes_multi_mut2.cpp
+/libea//libea
+/libea//libea_runner
+: <include>./include <link>static
+;
+
+install dist : stripes_multi_mut2 : <location>$(HOME)/bin ;
+
+
+
