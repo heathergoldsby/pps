@@ -16,6 +16,7 @@ using namespace ealib;
 #include "movie.h"
 #include "subpopulation_propagule_split.h"
 #include "multibirth_not_nand_prop_ancestor.h"
+#include "propagule.h"
 
 
 //! Configuration object for an EA.
@@ -204,9 +205,11 @@ public:
         
         add_event<task_performed_tracking>(ea);
         add_event<task_switch_tracking>(ea);
+        add_event<datafiles::propagule_dat>(ea);
+
         
-        add_event<random_death>(ea);
-        add_event<swap_locations>(ea);
+//        add_event<random_death>(ea);
+//        add_event<swap_locations>(ea);
     }
 };
 LIBEA_CMDLINE_INSTANCE(mea_type, cli);
