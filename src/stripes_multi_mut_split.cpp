@@ -59,6 +59,12 @@ struct lifecycle : public default_lifecycle {
         append_isa<if_not_equal>(ea);
         append_isa<jump_head>(ea);
         append_isa<is_neighbor>(ea);
+        
+        append_isa<deploy_propagule>(ea);
+        append_isa<if_prop_cell_absent>(ea);
+        //        append_isa<get_propagule_size>(ea);
+        append_isa<deploy_one_propagule>(ea);
+        
         //        append_isa<create_propagule>(ea);
         //        append_isa<deploy_propagule>(ea);
         
