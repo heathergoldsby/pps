@@ -50,8 +50,10 @@ struct subpopulation_propagule_fix_size {
         
         for(typename propagule_type::iterator j=parents[0]->population().begin(); j!=parents[0]->population().end(); ++j) {
             if  ((*j)->alive() &&
-                 (get<IS_PROPAGULE>(**j,0) == 2)) {
+                 (get<IS_PROPAGULE>(**j,0) == 2) &&
+                 (get<PARENT>(**j,0) > 0)) {
                 typename MEA::subpopulation_type::genome_type r((*j)->genome().begin(),
+                             
                                                                 (*j)->genome().begin()+(*j)->hw().original_size());
                 typename MEA::subpopulation_type::individual_ptr_type q = p->make_individual(r);
                 
@@ -65,6 +67,18 @@ struct subpopulation_propagule_fix_size {
                 
                 //iterator insert_at(iterator i, individual_ptr_type x, const position_type& pos) {
                 p->insert_at(p->end(), q, p->env().location(pos).position());
+                
+                
+                // Rotate the org to a random direction...
+                int n = p->rng()(8);
+                position_type& p1 = q->position();
+                for (int q=0; q<=n; ++q){
+                    int blah =0;
+                    p1.rotate_cw();
+                    
+                }
+                
+                
                 
                 (*j)->alive() = false;
                 parents[0]->events().death(**j,*(parents[0]));

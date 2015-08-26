@@ -88,6 +88,7 @@ struct subpopulation_propagule {
             open_pos.erase(open_pos.begin() + t);
             
             p->insert_at(p->end(),q, p->env().location(pos).position());
+
             
             for (int k=1; k<get<NUM_PROPAGULE_CELL>(mea); ++k) {
                 // check if this is a valid way to copy an individual

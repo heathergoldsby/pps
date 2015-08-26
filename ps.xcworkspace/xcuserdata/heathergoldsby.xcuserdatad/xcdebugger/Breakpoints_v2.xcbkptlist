@@ -20,11 +20,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "src/stripes.h"
-            timestampString = "452628087.661061"
+            timestampString = "462303098.884554"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "564"
-            endingLineNumber = "564"
+            startingLineNumber = "592"
+            endingLineNumber = "592"
             landmarkName = "operator()(MEA&amp; mea)"
             landmarkType = "7">
          </BreakpointContent>
@@ -150,13 +150,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "src/stripes.h"
-            timestampString = "453304770.315436"
+            timestampString = "462303098.884554"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "236"
-            endingLineNumber = "236"
+            startingLineNumber = "264"
+            endingLineNumber = "264"
             landmarkName = "eval_permute_three_stripes(EA&amp; ea)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "src/subpopulation_propagule_fix_size.h"
+            timestampString = "462303075.532854"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "77"
+            endingLineNumber = "77">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

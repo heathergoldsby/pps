@@ -14,7 +14,7 @@ using namespace ealib;
 
 #include "stripes.h"
 #include "movie.h"
-#include "subpopulation_propagule_split.h"
+#include "subpopulation_propagule.h"
 #include "multibirth_not_nand_prop_ancestor.h"
 #include "propagule.h"
 
@@ -133,7 +133,7 @@ typedef metapopulation
 < sea_type
 , permute_stripes
 , mutation::operators::no_mutation
-, subpopulation_propagule_split
+, subpopulation_propagule
 , generational_models::periodic_competition< >
 , ancestors::default_subpopulation
 , dont_stop
@@ -205,6 +205,7 @@ public:
         
         add_event<task_performed_tracking>(ea);
         add_event<task_switch_tracking>(ea);
+        
         add_event<datafiles::propagule_dat>(ea);
 
         

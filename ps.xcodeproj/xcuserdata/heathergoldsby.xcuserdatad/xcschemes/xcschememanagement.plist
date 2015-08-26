@@ -4,90 +4,25 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>stripes.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>0</integer>
-		</dict>
-		<key>stripes_control.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>1</integer>
-		</dict>
-		<key>stripes_ep3.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>27</integer>
-		</dict>
-		<key>stripes_ep4 copy.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>32</integer>
-		</dict>
 		<key>stripes_ep4.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>29</integer>
+			<integer>19</integer>
 		</dict>
-		<key>stripes_ep4_fewer_ins.xcscheme</key>
+		<key>stripes_ep4_fix.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>31</integer>
-		</dict>
-		<key>stripes_ep4_three.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>30</integer>
-		</dict>
-		<key>stripes_evo_no_p_reset.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>26</integer>
-		</dict>
-		<key>stripes_evo_ps.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>4</integer>
-		</dict>
-		<key>stripes_evo_ps_plane.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>5</integer>
-		</dict>
-		<key>stripes_evo_ps_plane2.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>24</integer>
-		</dict>
-		<key>stripes_location.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>2</integer>
+			<integer>21</integer>
 		</dict>
 		<key>stripes_multi.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>3</integer>
-		</dict>
-		<key>stripes_multi_mut2.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>33</integer>
+			<integer>0</integer>
 		</dict>
 		<key>stripes_multi_mut_split.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>34</integer>
-		</dict>
-		<key>stripes_plane_evo.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>25</integer>
-		</dict>
-		<key>stripes_split.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>28</integer>
+			<integer>20</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
@@ -233,6 +168,11 @@
 			<true/>
 		</dict>
 		<key>488DA3F51A6B4D6F00BF0B0B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>48B07C601B8CE70000B3BBB7</key>
 		<dict>
 			<key>primary</key>
 			<true/>

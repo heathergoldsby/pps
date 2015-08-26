@@ -68,6 +68,10 @@ LIBEA_MD_DECL(PROP_COUNT, "ea.stripes.prop_count", int);
 LIBEA_MD_DECL(JUV_PERIOD, "ea.stripes.juv_period", int);
 LIBEA_MD_DECL(DEPLOY_ONE, "ea.stripes.deploy_one", int);
 
+
+LIBEA_MD_DECL(PARENT, "ea.stripes.parent", int); // 0 - no offspring, ++ offspring.
+
+
 ////! create_propagule - creates the propagule cell
 //DIGEVO_INSTRUCTION_DECL(create_propagule) {
 //    p->hw().add_cost(get<PROPAGULE_COST>(ea));
@@ -126,6 +130,30 @@ DIGEVO_INSTRUCTION_DECL(if_prop_cell_absent) {
         hw.advanceHead(Hardware::IP);
     }
 }
+
+
+
+template <typename EA>
+struct ps_birth_event : birth_event<EA> {
+    
+    //! Constructor.
+    ps_birth_event(EA& ea) : birth_event<EA>(ea) {
+    }
+    
+    //! Destructor.
+    virtual ~ps_birth_event() {
+    }
+    
+    /*! Called for every inheritance event. We are using the orientation of the first parent...
+     */
+    virtual void operator()(typename EA::individual_type& offspring, // individual offspring
+                            typename EA::individual_type& parent, // individual parent
+                            EA& ea) {
+        
+        get<PARENT>(parent,0) ++;
+        
+    }
+};
 
 
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0610"
+   LastUpgradeVersion = "0620"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "480052B619EA18460063B13B"
-               BuildableName = "stripes_evo_ps_plane"
-               BlueprintName = "stripes_evo_ps_plane"
+               BlueprintIdentifier = "48B07C601B8CE70000B3BBB7"
+               BuildableName = "stripes_ep4 copy"
+               BlueprintName = "stripes_ep4_fix"
                ReferencedContainer = "container:ps.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -32,9 +32,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "480052B619EA18460063B13B"
-            BuildableName = "stripes_evo_ps_plane"
-            BlueprintName = "stripes_evo_ps_plane"
+            BlueprintIdentifier = "48B07C601B8CE70000B3BBB7"
+            BuildableName = "stripes_ep4 copy"
+            BlueprintName = "stripes_ep4_fix"
             ReferencedContainer = "container:ps.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -49,23 +49,20 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "480052B619EA18460063B13B"
-            BuildableName = "stripes_evo_ps_plane"
-            BlueprintName = "stripes_evo_ps_plane"
+            BlueprintIdentifier = "48B07C601B8CE70000B3BBB7"
+            BuildableName = "stripes_ep4 copy"
+            BlueprintName = "stripes_ep4_fix"
             ReferencedContainer = "container:ps.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "-c stripes_evo_plane.cfg"
+            argument = "-c stripes_ep4_fix.cfg"
             isEnabled = "YES">
-         </CommandLineArgument>
-         <CommandLineArgument
-            argument = "-l checkpoint-200000.xml.gz --analyze movie_evo_plane"
-            isEnabled = "NO">
          </CommandLineArgument>
       </CommandLineArguments>
       <AdditionalOptions>
@@ -77,12 +74,13 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "480052B619EA18460063B13B"
-            BuildableName = "stripes_evo_ps_plane"
-            BlueprintName = "stripes_evo_ps_plane"
+            BlueprintIdentifier = "48B07C601B8CE70000B3BBB7"
+            BuildableName = "stripes_ep4 copy"
+            BlueprintName = "stripes_ep4_fix"
             ReferencedContainer = "container:ps.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

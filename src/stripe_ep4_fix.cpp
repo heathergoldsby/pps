@@ -3,20 +3,32 @@
 #include <ea/subpopulation_founder.h>
 #include <ea/line_of_descent.h>
 #include <ea/analysis/archive.h>
+#include <ea/generational_models/periodic_competition.h>
+//#include <ea/generational_models/moran_process.h>
+#include <ea/selection/rank.h>
+#include <ea/datafiles/fitness.h>
+#include <ea/digital_evolution/ancestors/multi_birth_selfrep_not_nand_ancestor.h>
 
 
-#include "evolved_striped_ancestor2.h"
-#include "multibirth_not_nand_prop_ancestor.h"
-#include "multibirth_not_nand_prop_ancestor2.h"
+
+
+//#include "evolved_striped_ancestor2.h"
+//#include "multibirth_not_nand_prop_ancestor.h"
+
+#include "subpopulation_propagule_fix_size.h"
 
 #include "stripes_split.h"
+#include "stripes.h"
+#include "meta_moran_process.h"
+#include "propagule.h"
+#include "movie.h"
+#include "knockouts.h"
 
 
 
 
 using namespace ealib;
 
-#include "stripes.h"
 #include "movie_evo_plane.h"
 
 
@@ -26,6 +38,10 @@ struct lifecycle : public default_lifecycle {
     //! Called as the final step of EA construction (must not depend on configuration parameters)
     template <typename EA>
     void after_initialization(EA& ea) {
+        if(ea.isa().size()) {
+            return;
+        }
+        
         using namespace instructions;
         append_isa<nop_a>(0,ea);
         append_isa<nop_b>(0,ea);
@@ -77,7 +93,8 @@ struct lifecycle : public default_lifecycle {
         //        append_isa<create_propagule>(ea);
         append_isa<deploy_propagule>(ea);
         append_isa<if_prop_cell_absent>(ea);
-        //        append_isa<deploy_one_propagule>(ea);
+        //        append_isa<get_propagule_size>(ea);
+        append_isa<deploy_one_propagule>(ea);
         
         add_event<task_resource_consumption>(ea);
         add_event<task_switching_cost>(ea);
@@ -85,6 +102,8 @@ struct lifecycle : public default_lifecycle {
         
         add_event<ts_birth_event>(ea);
         
+        add_event<ps_birth_event>(ea);
+
         typedef typename EA::task_library_type::task_ptr_type task_ptr_type;
         typedef typename EA::resource_ptr_type resource_ptr_type;
         
@@ -121,18 +140,20 @@ typedef digital_evolution
 < lifecycle
 , recombination::asexual
 , round_robin
-, multibirth_not_nand_prop_ancestor
+, multibirth_selfrep_not_nand_ancestor
 , empty_facing_neighbor
 , dont_stop
 , generate_single_ancestor
 > sea_type;
 
+// , generational_models::periodic_competition < generational_models::meta_moran_process< selection::rank< >, selection::rank< > >, generational_models::isolated_subpopulations > // generational_models::moran_process< >, isolated_subpopulations
+
 typedef metapopulation
 < sea_type
 , permute_stripes
 , mutation::operators::no_mutation
-, quiet_nan
-, generational_models::isolated_subpopulations
+, subpopulation_propagule_fix_size
+, generational_models::periodic_competition < generational_models::meta_moran_process< selection::random< >, selection::rank< > >, generational_models::isolated_subpopulations > // generational_models::moran_process< >, isolated_subpopulations
 , ancestors::default_subpopulation
 , dont_stop
 , fill_metapopulation
@@ -159,57 +180,67 @@ public:
         add_option<MUTATION_PER_SITE_P>(this);
         add_option<MUTATION_INSERTION_P>(this);
         add_option<MUTATION_DELETION_P>(this);
-        add_option<MUTATION_UNIFORM_INT_MIN>(this);
-        add_option<MUTATION_UNIFORM_INT_MAX>(this);
+        //        add_option<MUTATION_UNIFORM_INT_MIN>(this);
+        //        add_option<MUTATION_UNIFORM_INT_MAX>(this);
         add_option<RUN_UPDATES>(this);
         add_option<RUN_EPOCHS>(this);
         //        add_option<CHECKPOINT_PREFIX>(this);
         add_option<RNG_SEED>(this);
         add_option<RECORDING_PERIOD>(this);
+        add_option<MORAN_REPLACEMENT_RATE_P>(this);
         
         add_option<ANALYSIS_INPUT>(this);
-        add_option<NUM_PROPAGULE_GERM>(this);
-        add_option<NUM_PROPAGULE_CELL>(this);
+        //        add_option<NUM_PROPAGULE_GERM>(this);
+        //        add_option<NUM_PROPAGULE_CELL>(this);
         
         // ts specific options
         add_option<TASK_SWITCHING_COST>(this);
-        add_option<GERM_MUTATION_PER_SITE_P>(this);
-        add_option<GROUP_REP_THRESHOLD>(this);
+        //        add_option<GERM_MUTATION_PER_SITE_P>(this);
+        //        add_option<GROUP_REP_THRESHOLD>(this);
+        
+        
         
         // stripes
-        add_option<STRIPE_FIT_FUNC>(this);
-        add_option<FIT_MAX>(this);
-        add_option<FIT_MIN>(this);
-        add_option<FIT_GAMMA>(this);
-        add_option<RES_UPDATE>(this);
-        add_option<PROP_SIZE_OPTION>(this);
-        add_option<PROP_SIZE_BOUND>(this);
+        //        add_option<STRIPE_FIT_FUNC>(this);
+        //        add_option<FIT_MAX>(this);
+        //        add_option<FIT_MIN>(this);
+        //        add_option<FIT_GAMMA>(this);
+        //        add_option<RES_UPDATE>(this);
+        //        add_option<PROP_SIZE_OPTION>(this);
+        //        add_option<PROP_SIZE_BOUND>(this);
         
-        add_option<IS_PROPAGULE>(this);
-        add_option<PROPAGULE_BASE_COST>(this);
-        add_option<PROPAGULE_PER_CELL_COST>(this);
-        add_option<PROPAGULE_FAIL_PROB>(this);
-        add_option<PROPAGULE_COST>(this);
-        add_option<DEATH_PROB>(this);
-        add_option<SL_PERIOD>(this);
-        add_option<NUM_SWAPS>(this);
-        add_option<JUV_PERIOD>(this);
+        //        add_option<IS_PROPAGULE>(this);
+        //        add_option<PROPAGULE_BASE_COST>(this);
+        //        add_option<PROPAGULE_PER_CELL_COST>(this);
+        add_option<METAPOP_COMPETITION_PERIOD>(this);
+        add_option<NUM_PROPAGULE_GERM>(this);
+        //        add_option<PROPAGULE_FAIL_PROB>(this);
+        //        add_option<PROPAGULE_COST>(this);
+        //        add_option<DEATH_PROB>(this);
+        //        add_option<SL_PERIOD>(this);
+        //        add_option<NUM_SWAPS>(this);
+        //        add_option<JUV_PERIOD>(this);
         
         
     }
     
     virtual void gather_tools() {
-        //        add_tool<ealib::analysis::movie_res>(this);
+        add_tool<ealib::analysis::movie_for_competitions>(this);
+        add_tool<ealib::analysis::knockouts_for_competition>(this);
         //add_tool<ealib::analysis::lod_knockouts>(this);
         //        add_tool<ealib::analysis::location_analysis>(this);
-        add_tool<ealib::analysis::movie_evo_plane>(this);
+        //        add_tool<ealib::analysis::movie_evo_plane>(this);
         
     }
     
     virtual void gather_events(EA& ea) {
         add_event<subpopulation_founder_event>(ea);
-        add_event<stripes_split>(ea);
+        add_event<datafiles::fitness_dat>(ea);
+        add_event<datafiles::propagule_dat>(ea);
+        
+        //        add_event<stripes_split>(ea);
         add_event<task_performed_tracking>(ea);
+
         
         
         
