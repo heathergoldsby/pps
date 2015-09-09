@@ -144,7 +144,7 @@ struct ps_birth_event : birth_event<EA> {
     virtual ~ps_birth_event() {
     }
     
-    /*! Called for every inheritance event. We are using the orientation of the first parent...
+    /*! Called for every inheritance event.
      */
     virtual void operator()(typename EA::individual_type& offspring, // individual offspring
                             typename EA::individual_type& parent, // individual parent

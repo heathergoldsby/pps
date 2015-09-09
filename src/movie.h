@@ -80,9 +80,17 @@ namespace ealib {
                                 df.write("0");
                             }
                             
+                            if (get<IS_PROPAGULE>(*(l->inhabitant()), 0) == 2) {
+                                df.write("3");
+                            } else {
+                                df.write("4");
+                            }
+                            
                             
                         } else {
                             df.write("-1");
+                            df.write("-1");
+
                         }
                         
                     }

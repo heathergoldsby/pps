@@ -73,7 +73,6 @@ struct subpopulation_propagule_fix_size {
                 int n = p->rng()(8);
                 position_type& p1 = q->position();
                 for (int q=0; q<=n; ++q){
-                    int blah =0;
                     p1.rotate_cw();
                     
                 }
