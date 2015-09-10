@@ -62,7 +62,7 @@
       <CommandLineArguments>
          <CommandLineArgument
             argument = "-c stripes_ep4.cfg  --ea.metapopulation.competition_period=100 --ea.generational_model.moran_process.replacement_rate.p=0.25"
-            isEnabled = "NO">
+            isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
             argument = "-l checkpoint-350000.xml.gz  --analyze movie_for_competitions"
@@ -70,7 +70,7 @@
          </CommandLineArgument>
          <CommandLineArgument
             argument = "-l checkpoint-350000.xml.gz  --analyze knockouts_for_competition"
-            isEnabled = "YES">
+            isEnabled = "NO">
          </CommandLineArgument>
       </CommandLineArguments>
       <AdditionalOptions>

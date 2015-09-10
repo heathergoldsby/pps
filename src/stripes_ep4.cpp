@@ -7,7 +7,7 @@
 //#include <ea/generational_models/moran_process.h>
 #include <ea/selection/rank.h>
 #include <ea/datafiles/fitness.h>
-
+#include <ea/digital_evolution/extra_instruction_sets/matrix.h>
 
 
 #include "evolved_striped_ancestor2.h"
@@ -54,10 +54,10 @@ struct lifecycle : public default_lifecycle {
         append_isa<swap>(ea);
         append_isa<inc>(ea);
         append_isa<dec>(ea);
-        append_isa<tx_msg_check_task>(ea);
-        append_isa<tx_msg>(ea);
+        append_isa<tx_msg_check_task_matrix>(ea);
+        append_isa<tx_msg_matrix>(ea);
         append_isa<rx_msg>(ea);
-        append_isa<bc_msg>(ea);
+        append_isa<bc_msg_matrix>(ea);
         append_isa<rotate>(ea);
         append_isa<rotate_cw>(ea);
         append_isa<rotate_ccw>(ea);
@@ -71,7 +71,7 @@ struct lifecycle : public default_lifecycle {
         append_isa<if_equal>(ea);
         append_isa<if_not_equal>(ea);
         append_isa<jump_head>(ea);
-        append_isa<is_neighbor>(ea);
+        append_isa<is_neighbor_matrix>(ea);
         //        append_isa<if_prop_cell_absent>(ea);
         //        append_isa<is_origin>(ea);
         
@@ -137,7 +137,7 @@ typedef digital_evolution
 , recombination::asexual
 , round_robin
 , multibirth_not_nand_prop_ancestor
-, empty_facing_neighbor
+, empty_facing_neighbor_matrix
 , dont_stop
 , generate_single_ancestor
 > sea_type;
