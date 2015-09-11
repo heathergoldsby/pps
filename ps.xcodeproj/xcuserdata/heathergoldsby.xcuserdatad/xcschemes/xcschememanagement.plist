@@ -14,10 +14,15 @@
 			<key>orderHint</key>
 			<integer>21</integer>
 		</dict>
+		<key>stripes_ep4_fix_control.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>22</integer>
+		</dict>
 		<key>stripes_multi.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>1</integer>
 		</dict>
 		<key>stripes_multi_mut_split.xcscheme</key>
 		<dict>
@@ -183,6 +188,11 @@
 			<true/>
 		</dict>
 		<key>48DEB45419376501002F8846</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>48E57B811BA32D0000E630CC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
