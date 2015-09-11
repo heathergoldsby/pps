@@ -192,7 +192,7 @@ public:
         
         add_option<ANALYSIS_INPUT>(this);
         //        add_option<NUM_PROPAGULE_GERM>(this);
-        //        add_option<NUM_PROPAGULE_CELL>(this);
+        add_option<NUM_PROPAGULE_CELL>(this);
         
         // ts specific options
         add_option<TASK_SWITCHING_COST>(this);
