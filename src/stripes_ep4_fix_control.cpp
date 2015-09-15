@@ -181,8 +181,8 @@ public:
         add_option<MUTATION_PER_SITE_P>(this);
         add_option<MUTATION_INSERTION_P>(this);
         add_option<MUTATION_DELETION_P>(this);
-        //        add_option<MUTATION_UNIFORM_INT_MIN>(this);
-        //        add_option<MUTATION_UNIFORM_INT_MAX>(this);
+        add_option<MUTATION_UNIFORM_INT_MIN>(this);
+        add_option<MUTATION_UNIFORM_INT_MAX>(this);
         add_option<RUN_UPDATES>(this);
         add_option<RUN_EPOCHS>(this);
         //        add_option<CHECKPOINT_PREFIX>(this);
@@ -196,7 +196,7 @@ public:
         
         // ts specific options
         add_option<TASK_SWITCHING_COST>(this);
-        //        add_option<GERM_MUTATION_PER_SITE_P>(this);
+        add_option<GERM_MUTATION_PER_SITE_P>(this);
         //        add_option<GROUP_REP_THRESHOLD>(this);
         
         
