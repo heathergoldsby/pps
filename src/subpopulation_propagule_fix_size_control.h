@@ -32,22 +32,23 @@ struct subpopulation_propagule_fix_size_control {
         
         typedef typename MEA::subpopulation_type::population_type propagule_type;
         
-        typename MEA::individual_ptr_type found = parents[0]->traits().founder();
 
         configurable_per_site m(get<GERM_MUTATION_PER_SITE_P>(mea));
 
+        /*
         // if there are no founders, work around it and add the first member of the pop.
         // This SHOULD just happen during the first replication cycle
-        if (found->population().size() == 0) {
-            found->insert(found->end(), parents[0]->population()[0]);
-        }
+        if (parents[0]->traits().founder()->population().size() == 0) {
+            int x = 5;
+        } else {
+            int i = 1+1;
+        }*/
         
         // shuffle the founder population
-        std::random_shuffle(parents[0]->traits().founder()->population().begin(), parents[0]->traits().founder()->population().end(), parents[0]->rng());
+        //std::random_shuffle(parents[0]->traits().founder()->population().begin(), parents[0]->traits().founder()->population().end(), parents[0]->rng());
         
         
         
-        int num_moved = 0;
         int s = get<POPULATION_SIZE>(mea);
         std::vector<int> open_pos (s);
         for( int n = 0 ; n < s ; ++n ) {
@@ -55,30 +56,23 @@ struct subpopulation_propagule_fix_size_control {
         }
         
         // first founder is the propagule.
-        typename MEA::subpopulation_type::genome_type r(found->population()[0]->genome().begin(), found->population()[0]->genome().begin()+found->population()[0]->hw().original_size());
+        typename MEA::subpopulation_type::genome_type r(parents[0]->population()[0]->genome().begin(), parents[0]->population()[0]->genome().begin()+parents[0]->population()[0]->hw().original_size());
         
         typename MEA::subpopulation_type::individual_ptr_type q = p->make_individual(r);
         
         // mutate
         mutate(*q,m,*p);
         
-        inherits_from(*(parents[0]->traits().founder()->population()[0]), *q, *p);
-        
+        inherits_from(*(parents[0]->population()[0]), *q, *p);
         
         for (int i=0; i< get<NUM_PROPAGULE_CELL>(mea,1);  ++i) {
-            
-          
             typename MEA::subpopulation_type::individual_ptr_type o(q);
 
-            
             std::size_t t = p->rng()(open_pos.size());
             std::size_t pos = open_pos[t];
             open_pos.erase(open_pos.begin() + t);
             
-            
-            //iterator insert_at(iterator i, individual_ptr_type x, const position_type& pos) {
             p->insert_at(p->end(), o, p->env().location(pos).position());
-            
             
             // Rotate the org to a random direction...
             int n = p->rng()(8);
@@ -89,9 +83,8 @@ struct subpopulation_propagule_fix_size_control {
             }
         }
         
-    
-        
         offspring.insert(offspring.end(),p);
+
     }
 };
 

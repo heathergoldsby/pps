@@ -147,7 +147,6 @@ typedef digital_evolution
 , generate_single_ancestor
 > sea_type;
 
-// , generational_models::periodic_competition < generational_models::meta_moran_process< selection::rank< >, selection::rank< > >, generational_models::isolated_subpopulations > // generational_models::moran_process< >, isolated_subpopulations
 
 typedef metapopulation
 < sea_type
