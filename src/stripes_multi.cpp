@@ -1,6 +1,8 @@
 #include <ea/digital_evolution.h>
 #include <ea/cmdline_interface.h>
 #include <ea/digital_evolution/ancestors/multi_birth_selfrep_not_nand_ancestor.h>
+#include <ea/digital_evolution/ancestors/multi_birth_selfrep_not_ancestor.h>
+
 #include <ea/digital_evolution/ancestors/multi_birth_selfrep_ancestor.h>
 
 #include <ea/subpopulation_founder.h>
@@ -117,7 +119,7 @@ typedef digital_evolution
 < lifecycle
 , recombination::asexual
 , round_robin
-, multibirth_selfrep_ancestor
+, multibirth_selfrep_not_ancestor
 , empty_facing_neighbor_matrix
 , dont_stop
 , generate_single_ancestor
@@ -172,15 +174,15 @@ public:
         add_option<METAPOP_COMPETITION_PERIOD>(this);
         add_option<TOURNAMENT_SELECTION_N>(this);
         add_option<TOURNAMENT_SELECTION_K>(this);
-        add_option<STRIPE_FIT_FUNC>(this);
-        add_option<PROPAGULE_COST>(this);
-        add_option<FIT_MAX>(this);
-        add_option<FIT_MIN>(this);
-        add_option<FIT_GAMMA>(this);
-        add_option<RES_UPDATE>(this);
-        add_option<DEATH_PROB>(this);
-        add_option<SL_PERIOD>(this);
-        add_option<NUM_SWAPS>(this);
+//        add_option<STRIPE_FIT_FUNC>(this);
+//        add_option<PROPAGULE_COST>(this);
+//        add_option<FIT_MAX>(this);
+//        add_option<FIT_MIN>(this);
+//        add_option<FIT_GAMMA>(this);
+//        add_option<RES_UPDATE>(this);
+//        add_option<DEATH_PROB>(this);
+//        add_option<SL_PERIOD>(this);
+//        add_option<NUM_SWAPS>(this);
 
 
         
@@ -200,8 +202,8 @@ public:
         add_event<task_performed_tracking>(ea);
         add_event<task_switch_tracking>(ea);
         
-        add_event<random_death>(ea);
-        add_event<swap_locations>(ea);
+//        add_event<random_death>(ea);
+//        add_event<swap_locations>(ea);
     }
 };
 LIBEA_CMDLINE_INSTANCE(mea_type, cli);
