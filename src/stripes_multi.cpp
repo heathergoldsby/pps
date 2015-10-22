@@ -119,7 +119,7 @@ typedef digital_evolution
 < lifecycle
 , recombination::asexual
 , round_robin
-, multibirth_selfrep_not_ancestor
+, multibirth_selfrep_not_nand_ancestor
 , empty_facing_neighbor_matrix
 , dont_stop
 , generate_single_ancestor
@@ -127,7 +127,7 @@ typedef digital_evolution
 
 typedef metapopulation
 < sea_type
-, permute_stripes
+, permute_three_stripes
 , mutation::operators::no_mutation
 , subpopulation_propagule
 , generational_models::periodic_competition< >
