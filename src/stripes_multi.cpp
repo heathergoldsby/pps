@@ -2,6 +2,7 @@
 #include <ea/cmdline_interface.h>
 #include <ea/digital_evolution/ancestors/multi_birth_selfrep_not_nand_ancestor.h>
 #include <ea/digital_evolution/ancestors/multi_birth_selfrep_not_ancestor.h>
+#include <ea/digital_evolution/ancestors/multi_birth_selfrep_not_nand_ornot_ancestor.h>
 
 #include <ea/digital_evolution/ancestors/multi_birth_selfrep_ancestor.h>
 
