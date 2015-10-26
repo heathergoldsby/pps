@@ -124,7 +124,7 @@ typedef digital_evolution
 < lifecycle
 , recombination::asexual
 , round_robin
-, multibirth_selfrep_not_nand_ancestor
+, multibirth_selfrep_not_nand_ornot_ancestor
 , empty_facing_neighbor_matrix
 , dont_stop
 , generate_single_ancestor
