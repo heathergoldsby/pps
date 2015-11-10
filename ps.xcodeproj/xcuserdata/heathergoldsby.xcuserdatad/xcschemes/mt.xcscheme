@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "48E57B811BA32D0000E630CC"
-               BuildableName = "stripes_ep4_fix_control"
-               BlueprintName = "stripes_ep4_fix_control"
+               BlueprintIdentifier = "489918091BF2662B002540AE"
+               BuildableName = "mt"
+               BlueprintName = "mt"
                ReferencedContainer = "container:ps.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -32,9 +32,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "48E57B811BA32D0000E630CC"
-            BuildableName = "stripes_ep4_fix_control"
-            BlueprintName = "stripes_ep4_fix_control"
+            BlueprintIdentifier = "489918091BF2662B002540AE"
+            BuildableName = "mt"
+            BlueprintName = "mt"
             ReferencedContainer = "container:ps.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -56,15 +56,15 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "48E57B811BA32D0000E630CC"
-            BuildableName = "stripes_ep4_fix_control"
-            BlueprintName = "stripes_ep4_fix_control"
+            BlueprintIdentifier = "489918091BF2662B002540AE"
+            BuildableName = "mt"
+            BlueprintName = "mt"
             ReferencedContainer = "container:ps.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "-c stripes_ep4_fix_control.cfg"
+            argument = "-c mt.cfg"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>
@@ -81,9 +81,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "48E57B811BA32D0000E630CC"
-            BuildableName = "stripes_ep4_fix_control"
-            BlueprintName = "stripes_ep4_fix_control"
+            BlueprintIdentifier = "489918091BF2662B002540AE"
+            BuildableName = "mt"
+            BlueprintName = "mt"
             ReferencedContainer = "container:ps.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
