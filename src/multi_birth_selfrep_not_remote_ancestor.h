@@ -61,6 +61,7 @@ namespace ealib {
             repr[93] =  ea.isa()["nop_c"]; // nopc
             repr[94] =  ea.isa()["nop_a"]; // nopa
             repr[95] =  ea.isa()["if_label"]; // iflabel
+//h_alt_divide            repr[96] = ea.isa()["h_alt_divide"];
             repr[96] =  ea.isa()["h_divide_remote"]; // hdivide
             repr[97] =  ea.isa()["mov_head"]; // movhead
             repr[98] =  ea.isa()["nop_a"]; // nopa
