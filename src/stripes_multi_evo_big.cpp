@@ -1,10 +1,10 @@
 #include <ea/digital_evolution.h>
 #include <ea/cmdline_interface.h>
-#include <ea/digital_evolution/ancestors/multi_birth_selfrep_not_nand_ancestor.h>
-#include <ea/digital_evolution/ancestors/multi_birth_selfrep_not_ancestor.h>
-#include <ea/digital_evolution/ancestors/multi_birth_selfrep_not_nand_ornot_ancestor.h>
-
-#include <ea/digital_evolution/ancestors/multi_birth_selfrep_ancestor.h>
+//#include <ea/digital_evolution/ancestors/multi_birth_selfrep_not_nand_ancestor.h>
+//#include <ea/digital_evolution/ancestors/multi_birth_selfrep_not_ancestor.h>
+//#include <ea/digital_evolution/ancestors/multi_birth_selfrep_not_nand_ornot_ancestor.h>
+//
+//#include <ea/digital_evolution/ancestors/multi_birth_selfrep_ancestor.h>
 
 #include <ea/subpopulation_founder.h>
 #include <ea/line_of_descent.h>
@@ -131,7 +131,7 @@ typedef digital_evolution
 < lifecycle
 , recombination::asexual
 , round_robin
-, multibirth_selfrep_not_nand_ornot_prop_ancestor
+, multibirth_not_nand_ornot_prop_ancestor
 , empty_facing_neighbor_matrix
 , dont_stop
 , generate_single_ancestor

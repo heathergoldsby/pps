@@ -34,6 +34,11 @@
 			<key>orderHint</key>
 			<integer>24</integer>
 		</dict>
+		<key>stripes_multi_evo_big.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>25</integer>
+		</dict>
 		<key>stripes_multi_mut_split.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -193,6 +198,11 @@
 			<true/>
 		</dict>
 		<key>48A9DE401BF95E6C00029AF7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>48A9DE4C1BF968A900029AF7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
