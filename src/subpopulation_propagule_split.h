@@ -75,8 +75,6 @@ struct subpopulation_propagule_split {
                 std::size_t pos = open_pos[t];
                 open_pos.erase(open_pos.begin() + t);
                 
-                
-                //iterator insert_at(iterator i, individual_ptr_type x, const position_type& pos) {
                 p->insert_at(p->end(), q, p->env().location(pos).position());
                 
                 (*j)->alive() = false;

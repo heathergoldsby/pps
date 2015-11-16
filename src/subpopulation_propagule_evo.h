@@ -32,75 +32,63 @@
  offspring subpopulation.
  */
 struct subpopulation_propagule_evo {
+   
     std::size_t capacity() const { return 1; }
     
     template <typename Population, typename MEA>
     void operator()(Population& parents, Population& offspring, MEA& mea) {
-
-        // Low end set to 0...
-        std::size_t prop_size = get<PROP_COUNT>(mea,1);
-        assert(prop_size > 0);
-        if (prop_size > parents[0]->size()) {
-            prop_size = parents[0]->size();
-        }
+        
+        double num_prop = ceil(get<PROP_COUNT>(*(parents[0]),0) / 2.0);
+        
+        //if (num_prop == 0) return;
         
         // get a new subpopulation:
         typename MEA::individual_ptr_type p = mea.make_individual();
         p->initialize(mea.md());
         p->reset_rng(mea.rng().seed());
         
-        // figure out which individuals from the parent comprise the propagule:
+        
         typedef typename MEA::subpopulation_type::population_type propagule_type;
-        propagule_type propagule;
-        mea.rng().sample_without_replacement(parents[0]->population().begin(),
-                                             parents[0]->population().end(),
-                                             std::back_inserter(propagule),
-                                             prop_size);
-        
-        
-        int s = get<POPULATION_SIZE>(mea);
-        
+        // shuffle the population
+        std::random_shuffle(parents[0]->population().begin(), parents[0]->population().end(), parents[0]->rng());
         configurable_per_site m(get<GERM_MUTATION_PER_SITE_P>(mea));
+
         
+        int num_moved = 0;
+        int s = get<POPULATION_SIZE>(mea);
         std::vector<int> open_pos (s);
         for( int n = 0 ; n < s ; ++n ) {
             open_pos[ n ] = n;
         }
         
-        
-        // now add a new individual built from each of the propagules to the
-        // subpopulation:
-        for(typename propagule_type::iterator i=propagule.begin(); i!=propagule.end(); ++i) {
-            // grab the original part of the propagule's genome; note that it could have been
-            // changed (implicit-like mutations):
-            typename MEA::subpopulation_type::genome_type r((*i)->genome().begin(),
-                                                            (*i)->genome().begin()+(*i)->hw().original_size());
-            typename MEA::subpopulation_type::individual_ptr_type q = p->make_individual(r);
+        for(typename propagule_type::iterator j=parents[0]->population().begin(); j!=parents[0]->population().end(); ++j) {
+            if ((get<IS_PROPAGULE>(**j, 0) == 2) && (*j)->alive()) {
+                typename MEA::subpopulation_type::genome_type r((*j)->genome().begin(),
+                                                                (*j)->genome().begin()+(*j)->hw().original_size());
+                typename MEA::subpopulation_type::individual_ptr_type q = p->make_individual(r);
             
-            inherits_from(**i, *q, *p);
-            
-            // mutate
-            mutate(*q,m,*p);
-            
-            
-            std::size_t t = p->rng()(open_pos.size());
-            std::size_t pos = open_pos[t];
-            open_pos.erase(open_pos.begin() + t);
-            
-            p->insert_at(p->end(),q, p->env().location(pos).position());
-            
-            
-            for (int k=1; k<get<NUM_PROPAGULE_CELL>(mea); ++k) {
-                // check if this is a valid way to copy an individual
-                typename MEA::subpopulation_type::individual_ptr_type o(q);
+                // mutate
+                mutate(*q,m,*p);
                 
-                t = p->rng()(open_pos.size());
-                pos = open_pos[t];
+                inherits_from(**j, *q, *p);
+                
+                
+                std::size_t t = p->rng()(open_pos.size());
+                std::size_t pos = open_pos[t];
                 open_pos.erase(open_pos.begin() + t);
-                p->insert_at(p->end(), o, p->env().location(pos).position());
+                
+                p->insert_at(p->end(), q, p->env().location(pos).position());
+                
+//                (*j)->alive() = false;
+//                parents[0]->events().death(**j,*(parents[0]));
+                
+                
+                ++num_moved;
                 
             }
-            
+            if (num_moved == num_prop) {
+                break;
+            }
         }
         
         offspring.insert(offspring.end(),p);
@@ -108,3 +96,4 @@ struct subpopulation_propagule_evo {
 };
 
 #endif
+
