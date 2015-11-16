@@ -39,6 +39,23 @@ src/stripes_ep4_fix_control.cpp
 ;
 install dist : stripes_ep4_fix_control : <location>$(HOME)/bin ;
 
+exe stripes_multi_evo :
+src/stripes_multi_evo.cpp
+/libea//libea
+/libea//libea_runner
+: <include>./include <link>static
+;
+install dist : stripes_multi_evo : <location>$(HOME)/bin ;
+
+exe stripes_multi_evo_big :
+src/stripes_multi_evo_big.cpp
+/libea//libea
+/libea//libea_runner
+: <include>./include <link>static
+;
+install dist : stripes_multi_evo_big : <location>$(HOME)/bin ;
+
+
 
 
 

@@ -1,44 +1,38 @@
 #include <ea/digital_evolution.h>
 #include <ea/cmdline_interface.h>
+#include <ea/digital_evolution/ancestors/multi_birth_selfrep_not_nand_ancestor.h>
+#include <ea/digital_evolution/ancestors/multi_birth_selfrep_not_ancestor.h>
+#include <ea/digital_evolution/ancestors/multi_birth_selfrep_not_nand_ornot_ancestor.h>
+
+#include <ea/digital_evolution/ancestors/multi_birth_selfrep_ancestor.h>
+
 #include <ea/subpopulation_founder.h>
 #include <ea/line_of_descent.h>
+#include <ea/generational_models/periodic_competition.h>
+#include <ea/generational_models/moran_process.h>
+#include <ea/datafiles/fitness.h>
 #include <ea/analysis/archive.h>
-//#include <ea/generational_models/periodic_competition.h>
-//#include <ea/generational_models/moran_process.h>
-//#include <ea/selection/rank.h>
-//#include <ea/datafiles/fitness.h>
 #include <ea/digital_evolution/extra_instruction_sets/matrix.h>
-
-
-//#include "evolved_striped_ancestor2.h"
-//#include "multibirth_not_nand_prop_ancestor.h"
-
-//#include "subpopulation_propagule_split.h"
-
-
-
-#include "mt_propagule.h"
-#include "multi_birth_selfrep_not_remote_ancestor.h"
-
-
 
 
 
 using namespace ealib;
 
-#include "movie_evo_plane.h"
-
+#include "stripes.h"
+#include "movie.h"
+#include "subpopulation_propagule_evo.h"
+#include "propagule.h"
 
 //! Configuration object for an EA.
 struct lifecycle : public default_lifecycle {
-    
-    //! Called as the final step of EA construction (must not depend on configuration parameters)
+    /*! Called after EA initialization.
+     
+     This is a good place to handle programmatic setup tasks.  E.g., adding
+     instructions to a digital evolution ISA, loading external data files,
+     and the like.
+     */
     template <typename EA>
     void after_initialization(EA& ea) {
-        if(ea.isa().size()) {
-            return;
-        }
-        
         using namespace instructions;
         append_isa<nop_a>(0,ea);
         append_isa<nop_b>(0,ea);
@@ -53,9 +47,10 @@ struct lifecycle : public default_lifecycle {
         append_isa<swap>(ea);
         append_isa<inc>(ea);
         append_isa<dec>(ea);
-        append_isa<tx_msg>(ea);
+        append_isa<tx_msg_check_task_matrix>(ea);
+        append_isa<tx_msg_matrix>(ea);
         append_isa<rx_msg>(ea);
-        append_isa<bc_msg>(ea);
+        append_isa<bc_msg_matrix>(ea);
         append_isa<rotate>(ea);
         append_isa<rotate_cw>(ea);
         append_isa<rotate_ccw>(ea);
@@ -63,19 +58,39 @@ struct lifecycle : public default_lifecycle {
         append_isa<h_alloc>(ea);
         append_isa<h_copy>(ea);
         append_isa<h_divide_soft_parent_reset>(ea);
-        append_isa<input>(ea);
+        append_isa<fixed_input>(ea);
         append_isa<output>(ea);
         append_isa<donate_res_to_group>(ea);
         append_isa<if_equal>(ea);
         append_isa<if_not_equal>(ea);
         append_isa<jump_head>(ea);
-        append_isa<is_neighbor>(ea);
-        append_isa<h_divide_remote>(ea);
-        append_isa<h_alt_divide>(ea);
+        append_isa<is_neighbor_matrix>(ea);
+        append_isa<deploy_propagule>(ea);
+        append_isa<if_prop_cell_absent>(ea);
+        append_isa<get_propagule_size>(ea);
+        append_isa<deploy_one_propagule>(ea);
+        
+        //        append_isa<create_propagule>(ea);
+        //        append_isa<deploy_propagule>(ea);
+        
+        //        append_isa<is_origin>(ea);
+        
+        //        append_isa<get_xy>(ea);
+        //        append_isa<get_epigenetic_info>(ea);
+        //        append_isa<set_epigenetic_info>(ea);
+        
+        // SOMA
+        //        append_isa<inc_propagule_size>(ea);
+        //        append_isa<dec_propagule_size>(ea);
+        //        append_isa<get_propagule_size>(ea);
+        //
+        //        append_isa<become_soma>(ea);
+        //        append_isa<if_soma>(ea);
+        //        append_isa<if_germ>(ea);
         
         add_event<task_resource_consumption>(ea);
         add_event<task_switching_cost>(ea);
-        
+        add_event<prop_death_event>(ea);
         add_event<ts_birth_event>(ea);
         
         typedef typename EA::task_library_type::task_ptr_type task_ptr_type;
@@ -83,39 +98,18 @@ struct lifecycle : public default_lifecycle {
         
         task_ptr_type task_not = make_task<tasks::task_not,catalysts::additive<0> >("not", ea);
         task_ptr_type task_nand = make_task<tasks::task_nand,catalysts::additive<0> >("nand", ea);
-//        task_ptr_type task_and = make_task<tasks::task_and,catalysts::additive<0> >("and", ea);
-//        task_ptr_type task_ornot = make_task<tasks::task_ornot,catalysts::additive<0> >("ornot", ea);
-//        task_ptr_type task_or = make_task<tasks::task_or,catalysts::additive<0> >("or", ea);
-//        task_ptr_type task_andnot = make_task<tasks::task_andnot,catalysts::additive<0> >("andnot", ea);
-//        task_ptr_type task_nor = make_task<tasks::task_nor,catalysts::additive<0> >("nor", ea);
-//        task_ptr_type task_xor = make_task<tasks::task_xor,catalysts::additive<0> >("xor", ea);
-//        task_ptr_type task_equals = make_task<tasks::task_equals,catalysts::additive<0> >("equals", ea);
-
+        task_ptr_type task_ornot = make_task<tasks::task_ornot,catalysts::additive<0> >("ornot", ea);
+        
         resource_ptr_type resA = make_resource("resA", ea);
         resource_ptr_type resB = make_resource("resB", ea);
-        
-//        resource_ptr_type resA = make_resource("resA", 100.0, 1.0, 0.01, 0.05, ea);
-//        resource_ptr_type resB = make_resource("resB", 100.0, 1.0, 0.01, 0.05, ea);
-//        resource_ptr_type resC = make_resource("resC", 100.0, 1.0, 0.01, 0.05, ea);
-//        resource_ptr_type resD = make_resource("resD", 100.0, 1.0, 0.01, 0.05, ea);
-//        resource_ptr_type resE = make_resource("resE", 100.0, 1.0, 0.01, 0.05, ea);
-//        resource_ptr_type resF = make_resource("resF", 100.0, 1.0, 0.01, 0.05, ea);
-//        resource_ptr_type resG = make_resource("resG", 100.0, 1.0, 0.01, 0.05, ea);
-//        resource_ptr_type resH = make_resource("resH", 100.0, 1.0, 0.01, 0.05, ea);
-//        resource_ptr_type resI = make_resource("resI", 100.0, 1.0, 0.01, 0.05, ea);
+        resource_ptr_type resC = make_resource("resC", ea);
         
         task_not->consumes(resA);
         task_nand->consumes(resB);
-//        task_and->consumes(resC);
-//        task_ornot->consumes(resD);
-//        task_or->consumes(resE);
-//        task_andnot->consumes(resF);
-//        task_nor->consumes(resG);
-//        task_xor->consumes(resH);
-//        task_equals->consumes(resI);
-        
+        task_ornot->consumes(resC);
         
     }
+    
     
 };
 
@@ -132,33 +126,28 @@ struct subpop_trait : subpopulation_founder_trait<T>, fitness_trait<T> {
 };
 
 
-
-
 typedef digital_evolution
 < lifecycle
 , recombination::asexual
 , round_robin
-, multibirth_selfrep_not_remote_ancestor
-, empty_facing_neighbor
+, multibirth_selfrep_not_nand_ornot_ancestor
+, empty_facing_neighbor_matrix
 , dont_stop
 , generate_single_ancestor
 > sea_type;
 
-
 typedef metapopulation
 < sea_type
-, quiet_nan
+, permute_three_stripes
 , mutation::operators::no_mutation
-, quiet_nan
-, generational_models::isolated_subpopulations
+, subpopulation_propagule_evo
+, generational_models::periodic_competition< >
 , ancestors::default_subpopulation
 , dont_stop
 , fill_metapopulation
 , default_lifecycle
 , subpop_trait
 > mea_type;
-
-
 
 
 /*!
@@ -177,33 +166,56 @@ public:
         add_option<MUTATION_PER_SITE_P>(this);
         add_option<MUTATION_INSERTION_P>(this);
         add_option<MUTATION_DELETION_P>(this);
+        add_option<MUTATION_UNIFORM_INT_MIN>(this);
+        add_option<MUTATION_UNIFORM_INT_MAX>(this);
         add_option<RUN_UPDATES>(this);
         add_option<RUN_EPOCHS>(this);
         add_option<RNG_SEED>(this);
         add_option<RECORDING_PERIOD>(this);
-        add_option<MUTATION_UNIFORM_INT_MIN>(this);
-        add_option<MUTATION_UNIFORM_INT_MAX>(this);
         
         add_option<ANALYSIS_INPUT>(this);
-
+        add_option<NUM_PROPAGULE_GERM>(this);
+        add_option<NUM_PROPAGULE_CELL>(this);
         
         // ts specific options
         add_option<TASK_SWITCHING_COST>(this);
         add_option<GERM_MUTATION_PER_SITE_P>(this);
-        add_option<GROUP_REP_THRESHOLD>(this);
-
+        
+        // stripes
+        add_option<METAPOP_COMPETITION_PERIOD>(this);
+        add_option<TOURNAMENT_SELECTION_N>(this);
+        add_option<TOURNAMENT_SELECTION_K>(this);
+        //        add_option<STRIPE_FIT_FUNC>(this);
+        //        add_option<PROPAGULE_COST>(this);
+        //        add_option<FIT_MAX>(this);
+        //        add_option<FIT_MIN>(this);
+        //        add_option<FIT_GAMMA>(this);
+        //        add_option<RES_UPDATE>(this);
+        //        add_option<DEATH_PROB>(this);
+        //        add_option<SL_PERIOD>(this);
+        //        add_option<NUM_SWAPS>(this);
+        
+        
+        
+        
         
     }
     
     virtual void gather_tools() {
-
-        
+        add_tool<ealib::analysis::movie_for_three_stripe_competitions>(this);
+        add_tool<get_dominant>(this);
     }
     
     virtual void gather_events(EA& ea) {
-        add_event<mt_propagule>(ea);
-        add_event<task_performed_tracking>(ea);
+        add_event<subpopulation_founder_event>(ea);
+        add_event<datafiles::fitness_dat>(ea);
+        add_event<datafiles::propagule_dat>(ea);
 
+        add_event<task_performed_tracking>(ea);
+        add_event<task_switch_tracking>(ea);
+        
+        //        add_event<random_death>(ea);
+        //        add_event<swap_locations>(ea);
     }
 };
 LIBEA_CMDLINE_INSTANCE(mea_type, cli);
