@@ -120,7 +120,6 @@
 		489918121BF2662B002540AE /* mt */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = mt; sourceTree = BUILT_PRODUCTS_DIR; };
 		48A1E129183F8ED70023C478 /* stripes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = stripes.h; sourceTree = "<group>"; };
 		48A9DE3E1BF95D2F00029AF7 /* stripes_multi_evo.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = stripes_multi_evo.cpp; sourceTree = "<group>"; };
-		48A9DE3F1BF95DE900029AF7 /* subpopulation_propagule_evo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = subpopulation_propagule_evo.h; sourceTree = "<group>"; };
 		48A9DE491BF95E6C00029AF7 /* stripes_multi_evo */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = stripes_multi_evo; sourceTree = BUILT_PRODUCTS_DIR; };
 		48A9DE4B1BF964F900029AF7 /* stripes_multi_evo_big.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = stripes_multi_evo_big.cpp; sourceTree = "<group>"; };
 		48A9DE551BF968A900029AF7 /* stripes_multi_evo_big */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = stripes_multi_evo_big; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -261,7 +260,6 @@
 				48EECA3F1ADC32020076F604 /* knockouts.h */,
 				488B205F1A2AC20400C3571D /* movie_evo_plane.h */,
 				42DF06891945418600C9A364 /* subpopulation_propagule.h */,
-				48A9DE3F1BF95DE900029AF7 /* subpopulation_propagule_evo.h */,
 				48C836081AC2D673004B4D0B /* subpopulation_propagule_split.h */,
 				48B07C5F1B8CE66900B3BBB7 /* subpopulation_propagule_fix_size.h */,
 				48E57B7F1BA32B1900E630CC /* subpopulation_propagule_fix_size_control.h */,

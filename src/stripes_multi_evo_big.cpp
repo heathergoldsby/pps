@@ -20,7 +20,7 @@ using namespace ealib;
 
 #include "stripes.h"
 #include "movie.h"
-#include "subpopulation_propagule_evo.h"
+#include "subpopulation_propagule_split.h"
 #include "propagule.h"
 #include "multibirth_not_nand_ornot_prop_ancestor.h"
 
@@ -141,7 +141,7 @@ typedef metapopulation
 < sea_type
 , permute_three_stripes
 , mutation::operators::no_mutation
-, subpopulation_propagule_evo
+, subpopulation_propagule_split
 , generational_models::periodic_competition< >
 , ancestors::default_subpopulation
 , dont_stop
