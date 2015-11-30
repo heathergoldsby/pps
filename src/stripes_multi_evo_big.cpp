@@ -68,7 +68,7 @@ struct lifecycle : public default_lifecycle {
         append_isa<is_neighbor_matrix>(ea);
         append_isa<deploy_propagule>(ea);
         append_isa<if_prop_cell_absent>(ea);
-        append_isa<get_propagule_size>(ea);
+//        append_isa<get_propagule_size>(ea);
         append_isa<deploy_one_propagule>(ea);
         
         //        append_isa<create_propagule>(ea);
