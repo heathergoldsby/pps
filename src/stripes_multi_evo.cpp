@@ -1,18 +1,25 @@
 #include <ea/digital_evolution.h>
 #include <ea/cmdline_interface.h>
-#include <ea/digital_evolution/ancestors/multi_birth_selfrep_not_nand_ancestor.h>
-#include <ea/digital_evolution/ancestors/multi_birth_selfrep_not_ancestor.h>
-#include <ea/digital_evolution/ancestors/multi_birth_selfrep_not_nand_ornot_ancestor.h>
-
-#include <ea/digital_evolution/ancestors/multi_birth_selfrep_ancestor.h>
-
 #include <ea/subpopulation_founder.h>
 #include <ea/line_of_descent.h>
-#include <ea/generational_models/periodic_competition.h>
-#include <ea/generational_models/moran_process.h>
-#include <ea/datafiles/fitness.h>
 #include <ea/analysis/archive.h>
+#include <ea/generational_models/periodic_competition.h>
+//#include <ea/generational_models/moran_process.h>
+#include <ea/selection/rank.h>
+#include <ea/datafiles/fitness.h>
 #include <ea/digital_evolution/extra_instruction_sets/matrix.h>
+
+
+#include "evolved_striped_ancestor2.h"
+#include "multibirth_not_nand_prop_ancestor.h"
+
+#include "subpopulation_propagule_split.h"
+
+#include "stripes_split.h"
+#include "stripes.h"
+#include "propagule.h"
+#include "movie.h"
+#include "knockouts.h"
 
 
 
@@ -22,6 +29,8 @@ using namespace ealib;
 #include "movie.h"
 #include "subpopulation_propagule_split.h"
 #include "propagule.h"
+#include "multibirth_not_nand_ornot_prop_ancestor.h"
+#include "meta_moran_process.h"
 
 //! Configuration object for an EA.
 struct lifecycle : public default_lifecycle {
@@ -67,7 +76,7 @@ struct lifecycle : public default_lifecycle {
         append_isa<is_neighbor_matrix>(ea);
         append_isa<deploy_propagule>(ea);
         append_isa<if_prop_cell_absent>(ea);
-        append_isa<get_propagule_size>(ea);
+        //        append_isa<get_propagule_size>(ea);
         append_isa<deploy_one_propagule>(ea);
         
         //        append_isa<create_propagule>(ea);
@@ -130,24 +139,27 @@ typedef digital_evolution
 < lifecycle
 , recombination::asexual
 , round_robin
-, multibirth_selfrep_not_nand_ornot_ancestor
+, multibirth_not_nand_ornot_prop_ancestor
 , empty_facing_neighbor_matrix
 , dont_stop
 , generate_single_ancestor
 > sea_type;
+
 
 typedef metapopulation
 < sea_type
 , permute_three_stripes
 , mutation::operators::no_mutation
 , subpopulation_propagule_split
-, generational_models::periodic_competition< >
+, generational_models::periodic_competition < generational_models::meta_moran_process< selection::random< >, selection::rank< > >, generational_models::isolated_subpopulations > // generational_models::moran_process< >, isolated_subpopulations
 , ancestors::default_subpopulation
 , dont_stop
 , fill_metapopulation
 , default_lifecycle
 , subpop_trait
 > mea_type;
+
+
 
 
 /*!
@@ -210,7 +222,7 @@ public:
         add_event<subpopulation_founder_event>(ea);
         add_event<datafiles::fitness_dat>(ea);
         add_event<datafiles::propagule_dat>(ea);
-
+        
         add_event<task_performed_tracking>(ea);
         add_event<task_switch_tracking>(ea);
         
