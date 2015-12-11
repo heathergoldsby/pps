@@ -8,6 +8,8 @@
 #include <ea/selection/rank.h>
 #include <ea/datafiles/fitness.h>
 #include <ea/digital_evolution/ancestors/multi_birth_selfrep_not_nand_ancestor.h>
+#include <ea/digital_evolution/ancestors/multi_birth_selfrep_not_nand_ornot_ancestor.h>
+
 #include <ea/digital_evolution/extra_instruction_sets/matrix.h>
 
 
@@ -105,17 +107,21 @@ struct lifecycle : public default_lifecycle {
         
         add_event<ps_birth_event>(ea);
 
+        
         typedef typename EA::task_library_type::task_ptr_type task_ptr_type;
         typedef typename EA::resource_ptr_type resource_ptr_type;
         
         task_ptr_type task_not = make_task<tasks::task_not,catalysts::additive<0> >("not", ea);
         task_ptr_type task_nand = make_task<tasks::task_nand,catalysts::additive<0> >("nand", ea);
+        task_ptr_type task_ornot = make_task<tasks::task_ornot,catalysts::additive<0> >("ornot", ea);
         
         resource_ptr_type resA = make_resource("resA", ea);
         resource_ptr_type resB = make_resource("resB", ea);
+        resource_ptr_type resC = make_resource("resC", ea);
         
         task_not->consumes(resA);
         task_nand->consumes(resB);
+        task_ornot->consumes(resC);
         
         
     }
@@ -141,7 +147,7 @@ typedef digital_evolution
 < lifecycle
 , recombination::asexual
 , round_robin
-, multibirth_selfrep_not_nand_ancestor
+, multibirth_selfrep_not_nand_ornot_ancestor
 , empty_facing_neighbor_matrix
 , dont_stop
 , generate_single_ancestor
@@ -151,7 +157,7 @@ typedef digital_evolution
 
 typedef metapopulation
 < sea_type
-, permute_stripes
+, permute_three_stripes
 , mutation::operators::no_mutation
 , subpopulation_propagule_fix_size
 , generational_models::periodic_competition < generational_models::meta_moran_process< selection::random< >, selection::rank< > >, generational_models::isolated_subpopulations > // generational_models::moran_process< >, isolated_subpopulations
