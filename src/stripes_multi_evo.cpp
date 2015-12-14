@@ -179,7 +179,7 @@ public:
         add_option<MUTATION_INSERTION_P>(this);
         add_option<MUTATION_DELETION_P>(this);
         add_option<MUTATION_UNIFORM_INT_MIN>(this);
-        add_option<MUTATION_UNIFORM_INT_MAX>(this);
+        add_option<MUTATION_UNIFORM_INT_MAX>(this); 
         add_option<RUN_UPDATES>(this);
         add_option<RUN_EPOCHS>(this);
         add_option<RNG_SEED>(this);
