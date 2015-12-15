@@ -227,6 +227,8 @@ public:
         //        add_option<SL_PERIOD>(this);
         //        add_option<NUM_SWAPS>(this);
         //        add_option<JUV_PERIOD>(this);
+        add_option<TOURNAMENT_SELECTION_N>(this);
+        add_option<TOURNAMENT_SELECTION_K>(this);
         
         
     }
