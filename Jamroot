@@ -29,6 +29,15 @@ src/stripes_ep4_fix.cpp
 ;
 install dist : stripes_ep4_fix : <location>$(HOME)/bin ;
 
+exe stripes_ep4_3 :
+src/stripes_ep4_3.cpp
+/libea//libea
+/libea//libea_runner
+: <include>./include <link>static
+;
+install dist : stripes_ep4_3 : <location>$(HOME)/bin ;
+
+
 
 
 exe stripes_ep4_fix_control :
