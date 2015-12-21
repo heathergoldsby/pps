@@ -139,6 +139,8 @@
 		4886B9DC1C27450500CA193A /* stripes_ep4_3_fixed.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = stripes_ep4_3_fixed.cpp; sourceTree = "<group>"; };
 		4886B9DD1C27457100CA193A /* subpopulation_propagule_split_fix_size.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = subpopulation_propagule_split_fix_size.h; sourceTree = "<group>"; };
 		4886B9E71C27469D00CA193A /* stripes_ep4_3_fix_size */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = stripes_ep4_3_fix_size; sourceTree = BUILT_PRODUCTS_DIR; };
+		4886B9E91C2880DF00CA193A /* subpopulation_propagule_split_fix_sizeb.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = subpopulation_propagule_split_fix_sizeb.h; sourceTree = "<group>"; };
+		4886B9EA1C28812100CA193A /* stripes_ep4_3_fixedb.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = stripes_ep4_3_fixedb.cpp; sourceTree = "<group>"; };
 		4888686D1AAF615E00ACAFD9 /* stripes_split.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = stripes_split.h; sourceTree = "<group>"; };
 		488B205F1A2AC20400C3571D /* movie_evo_plane.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = movie_evo_plane.h; sourceTree = "<group>"; };
 		489918061BF20687002540AE /* mt_propagule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mt_propagule.h; sourceTree = "<group>"; };
@@ -301,6 +303,7 @@
 				48C835FC1AC2D33F004B4D0B /* stripes_ep4.cpp */,
 				481466461C249E0C00751B40 /* stripes_ep4_3.cpp */,
 				4886B9DC1C27450500CA193A /* stripes_ep4_3_fixed.cpp */,
+				4886B9EA1C28812100CA193A /* stripes_ep4_3_fixedb.cpp */,
 				48A9DE3E1BF95D2F00029AF7 /* stripes_multi_evo.cpp */,
 				48A9DE4B1BF964F900029AF7 /* stripes_multi_evo_big.cpp */,
 				487ACE231934F7C60016340B /* movie.h */,
@@ -309,6 +312,7 @@
 				42DF06891945418600C9A364 /* subpopulation_propagule.h */,
 				48C836081AC2D673004B4D0B /* subpopulation_propagule_split.h */,
 				4886B9DD1C27457100CA193A /* subpopulation_propagule_split_fix_size.h */,
+				4886B9E91C2880DF00CA193A /* subpopulation_propagule_split_fix_sizeb.h */,
 				48B07C5F1B8CE66900B3BBB7 /* subpopulation_propagule_fix_size.h */,
 				48E57B7F1BA32B1900E630CC /* subpopulation_propagule_fix_size_control.h */,
 				481F84C119DD91AC000EDBE8 /* multibirth_not_nand_prop_ancestor.h */,
