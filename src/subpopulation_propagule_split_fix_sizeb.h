@@ -35,7 +35,7 @@ using namespace ealib;
  
  Cells are flagged as propagules using the create_propagule and deploy_propagule methods.
  */
-struct subpopulation_propagule_split_fix_size {
+struct subpopulation_propagule_split_fix_sizeb {
     std::size_t capacity() const { return 1; }
     
     template <typename Population, typename MEA>
