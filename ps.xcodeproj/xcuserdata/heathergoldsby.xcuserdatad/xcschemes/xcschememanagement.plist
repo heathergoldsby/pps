@@ -24,6 +24,11 @@
 			<key>orderHint</key>
 			<integer>27</integer>
 		</dict>
+		<key>stripes_ep4_3_fix_sizeb.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>28</integer>
+		</dict>
 		<key>stripes_ep4_fix.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -163,6 +168,11 @@
 			<true/>
 		</dict>
 		<key>48460689192D1FFE005579F9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>484A870B1C3ABE850029F05B</key>
 		<dict>
 			<key>primary</key>
 			<true/>

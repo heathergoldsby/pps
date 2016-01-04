@@ -151,7 +151,7 @@ typedef metapopulation
 , permute_stripes
 , mutation::operators::no_mutation
 , subpopulation_propagule_split_fix_sizeb
-, generational_models::periodic_competition < generational_models::meta_moran_process< >, generational_models::isolated_subpopulations > 
+, generational_models::periodic_competition < generational_models::meta_moran_process< selection::tournament< >, selection::random < >  >, generational_models::isolated_subpopulations >
 , ancestors::default_subpopulation
 , dont_stop
 , fill_metapopulation
@@ -198,6 +198,10 @@ public:
         add_option<TASK_SWITCHING_COST>(this);
         //        add_option<GERM_MUTATION_PER_SITE_P>(this);
         //        add_option<GROUP_REP_THRESHOLD>(this);
+        
+        add_option<TOURNAMENT_SELECTION_K>(this);
+        add_option<TOURNAMENT_SELECTION_N>(this);
+        
         
         
         
