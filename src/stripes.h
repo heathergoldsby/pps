@@ -327,7 +327,8 @@ struct permute_three_stripes : public fitness_function<unary_fitness<double>, no
                 }
             }
         }
-        
+       
+        /*
         total_fit[0] = (not_fit[0] + 1) * (nand_fit[0] + 1) * (ornot_fit[0] + 1);
         total_fit[1] = (not_fit[1] + 1) * (nand_fit[1] + 1) * (ornot_fit[1] + 1);
         total_fit[2] = (not_fit[2] + 1) * (nand_fit[2] + 1) * (ornot_fit[2] + 1);
@@ -343,8 +344,22 @@ struct permute_three_stripes : public fitness_function<unary_fitness<double>, no
         if (tmp_fit < min_fit) {
             tmp_fit = min_fit;
         }
+         */
         
-        return tmp_fit;
+        total_fit[0] = not_fit[0] + nand_fit[0] + ornot_fit[0];
+        total_fit[1] = not_fit[1] + nand_fit[1] + ornot_fit[1];
+        total_fit[2] = not_fit[2] + nand_fit[2] + ornot_fit[2];
+        total_fit[3] = not_fit[3] + nand_fit[3] + ornot_fit[3];
+        
+        double tmp_fit = std::max(total_fit[0], total_fit[1]);
+        tmp_fit = std::max(tmp_fit, total_fit[2]);
+        tmp_fit = std::max(tmp_fit, total_fit[3]);
+        
+        if (tmp_fit < 1.0) tmp_fit = 1.0;
+        
+        double f = std::pow(1.5, tmp_fit);
+        
+        return f;
     }
     
     template <typename SubpopulationEA, typename MetapopulationEA>

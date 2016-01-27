@@ -148,7 +148,7 @@ typedef digital_evolution
 
 typedef metapopulation
 < sea_type
-, permute_stripes
+, permute_three_stripes
 , mutation::operators::no_mutation
 , subpopulation_propagule_split_fix_sizeb
 , generational_models::periodic_competition < generational_models::meta_moran_process< selection::tournament< >, selection::random < >  >, generational_models::isolated_subpopulations >
