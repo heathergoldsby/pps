@@ -257,7 +257,6 @@ std::string get_last_task(int x, int y, EA& ea) {
 struct permute_three_stripes : public fitness_function<unary_fitness<double>, nonstationaryS> {
     template <typename EA>
     int eval_permute_three_stripes(EA& ea) {
-        double num_correct = 0;
         
         
         //    accumulator_set<double, stats<tag::mean, tag::max> > sfit;

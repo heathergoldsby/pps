@@ -136,6 +136,7 @@ namespace ealib {
             datafile df("movie.dat");
             df.write(get<SPATIAL_X>(ea));
             df.write(get<SPATIAL_Y>(ea));
+            df.write(max_fit); 
             df.endl();
             
             typename EA::individual_type best_founder(*best.traits().founder());
