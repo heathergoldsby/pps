@@ -64,7 +64,7 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "-c stripes_ep4.cfg "
+            argument = "-c stripes_ep4.cfg --ea.rng.seed=1 --ea.selection.tournament.n=2 --ea.selection.tournament.k=1"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>
