@@ -343,9 +343,11 @@ struct permute_three_stripes : public fitness_function<unary_fitness<double>, no
         if (tmp_fit < min_fit) {
             tmp_fit = min_fit;
         }
+        
+        double f = pow(1.05, tmp_fit);
 
         
-        return tmp_fit;
+        return f;
     }
     
     template <typename SubpopulationEA, typename MetapopulationEA>
@@ -450,8 +452,12 @@ void eval_permute_three_stripes(EA& ea) {
         tmp_fit = min_fit;
     }
     
+    double f = pow(1.05, tmp_fit);
     
-    put<STRIPE_FIT>(tmp_fit, ea);
+    
+    
+    
+    put<STRIPE_FIT>(f, ea);
     //    // rescale fitness!
     //    double rescaled_fit = (get<FIT_MAX>(ea) - get<FIT_MIN>(ea)) * pow (((tmp_fit - min_fit) / (max_fit - min_fit)), (get<FIT_GAMMA>(ea))) + get<FIT_MIN>(ea);
     //
