@@ -21,29 +21,6 @@ src/stripes_ep4.cpp
 ;
 install dist : stripes_ep4 : <location>$(HOME)/bin ;
 
-exe stripes_ep4_fix :
-src/stripes_ep4_fix.cpp
-/libea//libea
-/libea//libea_runner
-: <include>./include <link>static
-;
-install dist : stripes_ep4_fix : <location>$(HOME)/bin ;
-
-exe stripes_ep4_3_fixed :
-src/stripes_ep4_3_fixed.cpp
-/libea//libea
-/libea//libea_runner
-: <include>./include <link>static
-;
-install dist : stripes_ep4_3_fixed : <location>$(HOME)/bin ;
-
-exe stripes_ep4_3_fixedb :
-src/stripes_ep4_3_fixedb.cpp
-/libea//libea
-/libea//libea_runner
-: <include>./include <link>static
-;
-install dist : stripes_ep4_3_fixedb : <location>$(HOME)/bin ;
 
 
 exe stripes_ep4_3 :
@@ -53,36 +30,6 @@ src/stripes_ep4_3.cpp
 : <include>./include <link>static
 ;
 install dist : stripes_ep4_3 : <location>$(HOME)/bin ;
-
-
-
-
-
-exe stripes_ep4_fix_control :
-src/stripes_ep4_fix_control.cpp
-/libea//libea
-/libea//libea_runner
-: <include>./include <link>static
-;
-install dist : stripes_ep4_fix_control : <location>$(HOME)/bin ;
-
-exe stripes_multi_evo :
-src/stripes_multi_evo.cpp
-/libea//libea
-/libea//libea_runner
-: <include>./include <link>static
-;
-install dist : stripes_multi_evo : <location>$(HOME)/bin ;
-
-exe stripes_multi_evo_big :
-src/stripes_multi_evo_big.cpp
-/libea//libea
-/libea//libea_runner
-: <include>./include <link>static
-;
-install dist : stripes_multi_evo_big : <location>$(HOME)/bin ;
-
-
 
 
 
