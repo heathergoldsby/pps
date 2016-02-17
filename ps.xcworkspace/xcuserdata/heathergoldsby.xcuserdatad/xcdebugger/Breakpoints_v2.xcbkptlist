@@ -20,11 +20,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "src/stripes.h"
-            timestampString = "475782067.881153"
+            timestampString = "477430635.493415"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "625"
-            endingLineNumber = "625"
+            startingLineNumber = "629"
+            endingLineNumber = "629"
             landmarkName = "operator()(MEA&amp; mea)"
             landmarkType = "7">
          </BreakpointContent>
@@ -135,22 +135,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "src/stripes.h"
-            timestampString = "462303098.884554"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "264"
-            endingLineNumber = "264"
-            landmarkName = "eval_permute_three_stripes(EA&amp; ea)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "../ealib/libea/include/ea/digital_evolution/replication.h"
             timestampString = "463538466.107175"
             startingColumnNumber = "9223372036854775807"
@@ -176,31 +160,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "src/stripes.h"
-            timestampString = "475601370.206413"
+            timestampString = "477430635.493415"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "344"
-            endingLineNumber = "344"
-            landmarkName = "eval_permute_three_stripes(EA&amp; ea)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "src/stripes.h"
-            timestampString = "475782067.881153"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "380"
-            endingLineNumber = "380"
+            startingLineNumber = "384"
+            endingLineNumber = "384"
             landmarkName = "eval_permute_three_stripes(EA&amp; ea)"
             landmarkType = "7">
          </BreakpointContent>
@@ -281,6 +249,22 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "29"
             endingLineNumber = "29">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "src/stripes.h"
+            timestampString = "477430667.021936"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "350"
+            endingLineNumber = "350"
+            landmarkName = "eval_permute_three_stripes(EA&amp; ea)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

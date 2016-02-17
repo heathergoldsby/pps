@@ -345,6 +345,10 @@ struct permute_three_stripes : public fitness_function<unary_fitness<double>, no
         }
         
         double f = pow(1.05, tmp_fit);
+        
+        if (f < 0) {
+            int q = 0;
+        }
 
         
         return f;
@@ -458,11 +462,7 @@ void eval_permute_three_stripes(EA& ea) {
     
     
     put<STRIPE_FIT>(f, ea);
-    //    // rescale fitness!
-    //    double rescaled_fit = (get<FIT_MAX>(ea) - get<FIT_MIN>(ea)) * pow (((tmp_fit - min_fit) / (max_fit - min_fit)), (get<FIT_GAMMA>(ea))) + get<FIT_MIN>(ea);
-    //
-    //
-    //    put<STRIPE_FIT>(rescaled_fit,ea);
+
     
 }
 
@@ -931,29 +931,5 @@ struct prop_death_event : death_event<EA> {
         
     }
 };
-
-/*! Output the dominant individual in p123 format.
- */
-LIBEA_ANALYSIS_TOOL(get_dominant) {
-    using namespace ealib;
-    
-    typename EA::individual_type& ind=*analysis::dominant(ea);
-    typename EA::individual_type::individual_ptr_type p = ind.population()[0];
-    typename EA::individual_type::individual_type::hardware_type::genome_type g = ind.population()[0]->genome();
-    
-    
-    int count = 0;
-    for (typename EA::individual_type::genome_type::iterator f=g.begin(); f != g.end(); f++) {
-        //name()
-        std::string s = (ind.isa()[*f])->name();
-        
-        //             repr[0] =  ea.isa()["h_alloc"]; // h_alloc
-
-        std::cout << "repr[" << count << "] = ea.isa()[\"" << s  << "\"];" << std::endl;
-        count ++;
-        
-    }
-    
-}
 
 #endif
