@@ -256,7 +256,7 @@ std::string get_last_task(int x, int y, EA& ea) {
 //! Stripe fitness.
 struct permute_three_stripes : public fitness_function<unary_fitness<double>, nonstationaryS> {
     template <typename EA>
-    int eval_permute_three_stripes(EA& ea) {
+    double eval_permute_three_stripes(EA& ea) {
         
         
         //    accumulator_set<double, stats<tag::mean, tag::max> > sfit;
@@ -344,12 +344,9 @@ struct permute_three_stripes : public fitness_function<unary_fitness<double>, no
             tmp_fit = min_fit;
         }
         
-        double f = pow(1.05, tmp_fit);
+        //double f = pow(1.05, tmp_fit);
+        double f = tmp_fit;
         
-        if (f < 0) {
-            int q = 0;
-        }
-
         
         return f;
     }
@@ -456,12 +453,12 @@ void eval_permute_three_stripes(EA& ea) {
         tmp_fit = min_fit;
     }
     
-    double f = pow(1.05, tmp_fit);
-    
-    
-    
+    //double f = pow(1.05, tmp_fit);
+    double f = tmp_fit;
     
     put<STRIPE_FIT>(f, ea);
+    
+    
 
     
 }
