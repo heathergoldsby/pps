@@ -23,7 +23,7 @@ namespace ealib {
         LIBEA_ANALYSIS_TOOL(movie_for_competitions) {
             
             int update_max = get<METAPOP_COMPETITION_PERIOD>(ea);
-            int max_fit = 0;
+            double max_fit = 0;
             typename EA::individual_type best;
             
             for(typename EA::iterator i=ea.begin(); i!=ea.end(); ++i) {
@@ -107,7 +107,7 @@ namespace ealib {
         LIBEA_ANALYSIS_TOOL(movie_for_three_stripe_competitions) {
             
             int update_max = get<METAPOP_COMPETITION_PERIOD>(ea);
-            int max_fit = 0;
+            double max_fit = 0;
             typename EA::individual_type best;
             
             for(typename EA::iterator i=ea.begin(); i!=ea.end(); ++i) {
