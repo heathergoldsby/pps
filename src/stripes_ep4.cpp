@@ -198,7 +198,8 @@ public:
 //        add_option<GERM_MUTATION_PER_SITE_P>(this);
 //        add_option<GROUP_REP_THRESHOLD>(this);
         
-        
+        add_option<TOURNAMENT_SELECTION_K>(this);
+        add_option<TOURNAMENT_SELECTION_N>(this);
         
         // stripes
 //        add_option<STRIPE_FIT_FUNC>(this);
