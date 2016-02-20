@@ -103,6 +103,25 @@ struct subpopulation_propagule {
 
         }
         
+        
+        
+            for (int x=0; x < get<SPATIAL_X>(mea); ++x) {
+                for (int y=0; y<get<SPATIAL_Y>(mea); ++y){
+                    
+                    //typename EA::individual_type::environment_type::location_type* l = &best_founder.traits().founder()->env().location(x,y);
+                    typename MEA::subpopulation_type::environment_type::location_type l = (p->env().location(x,y));
+                    
+                    
+                    if (l.occupied()) {
+                        std::cout << x << " " << y << std::endl;
+                    }
+                    
+                }
+            }
+        std::cout << std::endl << std::endl;
+
+        
+        
         offspring.insert(offspring.end(),p);
     }
 };
