@@ -20,7 +20,7 @@ using namespace ealib;
 
 #include "stripes.h"
 #include "movie.h"
-#include "subpopulation_propagule.h"
+#include "subpopulation_propagule_split.h"
 
 
 //! Configuration object for an EA.
