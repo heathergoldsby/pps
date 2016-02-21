@@ -69,6 +69,7 @@
 		487ACE231934F7C60016340B /* movie.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = movie.h; sourceTree = "<group>"; };
 		48802FF41B011F9700CD819A /* multibirth_not_nand_ornot_prop_ancestor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = multibirth_not_nand_ornot_prop_ancestor.h; sourceTree = "<group>"; };
 		4888686D1AAF615E00ACAFD9 /* stripes_split.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = stripes_split.h; sourceTree = "<group>"; };
+		48951F4E1C7A3C7D00F7D7F3 /* stripes_multi_evo.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = stripes_multi_evo.cpp; sourceTree = "<group>"; };
 		489918061BF20687002540AE /* mt_propagule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mt_propagule.h; sourceTree = "<group>"; };
 		489918071BF20F63002540AE /* multi_birth_selfrep_not_remote_ancestor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = multi_birth_selfrep_not_remote_ancestor.h; sourceTree = "<group>"; };
 		489918081BF2635C002540AE /* mt.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = mt.cpp; sourceTree = "<group>"; };
@@ -159,6 +160,7 @@
 				48A1E129183F8ED70023C478 /* stripes.h */,
 				4888686D1AAF615E00ACAFD9 /* stripes_split.h */,
 				48AC8AB11937639900DA6945 /* stripes_multi.cpp */,
+				48951F4E1C7A3C7D00F7D7F3 /* stripes_multi_evo.cpp */,
 				48C835FC1AC2D33F004B4D0B /* stripes_ep4.cpp */,
 				481466461C249E0C00751B40 /* stripes_ep4_3.cpp */,
 				487ACE231934F7C60016340B /* movie.h */,
