@@ -204,6 +204,8 @@ public:
     virtual void gather_events(EA& ea) {
         add_event<subpopulation_founder_event>(ea);
         add_event<datafiles::fitness_dat>(ea);
+        add_event<datafiles::propagule_dat>(ea);
+
         
         add_event<task_performed_tracking>(ea);
         add_event<task_switch_tracking>(ea);
