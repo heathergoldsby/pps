@@ -86,7 +86,8 @@ LIBEA_MD_DECL(PARENT, "ea.stripes.parent", int); // 0 - no offspring, ++ offspri
 DIGEVO_INSTRUCTION_DECL(deploy_propagule) {
     
     // If the cell only ever wants to deploy one propagule... use this
-    if (get<DEPLOY_ONE>(ea,0) == 1) {
+//    if (get<DEPLOY_ONE>(ea,0) == 1) {
+    if (get<DEPLOY_ONE>(*p,0) == 1) {
         if(get<PROP_COUNT>(ea,0) > 0) {
             return;
         }
@@ -101,7 +102,8 @@ DIGEVO_INSTRUCTION_DECL(deploy_propagule) {
 
 
 DIGEVO_INSTRUCTION_DECL(deploy_one_propagule) {
-    get<DEPLOY_ONE>(ea,0) = 1;
+//    get<DEPLOY_ONE>(ea,0) = 1;
+    get<DEPLOY_ONE>(*p,0) = 1;
 }
 
 //! Increment the propagule size suggested by the organism.
