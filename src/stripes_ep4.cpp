@@ -6,6 +6,8 @@
 #include <ea/generational_models/periodic_competition.h>
 //#include <ea/generational_models/moran_process.h>
 #include <ea/selection/rank.h>
+#include <ea/selection/proportionate.h>
+
 #include <ea/datafiles/fitness.h>
 #include <ea/digital_evolution/extra_instruction_sets/matrix.h>
 
@@ -152,7 +154,7 @@ typedef metapopulation
 , permute_stripes
 , mutation::operators::no_mutation
 , subpopulation_propagule_split
-, generational_models::periodic_competition < generational_models::meta_moran_process< selection::random< >, selection::rank< > >, generational_models::isolated_subpopulations > // generational_models::moran_process< >, isolated_subpopulations
+, generational_models::periodic_competition < generational_models::meta_moran_process< selection::random< >, selection::proportionate< > >, generational_models::isolated_subpopulations > // generational_models::moran_process< >, isolated_subpopulations
 , ancestors::default_subpopulation
 , dont_stop
 , fill_metapopulation
