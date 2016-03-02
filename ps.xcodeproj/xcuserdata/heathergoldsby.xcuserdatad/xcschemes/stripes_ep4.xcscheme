@@ -64,7 +64,7 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "-c stripes_ep4.cfg  --ea.metapopulation.competition_period=100 --ea.generational_model.moran_process.replacement_rate.p=0.25"
+            argument = "-c stripes_ep4.cfg"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument

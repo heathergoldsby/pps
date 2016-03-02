@@ -90,10 +90,6 @@ struct subpopulation_propagule_split {
             }
         }
         
-        double prop_update = get<PROP_COUNT>(*(parents[0]),0) - num_prop;
-        put<PROP_COUNT>(prop_update, *(parents[0]));
-        
-        
         // update parent prop count
         offspring.insert(offspring.end(),p);
     }

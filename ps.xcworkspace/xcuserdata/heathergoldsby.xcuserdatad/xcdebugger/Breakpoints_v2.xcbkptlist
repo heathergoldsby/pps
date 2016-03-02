@@ -32,39 +32,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "src/subpopulation_propagule_split.h"
-            timestampString = "448999356.057934"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../ealib/libea/include/ea/generational_models/moran_process.h"
             timestampString = "448999548.886976"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "src/meta_moran_process.h"
-            timestampString = "449000071.838599"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "56"
@@ -129,6 +101,38 @@
             endingLineNumber = "381"
             landmarkName = "eval_permute_three_stripes(EA&amp; ea)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "random_death&lt;ealib::metapopulation&lt;ealib::digital_evolution&lt;lifecycle, ealib::recombination::asexual, ealib::weighted_round_robin&lt;ealib::access::unit_priority&gt;, ealib::multibirth_not_nand_prop_ancestor, ealib::empty_facing_neighbor_matrix, ealib::dont_stop, ealib::generate_single_ancestor, ealib::null_trait&gt;, permute_stripes, ealib::mutation::operators::no_mutation, subpopulation_propagule_split, ealib::generational_models::periodic_competition&lt;ealib::generational_models::meta_moran_process&lt;ealib::selection::random&lt;ealib::without_replacementS&gt;, ealib::selection::proportionate&lt;ealib::access::fitness&gt; &gt;, ealib::generational_models::isolated_subpopulations&gt;, ealib::ancestors::default_subpopulation, ealib::dont_stop, ealib::fill_metapopulation, ealib::default_lifecycle, subpop_trait&gt; &gt;::random_death(ealib::metapopulation&lt;ealib::digital_evolution&lt;lifecycle, ealib::recombination::asexual, ealib::weighted_round_robin&lt;ealib::access::unit_priority&gt;, ealib::multibirth_not_nand_prop_ancestor, ealib::empty_facing_neighbor_matrix, ealib::dont_stop, ealib::generate_single_ancestor, ealib::null_trait&gt;, permute_stripes, ealib::mutation::operators::no_mutation, subpopulation_propagule_split, ealib::generational_models::periodic_competition&lt;ealib::generational_models::meta_moran_process&lt;ealib::selection::random&lt;ealib::without_replacementS&gt;, ealib::selection::proportionate&lt;ealib::access::fitness&gt; &gt;, ealib::generational_models::isolated_subpopulations&gt;, ealib::ancestors::default_subpopulation, ealib::dont_stop, ealib::fill_metapopulation, ealib::default_lifecycle, subpop_trait&gt;&amp;)"
+                  moduleName = "stripes_split copy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/heathergoldsby/Desktop/research/code/pps/src/stripes.h"
+                  timestampString = "478625613.528304"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "515"
+                  endingLineNumber = "515"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "random_death&lt;ealib::metapopulation&lt;ealib::digital_evolution&lt;lifecycle, ealib::recombination::asexual, ealib::weighted_round_robin&lt;ealib::access::unit_priority&gt;, ealib::multibirth_not_nand_prop_ancestor, ealib::empty_facing_neighbor_matrix, ealib::dont_stop, ealib::generate_single_ancestor, ealib::null_trait&gt;, permute_stripes, ealib::mutation::operators::no_mutation, subpopulation_propagule_split, ealib::generational_models::periodic_competition&lt;ealib::generational_models::meta_moran_process&lt;ealib::selection::random&lt;ealib::without_replacementS&gt;, ealib::selection::proportionate&lt;ealib::access::fitness&gt; &gt;, ealib::generational_models::isolated_subpopulations&gt;, ealib::ancestors::default_subpopulation, ealib::dont_stop, ealib::fill_metapopulation, ealib::default_lifecycle, subpop_trait&gt; &gt;::random_death(ealib::metapopulation&lt;ealib::digital_evolution&lt;lifecycle, ealib::recombination::asexual, ealib::weighted_round_robin&lt;ealib::access::unit_priority&gt;, ealib::multibirth_not_nand_prop_ancestor, ealib::empty_facing_neighbor_matrix, ealib::dont_stop, ealib::generate_single_ancestor, ealib::null_trait&gt;, permute_stripes, ealib::mutation::operators::no_mutation, subpopulation_propagule_split, ealib::generational_models::periodic_competition&lt;ealib::generational_models::meta_moran_process&lt;ealib::selection::random&lt;ealib::without_replacementS&gt;, ealib::selection::proportionate&lt;ealib::access::fitness&gt; &gt;, ealib::generational_models::isolated_subpopulations&gt;, ealib::ancestors::default_subpopulation, ealib::dont_stop, ealib::fill_metapopulation, ealib::default_lifecycle, subpop_trait&gt;&amp;)"
+                  moduleName = "stripes_split copy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/heathergoldsby/Desktop/research/code/pps/src/stripes.h"
+                  timestampString = "478625613.528745"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "515"
+                  endingLineNumber = "515"
+                  offsetFromSymbolStart = "32">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -166,38 +170,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "src/stripes.h"
-            timestampString = "470524040.532958"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
-            landmarkName = "DIGEVO_INSTRUCTION_DECL(deploy_propagule)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "src/stripes.h"
-            timestampString = "470605181.131669"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
-            landmarkName = "DIGEVO_INSTRUCTION_DECL(deploy_one_propagule)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -207,6 +179,38 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "29"
             endingLineNumber = "29">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "src/stripes.h"
+            timestampString = "478624749.028326"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
+            landmarkName = "DIGEVO_INSTRUCTION_DECL(deploy_one_propagule)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "src/stripes.h"
+            timestampString = "478624929.164033"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
+            landmarkName = "DIGEVO_INSTRUCTION_DECL(deploy_propagule)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -217,7 +217,7 @@ public:
         add_option<METAPOP_COMPETITION_PERIOD>(this);
 //        add_option<PROPAGULE_FAIL_PROB>(this);
 //        add_option<PROPAGULE_COST>(this);
-//        add_option<DEATH_PROB>(this);
+        add_option<DEATH_PROB>(this);
 //        add_option<SL_PERIOD>(this);
 //        add_option<NUM_SWAPS>(this);
 //        add_option<JUV_PERIOD>(this);
@@ -238,6 +238,8 @@ public:
         add_event<subpopulation_founder_event>(ea);
         add_event<datafiles::fitness_dat>(ea);
         add_event<datafiles::propagule_dat>(ea);
+        add_event<random_death>(ea);
+
 
 //        add_event<stripes_split>(ea);
         add_event<task_performed_tracking>(ea);
