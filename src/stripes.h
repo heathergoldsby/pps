@@ -530,9 +530,12 @@ struct random_death : end_of_update_event<EA> {
                 for(typename EA::iterator i=ea.begin(); i!=ea.end(); ++i) {
                     for(typename EA::subpopulation_type::population_type::iterator j=i->population().begin(); j!=i->population().end(); ++j) {
                         // get prob...
-                        if (ea.rng().p() < get<DEATH_PROB>(ea,0)) {
-                            (*j)->alive() = false;
-                            i->events().death(**j,*i);
+                        if ((*j)-alive()) {
+                            if (ea.rng().p() < get<DEATH_PROB>(ea,0)) {
+                                (*j)->alive() = false;
+                                i->events().death(**j,*i);
+                                
+                            }
                         }
                     }
                     
