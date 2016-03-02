@@ -44,6 +44,7 @@ struct subpopulation_propagule_split {
         double num_prop = ceil(get<PROP_COUNT>(*(parents[0]),0) / 2.0);
         
         if (num_prop == 0) return;
+        
 
         // get a new subpopulation:
         typename MEA::individual_ptr_type p = mea.make_individual();
@@ -89,6 +90,11 @@ struct subpopulation_propagule_split {
             }
         }
         
+        double prop_update = get<PROP_COUNT>(*(parents[0]),0) - num_prop;
+        put<PROP_COUNT>(prop_update, *(parents[0]));
+        
+        
+        // update parent prop count
         offspring.insert(offspring.end(),p);
     }
 };
