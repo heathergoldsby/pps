@@ -83,7 +83,7 @@ struct subpopulation_propagule_split {
                 
                 
                 ++num_moved;
-                
+                get<PROP_COUNT>*(parents[0]))--; 
             }
             if (num_moved == num_prop) {
                 break;
