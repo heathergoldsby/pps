@@ -20,11 +20,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "src/stripes.h"
-            timestampString = "477431598.60009"
+            timestampString = "478659517.827292"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "622"
-            endingLineNumber = "622"
+            startingLineNumber = "639"
+            endingLineNumber = "639"
             landmarkName = "operator()(MEA&amp; mea)"
             landmarkType = "7">
          </BreakpointContent>
@@ -94,11 +94,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "src/stripes.h"
-            timestampString = "477431598.60009"
+            timestampString = "478659517.827292"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "381"
-            endingLineNumber = "381"
+            startingLineNumber = "395"
+            endingLineNumber = "395"
             landmarkName = "eval_permute_three_stripes(EA&amp; ea)"
             landmarkType = "7">
             <Locations>
@@ -110,11 +110,11 @@
                   moduleName = "stripes_split copy"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/heathergoldsby/Desktop/research/code/pps/src/stripes.h"
-                  timestampString = "478625613.528304"
+                  timestampString = "478659519.998963"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "515"
-                  endingLineNumber = "515"
+                  startingLineNumber = "529"
+                  endingLineNumber = "529"
                   offsetFromSymbolStart = "20">
                </Location>
                <Location
@@ -125,11 +125,11 @@
                   moduleName = "stripes_split copy"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/heathergoldsby/Desktop/research/code/pps/src/stripes.h"
-                  timestampString = "478625613.528745"
+                  timestampString = "478659519.999411"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "515"
-                  endingLineNumber = "515"
+                  startingLineNumber = "529"
+                  endingLineNumber = "529"
                   offsetFromSymbolStart = "32">
                </Location>
             </Locations>
@@ -210,22 +210,6 @@
             startingLineNumber = "91"
             endingLineNumber = "91"
             landmarkName = "DIGEVO_INSTRUCTION_DECL(deploy_propagule)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "src/stripes.h"
-            timestampString = "478626600.921396"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "533"
-            endingLineNumber = "533"
-            landmarkName = "operator()(EA&amp; ea)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

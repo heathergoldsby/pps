@@ -165,6 +165,13 @@ struct ps_birth_event : birth_event<EA> {
 struct permute_stripes : public fitness_function<unary_fitness<double>, nonstationaryS> {
     template <typename EA>
     int eval_permute_stripes(EA& ea) {
+        
+        // sterile
+        if(get<PROP_COUNT>(ea,0) == 0) {
+            return 1.0;
+        }
+
+        
         // vert stripes
         double one_fit_not = 0;
         double one_fit_nand = 0;
@@ -261,6 +268,10 @@ struct permute_three_stripes : public fitness_function<unary_fitness<double>, no
     template <typename EA>
     double eval_permute_three_stripes(EA& ea) {
         
+        // sterile
+        if(get<PROP_COUNT>(ea,0) == 0) {
+            return 1.0;
+        }
         
         //    accumulator_set<double, stats<tag::mean, tag::max> > sfit;
         int num_neighbors = 4;
@@ -369,8 +380,11 @@ struct permute_three_stripes : public fitness_function<unary_fitness<double>, no
 template <typename EA>
 void eval_permute_three_stripes(EA& ea) {
     
-    double num_correct = 0;
     
+    // sterile
+    if(get<PROP_COUNT>(ea,0) == 0) {
+        return 1.0;
+    }
     
     //    accumulator_set<double, stats<tag::mean, tag::max> > sfit;
     int num_neighbors = 4;
@@ -530,7 +544,7 @@ struct random_death : end_of_update_event<EA> {
                 for(typename EA::iterator i=ea.begin(); i!=ea.end(); ++i) {
                     for(typename EA::subpopulation_type::population_type::iterator j=i->population().begin(); j!=i->population().end(); ++j) {
                         // get prob...
-                        if ((*j)-alive()) {
+                        if ((*j)->alive()) {
                             if (ea.rng().p() < get<DEATH_PROB>(ea,0)) {
                                 (*j)->alive() = false;
                                 i->events().death(**j,*i);
@@ -748,57 +762,63 @@ struct stripes_ep3 : end_of_update_event<MEA> {
 };
 
 
-template <typename EA>
-int int_get_prop_size(EA& ea) {
-    int ps = 0;
-    accumulator_set<double, stats<tag::median> > p_size;
-    
-    switch (get<PROP_SIZE_OPTION>(ea,0)) {
-        case 0: { // config
-            ps = get<PROP_SIZE_OPTION>(ea,0);
-            break;
-        }
-        case 1:{ // vote
-            for (int x=0; x < get<SPATIAL_X>(ea); ++x) {
-                for (int y=0; y<get<SPATIAL_Y>(ea); ++y){
-                    typename EA::environment_type::location_type* l = &ea.env().location(x,y);
-
-                    if (!l->occupied()) {
-                        continue;
-                    }
-                    
-                    p_size(get<PROP_SIZE>(*(l->inhabitant()),get<NUM_PROPAGULE_CELL>(ea)));
-                    
-                }
-            }
-            
-            ps = median(p_size);
-            if (ps > get<POPULATION_SIZE>(ea)) { ps = get<POPULATION_SIZE>(ea); }
-            break;
-        }
-        case 2: {// num germ
-            for (int x=0; x < get<SPATIAL_X>(ea); ++x) {
-                for (int y=0; y<get<SPATIAL_Y>(ea); ++y){
-                    typename EA::environment_type::location_type* l = &ea.env().location(x,y);
-                    if (!l->occupied()) {
-                        continue;
-                    }
-                    
-                    if (get<GERM_STATUS>(*(l->inhabitant()),1)) {
-                        ++ps;
-                    }
-                }
-            }
-            
-            break;
-        }
-    }
-    return ps;
-    
-}
+//template <typename EA>
+//int int_get_prop_size(EA& ea) {
+//    int ps = 0;
+//    accumulator_set<double, stats<tag::median> > p_size;
+//    
+//    switch (get<PROP_SIZE_OPTION>(ea,0)) {
+//        case 0: { // config
+//            ps = get<PROP_SIZE_OPTION>(ea,0);
+//            break;
+//        }
+//        case 1:{ // vote
+//            for (int x=0; x < get<SPATIAL_X>(ea); ++x) {
+//                for (int y=0; y<get<SPATIAL_Y>(ea); ++y){
+//                    typename EA::environment_type::location_type* l = &ea.env().location(x,y);
+//
+//                    if (!l->occupied()) {
+//                        continue;
+//                    }
+//                    
+//                    p_size(get<PROP_SIZE>(*(l->inhabitant()),get<NUM_PROPAGULE_CELL>(ea)));
+//                    
+//                }
+//            }
+//            
+//            ps = median(p_size);
+//            if (ps > get<POPULATION_SIZE>(ea)) { ps = get<POPULATION_SIZE>(ea); }
+//            break;
+//        }
+//        case 2: {// num germ
+//            for (int x=0; x < get<SPATIAL_X>(ea); ++x) {
+//                for (int y=0; y<get<SPATIAL_Y>(ea); ++y){
+//                    typename EA::environment_type::location_type* l = &ea.env().location(x,y);
+//                    if (!l->occupied()) {
+//                        continue;
+//                    }
+//                    
+//                    if (get<GERM_STATUS>(*(l->inhabitant()),1)) {
+//                        ++ps;
+//                    }
+//                }
+//            }
+//            
+//            break;
+//        }
+//    }
+//    return ps;
+//    
+//}
 
 template <typename EA>
 void eval_permute_stripes(EA& ea) {
+    
+    // sterile
+    if(get<PROP_COUNT>(ea,0) == 0) {
+        return 1.0;
+    }
+    
     // vert stripes
     double one_fit_not = 0;
     double one_fit_nand = 0;
