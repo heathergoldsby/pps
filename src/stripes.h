@@ -383,7 +383,8 @@ void eval_permute_three_stripes(EA& ea) {
     
     // sterile
     if(get<PROP_COUNT>(ea,0) == 0) {
-        return 1.0;
+        put<STRIPE_FIT>(1.0, ea);
+        return;
     }
     
     //    accumulator_set<double, stats<tag::mean, tag::max> > sfit;
@@ -816,7 +817,8 @@ void eval_permute_stripes(EA& ea) {
     
     // sterile
     if(get<PROP_COUNT>(ea,0) == 0) {
-        return 1.0;
+            put<STRIPE_FIT>(1.0, ea);
+            return;
     }
     
     // vert stripes
