@@ -37,7 +37,9 @@ namespace ealib {
             propagule_dat(EA& ea) : record_statistics_event<EA>(ea), _df("propagule.dat") {
                 _df.add_field("update")
                 .add_field("mean_propagule_size")
-                .add_field("mean_multicell_size");
+                .add_field("mean_multicell_size")
+                .add_field("mean_act_propagule_size");
+
 //                .add_field("mean_fitness")
 //                .add_field("max_fitness");
             }
@@ -48,11 +50,28 @@ namespace ealib {
             virtual void operator()(EA& ea) {
                 using namespace boost::accumulators;
                 accumulator_set<double, stats<tag::mean> > propagule_size;
-                accumulator_set<double, stats<tag::mean> > multicell_size;
-                
-                for(typename EA::iterator i=ea.begin(); i!=ea.end(); ++i) {
-                    double num_prop = ceil(get<PROP_COUNT>(*i,0) / 2.0);
+                accumulator_set<double, stats<tag::mean> > propagule_size_act;
 
+                accumulator_set<double, stats<tag::mean> > multicell_size;
+                typedef typename EA::subpopulation_type::population_type propagule_type;
+                
+                int prop_count;
+                for(typename EA::iterator i=ea.begin(); i!=ea.end(); ++i) {
+                    prop_count = 0;
+                    for(typename propagule_type::iterator j=i->population().begin(); j!=i->population().end(); ++j) {
+                        if ((*j)->alive()) {
+                            if (get<IS_PROPAGULE>(**j,0) == 2) {
+                                prop_count++;
+                            }
+                        }
+                        
+                    }
+                    
+                    // (*j)->alive()
+                    
+                    
+                    double num_prop = ceil(get<PROP_COUNT>(*i,0) / 2.0);
+                    propagule_size_act(prop_count);
                     propagule_size(num_prop);
                     multicell_size(i->size());
                 }
@@ -60,6 +79,7 @@ namespace ealib {
                 _df.write(ea.current_update())
                 .write(mean(propagule_size))
                 .write(mean(multicell_size))
+                .write(mean(propagule_size_act))
                 .endl();
             }
             
