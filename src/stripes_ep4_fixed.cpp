@@ -191,7 +191,7 @@ public:
         add_option<MORAN_REPLACEMENT_RATE_P>(this);
         
         add_option<ANALYSIS_INPUT>(this);
-        //        add_option<NUM_PROPAGULE_GERM>(this);
+        add_option<NUM_PROPAGULE_GERM>(this);
         //        add_option<NUM_PROPAGULE_CELL>(this);
         
         // ts specific options
