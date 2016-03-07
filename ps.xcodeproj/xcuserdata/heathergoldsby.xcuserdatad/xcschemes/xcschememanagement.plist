@@ -7,7 +7,7 @@
 		<key>mt.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>23</integer>
+			<integer>20</integer>
 		</dict>
 		<key>stripes_ep4.xcscheme</key>
 		<dict>
@@ -17,7 +17,12 @@
 		<key>stripes_ep4_3.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>26</integer>
+			<integer>21</integer>
+		</dict>
+		<key>stripes_ep4_fixed.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>23</integer>
 		</dict>
 		<key>stripes_multi.xcscheme</key>
 		<dict>
@@ -27,7 +32,7 @@
 		<key>stripes_multi_evo.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>29</integer>
+			<integer>22</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
@@ -123,6 +128,11 @@
 			<true/>
 		</dict>
 		<key>481F1C891A7129DA00153768</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>481F3BFC1C8DCA4D00325485</key>
 		<dict>
 			<key>primary</key>
 			<true/>
