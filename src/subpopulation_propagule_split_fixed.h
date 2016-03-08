@@ -49,11 +49,11 @@ struct subpopulation_propagule_split_fixed {
             prop_size = parents[0]->size();
         }
         
-        if (prop_size > get<PROP_COUNT>(*(parents[0]),0)) {
-            prop_size = get<PROP_COUNT>(*(parents[0]),0);
-        }
-        
-        
+//        if (prop_size > get<PROP_COUNT>(*(parents[0]),0)) {
+//            prop_size = get<PROP_COUNT>(*(parents[0]),0);
+//        }
+//        
+//        
         
         // get a new subpopulation:
         typename MEA::individual_ptr_type p = mea.make_individual();
@@ -73,7 +73,7 @@ struct subpopulation_propagule_split_fixed {
         }
         
         for(typename propagule_type::iterator j=parents[0]->population().begin(); j!=parents[0]->population().end(); ++j) {
-            if ((get<IS_PROPAGULE>(**j, 0) == 2) && (*j)->alive()) {
+            if ((*j)->alive()) {
 
                 typename MEA::subpopulation_type::genome_type r((*j)->genome().begin(),
                                                                 (*j)->genome().begin()+(*j)->hw().original_size());
