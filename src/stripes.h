@@ -67,6 +67,7 @@ LIBEA_MD_DECL(NUM_SWAPS, "ea.stripes.num_swaps", int);
 LIBEA_MD_DECL(PROP_COUNT, "ea.stripes.prop_count", int);
 LIBEA_MD_DECL(JUV_PERIOD, "ea.stripes.juv_period", int);
 LIBEA_MD_DECL(DEPLOY_ONE, "ea.stripes.deploy_one", int);
+LIBEA_MD_DECL(CELL_COUNT_AT_SEQUESTER, "ea.stripes.cell_count_at_sequester", int);
 
 
 LIBEA_MD_DECL(PARENT, "ea.stripes.parent", int); // 0 - no offspring, ++ offspring.
@@ -96,6 +97,7 @@ DIGEVO_INSTRUCTION_DECL(deploy_propagule) {
     if (get<IS_PROPAGULE>(*p,0) != 2) {
         put<IS_PROPAGULE>(2, *p);
         get<PROP_COUNT>(ea,0) += 1;
+        put<CELL_COUNT_AT_SEQUESTER>(ea.size(), *p);
     }
 }
 

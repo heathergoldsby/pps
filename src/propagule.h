@@ -51,17 +51,23 @@ namespace ealib {
                 using namespace boost::accumulators;
                 accumulator_set<double, stats<tag::mean> > propagule_size;
                 accumulator_set<double, stats<tag::mean> > propagule_size_act;
+                accumulator_set<double, stats<tag::mean> > prop_count_sequest_all;
 
                 accumulator_set<double, stats<tag::mean> > multicell_size;
                 typedef typename EA::subpopulation_type::population_type propagule_type;
                 
                 int prop_count;
                 for(typename EA::iterator i=ea.begin(); i!=ea.end(); ++i) {
+                    accumulator_set<double, stats<tag::mean> > prop_count_sequest;
+
                     prop_count = 0;
                     for(typename propagule_type::iterator j=i->population().begin(); j!=i->population().end(); ++j) {
                         if ((*j)->alive()) {
                             if (get<IS_PROPAGULE>(**j,0) == 2) {
                                 prop_count++;
+                                
+                                prop_count_sequest(get<CELL_COUNT_AT_SEQUESTER>(**j));
+                                
                             }
                         }
                         
@@ -74,6 +80,7 @@ namespace ealib {
                     propagule_size_act(prop_count);
                     propagule_size(num_prop);
                     multicell_size(i->size());
+                    prop_count_sequest_all(mean(prop_count_sequest));
                 }
                 
                 _df.write(ea.current_update())
