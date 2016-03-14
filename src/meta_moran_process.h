@@ -55,6 +55,12 @@ namespace ealib {
                 // how many survivors?
                 std::size_t n = static_cast<std::size_t>((1.0 - get<MORAN_REPLACEMENT_RATE_P>(ea)) * get<METAPOPULATION_SIZE>(ea));
                 
+                for(typename EA::iterator i=ea.begin(); i!=ea.end(); ++i) {
+                    recalculate_fitness(*i, ea);
+
+                }
+                
+                
                 // select individuals for survival:
                 Population survivors;
                 select_n<survivor_selection_type>(population, survivors, n, ea);

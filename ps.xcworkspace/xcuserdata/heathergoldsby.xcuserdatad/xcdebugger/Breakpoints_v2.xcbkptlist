@@ -90,54 +90,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "src/stripes.h"
-            timestampString = "478659517.827292"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "395"
-            endingLineNumber = "395"
-            landmarkName = "eval_permute_three_stripes(EA&amp; ea)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "random_death&lt;ealib::metapopulation&lt;ealib::digital_evolution&lt;lifecycle, ealib::recombination::asexual, ealib::weighted_round_robin&lt;ealib::access::unit_priority&gt;, ealib::multibirth_not_nand_prop_ancestor, ealib::empty_facing_neighbor_matrix, ealib::dont_stop, ealib::generate_single_ancestor, ealib::null_trait&gt;, permute_stripes, ealib::mutation::operators::no_mutation, subpopulation_propagule_split, ealib::generational_models::periodic_competition&lt;ealib::generational_models::meta_moran_process&lt;ealib::selection::random&lt;ealib::without_replacementS&gt;, ealib::selection::proportionate&lt;ealib::access::fitness&gt; &gt;, ealib::generational_models::isolated_subpopulations&gt;, ealib::ancestors::default_subpopulation, ealib::dont_stop, ealib::fill_metapopulation, ealib::default_lifecycle, subpop_trait&gt; &gt;::random_death(ealib::metapopulation&lt;ealib::digital_evolution&lt;lifecycle, ealib::recombination::asexual, ealib::weighted_round_robin&lt;ealib::access::unit_priority&gt;, ealib::multibirth_not_nand_prop_ancestor, ealib::empty_facing_neighbor_matrix, ealib::dont_stop, ealib::generate_single_ancestor, ealib::null_trait&gt;, permute_stripes, ealib::mutation::operators::no_mutation, subpopulation_propagule_split, ealib::generational_models::periodic_competition&lt;ealib::generational_models::meta_moran_process&lt;ealib::selection::random&lt;ealib::without_replacementS&gt;, ealib::selection::proportionate&lt;ealib::access::fitness&gt; &gt;, ealib::generational_models::isolated_subpopulations&gt;, ealib::ancestors::default_subpopulation, ealib::dont_stop, ealib::fill_metapopulation, ealib::default_lifecycle, subpop_trait&gt;&amp;)"
-                  moduleName = "stripes_split copy"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/heathergoldsby/Desktop/research/code/pps/src/stripes.h"
-                  timestampString = "478659519.998963"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "529"
-                  endingLineNumber = "529"
-                  offsetFromSymbolStart = "20">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "random_death&lt;ealib::metapopulation&lt;ealib::digital_evolution&lt;lifecycle, ealib::recombination::asexual, ealib::weighted_round_robin&lt;ealib::access::unit_priority&gt;, ealib::multibirth_not_nand_prop_ancestor, ealib::empty_facing_neighbor_matrix, ealib::dont_stop, ealib::generate_single_ancestor, ealib::null_trait&gt;, permute_stripes, ealib::mutation::operators::no_mutation, subpopulation_propagule_split, ealib::generational_models::periodic_competition&lt;ealib::generational_models::meta_moran_process&lt;ealib::selection::random&lt;ealib::without_replacementS&gt;, ealib::selection::proportionate&lt;ealib::access::fitness&gt; &gt;, ealib::generational_models::isolated_subpopulations&gt;, ealib::ancestors::default_subpopulation, ealib::dont_stop, ealib::fill_metapopulation, ealib::default_lifecycle, subpop_trait&gt; &gt;::random_death(ealib::metapopulation&lt;ealib::digital_evolution&lt;lifecycle, ealib::recombination::asexual, ealib::weighted_round_robin&lt;ealib::access::unit_priority&gt;, ealib::multibirth_not_nand_prop_ancestor, ealib::empty_facing_neighbor_matrix, ealib::dont_stop, ealib::generate_single_ancestor, ealib::null_trait&gt;, permute_stripes, ealib::mutation::operators::no_mutation, subpopulation_propagule_split, ealib::generational_models::periodic_competition&lt;ealib::generational_models::meta_moran_process&lt;ealib::selection::random&lt;ealib::without_replacementS&gt;, ealib::selection::proportionate&lt;ealib::access::fitness&gt; &gt;, ealib::generational_models::isolated_subpopulations&gt;, ealib::ancestors::default_subpopulation, ealib::dont_stop, ealib::fill_metapopulation, ealib::default_lifecycle, subpop_trait&gt;&amp;)"
-                  moduleName = "stripes_split copy"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/heathergoldsby/Desktop/research/code/pps/src/stripes.h"
-                  timestampString = "478659519.999411"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "529"
-                  endingLineNumber = "529"
-                  offsetFromSymbolStart = "32">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
