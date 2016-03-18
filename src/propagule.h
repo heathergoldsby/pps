@@ -38,6 +38,7 @@ namespace ealib {
                 _df.add_field("update")
                 .add_field("mean_propagule_size")
                 .add_field("mean_multicell_size")
+                .add_field("mean_cell_count_sequester")
                 .add_field("mean_act_propagule_size");
 
 //                .add_field("mean_fitness")
@@ -87,6 +88,7 @@ namespace ealib {
                 .write(mean(propagule_size))
                 .write(mean(multicell_size))
                 .write(mean(propagule_size_act))
+                .write(mean(prop_count_sequest_all))
                 .endl();
             }
             
