@@ -153,7 +153,7 @@ typedef metapopulation
 < sea_type
 , permute_stripes
 , mutation::operators::no_mutation
-, subpopulation_propagule_split_fixed_pick
+, subpopulation_propagule_split_fixed
 , generational_models::periodic_competition < generational_models::meta_moran_process< selection::random< >, selection::proportionate< > >, generational_models::isolated_subpopulations > // generational_models::moran_process< >, isolated_subpopulations
 , ancestors::default_subpopulation
 , dont_stop

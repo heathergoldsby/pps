@@ -45,8 +45,8 @@ struct subpopulation_propagule_split_fixed {
         // the propagule's composition is clonal.
         std::size_t prop_size = get<NUM_PROPAGULE_GERM>(mea,1);
         assert(prop_size > 0);
-        if (prop_size > parents[0]->size()) {
-            prop_size = parents[0]->size();
+        if (prop_size > (parents[0]->size() / 2.0)) {
+            return;
         }
         
 //        if (prop_size > get<PROP_COUNT>(*(parents[0]),0)) {
