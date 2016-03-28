@@ -153,7 +153,7 @@ typedef metapopulation
 < sea_type
 , permute_stripes
 , mutation::operators::no_mutation
-, subpopulation_propagule_split_fixed
+, subpopulation_propagule_split_fixed_partial_pick
 , generational_models::periodic_competition < generational_models::meta_moran_process< selection::random< >, selection::proportionate< > >, generational_models::isolated_subpopulations > // generational_models::moran_process< >, isolated_subpopulations
 , ancestors::default_subpopulation
 , dont_stop
@@ -238,7 +238,7 @@ public:
         add_event<subpopulation_founder_event>(ea);
         add_event<datafiles::fitness_dat>(ea);
         add_event<datafiles::propagule_dat>(ea);
-        add_event<random_death>(ea);
+        //add_event<random_death>(ea);
         
         
         //        add_event<stripes_split>(ea);
