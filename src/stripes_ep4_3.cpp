@@ -147,6 +147,7 @@ typedef digital_evolution
 
 // orig select: , generational_models::periodic_competition < generational_models::meta_moran_process< selection::random< >, selection::rank< > >, generational_models::isolated_subpopulations >
 // , generational_models::periodic_competition < generational_models::meta_moran_process< selection::tournament< >, selection::random < > >, generational_models::isolated_subpopulations >
+//, generational_models::periodic_competition < generational_models::meta_moran_process< selection::random< >, selection::proportionate< > >, generational_models::isolated_subpopulations > // generational_models::moran_process< >, isolated_subpopulations
 
 
 typedef metapopulation

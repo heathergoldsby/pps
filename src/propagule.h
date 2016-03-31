@@ -38,7 +38,6 @@ namespace ealib {
                 _df.add_field("update")
                 .add_field("mean_propagule_size")
                 .add_field("mean_multicell_size")
-                .add_field("mean_cell_count_sequester")
                 .add_field("mean_act_propagule_size");
 
 //                .add_field("mean_fitness")
@@ -67,8 +66,6 @@ namespace ealib {
                             if (get<IS_PROPAGULE>(**j,0) == 2) {
                                 prop_count++;
                                 
-                                prop_count_sequest(get<CELL_COUNT_AT_SEQUESTER>(**j));
-                                
                             }
                         }
                         
@@ -81,14 +78,12 @@ namespace ealib {
                     propagule_size_act(prop_count);
                     propagule_size(num_prop);
                     multicell_size(i->size());
-                    prop_count_sequest_all(mean(prop_count_sequest));
                 }
                 
                 _df.write(ea.current_update())
                 .write(mean(propagule_size))
                 .write(mean(multicell_size))
                 .write(mean(propagule_size_act))
-                .write(mean(prop_count_sequest_all))
                 .endl();
             }
             
