@@ -38,7 +38,8 @@ namespace ealib {
                 _df.add_field("update")
                 .add_field("mean_propagule_size")
                 .add_field("mean_multicell_size")
-                .add_field("mean_act_propagule_size");
+                .add_field("mean_act_propagule_size")
+                .add_field("num_zero_prop");
 
 //                .add_field("mean_fitness")
 //                .add_field("max_fitness");
@@ -51,9 +52,10 @@ namespace ealib {
                 using namespace boost::accumulators;
                 accumulator_set<double, stats<tag::mean> > propagule_size;
                 accumulator_set<double, stats<tag::mean> > propagule_size_act;
-                accumulator_set<double, stats<tag::mean> > prop_count_sequest_all;
-
                 accumulator_set<double, stats<tag::mean> > multicell_size;
+                
+                int num_zero_prop = 0;
+                
                 typedef typename EA::subpopulation_type::population_type propagule_type;
                 
                 int prop_count;
@@ -71,6 +73,10 @@ namespace ealib {
                         
                     }
                     
+                    if (prop_count == 0) {
+                        num_zero_prop++;
+                    }
+                    
                     // (*j)->alive()
                     
                     
@@ -84,6 +90,7 @@ namespace ealib {
                 .write(mean(propagule_size))
                 .write(mean(multicell_size))
                 .write(mean(propagule_size_act))
+                .write(num_zero_prop)
                 .endl();
             }
             
