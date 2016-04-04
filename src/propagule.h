@@ -73,7 +73,7 @@ namespace ealib {
                         
                     }
                     
-                    if (prop_count == 0) {
+                    if (prop_count == 1) {
                         num_zero_prop++;
                     }
                     

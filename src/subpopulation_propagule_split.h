@@ -43,7 +43,10 @@ struct subpopulation_propagule_split {
     
         double num_prop = ceil(get<PROP_COUNT>(*(parents[0]),0) / 2.0);
         
-        if (num_prop == 0) return;
+        if (num_prop == 0) {
+            std::cout << "update: " << mea.current_update() << " prop 0 " << std::endl;
+            return;
+        }
         
 
         // get a new subpopulation:
