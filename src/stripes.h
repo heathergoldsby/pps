@@ -97,7 +97,6 @@ DIGEVO_INSTRUCTION_DECL(deploy_propagule) {
     if (get<IS_PROPAGULE>(*p,0) != 2) {
         put<IS_PROPAGULE>(2, *p);
         get<PROP_COUNT>(ea,0) += 1;
-        put<CELL_COUNT_AT_SEQUESTER>(ea.size(), *p);
     }
 }
 
@@ -167,6 +166,7 @@ struct ps_birth_event : birth_event<EA> {
 struct permute_stripes : public fitness_function<unary_fitness<double>, nonstationaryS> {
     template <typename EA>
     int eval_permute_stripes(EA& ea) {
+        
         
         // sterile
         if(get<PROP_COUNT>(ea,0) == 0) {
@@ -240,7 +240,8 @@ struct permute_stripes : public fitness_function<unary_fitness<double>, nonstati
         tmp_fit = std::max(tmp_fit, tmp_five_fit);
         tmp_fit = std::max(tmp_fit, tmp_six_fit);
         
-        return tmp_fit;
+        //return tmp_fit;
+        return num_org;
     }
     
     template <typename SubpopulationEA, typename MetapopulationEA>
