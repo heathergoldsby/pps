@@ -385,7 +385,7 @@ void eval_permute_three_stripes(EA& ea) {
     
     // sterile
     if(get<PROP_COUNT>(ea,0) == 0) {
-        put<STRIPE_FIT>(1.0, ea);
+        put<STRIPE_FIT>(0.0, ea);
         return;
     }
     
@@ -819,7 +819,7 @@ void eval_permute_stripes(EA& ea) {
     
     // sterile
     if(get<PROP_COUNT>(ea,0) == 0) {
-            put<STRIPE_FIT>(1.0, ea);
+            put<STRIPE_FIT>(0.0, ea);
             return;
     }
     
