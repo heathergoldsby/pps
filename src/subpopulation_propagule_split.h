@@ -43,11 +43,11 @@ struct subpopulation_propagule_split {
     
         double num_prop = ceil(get<PROP_COUNT>(*(parents[0]),0) / 2.0);
         
-        if (num_prop == 0) {
-            std::cout << "update: " << mea.current_update() << " prop 0 " << std::endl;
-            return;
-        }
-        
+//        if (num_prop == 0) {
+//            std::cout << "update: " << mea.current_update() << " prop 0 " << std::endl;
+//            return;
+//        }
+//        
 
         // get a new subpopulation:
         typename MEA::individual_ptr_type p = mea.make_individual();
@@ -57,7 +57,7 @@ struct subpopulation_propagule_split {
         
         typedef typename MEA::subpopulation_type::population_type propagule_type;
         // shuffle the population
-        std::random_shuffle(parents[0]->population().begin(), parents[0]->population().end(), parents[0]->rng());
+        //std::random_shuffle(parents[0]->population().begin(), parents[0]->population().end(), parents[0]->rng());
                 
         int num_moved = 0;
         int s = get<POPULATION_SIZE>(mea);

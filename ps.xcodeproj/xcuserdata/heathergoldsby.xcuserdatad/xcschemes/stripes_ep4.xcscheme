@@ -65,6 +65,10 @@
       <CommandLineArguments>
          <CommandLineArgument
             argument = "-c stripes_ep4.cfg"
+            isEnabled = "NO">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "--ea.rng.seed 1 --config=stripes_ep4.cfg --ea.metapopulation.competition_period=200 --ea.mutation.site.p=0.005"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
