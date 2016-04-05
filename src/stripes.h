@@ -189,7 +189,6 @@ struct permute_stripes : public fitness_function<unary_fitness<double>, nonstati
         double five_fit_nand = 0;
         double six_fit_not = 0;
         double six_fit_nand = 0;
-        int num_org = 0;
         
         for (int x=0; x < get<SPATIAL_X>(ea); ++x) {
             for (int y=0; y<get<SPATIAL_Y>(ea); ++y){
@@ -241,7 +240,7 @@ struct permute_stripes : public fitness_function<unary_fitness<double>, nonstati
         tmp_fit = std::max(tmp_fit, tmp_six_fit);
         
         //return tmp_fit;
-        return num_org;
+        return tmp_one_fit;
     }
     
     template <typename SubpopulationEA, typename MetapopulationEA>
