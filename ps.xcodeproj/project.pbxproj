@@ -18,7 +18,7 @@
 		489918131BF26641002540AE /* mt.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 489918081BF2635C002540AE /* mt.cpp */; };
 		48C836011AC2D433004B4D0B /* libea.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DC570A1940C99D005044F1 /* libea.a */; };
 		48C836071AC2D4FD004B4D0B /* stripes_ep4.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48C835FC1AC2D33F004B4D0B /* stripes_ep4.cpp */; };
-		48FF4C9319379E49001F0183 /* stripes_multi.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48AC8AB11937639900DA6945 /* stripes_multi.cpp */; };
+		48FF4C9319379E49001F0183 /* stripes_multi_three.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48AC8AB11937639900DA6945 /* stripes_multi_three.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -100,8 +100,9 @@
 		489918071BF20F63002540AE /* multi_birth_selfrep_not_remote_ancestor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = multi_birth_selfrep_not_remote_ancestor.h; sourceTree = "<group>"; };
 		489918081BF2635C002540AE /* mt.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = mt.cpp; sourceTree = "<group>"; };
 		489918121BF2662B002540AE /* mt */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = mt; sourceTree = BUILT_PRODUCTS_DIR; };
+		48A0A3EF1CB8044A00284292 /* stripes_multi.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = stripes_multi.cpp; sourceTree = "<group>"; };
 		48A1E129183F8ED70023C478 /* stripes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = stripes.h; sourceTree = "<group>"; };
-		48AC8AB11937639900DA6945 /* stripes_multi.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = stripes_multi.cpp; sourceTree = "<group>"; };
+		48AC8AB11937639900DA6945 /* stripes_multi_three.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = stripes_multi_three.cpp; sourceTree = "<group>"; };
 		48C835FC1AC2D33F004B4D0B /* stripes_ep4.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = stripes_ep4.cpp; sourceTree = "<group>"; };
 		48C836061AC2D433004B4D0B /* stripes_split copy */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "stripes_split copy"; sourceTree = BUILT_PRODUCTS_DIR; };
 		48C836081AC2D673004B4D0B /* subpopulation_propagule_split.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = subpopulation_propagule_split.h; sourceTree = "<group>"; };
@@ -203,7 +204,8 @@
 			children = (
 				48A1E129183F8ED70023C478 /* stripes.h */,
 				4888686D1AAF615E00ACAFD9 /* stripes_split.h */,
-				48AC8AB11937639900DA6945 /* stripes_multi.cpp */,
+				48AC8AB11937639900DA6945 /* stripes_multi_three.cpp */,
+				48A0A3EF1CB8044A00284292 /* stripes_multi.cpp */,
 				48951F4E1C7A3C7D00F7D7F3 /* stripes_multi_evo.cpp */,
 				48C835FC1AC2D33F004B4D0B /* stripes_ep4.cpp */,
 				481F3BFA1C8DC79C00325485 /* stripes_ep4_fixed.cpp */,
@@ -413,7 +415,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48FF4C9319379E49001F0183 /* stripes_multi.cpp in Sources */,
+				48FF4C9319379E49001F0183 /* stripes_multi_three.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

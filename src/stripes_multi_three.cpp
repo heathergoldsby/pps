@@ -65,8 +65,8 @@ struct lifecycle : public default_lifecycle {
         append_isa<if_not_equal>(ea);
         append_isa<jump_head>(ea);
         append_isa<is_neighbor_matrix>(ea);
-        //        append_isa<create_propagule>(ea);
-        //        append_isa<deploy_propagule>(ea);
+//        append_isa<create_propagule>(ea);
+//        append_isa<deploy_propagule>(ea);
         
         //        append_isa<is_origin>(ea);
         
@@ -92,16 +92,16 @@ struct lifecycle : public default_lifecycle {
         
         task_ptr_type task_not = make_task<tasks::task_not,catalysts::additive<0> >("not", ea);
         task_ptr_type task_nand = make_task<tasks::task_nand,catalysts::additive<0> >("nand", ea);
-        //task_ptr_type task_ornot = make_task<tasks::task_ornot,catalysts::additive<0> >("ornot", ea);
+        task_ptr_type task_ornot = make_task<tasks::task_ornot,catalysts::additive<0> >("ornot", ea);
         
         resource_ptr_type resA = make_resource("resA", ea);
         resource_ptr_type resB = make_resource("resB", ea);
-        //resource_ptr_type resC = make_resource("resC", ea);
+        resource_ptr_type resC = make_resource("resC", ea);
         
         task_not->consumes(resA);
         task_nand->consumes(resB);
-        //task_ornot->consumes(resC);
-        
+        task_ornot->consumes(resC);
+
     }
     
     
@@ -124,7 +124,7 @@ typedef digital_evolution
 < lifecycle
 , recombination::asexual
 , round_robin
-, multibirth_selfrep_not_nand_ancestor
+, multibirth_selfrep_not_nand_ornot_ancestor
 , empty_facing_neighbor_matrix
 , dont_stop
 , generate_single_ancestor
@@ -132,7 +132,7 @@ typedef digital_evolution
 
 typedef metapopulation
 < sea_type
-, permute_stripes
+, permute_three_stripes
 , mutation::operators::no_mutation
 , subpopulation_propagule
 , generational_models::periodic_competition< >
@@ -179,35 +179,35 @@ public:
         add_option<METAPOP_COMPETITION_PERIOD>(this);
         add_option<TOURNAMENT_SELECTION_N>(this);
         add_option<TOURNAMENT_SELECTION_K>(this);
-        //        add_option<STRIPE_FIT_FUNC>(this);
-        //        add_option<PROPAGULE_COST>(this);
-        //        add_option<FIT_MAX>(this);
-        //        add_option<FIT_MIN>(this);
-        //        add_option<FIT_GAMMA>(this);
-        //        add_option<RES_UPDATE>(this);
-        //        add_option<DEATH_PROB>(this);
-        //        add_option<SL_PERIOD>(this);
-        //        add_option<NUM_SWAPS>(this);
+//        add_option<STRIPE_FIT_FUNC>(this);
+//        add_option<PROPAGULE_COST>(this);
+//        add_option<FIT_MAX>(this);
+//        add_option<FIT_MIN>(this);
+//        add_option<FIT_GAMMA>(this);
+//        add_option<RES_UPDATE>(this);
+//        add_option<DEATH_PROB>(this);
+//        add_option<SL_PERIOD>(this);
+//        add_option<NUM_SWAPS>(this);
+
+
         
         
-        
-        
-        
+
     }
     
     virtual void gather_tools() {
-    //    add_tool<ealib::analysis::movie_for_three_stripe_competitions>(this);
+        add_tool<ealib::analysis::movie_for_three_stripe_competitions>(this);
     }
     
     virtual void gather_events(EA& ea) {
         add_event<subpopulation_founder_event>(ea);
         add_event<datafiles::fitness_dat>(ea);
-        
-        //add_event<task_performed_tracking>(ea);
+
+        add_event<task_performed_tracking>(ea);
         add_event<task_switch_tracking>(ea);
         
-        //        add_event<random_death>(ea);
-        //        add_event<swap_locations>(ea);
+//        add_event<random_death>(ea);
+//        add_event<swap_locations>(ea);
     }
 };
 LIBEA_CMDLINE_INSTANCE(mea_type, cli);
