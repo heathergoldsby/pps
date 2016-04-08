@@ -112,13 +112,13 @@ struct subpopulation_propagule {
                     typename MEA::subpopulation_type::environment_type::location_type l = (p->env().location(x,y));
                     
                     
-                    if (l.occupied()) {
-                        std::cout << x << " " << y << std::endl;
-                    }
+//                    if (l.occupied()) {
+//                        std::cout << x << " " << y << std::endl;
+//                    }
                     
                 }
             }
-        std::cout << std::endl << std::endl;
+//        std::cout << std::endl << std::endl;
 
         
         

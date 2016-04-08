@@ -64,7 +64,7 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "-c stripes.cfg"
+            argument = "-c stripes.cfg --ea.rng.seed 1  --ea.stripes.num_propagule_cell 1 --ea.metapopulation.competition_period 500 --ea.run.updates=200000&#10;"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument

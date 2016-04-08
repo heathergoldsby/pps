@@ -99,7 +99,7 @@ struct lifecycle : public default_lifecycle {
         add_event<task_switching_cost>(ea);
 //        add_event<prop_death_event>(ea);
         
-        //add_event<ts_birth_event>(ea);
+        add_event<ts_birth_event>(ea);
         
         typedef typename EA::task_library_type::task_ptr_type task_ptr_type;
         typedef typename EA::resource_ptr_type resource_ptr_type;
