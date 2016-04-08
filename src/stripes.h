@@ -167,11 +167,11 @@ struct permute_stripes : public fitness_function<unary_fitness<double>, nonstati
     template <typename EA>
     int eval_permute_stripes(EA& ea) {
         
-        
-        // sterile
-        if(get<PROP_COUNT>(ea,0) == 0) {
-            return 1.0;
-        }
+//        
+//        // sterile
+//        if(get<PROP_COUNT>(ea,0) == 0) {
+//            return 1.0;
+//        }
 
         
         // vert stripes
@@ -270,10 +270,10 @@ struct permute_three_stripes : public fitness_function<unary_fitness<double>, no
     template <typename EA>
     double eval_permute_three_stripes(EA& ea) {
         
-        // sterile
-        if(get<PROP_COUNT>(ea,0) == 0) {
-            return 1.0;
-        }
+//        // sterile
+//        if(get<PROP_COUNT>(ea,0) == 0) {
+//            return 1.0;
+//        }
         
         //    accumulator_set<double, stats<tag::mean, tag::max> > sfit;
         int num_neighbors = 4;
@@ -383,11 +383,11 @@ template <typename EA>
 void eval_permute_three_stripes(EA& ea) {
     
     
-    // sterile
-    if(get<PROP_COUNT>(ea,0) == 0) {
-        put<STRIPE_FIT>(0.0, ea);
-        return;
-    }
+//    // sterile
+//    if(get<PROP_COUNT>(ea,0) == 0) {
+//        put<STRIPE_FIT>(0.0, ea);
+//        return;
+//    }
     
     //    accumulator_set<double, stats<tag::mean, tag::max> > sfit;
     int num_neighbors = 4;
@@ -817,11 +817,11 @@ struct stripes_ep3 : end_of_update_event<MEA> {
 template <typename EA>
 void eval_permute_stripes(EA& ea) {
     
-    // sterile
-    if(get<PROP_COUNT>(ea,0) == 0) {
-            put<STRIPE_FIT>(0.0, ea);
-            return;
-    }
+//    // sterile
+//    if(get<PROP_COUNT>(ea,0) == 0) {
+//            put<STRIPE_FIT>(0.0, ea);
+//            return;
+//    }
     
     // vert stripes
     double one_fit_not = 0;
