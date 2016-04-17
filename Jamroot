@@ -14,6 +14,16 @@ exe stripes_multi :
 install dist : stripes_multi : <location>$(HOME)/bin ;
 
 
+exe stripes_multi_fps :
+src/stripes_multi_fps.cpp
+/libea//libea
+/libea//libea_runner
+: <include>./include <link>static
+;
+
+install dist : stripes_multi_fps : <location>$(HOME)/bin ;
+
+
 exe stripes_plane :
 src/stripes_evo_plane.cpp
 /libea//libea
