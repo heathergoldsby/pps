@@ -39,6 +39,11 @@
 			<key>orderHint</key>
 			<integer>24</integer>
 		</dict>
+		<key>stripes_multi_fps_3.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>25</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -123,6 +128,11 @@
 			<true/>
 		</dict>
 		<key>482F01371CC42EF900C88BD8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>482F01431CC5245000C88BD8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
