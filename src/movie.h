@@ -37,7 +37,7 @@ namespace ealib {
                 
                 
                 // Calc fitness for each subpop
-                eval_permute_stripes(tmp);
+                eval_two_stripes(tmp);
                 
                 // copy the stripe fit to the accumulator and also the subpop
                 double sf =get<STRIPE_FIT>(tmp);
