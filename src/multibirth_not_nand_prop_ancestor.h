@@ -55,7 +55,6 @@ namespace ealib {
             repr[30] = ea.isa()["output"]; //output
             repr[31] = ea.isa()["donate_res_to_group"]; // donate_res_to_group
             
-            repr[40] = ea.isa()["create_propagule"]; // create propagule
             repr[50] = ea.isa()["deploy_propagule"]; // deploy propagule!
             
             // nand
