@@ -47,7 +47,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "190"
             endingLineNumber = "190"
-            landmarkName = "eval_permute_stripes(EA&amp; ea)"
+            landmarkName = "eval_three_stripes(EA&amp; ea)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

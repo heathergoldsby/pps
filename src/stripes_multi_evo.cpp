@@ -57,23 +57,12 @@ struct lifecycle : public default_lifecycle {
         append_isa<if_not_equal>(ea);
         append_isa<jump_head>(ea);
         append_isa<is_neighbor>(ea);
-//        append_isa<create_propagule>(ea);
-//        append_isa<deploy_propagule>(ea);
+
+        append_isa<deploy_propagule>(ea);
+        append_isa<deploy_one_propagule>(ea);
+        append_isa<if_prop_cell_absent>(ea);
+        append_isa<only_deploy_one>(ea);
         
-        //        append_isa<is_origin>(ea);
-        
-        //        append_isa<get_xy>(ea);
-        //        append_isa<get_epigenetic_info>(ea);
-        //        append_isa<set_epigenetic_info>(ea);
-        
-        // SOMA
-        //        append_isa<inc_propagule_size>(ea);
-        //        append_isa<dec_propagule_size>(ea);
-        //        append_isa<get_propagule_size>(ea);
-        //
-        //        append_isa<become_soma>(ea);
-        //        append_isa<if_soma>(ea);
-        //        append_isa<if_germ>(ea);
         
         add_event<task_resource_consumption>(ea);
         add_event<task_switching_cost>(ea);
@@ -167,14 +156,14 @@ public:
         add_option<METAPOP_COMPETITION_PERIOD>(this);
         add_option<TOURNAMENT_SELECTION_N>(this);
         add_option<TOURNAMENT_SELECTION_K>(this);
-
+        
         add_option<FIT_MAX>(this);
         add_option<FIT_MIN>(this);
         add_option<FIT_GAMMA>(this);
         add_option<RES_UPDATE>(this);
         
         
-
+        
     }
     
     virtual void gather_tools() {
@@ -184,11 +173,11 @@ public:
     virtual void gather_events(EA& ea) {
         add_event<subpopulation_founder_event>(ea);
         add_event<datafiles::fitness_dat>(ea);
-
-        add_event<task_performed_tracking>(ea);
-//         add_event<task_switch_tracking>(ea);
         
-//        add_event<swap_locations>(ea);
+        add_event<task_performed_tracking>(ea);
+        //         add_event<task_switch_tracking>(ea);
+        
+        //        add_event<swap_locations>(ea);
     }
 };
 LIBEA_CMDLINE_INSTANCE(mea_type, cli);

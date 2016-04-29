@@ -50,6 +50,8 @@ LIBEA_MD_DECL(PROP_SIZE, "ea.stripes.propagule_size", double);
 LIBEA_MD_DECL(PROP_SIZE_OPTION, "ea.stripes.propagule_size_option", int);
 LIBEA_MD_DECL(PROP_SIZE_BOUND, "ea.stripes.propagule_size_bound", int);
 
+LIBEA_MD_DECL(REP_COUNT, "ea.stripes.rep_count", int); // count the number of times a multicell has replicated. 
+
 
 LIBEA_MD_DECL(PROP_COUNT, "ea.stripes.prop_count", int);
 
@@ -77,7 +79,7 @@ DIGEVO_INSTRUCTION_DECL(if_prop_cell_absent) {
 
 
 //! Stripe fitness.
-struct permute_stripes : public fitness_function<unary_fitness<double> > {
+struct permute_stripes : public fitness_function<unary_fitness<double>, nonstationaryS > {
     template <typename EA>
     double eval_permute_stripes(EA& ea) {
         double tmp_fit = eval_two_stripes(ea);
@@ -93,7 +95,7 @@ struct permute_stripes : public fitness_function<unary_fitness<double> > {
 };
 
 //! Stripe fitness.
-struct permute_three_stripes : public fitness_function<unary_fitness<double> > {
+struct permute_three_stripes : public fitness_function<unary_fitness<double>, nonstationaryS > {
     template <typename EA>
     double eval_permute_three_stripes(EA& ea) {
         double tmp_fit = eval_three_stripes(ea);
