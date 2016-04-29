@@ -34,3 +34,12 @@ src/stripes_multi_fps_3.cpp
 install dist : stripes_multi_fps_3 : <location>$(HOME)/bin ;
 
 
+exe stripes_ep4 :
+src/stripes_ep4.cpp
+/libea//libea
+/libea//libea_runner
+: <include>./include <link>static
+;
+
+install dist : stripes_ep4 : <location>$(HOME)/bin ;
+
