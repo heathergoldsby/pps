@@ -8,6 +8,10 @@
 #ifndef _EALIFE_EVO_PROPAGULE_INS_H_
 #define _EALIFE_EVO_PROPAGULE_INS_H_
 
+#include "stripes.h"
+
+using namespace ealib;
+
 
 LIBEA_MD_DECL(IS_PROPAGULE, "ea.stripes.is_propagule", int); // 0 - no, 1 - prop
 LIBEA_MD_DECL(DEPLOY_ONE, "ea.stripes.deploy_one", int);
@@ -15,7 +19,7 @@ LIBEA_MD_DECL(DEPLOY_ONE, "ea.stripes.deploy_one", int);
 DIGEVO_INSTRUCTION_DECL(deploy_propagule) {
     
     // If the cell only ever wants to deploy one propagule... use this
-    if (get<DEPLOY_ONE>(*p,0) == 1) {
+    if ((get<DEPLOY_ONE>(*p,0)) == 1) {
         if(get<PROP_COUNT>(ea,0) > 0) {
             return;
         }

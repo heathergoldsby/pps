@@ -39,7 +39,7 @@ LIBEA_MD_DECL(STRIPE_FIT, "ea.stripes.fit", int); // count the number of organis
 
 LIBEA_MD_DECL(NUM_PROPAGULE_CELL, "ea.stripes.num_propagule_cell", int);
 
-LIBEA_MD_DECL(IS_PROPAGULE, "ea.stripes.is_propagule", int); // 0 - no, 1 - cost paid, 2 - transfer
+//LIBEA_MD_DECL(IS_PROPAGULE, "ea.stripes.is_propagule", int); // 0 - no, 1 - cost paid, 2 - transfer
 
 
 LIBEA_MD_DECL(FIT_MAX, "ea.stripes.fit_max", int);
@@ -54,26 +54,6 @@ LIBEA_MD_DECL(REP_COUNT, "ea.stripes.rep_count", int); // count the number of ti
 
 
 LIBEA_MD_DECL(PROP_COUNT, "ea.stripes.prop_count", int);
-
-//! create_propagule - creates the propagule cell
-
-
-//! deploys the propagule to the holding tank
-DIGEVO_INSTRUCTION_DECL(deploy_propagule) {
-    
-    if (get<IS_PROPAGULE>(*p, 0) == 1) {
-        put<IS_PROPAGULE>(2, *p);
-        get<PROP_COUNT>(ea,0) += 1;
-    }
-}
-
-
-//! Execute the next instruction if the multicell does not have a propagule cell
-DIGEVO_INSTRUCTION_DECL(if_prop_cell_absent) {
-    if(get<PROP_COUNT>(ea,0)) {
-        hw.advanceHead(Hardware::IP);
-    }
-}
 
 
 

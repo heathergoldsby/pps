@@ -11,7 +11,7 @@
 #include <ea/datafiles/fitness.h>
 #include <ea/digital_evolution/extra_instruction_sets/matrix.h>
 
-
+#include "evo_propagule_ins.h"
 #include "multibirth_not_nand_prop_ancestor.h"
 
 #include "subpopulation_propagule_split.h"
@@ -89,6 +89,8 @@ struct lifecycle : public default_lifecycle {
         
         //        append_isa<create_propagule>(ea);
         append_isa<deploy_propagule>(ea);
+        append_isa<deploy_one_propagule>(ea);
+        append_isa<only_deploy_one>(ea);
         append_isa<if_prop_cell_absent>(ea);
         //        append_isa<get_propagule_size>(ea);
         //append_isa<deploy_one_propagule>(ea);
