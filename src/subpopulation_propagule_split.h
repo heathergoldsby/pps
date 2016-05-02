@@ -46,11 +46,9 @@ struct subpopulation_propagule_split {
     template <typename Population, typename MEA>
     void operator()(Population& parents, Population& offspring, MEA& mea) {
         
-        // get a new subpopulation:
-        typename MEA::individual_ptr_type p = mea.make_individual();
-        p->initialize(mea.md());
-        p->reset_rng(mea.rng().seed());
         
+        
+
         
         typedef typename MEA::subpopulation_type::population_type propagule_type;
         
@@ -61,8 +59,17 @@ struct subpopulation_propagule_split {
             propagule_size(get<PROPAGULE_SIZE>(**j));
         }
         
+        int p_size = median(propagule_size);
+        if (p_size >= parents[0]->size()) {
+            return;
+        }
         
-        int p_size = median(propagule_size); 
+        // get a new subpopulation:
+        typename MEA::individual_ptr_type p = mea.make_individual();
+        p->initialize(mea.md());
+        p->reset_rng(mea.rng().seed());
+        
+        
         
         int num_moved = 0;
         int s = get<POPULATION_SIZE>(mea);
