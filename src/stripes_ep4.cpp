@@ -71,29 +71,28 @@ struct lifecycle : public default_lifecycle {
         append_isa<if_not_equal>(ea);
         append_isa<jump_head>(ea);
         append_isa<is_neighbor_matrix>(ea);
-        //        append_isa<if_prop_cell_absent>(ea);
-        //        append_isa<is_origin>(ea);
-        
-        //        append_isa<get_xy>(ea);
-        //        append_isa<get_epigenetic_info>(ea);
-        //        append_isa<set_epigenetic_info>(ea);
-        
-        // SOMA
-        //        append_isa<inc_propagule_size>(ea);
-        //        append_isa<dec_propagule_size>(ea);
-        //        append_isa<get_propagule_size>(ea);
-        //        //
-        //        append_isa<become_soma>(ea);
-        //        //        append_isa<if_soma>(ea);
-        //        //        append_isa<if_germ>(ea);
-        
-        //        append_isa<create_propagule>(ea);
+
         append_isa<deploy_propagule>(ea);
-        append_isa<deploy_one_propagule>(ea);
-        append_isa<only_deploy_one>(ea);
-        append_isa<if_prop_cell_absent>(ea);
-        //        append_isa<get_propagule_size>(ea);
-        //append_isa<deploy_one_propagule>(ea);
+        append_isa<prop_size_1>(ea);
+        append_isa<prop_size_2>(ea);
+        append_isa<prop_size_3>(ea);
+        append_isa<prop_size_4>(ea);
+        append_isa<prop_size_5>(ea);
+        append_isa<prop_size_6>(ea);
+        append_isa<prop_size_7>(ea);
+        append_isa<prop_size_8>(ea);
+        append_isa<prop_size_9>(ea);
+        append_isa<prop_size_10>(ea);
+        append_isa<prop_size_11>(ea);
+        append_isa<prop_size_12>(ea);
+        append_isa<prop_size_13>(ea);
+        append_isa<prop_size_14>(ea);
+        append_isa<prop_size_15>(ea);
+        append_isa<prop_size_16>(ea);
+        append_isa<prop_size_17>(ea);
+        append_isa<prop_size_18>(ea);
+        
+        
         
         add_event<task_resource_consumption>(ea);
         add_event<task_switching_cost>(ea);
@@ -182,56 +181,32 @@ public:
         add_option<MUTATION_PER_SITE_P>(this);
         add_option<MUTATION_INSERTION_P>(this);
         add_option<MUTATION_DELETION_P>(this);
-        //        add_option<MUTATION_UNIFORM_INT_MIN>(this);
-        //        add_option<MUTATION_UNIFORM_INT_MAX>(this);
         add_option<RUN_UPDATES>(this);
         add_option<RUN_EPOCHS>(this);
-        //        add_option<CHECKPOINT_PREFIX>(this);
         add_option<RNG_SEED>(this);
         add_option<RECORDING_PERIOD>(this);
         add_option<MORAN_REPLACEMENT_RATE_P>(this);
         
         add_option<ANALYSIS_INPUT>(this);
-        //        add_option<NUM_PROPAGULE_GERM>(this);
-        //        add_option<NUM_PROPAGULE_CELL>(this);
+
         
         // ts specific options
         add_option<TASK_SWITCHING_COST>(this);
-        //        add_option<GERM_MUTATION_PER_SITE_P>(this);
-        //        add_option<GROUP_REP_THRESHOLD>(this);
+
         
         add_option<TOURNAMENT_SELECTION_K>(this);
         add_option<TOURNAMENT_SELECTION_N>(this);
         
-        // stripes
-        //        add_option<STRIPE_FIT_FUNC>(this);
-        //        add_option<FIT_MAX>(this);
-        //        add_option<FIT_MIN>(this);
-        //        add_option<FIT_GAMMA>(this);
-        //        add_option<RES_UPDATE>(this);
-        //        add_option<PROP_SIZE_OPTION>(this);
-        //        add_option<PROP_SIZE_BOUND>(this);
-        
-        //        add_option<IS_PROPAGULE>(this);
-        //        add_option<PROPAGULE_BASE_COST>(this);
-        //        add_option<PROPAGULE_PER_CELL_COST>(this);
         add_option<METAPOP_COMPETITION_PERIOD>(this);
-        //        add_option<PROPAGULE_FAIL_PROB>(this);
-        //        add_option<PROPAGULE_COST>(this);
-        //        add_option<DEATH_PROB>(this);
-        //        add_option<SL_PERIOD>(this);
-        //        add_option<NUM_SWAPS>(this);
-        //        add_option<JUV_PERIOD>(this);
+        add_option<PROPAGULE_SIZE>(this);
+
         
         
     }
     
     virtual void gather_tools() {
         add_tool<ealib::analysis::movie_for_competitions>(this);
-        //add_tool<ealib::analysis::knockouts_for_competition>(this);
-        //add_tool<ealib::analysis::lod_knockouts>(this);
-        //        add_tool<ealib::analysis::location_analysis>(this);
-        //        add_tool<ealib::analysis::movie_evo_plane>(this);
+
         
     }
     

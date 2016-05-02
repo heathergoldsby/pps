@@ -22,9 +22,14 @@
 
 #include <algorithm>
 #include <utility>
+#include <boost/accumulators/accumulators.hpp>
+#include <boost/accumulators/statistics/stats.hpp>
+#include <boost/accumulators/statistics/median.hpp>
 
 #include <ea/metadata.h>
 #include "stripes.h"
+#include "evo_propagule_ins.h"
+
 
 using namespace ealib;
 
@@ -41,14 +46,6 @@ struct subpopulation_propagule_split {
     template <typename Population, typename MEA>
     void operator()(Population& parents, Population& offspring, MEA& mea) {
         
-        double num_prop = ceil(get<PROP_COUNT>(*(parents[0]),0) / 2.0);
-        
-        //        if (num_prop == 0) {
-        //            std::cout << "update: " << mea.current_update() << " prop 0 " << std::endl;
-        //            return;
-        //        }
-        //
-        
         // get a new subpopulation:
         typename MEA::individual_ptr_type p = mea.make_individual();
         p->initialize(mea.md());
@@ -56,8 +53,16 @@ struct subpopulation_propagule_split {
         
         
         typedef typename MEA::subpopulation_type::population_type propagule_type;
-        // shuffle the population
-        //std::random_shuffle(parents[0]->population().begin(), parents[0]->population().end(), parents[0]->rng());
+        
+        accumulator_set<double, stats<tag::median> > propagule_size;
+
+        // Figure out the propagule size... take the median of the sizes suggested by the cells.
+        for(typename propagule_type::iterator j=parents[0]->population().begin(); j!=parents[0]->population().end(); ++j) {
+            propagule_size(get<PROPAGULE_SIZE>(**j));
+        }
+        
+        
+        int p_size = median(propagule_size); 
         
         int num_moved = 0;
         int s = get<POPULATION_SIZE>(mea);
@@ -66,8 +71,10 @@ struct subpopulation_propagule_split {
             open_pos[ n ] = n;
         }
         
+        
+        // first grab the propagule cells...
         for(typename propagule_type::iterator j=parents[0]->population().begin(); j!=parents[0]->population().end(); ++j) {
-            if ((get<IS_PROPAGULE>(**j, 0) == 2) && (*j)->alive()) {
+            if ((get<IS_PROPAGULE>(**j, 0) == 1) && (*j)->alive()) {
                 typename MEA::subpopulation_type::genome_type r((*j)->genome().begin(),
                                                                 (*j)->genome().begin()+(*j)->hw().original_size());
                 typename MEA::subpopulation_type::individual_ptr_type q = p->make_individual(r);
@@ -88,10 +95,43 @@ struct subpopulation_propagule_split {
                 ++num_moved;
                 get<PROP_COUNT>(*(parents[0]))--;
             }
-            if (num_moved == num_prop) {
+            if (num_moved == p_size) {
                 break;
             }
         }
+        
+        
+        // Move some non propagule cells to make up the difference....
+        if (num_moved != p_size) {
+            for(typename propagule_type::iterator j=parents[0]->population().begin(); j!=parents[0]->population().end(); ++j) {
+
+            if ((get<IS_PROPAGULE>(**j, 0) != 1) && (*j)->alive()) {
+                typename MEA::subpopulation_type::genome_type r((*j)->genome().begin(),
+                                                                (*j)->genome().begin()+(*j)->hw().original_size());
+                typename MEA::subpopulation_type::individual_ptr_type q = p->make_individual(r);
+                
+                inherits_from(**j, *q, *p);
+                
+                
+                std::size_t t = p->rng()(open_pos.size());
+                std::size_t pos = open_pos[t];
+                open_pos.erase(open_pos.begin() + t);
+                
+                p->insert_at(p->end(), q, p->env().location(pos).position());
+                
+                (*j)->alive() = false;
+                parents[0]->events().death(**j,*(parents[0]));
+                
+                
+                ++num_moved;
+            }
+            if (num_moved == p_size) {
+                break;
+            }
+            }
+        }
+        
+        
         
         
         get<REP_COUNT>(*(parents[0]),0) ++;
