@@ -111,6 +111,9 @@ namespace ealib {
                 .write(mean(multicell_size))
                 .write(rep_count_over_0)
                 .write(mean(size_mc_rep_count_over_0))
+                .write(mean(prop_size))
+                .write(min(prop_size))
+                .write(max(prop_size))
                 .endl();
             }
             
