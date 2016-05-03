@@ -77,11 +77,11 @@ namespace ealib {
                     prop_count = 0;
                     for(typename propagule_type::iterator j=i->population().begin(); j!=i->population().end(); ++j) {
                         if ((*j)->alive()) {
-                            if (get<IS_PROPAGULE>(*i) == 1) {
+                            if (get<IS_PROPAGULE>(**j,0) == 1) {
                                 prop_count++;
                                 
                             }
-                            subpop_prop_size(get<PROPAGULE_SIZE>(**j, get<START_PROPAGULE_SIZE>(**j)));
+                            subpop_prop_size(get<PROPAGULE_SIZE>(**j, get<START_PROPAGULE_SIZE>(*i)));
 
                         }
                         
