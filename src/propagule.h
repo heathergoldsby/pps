@@ -81,7 +81,7 @@ namespace ealib {
                                 prop_count++;
                                 
                             }
-                            subpop_prop_size(get<PROPAGULE_SIZE>(**j, get<START_PROPAGULE_SIZE>(**j,18)));
+                            subpop_prop_size(get<PROPAGULE_SIZE>(**j, get<START_PROPAGULE_SIZE>(**j)));
 
                         }
                         
