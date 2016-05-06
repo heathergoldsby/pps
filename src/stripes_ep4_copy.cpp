@@ -14,7 +14,7 @@
 #include "evo_propagule_ins.h"
 #include "multibirth_not_nand_prop_ancestor.h"
 
-#include "subpopulation_propagule_split.h"
+#include "subpopulation_propagule_copy.h"
 
 #include "stripes.h"
 #include "meta_moran_process.h"
@@ -71,7 +71,7 @@ struct lifecycle : public default_lifecycle {
         append_isa<if_not_equal>(ea);
         append_isa<jump_head>(ea);
         append_isa<is_neighbor_matrix>(ea);
-
+        
         append_isa<deploy_propagule>(ea);
         append_isa<prop_size_1>(ea);
         append_isa<prop_size_2>(ea);
@@ -148,7 +148,7 @@ typedef metapopulation
 < sea_type
 , permute_stripes
 , mutation::operators::no_mutation
-, subpopulation_propagule_split
+, subpopulation_propagule_copy
 , generational_models::periodic_competition < generational_models::meta_moran_process< selection::proportionate< >, selection::random< > >, generational_models::isolated_subpopulations >
 , ancestors::default_subpopulation
 , dont_stop
@@ -183,25 +183,25 @@ public:
         add_option<MORAN_REPLACEMENT_RATE_P>(this);
         
         add_option<ANALYSIS_INPUT>(this);
-
+        
         
         // ts specific options
         add_option<TASK_SWITCHING_COST>(this);
-
+        
         
         add_option<TOURNAMENT_SELECTION_K>(this);
         add_option<TOURNAMENT_SELECTION_N>(this);
         
         add_option<METAPOP_COMPETITION_PERIOD>(this);
         add_option<PROPAGULE_SIZE>(this);
-
+        
         
         
     }
     
     virtual void gather_tools() {
         add_tool<ealib::analysis::movie_for_competitions>(this);
-
+        
         
     }
     
@@ -209,7 +209,7 @@ public:
         add_event<subpopulation_founder_event>(ea);
         add_event<datafiles::fitness_dat>(ea);
         add_event<datafiles::propagule_dat>(ea);
-
+        
         
     }
 };

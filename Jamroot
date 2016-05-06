@@ -52,3 +52,14 @@ src/stripes_ep4_fixed.cpp
 ;
 
 install dist : stripes_ep4_fixed : <location>$(HOME)/bin ;
+
+
+
+exe stripes_ep4_copy :
+src/stripes_ep4_copy.cpp
+/libea//libea
+/libea//libea_runner
+: <include>./include <link>static
+;
+
+install dist : stripes_ep4_copy : <location>$(HOME)/bin ;

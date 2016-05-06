@@ -14,6 +14,11 @@
 			<key>orderHint</key>
 			<integer>3</integer>
 		</dict>
+		<key>stripes_ep4 copy.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>29</integer>
+		</dict>
 		<key>stripes_ep4.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -173,6 +178,11 @@
 			<true/>
 		</dict>
 		<key>486CA9A41CD923ED003A113C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>486CA9B11CDCE53E003A113C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
