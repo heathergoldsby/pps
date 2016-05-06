@@ -28,58 +28,58 @@ DIGEVO_INSTRUCTION_DECL(deploy_propagule) {
 
 
 DIGEVO_INSTRUCTION_DECL(prop_size_1) {
-    get<PROPAGULE_SIZE>(*p,get<START_PROPAGULE_SIZE>(*p)) = 1;
+    get<PROPAGULE_SIZE>(*p,get<START_PROPAGULE_SIZE>(ea)) = 1;
 }
 DIGEVO_INSTRUCTION_DECL(prop_size_2) {
-    get<PROPAGULE_SIZE>(*p,get<START_PROPAGULE_SIZE>(*p)) = 2;
+    get<PROPAGULE_SIZE>(*p,get<START_PROPAGULE_SIZE>(ea)) = 2;
 }
 DIGEVO_INSTRUCTION_DECL(prop_size_3) {
-    get<PROPAGULE_SIZE>(*p,get<START_PROPAGULE_SIZE>(*p)) = 3;
+    get<PROPAGULE_SIZE>(*p,get<START_PROPAGULE_SIZE>(ea)) = 3;
 }
 DIGEVO_INSTRUCTION_DECL(prop_size_4) {
-    get<PROPAGULE_SIZE>(*p,get<START_PROPAGULE_SIZE>(*p)) = 4;
+    get<PROPAGULE_SIZE>(*p,get<START_PROPAGULE_SIZE>(ea)) = 4;
 }
 DIGEVO_INSTRUCTION_DECL(prop_size_5) {
-    get<PROPAGULE_SIZE>(*p,get<START_PROPAGULE_SIZE>(*p)) = 5;
+    get<PROPAGULE_SIZE>(*p,get<START_PROPAGULE_SIZE>(ea)) = 5;
 }
 DIGEVO_INSTRUCTION_DECL(prop_size_6) {
-    get<PROPAGULE_SIZE>(*p,get<START_PROPAGULE_SIZE>(*p)) = 6;
+    get<PROPAGULE_SIZE>(*p,get<START_PROPAGULE_SIZE>(ea)) = 6;
 }
 DIGEVO_INSTRUCTION_DECL(prop_size_7) {
-    get<PROPAGULE_SIZE>(*p,get<START_PROPAGULE_SIZE>(*p)) = 7;
+    get<PROPAGULE_SIZE>(*p,get<START_PROPAGULE_SIZE>(ea)) = 7;
 }
 DIGEVO_INSTRUCTION_DECL(prop_size_8) {
-    get<PROPAGULE_SIZE>(*p,get<START_PROPAGULE_SIZE>(*p)) = 8;
+    get<PROPAGULE_SIZE>(*p,get<START_PROPAGULE_SIZE>(ea)) = 8;
 }
 DIGEVO_INSTRUCTION_DECL(prop_size_9) {
-    get<PROPAGULE_SIZE>(*p,get<START_PROPAGULE_SIZE>(*p)) = 9;
+    get<PROPAGULE_SIZE>(*p,get<START_PROPAGULE_SIZE>(ea)) = 9;
 }
 DIGEVO_INSTRUCTION_DECL(prop_size_10) {
-    get<PROPAGULE_SIZE>(*p,get<START_PROPAGULE_SIZE>(*p)) = 10;
+    get<PROPAGULE_SIZE>(*p,get<START_PROPAGULE_SIZE>(ea)) = 10;
 }
 DIGEVO_INSTRUCTION_DECL(prop_size_11) {
-    get<PROPAGULE_SIZE>(*p,get<START_PROPAGULE_SIZE>(*p)) = 11;
+    get<PROPAGULE_SIZE>(*p,get<START_PROPAGULE_SIZE>(ea)) = 11;
 }
 DIGEVO_INSTRUCTION_DECL(prop_size_12) {
-    get<PROPAGULE_SIZE>(*p,get<START_PROPAGULE_SIZE>(*p)) = 12;
+    get<PROPAGULE_SIZE>(*p,get<START_PROPAGULE_SIZE>(ea)) = 12;
 }
 DIGEVO_INSTRUCTION_DECL(prop_size_13) {
-    get<PROPAGULE_SIZE>(*p,get<START_PROPAGULE_SIZE>(*p)) = 13;
+    get<PROPAGULE_SIZE>(*p,get<START_PROPAGULE_SIZE>(ea)) = 13;
 }
 DIGEVO_INSTRUCTION_DECL(prop_size_14) {
-    get<PROPAGULE_SIZE>(*p,get<START_PROPAGULE_SIZE>(*p)) = 14;
+    get<PROPAGULE_SIZE>(*p,get<START_PROPAGULE_SIZE>(ea)) = 14;
 }
 DIGEVO_INSTRUCTION_DECL(prop_size_15) {
-    get<PROPAGULE_SIZE>(*p,get<START_PROPAGULE_SIZE>(*p)) = 15;
+    get<PROPAGULE_SIZE>(*p,get<START_PROPAGULE_SIZE>(ea)) = 15;
 }
 DIGEVO_INSTRUCTION_DECL(prop_size_16) {
-    get<PROPAGULE_SIZE>(*p,get<START_PROPAGULE_SIZE>(*p)) = 16;
+    get<PROPAGULE_SIZE>(*p,get<START_PROPAGULE_SIZE>(ea)) = 16;
 }
 DIGEVO_INSTRUCTION_DECL(prop_size_17) {
-    get<PROPAGULE_SIZE>(*p,get<START_PROPAGULE_SIZE>(*p)) = 17;
+    get<PROPAGULE_SIZE>(*p,get<START_PROPAGULE_SIZE>(ea)) = 17;
 }
 DIGEVO_INSTRUCTION_DECL(prop_size_18) {
-    get<PROPAGULE_SIZE>(*p,get<START_PROPAGULE_SIZE>(*p)) = 18;
+    get<PROPAGULE_SIZE>(*p,get<START_PROPAGULE_SIZE>(ea)) = 18;
 }
 
 #endif /* evo_propagule_ins_h */
