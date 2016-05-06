@@ -194,6 +194,7 @@ public:
         
         add_option<METAPOP_COMPETITION_PERIOD>(this);
         add_option<PROPAGULE_SIZE>(this);
+        add_option<START_PROPAGULE_SIZE>(this);
         
         
         
