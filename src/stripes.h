@@ -59,7 +59,7 @@ LIBEA_MD_DECL(PROP_COUNT, "ea.stripes.prop_count", int);
 
 
 //! Stripe fitness.
-struct permute_stripes : public fitness_function<unary_fitness<double>, nonstationaryS > {
+struct permute_stripes : public fitness_function<unary_fitness<double> > {
     template <typename EA>
     double eval_permute_stripes(EA& ea) {
         double tmp_fit = eval_two_stripes(ea);
@@ -75,7 +75,7 @@ struct permute_stripes : public fitness_function<unary_fitness<double>, nonstati
 };
 
 //! Stripe fitness.
-struct permute_three_stripes : public fitness_function<unary_fitness<double>, nonstationaryS > {
+struct permute_three_stripes : public fitness_function<unary_fitness<double> > {
     template <typename EA>
     double eval_permute_three_stripes(EA& ea) {
         double tmp_fit = eval_three_stripes(ea);
