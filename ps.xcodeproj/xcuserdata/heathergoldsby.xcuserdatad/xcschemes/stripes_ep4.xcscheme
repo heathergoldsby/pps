@@ -64,7 +64,7 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "-c stripes_ep4.cfg  --ea.metapopulation.competition_period=100 --ea.mutation.site.p=0.005"
+            argument = "-c stripes_ep4.cfg  --ea.metapopulation.competition_period=100 --ea.mutation.site.p=0.005 --ea.stripes.trans=1 --ea.stripes.base=1.2"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>
