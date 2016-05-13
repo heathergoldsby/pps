@@ -42,18 +42,20 @@ LIBEA_MD_DECL(NUM_PROPAGULE_CELL, "ea.stripes.num_propagule_cell", int);
 //LIBEA_MD_DECL(IS_PROPAGULE, "ea.stripes.is_propagule", int); // 0 - no, 1 - cost paid, 2 - transfer
 
 
-LIBEA_MD_DECL(FIT_MAX, "ea.stripes.fit_max", int);
-LIBEA_MD_DECL(FIT_MIN, "ea.stripes.fit_min", int);
+//LIBEA_MD_DECL(FIT_MAX, "ea.stripes.fit_max", int);
+//LIBEA_MD_DECL(FIT_MIN, "ea.stripes.fit_min", int);
 LIBEA_MD_DECL(FIT_GAMMA, "ea.stripes.fit_gamma", double);
-LIBEA_MD_DECL(RES_UPDATE, "ea.stripes.res_update", int);
-LIBEA_MD_DECL(PROP_SIZE, "ea.stripes.propagule_size", double);
-LIBEA_MD_DECL(PROP_SIZE_OPTION, "ea.stripes.propagule_size_option", int);
-LIBEA_MD_DECL(PROP_SIZE_BOUND, "ea.stripes.propagule_size_bound", int);
+//LIBEA_MD_DECL(RES_UPDATE, "ea.stripes.res_update", int);
+//LIBEA_MD_DECL(PROP_SIZE, "ea.stripes.propagule_size", double);
+//LIBEA_MD_DECL(PROP_SIZE_OPTION, "ea.stripes.propagule_size_option", int);
+//LIBEA_MD_DECL(PROP_SIZE_BOUND, "ea.stripes.propagule_size_bound", int);
 
 LIBEA_MD_DECL(REP_COUNT, "ea.stripes.rep_count", int); // count the number of times a multicell has replicated. 
 
 
 LIBEA_MD_DECL(PROP_COUNT, "ea.stripes.prop_count", int);
+LIBEA_MD_DECL(AGING, "ea.stripes.aging", int); // 0 off; 1 on
+LIBEA_MD_DECL(AGE, "ea.stripes.age", double);
 
 
 
@@ -69,8 +71,14 @@ struct permute_stripes : public fitness_function<unary_fitness<double> > {
     template <typename SubpopulationEA, typename MetapopulationEA>
     double operator()(SubpopulationEA& sea, MetapopulationEA& mea) {
         double f = static_cast<double>(eval_permute_stripes(sea));
+        double adj_f =f;
         put<STRIPE_FIT>(f,sea);
-        return f;
+        if (get<AGING>(sea,0) == 1) {
+            double age = get<AGE>(sea, 0);
+            adj_f *= (1.0 - (age * 0.05) );
+        }
+        
+        return adj_f;
     }
 };
 
@@ -89,6 +97,24 @@ struct permute_three_stripes : public fitness_function<unary_fitness<double> > {
         return f;
     }
 };
+
+
+//!
+struct solid_control : public fitness_function<unary_fitness<double> > {
+    template <typename EA>
+    double eval_permute_three_stripes(EA& ea) {
+        double tmp_fit = eval_three_stripes(ea);
+        return tmp_fit;
+    }
+    
+    template <typename SubpopulationEA, typename MetapopulationEA>
+    double operator()(SubpopulationEA& sea, MetapopulationEA& mea) {
+        double f = static_cast<double>(eval_solid_control(sea));
+        put<STRIPE_FIT>(f,sea);
+        return f;
+    }
+};
+
 
 
 
@@ -205,6 +231,40 @@ double eval_three_stripes(EA& ea) {
     
 }
 
+
+
+template <typename EA>
+double eval_solid_control(EA& ea) {
+    
+    double num_correct = 0;
+    
+    
+    
+    int max_x = get<SPATIAL_X>(ea);
+    int max_y = get<SPATIAL_Y>(ea);
+    
+    for (int x=0; x < max_x; ++x) {
+        for (int y=0; y< max_y; ++y){
+            typename EA::environment_type::location_type* l = &ea.env().location(x,y);
+            if (!l->occupied()) {
+                continue;
+            }
+            
+            std::string lt = get<LAST_TASK>(*(l->inhabitant()),"");
+            if (lt == "" ) { continue; }
+            
+                        // NW
+            if (lt == "NOT" ) { ++num_correct; }
+        }
+    }
+        
+    num_correct = num_correct * num_correct;
+        
+    
+    put<STRIPE_FIT>(num_correct, ea);
+
+    
+}
 
 
 

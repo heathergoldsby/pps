@@ -23,10 +23,12 @@
 #include <ea/metadata.h>
 #include <ea/selection/proportionate.h>
 #include <ea/selection/random.h>
+#include "stripes.h"
 
 namespace ealib {
     
     LIBEA_MD_DECL(MORAN_REPLACEMENT_RATE_P, "ea.generational_model.moran_process.replacement_rate.p", double);
+
     
     namespace generational_models {
         
@@ -57,7 +59,7 @@ namespace ealib {
                 
                 for(typename EA::iterator i=ea.begin(); i!=ea.end(); ++i) {
                     recalculate_fitness(*i, ea);
-
+                    get<AGE>(*i,0) += 1;
                 }
                 
                 
