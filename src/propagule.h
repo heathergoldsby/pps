@@ -49,7 +49,9 @@ namespace ealib {
                 .add_field("mean_size_mc_rep_count_over_0") // this one is the mean number of births for those over 0.
                 .add_field("mean_prop_size")
                 .add_field("min_prop_size")
-                .add_field("max_prop_size");
+                .add_field("max_prop_size")
+                .add_field("mean_stripes_fit")
+                .add_field("max_stripes_fit");
 
             }
             
@@ -61,7 +63,9 @@ namespace ealib {
                 accumulator_set<double, stats<tag::mean> > num_prop_cells;
                 accumulator_set<double, stats<tag::mean> > num_prop_cells_act;
 
+                accumulator_set<double, stats<tag::mean, tag::max> > fit;
                 accumulator_set<double, stats<tag::mean, tag::min, tag::max> > prop_size;
+
                 accumulator_set<double, stats<tag::mean> > multicell_size;
                 accumulator_set<double, stats<tag::mean> > size_mc_rep_count_over_0;
 
@@ -97,6 +101,7 @@ namespace ealib {
                     num_prop_cells_act(prop_count);
                     multicell_size(i->size());
                     prop_size(median(subpop_prop_size));
+                    fit(get<STRIPE_FIT>(*i));
                     
                     if ((get<REP_COUNT>(*i,0)) > 0) {
                         ++rep_count_over_0;
@@ -114,6 +119,8 @@ namespace ealib {
                 .write(mean(prop_size))
                 .write(min(prop_size))
                 .write(max(prop_size))
+                .write(mean(fit))
+                .write(max(fit))
                 .endl();
             }
             
