@@ -197,6 +197,10 @@ public:
         add_option<START_PROPAGULE_SIZE>(this);
         add_option<TRANS>(this);
         add_option<BASE>(this);
+        add_option<AGING>(this);
+
+        add_option<AGE_AMOUNT>(this);
+
         
         
     }

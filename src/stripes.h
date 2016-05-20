@@ -56,6 +56,8 @@ LIBEA_MD_DECL(REP_COUNT, "ea.stripes.rep_count", int); // count the number of ti
 LIBEA_MD_DECL(PROP_COUNT, "ea.stripes.prop_count", int);
 LIBEA_MD_DECL(AGING, "ea.stripes.aging", int); // 0 off; 1 on
 LIBEA_MD_DECL(AGE, "ea.stripes.age", double);
+LIBEA_MD_DECL(AGE_AMOUNT, "ea.stripes.age_amount", double);
+
 LIBEA_MD_DECL(TRANS, "ea.stripes.trans", int); // 0 off; 1 on
 LIBEA_MD_DECL(BASE, "ea.stripes.base", double);
 
@@ -78,8 +80,10 @@ struct permute_stripes : public fitness_function<unary_fitness<double> > {
         
         // add in aging effects
         if (get<AGING>(sea,0) == 1) {
+            double age_factor = get<AGE_AMOUNT>(sea);
+
             double age = get<AGE>(sea, 0);
-            adj_f *= (1.0 - (age * 0.05) );
+            adj_f *= (1.0 - (age * age_factor) );
         }
         
         
