@@ -13,63 +13,12 @@ exe stripes_multi :
 
 install dist : stripes_multi : <location>$(HOME)/bin ;
 
-
-exe stripes_multi_fps :
-src/stripes_multi_fps.cpp
+exe stripes_multi_matrix :
+src/stripes_multi_matrix.cpp
 /libea//libea
 /libea//libea_runner
 : <include>./include <link>static
 ;
 
-install dist : stripes_multi_fps : <location>$(HOME)/bin ;
+install dist : stripes_multi_matrix : <location>$(HOME)/bin ;
 
-
-exe stripes_multi_fps_3 :
-src/stripes_multi_fps_3.cpp
-/libea//libea
-/libea//libea_runner
-: <include>./include <link>static
-;
-
-install dist : stripes_multi_fps_3 : <location>$(HOME)/bin ;
-
-
-exe stripes_ep4 :
-src/stripes_ep4.cpp
-/libea//libea
-/libea//libea_runner
-: <include>./include <link>static
-;
-
-install dist : stripes_ep4 : <location>$(HOME)/bin ;
-
-
-exe stripes_ep4_flipped :
-src/stripes_ep4_flipped.cpp
-/libea//libea
-/libea//libea_runner
-: <include>./include <link>static
-;
-
-install dist : stripes_ep4_flipped : <location>$(HOME)/bin ;
-
-
-exe stripes_ep4_fixed :
-src/stripes_ep4_fixed.cpp
-/libea//libea
-/libea//libea_runner
-: <include>./include <link>static
-;
-
-install dist : stripes_ep4_fixed : <location>$(HOME)/bin ;
-
-
-
-exe stripes_ep4_copy :
-src/stripes_ep4_copy.cpp
-/libea//libea
-/libea//libea_runner
-: <include>./include <link>static
-;
-
-install dist : stripes_ep4_copy : <location>$(HOME)/bin ;
