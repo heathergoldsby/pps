@@ -152,10 +152,10 @@ public:
         add_option<METAPOP_COMPETITION_PERIOD>(this);
         add_option<TOURNAMENT_SELECTION_N>(this);
         add_option<TOURNAMENT_SELECTION_K>(this);
-        add_option<FIT_MAX>(this);
-        add_option<FIT_MIN>(this);
-        add_option<FIT_GAMMA>(this);
-        add_option<RES_UPDATE>(this);
+//        add_option<FIT_MAX>(this);
+//        add_option<FIT_MIN>(this);
+//        add_option<FIT_GAMMA>(this);
+//        add_option<RES_UPDATE>(this);
         
         
         
@@ -168,9 +168,9 @@ public:
     virtual void gather_events(EA& ea) {
         add_event<subpopulation_founder_event>(ea);
         add_event<datafiles::fitness_dat>(ea);
-        
-        add_event<task_performed_tracking>(ea);
-        add_event<task_switch_tracking>(ea);
+//        
+//        add_event<task_performed_tracking>(ea);
+//        add_event<task_switch_tracking>(ea);
        
     }
 };

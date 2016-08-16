@@ -44,7 +44,7 @@ LIBEA_MD_DECL(NUM_PROPAGULE_CELL, "ea.stripes.num_propagule_cell", int);
 
 //LIBEA_MD_DECL(FIT_MAX, "ea.stripes.fit_max", int);
 //LIBEA_MD_DECL(FIT_MIN, "ea.stripes.fit_min", int);
-LIBEA_MD_DECL(FIT_GAMMA, "ea.stripes.fit_gamma", double);
+//LIBEA_MD_DECL(FIT_GAMMA, "ea.stripes.fit_gamma", double);
 //LIBEA_MD_DECL(RES_UPDATE, "ea.stripes.res_update", int);
 //LIBEA_MD_DECL(PROP_SIZE, "ea.stripes.propagule_size", double);
 //LIBEA_MD_DECL(PROP_SIZE_OPTION, "ea.stripes.propagule_size_option", int);
