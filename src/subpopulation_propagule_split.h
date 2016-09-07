@@ -56,7 +56,13 @@ struct subpopulation_propagule_split {
 
         // Figure out the propagule size... take the median of the sizes suggested by the cells.
         for(typename propagule_type::iterator j=parents[0]->population().begin(); j!=parents[0]->population().end(); ++j) {
-            propagule_size(get<PROPAGULE_SIZE>(**j, get<START_PROPAGULE_SIZE>(*(parents[0]))));
+            if (exists<PROPAGULE_SIZE>(**j)) {
+                propagule_size(get<PROPAGULE_SIZE>(**j));
+            }
+        }
+        
+        if(count(propagule_size) == 0) {
+            return;
         }
         
         int p_size = median(propagule_size);

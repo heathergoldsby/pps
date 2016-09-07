@@ -64,8 +64,8 @@ namespace ealib {
             repr[77] = ea.isa()["nand"]; // nand
             repr[78] = ea.isa()["output"]; //output
             repr[79] = ea.isa()["donate_res_to_group"]; // donate_res_to_group
-
             
+            repr[80] =  ea.isa()["prop_size_18"]; 
             repr[90] =  ea.isa()["rotate_cw"];
             repr[91] =  ea.isa()["h_search"]; // hsearch
             repr[92] =  ea.isa()["h_copy"]; // hcopy

@@ -21,6 +21,8 @@
 		486CA9BB1CDCE54C003A113C /* stripes_ep4_copy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 486CA9B01CDCE51A003A113C /* stripes_ep4_copy.cpp */; };
 		48CA8EA11CD3D25A004BDB7E /* libea.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DC570A1940C99D005044F1 /* libea.a */; };
 		48CA8EA71CD3D265004BDB7E /* stripes_ep4.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48CA8E9C1CD3D21B004BDB7E /* stripes_ep4.cpp */; };
+		48E554AE1D80ABB3003D52DE /* libea.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DC570A1940C99D005044F1 /* libea.a */; };
+		48E554B41D80ABBE003D52DE /* stripes_multi_evo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 482085CA1CCA8CF200406273 /* stripes_multi_evo.cpp */; };
 		48FF4C9319379E49001F0183 /* stripes_multi.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48AC8AB11937639900DA6945 /* stripes_multi.cpp */; };
 /* End PBXBuildFile section */
 
@@ -88,6 +90,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
+		48E554AF1D80ABB3003D52DE /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 		48FF4C8E19379E17001F0183 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -129,6 +140,7 @@
 		48CA8EA61CD3D25A004BDB7E /* stripes_ep4 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = stripes_ep4; sourceTree = BUILT_PRODUCTS_DIR; };
 		48CA8EA81CD3D2C7004BDB7E /* meta_moran_process.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = meta_moran_process.h; sourceTree = "<group>"; };
 		48CA8EA91CD3D477004BDB7E /* propagule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = propagule.h; sourceTree = "<group>"; };
+		48E554B31D80ABB3003D52DE /* stripes_multi_evo */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = stripes_multi_evo; sourceTree = BUILT_PRODUCTS_DIR; };
 		48FF4C9219379E17001F0183 /* stripes_multi */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = stripes_multi; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -189,6 +201,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		48E554AD1D80ABB3003D52DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48E554AE1D80ABB3003D52DE /* libea.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		48FF4C8719379E17001F0183 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -223,6 +243,7 @@
 				486CA9AD1CD923ED003A113C /* stripes_ep4_fixed */,
 				486CA9BA1CDCE53E003A113C /* stripes_ep4_copy */,
 				480FEBD91CE61C5500ECABDD /* stripes_ep4_flipped */,
+				48E554B31D80ABB3003D52DE /* stripes_multi_evo */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -391,6 +412,23 @@
 			productReference = 48CA8EA61CD3D25A004BDB7E /* stripes_ep4 */;
 			productType = "com.apple.product-type.tool";
 		};
+		48E554AA1D80ABB3003D52DE /* stripes_multi_evo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 48E554B01D80ABB3003D52DE /* Build configuration list for PBXNativeTarget "stripes_multi_evo" */;
+			buildPhases = (
+				48E554AB1D80ABB3003D52DE /* Sources */,
+				48E554AD1D80ABB3003D52DE /* Frameworks */,
+				48E554AF1D80ABB3003D52DE /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = stripes_multi_evo;
+			productName = ealife;
+			productReference = 48E554B31D80ABB3003D52DE /* stripes_multi_evo */;
+			productType = "com.apple.product-type.tool";
+		};
 		48FF4C8419379E17001F0183 /* stripes_multi */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 48FF4C8F19379E17001F0183 /* Build configuration list for PBXNativeTarget "stripes_multi" */;
@@ -437,6 +475,7 @@
 				486CA9A41CD923ED003A113C /* stripes_ep4_fixed */,
 				486CA9B11CDCE53E003A113C /* stripes_ep4_copy */,
 				480FEBD01CE61C5500ECABDD /* stripes_ep4_flipped */,
+				48E554AA1D80ABB3003D52DE /* stripes_multi_evo */,
 			);
 		};
 /* End PBXProject section */
@@ -494,6 +533,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				48CA8EA71CD3D265004BDB7E /* stripes_ep4.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		48E554AB1D80ABB3003D52DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48E554B41D80ABBE003D52DE /* stripes_multi_evo.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -681,6 +728,28 @@
 			};
 			name = Release;
 		};
+		48E554B11D80ABB3003D52DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/dk/Documents/repositories/research.hg/src/DerivedData/research/Build/Products/Debug,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		48E554B21D80ABB3003D52DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/dk/Documents/repositories/research.hg/src/DerivedData/research/Build/Products/Debug,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		48FF4C9019379E17001F0183 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -774,6 +843,15 @@
 			buildConfigurations = (
 				48CA8EA41CD3D25A004BDB7E /* Debug */,
 				48CA8EA51CD3D25A004BDB7E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		48E554B01D80ABB3003D52DE /* Build configuration list for PBXNativeTarget "stripes_multi_evo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				48E554B11D80ABB3003D52DE /* Debug */,
+				48E554B21D80ABB3003D52DE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

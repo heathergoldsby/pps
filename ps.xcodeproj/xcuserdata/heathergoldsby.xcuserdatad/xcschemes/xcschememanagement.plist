@@ -7,12 +7,12 @@
 		<key>stripes.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>2</integer>
+			<integer>3</integer>
 		</dict>
 		<key>stripes_control.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>5</integer>
+			<integer>6</integer>
 		</dict>
 		<key>stripes_ep4 copy.xcscheme</key>
 		<dict>
@@ -37,22 +37,27 @@
 		<key>stripes_evo_ps.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>12</integer>
+			<integer>15</integer>
 		</dict>
 		<key>stripes_evo_ps_plane.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>16</integer>
+			<integer>19</integer>
 		</dict>
 		<key>stripes_location.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>7</integer>
+			<integer>9</integer>
 		</dict>
 		<key>stripes_multi.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>10</integer>
+			<integer>13</integer>
+		</dict>
+		<key>stripes_multi_evo.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>31</integer>
 		</dict>
 		<key>stripes_multi_fps.xcscheme</key>
 		<dict>
@@ -203,6 +208,11 @@
 			<true/>
 		</dict>
 		<key>48DEB45419376501002F8846</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>48E554AA1D80ABB3003D52DE</key>
 		<dict>
 			<key>primary</key>
 			<true/>

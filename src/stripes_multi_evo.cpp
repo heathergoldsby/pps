@@ -1,18 +1,23 @@
 #include <ea/digital_evolution.h>
 #include <ea/cmdline_interface.h>
-#include <ea/digital_evolution/ancestors/multi_birth_selfrep_not_nand_ancestor.h>
+//#include <ea/digital_evolution/ancestors/multi_birth_selfrep_not_nand_ancestor.h>
 #include <ea/subpopulation_founder.h>
 #include <ea/line_of_descent.h>
 #include <ea/generational_models/periodic_competition.h>
-#include <ea/generational_models/moran_process.h>
+//#include <ea/generational_models/moran_process.h>
 #include <ea/datafiles/fitness.h>
+#include <ea/digital_evolution/extra_instruction_sets/matrix.h>
 
-
-using namespace ealib;
+#include "evo_propagule_ins.h"
+#include "multibirth_not_nand_prop_ancestor.h"
 
 #include "stripes.h"
 #include "movie.h"
-#include "subpopulation_propagule.h"
+#include "subpopulation_propagule_split.h"
+
+using namespace ealib;
+
+
 
 
 //! Configuration object for an EA.
@@ -39,10 +44,10 @@ struct lifecycle : public default_lifecycle {
         append_isa<swap>(ea);
         append_isa<inc>(ea);
         append_isa<dec>(ea);
-        append_isa<tx_msg_check_task>(ea);
-        append_isa<tx_msg>(ea);
+        append_isa<tx_msg_check_task_matrix>(ea);
+        append_isa<tx_msg_matrix>(ea);
         append_isa<rx_msg>(ea);
-        append_isa<bc_msg>(ea);
+        append_isa<bc_msg_matrix>(ea);
         append_isa<rotate>(ea);
         append_isa<rotate_cw>(ea);
         append_isa<rotate_ccw>(ea);
@@ -56,12 +61,27 @@ struct lifecycle : public default_lifecycle {
         append_isa<if_equal>(ea);
         append_isa<if_not_equal>(ea);
         append_isa<jump_head>(ea);
-        append_isa<is_neighbor>(ea);
-
+        append_isa<is_neighbor_matrix>(ea);
+        
         append_isa<deploy_propagule>(ea);
-        append_isa<deploy_one_propagule>(ea);
-        append_isa<if_prop_cell_absent>(ea);
-        append_isa<only_deploy_one>(ea);
+        append_isa<prop_size_1>(ea);
+        append_isa<prop_size_2>(ea);
+        append_isa<prop_size_3>(ea);
+        append_isa<prop_size_4>(ea);
+        append_isa<prop_size_5>(ea);
+        append_isa<prop_size_6>(ea);
+        append_isa<prop_size_7>(ea);
+        append_isa<prop_size_8>(ea);
+        append_isa<prop_size_9>(ea);
+        append_isa<prop_size_10>(ea);
+        append_isa<prop_size_11>(ea);
+        append_isa<prop_size_12>(ea);
+        append_isa<prop_size_13>(ea);
+        append_isa<prop_size_14>(ea);
+        append_isa<prop_size_15>(ea);
+        append_isa<prop_size_16>(ea);
+        append_isa<prop_size_17>(ea);
+        append_isa<prop_size_18>(ea);
         
         
         add_event<task_resource_consumption>(ea);
@@ -101,7 +121,7 @@ typedef digital_evolution
 < lifecycle
 , recombination::asexual
 , round_robin
-, multibirth_selfrep_not_nand_ancestor
+, multibirth_not_nand_prop_ancestor
 , empty_facing_neighbor
 , dont_stop
 , generate_single_ancestor
@@ -111,7 +131,7 @@ typedef metapopulation
 < sea_type
 , permute_stripes
 , mutation::operators::no_mutation
-, subpopulation_propagule
+, subpopulation_propagule_split
 , generational_models::periodic_competition< >
 , ancestors::default_subpopulation
 , dont_stop
@@ -157,10 +177,7 @@ public:
         add_option<TOURNAMENT_SELECTION_N>(this);
         add_option<TOURNAMENT_SELECTION_K>(this);
         
-        add_option<FIT_MAX>(this);
-        add_option<FIT_MIN>(this);
-        add_option<FIT_GAMMA>(this);
-        add_option<RES_UPDATE>(this);
+        add_option<PROPAGULE_SIZE>(this);
         
         
         
