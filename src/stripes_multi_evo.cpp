@@ -14,6 +14,8 @@
 #include "stripes.h"
 #include "movie.h"
 #include "subpopulation_propagule_split.h"
+#include "propagule.h"
+
 
 using namespace ealib;
 
@@ -192,6 +194,8 @@ public:
         add_event<datafiles::fitness_dat>(ea);
         
         add_event<task_performed_tracking>(ea);
+        add_event<datafiles::propagule_dat>(ea);
+
         //         add_event<task_switch_tracking>(ea);
         
         //        add_event<swap_locations>(ea);
