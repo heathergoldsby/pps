@@ -52,14 +52,14 @@ struct subpopulation_propagule_copy {
         
         typedef typename MEA::subpopulation_type::population_type propagule_type;
         
-        accumulator_set<double, stats<tag::median> > propagule_size;
+        accumulator_set<double, stats<tag::mean> > propagule_size;
         
         // Figure out the propagule size... take the median of the sizes suggested by the cells.
         for(typename propagule_type::iterator j=parents[0]->population().begin(); j!=parents[0]->population().end(); ++j) {
             propagule_size(get<PROPAGULE_SIZE>(**j, get<START_PROPAGULE_SIZE>(*(parents[0]))));
         }
         
-        int p_size = median(propagule_size);
+        int p_size = floor(mean(propagule_size));
         if (p_size >= parents[0]->size()) {
             return;
         }

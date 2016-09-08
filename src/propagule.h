@@ -76,7 +76,7 @@ namespace ealib {
                 
                 int prop_count;
                 for(typename EA::iterator i=ea.begin(); i!=ea.end(); ++i) {
-                    accumulator_set<double, stats<tag::median> > subpop_prop_size;
+                    accumulator_set<double, stats<tag::mean> > subpop_prop_size;
 
                     prop_count = 0;
                     for(typename propagule_type::iterator j=i->population().begin(); j!=i->population().end(); ++j) {
@@ -102,7 +102,7 @@ namespace ealib {
                     num_prop_cells(get<PROP_COUNT>(*i,0));
                     num_prop_cells_act(prop_count);
                     multicell_size(i->size());
-                    prop_size(median(subpop_prop_size));
+                    prop_size(floor(mean(subpop_prop_size)));
                     fit(get<STRIPE_FIT>(*i));
                     
                     if ((get<REP_COUNT>(*i,0)) > 0) {
