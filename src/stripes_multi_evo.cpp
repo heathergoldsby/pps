@@ -15,6 +15,7 @@
 #include "movie.h"
 #include "subpopulation_propagule_split.h"
 #include "propagule.h"
+#include "propagule_size.h"
 
 
 using namespace ealib;
@@ -180,6 +181,7 @@ public:
         add_option<TOURNAMENT_SELECTION_K>(this);
         
         add_option<PROPAGULE_SIZE>(this);
+        add_option<PS_SIZE_1>(this);
         
         
         
@@ -195,6 +197,7 @@ public:
         
         add_event<task_performed_tracking>(ea);
         add_event<datafiles::propagule_dat>(ea);
+        add_event<datafiles::propagule_size_dat>(ea);
 
         //         add_event<task_switch_tracking>(ea);
         

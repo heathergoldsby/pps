@@ -28,6 +28,10 @@
 namespace ealib {
     /*! Generates a self-replicating ancestor that performs not.
      */
+    
+    LIBEA_MD_DECL(PS_SIZE_1, "ea.stripes.pssize1", int); // is the propagule size 1?
+
+    
     struct multibirth_not_nand_prop_ancestor {
         template <typename EA>
         typename EA::genome_type operator()(EA& ea) {
@@ -65,7 +69,12 @@ namespace ealib {
             repr[78] = ea.isa()["output"]; //output
             repr[79] = ea.isa()["donate_res_to_group"]; // donate_res_to_group
             
-            repr[80] =  ea.isa()["prop_size_18"]; 
+            
+            if (get<PS_SIZE_1>(ea,0) == true) {
+                repr[80] =  ea.isa()["prop_size_1"];
+            } else {
+                repr[80] =  ea.isa()["prop_size_18"];
+            }
             repr[90] =  ea.isa()["rotate_cw"];
             repr[91] =  ea.isa()["h_search"]; // hsearch
             repr[92] =  ea.isa()["h_copy"]; // hcopy
@@ -82,6 +91,8 @@ namespace ealib {
         }
     };
     
+    
+
 }
 
 #endif

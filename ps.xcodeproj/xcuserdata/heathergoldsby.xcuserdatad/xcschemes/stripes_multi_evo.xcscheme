@@ -64,7 +64,7 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "-c stripes_evo.cfg"
+            argument = "-c stripes_evo.cfg --ea.stripes.pssize1=1"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>

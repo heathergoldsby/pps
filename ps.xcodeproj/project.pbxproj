@@ -135,6 +135,7 @@
 		487ACE231934F7C60016340B /* movie.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = movie.h; sourceTree = "<group>"; };
 		48A1E129183F8ED70023C478 /* stripes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = stripes.h; sourceTree = "<group>"; };
 		48AC8AB11937639900DA6945 /* stripes_multi.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = stripes_multi.cpp; sourceTree = "<group>"; };
+		48C4E6ED1D830B5700977742 /* propagule_size.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = propagule_size.h; sourceTree = "<group>"; };
 		48CA8E9B1CD3D1B8004BDB7E /* subpopulation_propagule_split.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = subpopulation_propagule_split.h; sourceTree = "<group>"; };
 		48CA8E9C1CD3D21B004BDB7E /* stripes_ep4.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = stripes_ep4.cpp; sourceTree = "<group>"; };
 		48CA8EA61CD3D25A004BDB7E /* stripes_ep4 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = stripes_ep4; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -262,6 +263,7 @@
 			isa = PBXGroup;
 			children = (
 				48CA8EA91CD3D477004BDB7E /* propagule.h */,
+				48C4E6ED1D830B5700977742 /* propagule_size.h */,
 				48A1E129183F8ED70023C478 /* stripes.h */,
 				482085C91CCA8BE400406273 /* evo_propagule_ins.h */,
 				48AC8AB11937639900DA6945 /* stripes_multi.cpp */,
