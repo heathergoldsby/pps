@@ -102,7 +102,11 @@ namespace ealib {
                     num_prop_cells(get<PROP_COUNT>(*i,0));
                     num_prop_cells_act(prop_count);
                     multicell_size(i->size());
-                    prop_size(floor(mean(subpop_prop_size)));
+                    if (count(subpop_prop_size) > 0) {
+                        prop_size(floor(mean(subpop_prop_size)));
+                    } else {
+                        prop_size(0);
+                    }
                     fit(get<STRIPE_FIT>(*i));
                     
                     if ((get<REP_COUNT>(*i,0)) > 0) {
@@ -116,9 +120,13 @@ namespace ealib {
                 .write(mean(num_prop_cells_act))
                 .write(num_zero_prop)
                 .write(mean(multicell_size))
-                .write(rep_count_over_0)
-                .write(mean(size_mc_rep_count_over_0))
-                .write(mean(prop_size))
+                .write(rep_count_over_0);
+                if (count(size_mc_rep_count_over_0))  {
+                    _df.write(mean(size_mc_rep_count_over_0));
+                } else {
+                    _df.write(0);
+                }
+                _df.write(mean(prop_size))
                 .write(min(prop_size))
                 .write(max(prop_size))
                 .write(mean(fit))
