@@ -38,6 +38,8 @@ using namespace ealib;
 LIBEA_MD_DECL(STRIPE_FIT, "ea.stripes.fit", int); // count the number of organisms that have the right color stripe
 
 LIBEA_MD_DECL(NUM_PROPAGULE_CELL, "ea.stripes.num_propagule_cell", int);
+LIBEA_MD_DECL(PROPAGULE_IDENTICAL, "ea.stripes.prop_identical", int); // 0 NO - different, 1 YES - identical
+LIBEA_MD_DECL(PROPAGULE_COPY, "ea.stripes.prop_copy", int); // 0 NO - move cells, 1 YES - copy cells
 
 //LIBEA_MD_DECL(IS_PROPAGULE, "ea.stripes.is_propagule", int); // 0 - no, 1 - cost paid, 2 - transfer
 
