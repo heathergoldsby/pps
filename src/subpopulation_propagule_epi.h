@@ -69,6 +69,7 @@ struct subpopulation_propagule_epi {
             open_pos[ n ] = n;
         }
         
+        int max_prop_size = floor (s/2.0) + 1;
         
         // first grab the propagule cells...
         for(typename propagule_type::iterator j=parents[0]->population().begin(); j!=parents[0]->population().end(); ++j) {
@@ -124,8 +125,10 @@ struct subpopulation_propagule_epi {
         // set propagule size for
         
         int new_p_size = p_size;
+        
         if (mea.rng().p(get<GERM_MUTATION_PER_SITE_P>(mea))) {
-            new_p_size = mea.rng()(19);
+            
+            new_p_size = mea.rng()(max_prop_size);
         }
         
         put<NUM_PROPAGULE_CELL>(new_p_size, *p);
