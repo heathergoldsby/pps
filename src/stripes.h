@@ -119,14 +119,14 @@ struct permute_three_stripes : public fitness_function<unary_fitness<double> > {
 //!
 struct solid_control : public fitness_function<unary_fitness<double> > {
     template <typename EA>
-    double eval_solid_control(EA& ea) {
+    double evaluate_solid_control(EA& ea) {
         double tmp_fit = eval_solid_control(ea);
         return tmp_fit;
     }
     
     template <typename SubpopulationEA, typename MetapopulationEA>
     double operator()(SubpopulationEA& sea, MetapopulationEA& mea) {
-        double f = static_cast<double>(eval_solid_control(sea));
+        double f = static_cast<double>(evaluate_solid_control(sea));
         put<STRIPE_FIT>(f,sea);
         return f;
     }
