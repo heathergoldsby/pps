@@ -280,7 +280,7 @@ double eval_solid_control(EA& ea) {
     
     put<STRIPE_FIT>(num_correct, ea);
 
-    
+    return num_correct;
 }
 
 
