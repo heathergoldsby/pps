@@ -39,6 +39,11 @@
 			<key>orderHint</key>
 			<integer>32</integer>
 		</dict>
+		<key>stripes_epi_control.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>34</integer>
+		</dict>
 		<key>stripes_evo_ps.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -82,7 +87,7 @@
 		<key>stripes_three.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>34</integer>
+			<integer>33</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
@@ -173,6 +178,11 @@
 			<true/>
 		</dict>
 		<key>482085BE1CCA7AA000406273</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>482C04A91D8B04D7001D67C2</key>
 		<dict>
 			<key>primary</key>
 			<true/>

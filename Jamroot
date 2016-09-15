@@ -82,3 +82,13 @@ src/stripes_multi_three.cpp
 
 install dist : stripes_multi_three : <location>$(HOME)/bin ;
 
+
+
+exe stripes_epi_control :
+src/stripes_epi_control.cpp
+/libea//libea
+/libea//libea_runner
+: <include>./include <link>static
+;
+
+install dist : stripes_epi_control : <location>$(HOME)/bin ;

@@ -119,7 +119,7 @@ struct permute_three_stripes : public fitness_function<unary_fitness<double> > {
 //!
 struct solid_control : public fitness_function<unary_fitness<double> > {
     template <typename EA>
-    double eval_permute_three_stripes(EA& ea) {
+    double eval_solid_control(EA& ea) {
         double tmp_fit = eval_three_stripes(ea);
         return tmp_fit;
     }
