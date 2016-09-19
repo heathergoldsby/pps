@@ -133,7 +133,22 @@ struct solid_control : public fitness_function<unary_fitness<double> > {
 };
 
 
-
+//! two_color_control
+struct two_color_control : public fitness_function<unary_fitness<double> > {
+    template <typename EA>
+    double eval_two_color_control(EA& ea) {
+        double tmp_fit = eval_two_color(ea);
+        return tmp_fit;
+    }
+    
+    template <typename SubpopulationEA, typename MetapopulationEA>
+    double operator()(SubpopulationEA& sea, MetapopulationEA& mea) {
+        double f = static_cast<double>(eval_two_color_control(sea));
+        put<STRIPE_FIT>(f,sea);
+    
+        return f;
+    }
+};
 
 
 
@@ -359,6 +374,39 @@ double eval_two_stripes(EA& ea) {
     return tmp_fit;
 
 
+}
+
+
+
+template <typename EA>
+double eval_two_color(EA& ea) {
+    double num_not = 0;
+    double num_nand = 0;
+    
+    
+    for (int x=0; x < get<SPATIAL_X>(ea); ++x) {
+        for (int y=0; y<get<SPATIAL_Y>(ea); ++y){
+            typename EA::environment_type::location_type* l = &ea.env().location(x,y);
+            if (!l->occupied()) {
+                continue;
+            }
+            
+            std::string lt = get<LAST_TASK>(*(l->inhabitant()),"");
+            
+            if (lt == "nand") { ++num_nand; }
+            if (lt == "not") { ++num_not; }
+        }
+    }
+    
+    
+    
+    
+    double fit = num_not * num_nand;
+    
+    put<STRIPE_FIT>(fit,ea);
+    return fit;
+    
+    
 }
 
 

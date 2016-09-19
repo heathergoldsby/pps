@@ -25,6 +25,8 @@
 		486CA9BB1CDCE54C003A113C /* stripes_ep4_copy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 486CA9B01CDCE51A003A113C /* stripes_ep4_copy.cpp */; };
 		48CA8EA11CD3D25A004BDB7E /* libea.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DC570A1940C99D005044F1 /* libea.a */; };
 		48CA8EA71CD3D265004BDB7E /* stripes_ep4.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48CA8E9C1CD3D21B004BDB7E /* stripes_ep4.cpp */; };
+		48D17AEC1D902533000F00AB /* libea.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DC570A1940C99D005044F1 /* libea.a */; };
+		48D17AF31D9025EB000F00AB /* stripes_epi_two_color_control.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48D17AF21D902556000F00AB /* stripes_epi_two_color_control.cpp */; };
 		48E554AE1D80ABB3003D52DE /* libea.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DC570A1940C99D005044F1 /* libea.a */; };
 		48E554B41D80ABBE003D52DE /* stripes_multi_evo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 482085CA1CCA8CF200406273 /* stripes_multi_evo.cpp */; };
 		48EBE81E1D898724003A9019 /* libea.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DC570A1940C99D005044F1 /* libea.a */; };
@@ -114,6 +116,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
+		48D17AED1D902533000F00AB /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 		48E554AF1D80ABB3003D52DE /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -178,6 +189,8 @@
 		48CA8EA61CD3D25A004BDB7E /* stripes_ep4 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = stripes_ep4; sourceTree = BUILT_PRODUCTS_DIR; };
 		48CA8EA81CD3D2C7004BDB7E /* meta_moran_process.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = meta_moran_process.h; sourceTree = "<group>"; };
 		48CA8EA91CD3D477004BDB7E /* propagule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = propagule.h; sourceTree = "<group>"; };
+		48D17AF11D902533000F00AB /* stripes_epi_two_color */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = stripes_epi_two_color; sourceTree = BUILT_PRODUCTS_DIR; };
+		48D17AF21D902556000F00AB /* stripes_epi_two_color_control.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = stripes_epi_two_color_control.cpp; sourceTree = "<group>"; };
 		48E554B31D80ABB3003D52DE /* stripes_multi_evo */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = stripes_multi_evo; sourceTree = BUILT_PRODUCTS_DIR; };
 		48EBE8181D898396003A9019 /* stripes_epi.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = stripes_epi.cpp; sourceTree = "<group>"; };
 		48EBE8191D8984BE003A9019 /* subpopulation_propagule_epi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = subpopulation_propagule_epi.h; sourceTree = "<group>"; };
@@ -259,6 +272,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		48D17AEB1D902533000F00AB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48D17AEC1D902533000F00AB /* libea.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		48E554AD1D80ABB3003D52DE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -313,6 +334,7 @@
 				48EBE8231D898724003A9019 /* stripes_epi */,
 				484529BB1D8A271A00062B6A /* stripes_three */,
 				482C04B21D8B04D7001D67C2 /* stripes_epi_control */,
+				48D17AF11D902533000F00AB /* stripes_epi_two_color */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -340,6 +362,7 @@
 				482085CA1CCA8CF200406273 /* stripes_multi_evo.cpp */,
 				48EBE8181D898396003A9019 /* stripes_epi.cpp */,
 				482C04A81D8B0482001D67C2 /* stripes_epi_control.cpp */,
+				48D17AF21D902556000F00AB /* stripes_epi_two_color_control.cpp */,
 				482085BD1CCA7A3000406273 /* stripes_multi_matrix.cpp */,
 				482F01421CC523B100C88BD8 /* stripes_multi_fps_3.cpp */,
 				482F01361CC42E7C00C88BD8 /* stripes_multi_fps.cpp */,
@@ -521,6 +544,23 @@
 			productReference = 48CA8EA61CD3D25A004BDB7E /* stripes_ep4 */;
 			productType = "com.apple.product-type.tool";
 		};
+		48D17AE81D902533000F00AB /* stripes_epi_two_color */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 48D17AEE1D902533000F00AB /* Build configuration list for PBXNativeTarget "stripes_epi_two_color" */;
+			buildPhases = (
+				48D17AE91D902533000F00AB /* Sources */,
+				48D17AEB1D902533000F00AB /* Frameworks */,
+				48D17AED1D902533000F00AB /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = stripes_epi_two_color;
+			productName = ealife;
+			productReference = 48D17AF11D902533000F00AB /* stripes_epi_two_color */;
+			productType = "com.apple.product-type.tool";
+		};
 		48E554AA1D80ABB3003D52DE /* stripes_multi_evo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 48E554B01D80ABB3003D52DE /* Build configuration list for PBXNativeTarget "stripes_multi_evo" */;
@@ -605,6 +645,7 @@
 				48EBE81A1D898724003A9019 /* stripes_epi */,
 				484529B21D8A271A00062B6A /* stripes_three */,
 				482C04A91D8B04D7001D67C2 /* stripes_epi_control */,
+				48D17AE81D902533000F00AB /* stripes_epi_two_color */,
 			);
 		};
 /* End PBXProject section */
@@ -678,6 +719,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				48CA8EA71CD3D265004BDB7E /* stripes_ep4.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		48D17AE91D902533000F00AB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48D17AF31D9025EB000F00AB /* stripes_epi_two_color_control.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -925,6 +974,28 @@
 			};
 			name = Release;
 		};
+		48D17AEF1D902533000F00AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/dk/Documents/repositories/research.hg/src/DerivedData/research/Build/Products/Debug,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		48D17AF01D902533000F00AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/dk/Documents/repositories/research.hg/src/DerivedData/research/Build/Products/Debug,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		48E554B11D80ABB3003D52DE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1080,6 +1151,15 @@
 			buildConfigurations = (
 				48CA8EA41CD3D25A004BDB7E /* Debug */,
 				48CA8EA51CD3D25A004BDB7E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		48D17AEE1D902533000F00AB /* Build configuration list for PBXNativeTarget "stripes_epi_two_color" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				48D17AEF1D902533000F00AB /* Debug */,
+				48D17AF01D902533000F00AB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

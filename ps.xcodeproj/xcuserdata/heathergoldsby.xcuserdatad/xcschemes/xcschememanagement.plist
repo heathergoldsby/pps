@@ -44,6 +44,11 @@
 			<key>orderHint</key>
 			<integer>34</integer>
 		</dict>
+		<key>stripes_epi_two_color_control.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>35</integer>
+		</dict>
 		<key>stripes_evo_ps.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -233,6 +238,11 @@
 			<true/>
 		</dict>
 		<key>48CA8E9D1CD3D25A004BDB7E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>48D17AE81D902533000F00AB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
