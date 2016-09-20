@@ -89,6 +89,11 @@
 			<key>orderHint</key>
 			<integer>26</integer>
 		</dict>
+		<key>stripes_multi_square.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>36</integer>
+		</dict>
 		<key>stripes_three.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -233,6 +238,11 @@
 			<true/>
 		</dict>
 		<key>486CA9B11CDCE53E003A113C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>48B25FCC1D91963000FDD03B</key>
 		<dict>
 			<key>primary</key>
 			<true/>

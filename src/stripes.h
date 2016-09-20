@@ -116,6 +116,24 @@ struct permute_three_stripes : public fitness_function<unary_fitness<double> > {
 };
 
 
+
+//! Square fitness
+struct permute_square : public fitness_function<unary_fitness<double> > {
+    template <typename EA>
+    double eval_permute_square(EA& ea) {
+        double tmp_fit = eval_square(ea);
+        return tmp_fit;
+    }
+    
+    template <typename SubpopulationEA, typename MetapopulationEA>
+    double operator()(SubpopulationEA& sea, MetapopulationEA& mea) {
+        double f = static_cast<double>(eval_permute_square(sea));
+        put<STRIPE_FIT>(f,sea);
+        return f;
+    }
+};
+
+
 //!
 struct solid_control : public fitness_function<unary_fitness<double> > {
     template <typename EA>
@@ -408,6 +426,85 @@ double eval_two_color(EA& ea) {
     
     
 }
+
+
+
+template <typename EA>
+double eval_square(EA& ea) {
+    
+    double num_correct = 0;
+    
+    
+    int num_square = 3;
+    std::vector<double> not_fit(num_square);
+    std::vector<double> nand_fit(num_square);
+    std::vector<double> ornot_fit(num_square);
+    std::vector<double> total_fit(6);
+    
+    int max_x = get<SPATIAL_X>(ea);
+    int max_y = get<SPATIAL_Y>(ea);
+    
+    for (int x=0; x < max_x; ++x) {
+        for (int y=0; y< max_y; ++y){
+            typename EA::environment_type::location_type* l = &ea.env().location(x,y);
+            if (!l->occupied()) {
+                continue;
+            }
+            
+            std::string lt = get<LAST_TASK>(*(l->inhabitant()),"");
+            if (lt == "" ) { continue; }
+            
+            
+            if (x == 0 || x == 5 || y == 0 || y == 5) {
+                if (lt == "not") {
+                    not_fit[0] += 1;
+                } else if (lt == "nand") {
+                    nand_fit[0] += 1;
+                } else if (lt == "ornot") {
+                    ornot_fit[0] +=1;
+                }
+            } else if (x == 1 || x == 4 || y == 1 || y == 4) {
+                if (lt == "not") {
+                    not_fit[1] += 1;
+                } else if (lt == "nand") {
+                    nand_fit[1] += 1;
+                } else if (lt == "ornot") {
+                    ornot_fit[1] +=1;
+                }
+            } else {
+                if (lt == "not") {
+                    not_fit[2] += 1;
+                } else if (lt == "nand") {
+                    nand_fit[2] += 1;
+                } else if (lt == "ornot") {
+                    ornot_fit[2] +=1;
+                }
+            }
+            
+        }
+    }
+    
+    total_fit[0] = (not_fit[0] + 1) * (nand_fit[1] + 1) * (ornot_fit[2] + 1);
+    total_fit[1] = (not_fit[0] + 1) * (nand_fit[2] + 1) * (ornot_fit[1] + 1);
+    total_fit[2] = (not_fit[1] + 1) * (nand_fit[0] + 1) * (ornot_fit[2] + 1);
+    total_fit[3] = (not_fit[1] + 1) * (nand_fit[2] + 1) * (ornot_fit[0] + 1);
+    total_fit[4] = (not_fit[2] + 1) * (nand_fit[0] + 1) * (ornot_fit[1] + 1);
+    total_fit[5] = (not_fit[2] + 1) * (nand_fit[1] + 1) * (ornot_fit[0] + 1);
+
+    
+    double tmp_fit = std::max(total_fit[0], total_fit[1]);
+    tmp_fit = std::max(tmp_fit, total_fit[2]);
+    tmp_fit = std::max(tmp_fit, total_fit[3]);
+    tmp_fit = std::max(tmp_fit, total_fit[4]);
+    tmp_fit = std::max(tmp_fit, total_fit[5]);
+    
+
+    
+    put<STRIPE_FIT>(tmp_fit, ea);
+    return (tmp_fit);
+    
+}
+
 
 
 #endif
