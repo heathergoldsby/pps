@@ -168,6 +168,22 @@ struct two_color_control : public fitness_function<unary_fitness<double> > {
     }
 };
 
+//! Bullseye
+struct permute_bullseye : public fitness_function<unary_fitness<double> > {
+    template <typename EA>
+    double eval_permute_bullseye(EA& ea) {
+        double tmp_fit = eval_bullseye(ea);
+        return tmp_fit;
+    }
+    
+    template <typename SubpopulationEA, typename MetapopulationEA>
+    double operator()(SubpopulationEA& sea, MetapopulationEA& mea) {
+        double f = static_cast<double>(eval_permute_bullseye(sea));
+        put<STRIPE_FIT>(f,sea);
+        return f;
+    }
+};
+
 
 
 template <typename EA>
@@ -504,6 +520,127 @@ double eval_square(EA& ea) {
     return (tmp_fit);
     
 }
+
+
+template <typename EA>
+double eval_bullseye(EA& ea) {
+    
+    int best_fit = 0;
+    
+    int max_x = get<SPATIAL_X>(ea);
+    int max_y = get<SPATIAL_Y>(ea);
+    
+    for (int x=0; x < max_x; ++x) {
+        for (int y=0; y< max_y; ++y){
+            typename EA::environment_type::location_type* l = &ea.env().location(x,y);
+            if (!l->occupied()) {
+                continue;
+            }
+            
+            std::string lt = get<LAST_TASK>(*(l->inhabitant()),"");
+            if (lt == "" ) { continue; }
+            
+            if (lt == "or") {
+                // check the grid.
+                int offset_x = 3 - x;
+                int offset_y = 3 - y;
+                std::vector<double> outer_ring(3);
+                std::vector<double> middle_ring(3);
+                std::vector<double> inner_ring(3);
+                
+                for (int check_x=0; check_x < max_x; ++check_x) {
+                    for (int check_y=0; check_y< max_y; ++check_y){
+                
+                        int act_x = check_x + offset_x;
+                        if (act_x >= max_x) {
+                            act_x -= max_x;
+                        }
+                        if (act_x < 0) {
+                            act_x += max_x;
+                        }
+                        
+                        int act_y = check_y + offset_y;
+                        if (act_y >= max_y) {
+                            act_y -= max_y;
+                        }
+                        if (act_y < 0) {
+                            act_y += max_y;
+                        }
+                        
+                        typename EA::environment_type::location_type* l2 = &ea.env().location(act_x,act_y);
+                        if (!l2->occupied()) {
+                            continue;
+                        }
+
+                        std::string act_lt = get<LAST_TASK>(*(l2->inhabitant()),"");
+                        if (act_lt == "") {
+                            continue;
+                        }
+                        
+                        // the outer ring.
+                        if (check_x == 0 || check_x == 6 || check_y == 0 || check_y == 6) {
+                            if(act_lt == "not" ) {
+                                outer_ring[0] +=1;
+                            } else if (act_lt == "nand") {
+                                outer_ring[1] +=1;
+                            } else if (act_lt == "ornot") {
+                                outer_ring[2] +=1;
+                            }
+                            
+                        } else if (check_x == 1 || check_x == 5 || check_y == 1 || check_y == 5) { // second ring
+                            if(act_lt == "not" ) {
+                                middle_ring[0] +=1;
+                            } else if (act_lt == "nand") {
+                                middle_ring[1] +=1;
+                            } else if (act_lt == "ornot") {
+                                middle_ring[2] +=1;
+                            }
+                        } else if (check_x == 2 || check_x == 4 || check_y == 2 || check_y == 4) {
+                            if(act_lt == "not" ) {
+                                inner_ring[0] +=1;
+                            } else if (act_lt == "nand") {
+                                inner_ring[1] +=1;
+                            } else if (act_lt == "ornot") {
+                                inner_ring[2] +=1;
+                            }
+                        }
+                        
+                    }
+                }
+                
+                // compute fit of this particular position...
+                std::vector<double> total_fit(6);
+    
+                total_fit[0] = (outer_ring[0] + 1) * (middle_ring[1] + 1) * (inner_ring[2] + 1);
+                total_fit[1] = (outer_ring[0] + 1) * (middle_ring[2] + 1) * (inner_ring[1] + 1);
+                total_fit[2] = (outer_ring[1] + 1) * (middle_ring[0] + 1) * (inner_ring[2] + 1);
+                total_fit[3] = (outer_ring[1] + 1) * (middle_ring[2] + 1) * (inner_ring[0] + 1);
+                total_fit[4] = (outer_ring[2] + 1) * (middle_ring[0] + 1) * (inner_ring[1] + 1);
+                total_fit[5] = (outer_ring[2] + 1) * (middle_ring[1] + 1) * (inner_ring[0] + 1);
+                
+                
+                double tmp_fit = std::max(total_fit[0], total_fit[1]);
+                tmp_fit = std::max(tmp_fit, total_fit[2]);
+                tmp_fit = std::max(tmp_fit, total_fit[3]);
+                tmp_fit = std::max(tmp_fit, total_fit[4]);
+                tmp_fit = std::max(tmp_fit, total_fit[5]);
+                
+                if (tmp_fit > best_fit) {
+                    best_fit = tmp_fit;
+                }
+            }
+        }
+    }
+    
+    
+    
+    
+    put<STRIPE_FIT>(best_fit, ea);
+    return (best_fit);
+
+    
+}
+
 
 
 

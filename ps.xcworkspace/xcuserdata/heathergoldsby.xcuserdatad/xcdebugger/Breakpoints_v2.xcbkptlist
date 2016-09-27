@@ -62,7 +62,9 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "133"
-            endingLineNumber = "133">
+            endingLineNumber = "133"
+            landmarkName = "subpopulation_propagule_epi"
+            landmarkType = "14">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -76,7 +78,9 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "52"
-            endingLineNumber = "52">
+            endingLineNumber = "52"
+            landmarkName = "subpopulation_propagule_epi"
+            landmarkType = "14">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -90,7 +94,9 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "130"
-            endingLineNumber = "130">
+            endingLineNumber = "130"
+            landmarkName = "subpopulation_propagule_epi"
+            landmarkType = "14">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -104,7 +110,9 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "86"
-            endingLineNumber = "86">
+            endingLineNumber = "86"
+            landmarkName = "subpopulation_propagule_epi"
+            landmarkType = "14">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -118,7 +126,9 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "85"
-            endingLineNumber = "85">
+            endingLineNumber = "85"
+            landmarkName = "subpopulation_propagule_epi"
+            landmarkType = "14">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -128,13 +138,29 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "src/stripes.h"
-            timestampString = "495986322.648792"
+            timestampString = "496695663.769264"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "271"
-            endingLineNumber = "271"
-            landmarkName = "eval_solid_control(EA&amp; ea)"
-            landmarkType = "7">
+            startingLineNumber = "287"
+            endingLineNumber = "287"
+            landmarkName = "eval_three_stripes(EA&amp; ea)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "src/stripes.h"
+            timestampString = "496696053.352028"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "629"
+            endingLineNumber = "629"
+            landmarkName = "eval_bullseye(EA&amp; ea)"
+            landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
