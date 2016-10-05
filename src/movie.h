@@ -76,6 +76,9 @@ namespace ealib {
                             if (lt == "nand") {
                                 df.write("2");
                             }
+                            if (lt == "ornot") {
+                                df.write("3");
+                            }
                             if (lt == "") {
                                 df.write("0");
                             }
