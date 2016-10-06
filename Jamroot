@@ -126,3 +126,14 @@ src/stripes_epi_two_color_control.cpp
 ;
 
 install dist : stripes_epi_two_color_control : <location>$(HOME)/bin ;
+
+
+
+exe n_neighbors :
+src/n_neighbors.cpp
+/libea//libea
+/libea//libea_runner
+: <include>./include <link>static
+;
+
+install dist : n_neighbors : <location>$(HOME)/bin ;
