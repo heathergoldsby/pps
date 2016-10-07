@@ -111,7 +111,12 @@ double eval_n_neighbors(EA& ea) {
             n = &ea.env().location(wx, sy);
             if (n->occupied()) { ++neighbors; }
             
-            f += (1.0 / (fabs(get<N_NEIGHBORS>(ea) - neighbors) + 1.0));
+            if (n_neighbors == neighbors) {
+                f+=1.0;
+            } else {
+            
+                f += (1.0 / (fabs(n_neighbors - neighbors) * n_neighbors));
+            }
             
         }
     }
