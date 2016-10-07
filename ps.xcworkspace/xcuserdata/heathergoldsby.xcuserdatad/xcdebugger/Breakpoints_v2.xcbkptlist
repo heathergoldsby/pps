@@ -163,5 +163,251 @@
             landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "src/movie.h"
+            timestampString = "497549580.649123"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "LIBEA_ANALYSIS_TOOL(movie_for_competitions)"
+            landmarkType = "9">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ealib::analysis::movie_n_neighbors&lt;ealib::metapopulation&lt;ealib::digital_evolution&lt;lifecycle, ealib::recombination::asexual, ealib::weighted_round_robin&lt;ealib::access::unit_priority&gt;, ealib::multibirth_selfrep_not_ancestor, ealib::empty_facing_neighbor, ealib::dont_stop, ealib::generate_single_ancestor, ealib::null_trait&gt;, permute_n_neighbors, ealib::mutation::operators::no_mutation, subpopulation_propagule, ealib::generational_models::periodic_competition&lt;ealib::generational_models::generational&lt;ealib::selection::tournament&lt;ealib::access::fitness, ealib::comparators::attribute&gt;, ealib::selection::none&gt;, ealib::generational_models::isolated_subpopulations&gt;, ealib::ancestors::default_subpopulation, ealib::dont_stop, ealib::fill_metapopulation, ealib::default_lifecycle, subpop_trait&gt; &gt;::movie_n_neighbors()"
+                  moduleName = "n_neighbors"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/heathergoldsby/Desktop/research/code/pps/src/movie.h"
+                  timestampString = "497553348.379749"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "188"
+                  endingLineNumber = "188"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ealib::analysis::movie_n_neighbors&lt;ealib::metapopulation&lt;ealib::digital_evolution&lt;lifecycle, ealib::recombination::asexual, ealib::weighted_round_robin&lt;ealib::access::unit_priority&gt;, ealib::multibirth_selfrep_not_ancestor, ealib::empty_facing_neighbor, ealib::dont_stop, ealib::generate_single_ancestor, ealib::null_trait&gt;, permute_n_neighbors, ealib::mutation::operators::no_mutation, subpopulation_propagule, ealib::generational_models::periodic_competition&lt;ealib::generational_models::generational&lt;ealib::selection::tournament&lt;ealib::access::fitness, ealib::comparators::attribute&gt;, ealib::selection::none&gt;, ealib::generational_models::isolated_subpopulations&gt;, ealib::ancestors::default_subpopulation, ealib::dont_stop, ealib::fill_metapopulation, ealib::default_lifecycle, subpop_trait&gt; &gt;::name()"
+                  moduleName = "n_neighbors"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/heathergoldsby/Desktop/research/code/pps/src/movie.h"
+                  timestampString = "497553348.387365"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "188"
+                  endingLineNumber = "188"
+                  offsetFromSymbolStart = "11">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ealib::analysis::movie_n_neighbors&lt;ealib::metapopulation&lt;ealib::digital_evolution&lt;lifecycle, ealib::recombination::asexual, ealib::weighted_round_robin&lt;ealib::access::unit_priority&gt;, ealib::multibirth_selfrep_not_ancestor, ealib::empty_facing_neighbor, ealib::dont_stop, ealib::generate_single_ancestor, ealib::null_trait&gt;, permute_n_neighbors, ealib::mutation::operators::no_mutation, subpopulation_propagule, ealib::generational_models::periodic_competition&lt;ealib::generational_models::generational&lt;ealib::selection::tournament&lt;ealib::access::fitness, ealib::comparators::attribute&gt;, ealib::selection::none&gt;, ealib::generational_models::isolated_subpopulations&gt;, ealib::ancestors::default_subpopulation, ealib::dont_stop, ealib::fill_metapopulation, ealib::default_lifecycle, subpop_trait&gt; &gt;::movie_n_neighbors()"
+                  moduleName = "n_neighbors"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/heathergoldsby/Desktop/research/code/pps/src/movie.h"
+                  timestampString = "497553348.396846"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "188"
+                  endingLineNumber = "188"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ealib::analysis::movie_n_neighbors&lt;ealib::metapopulation&lt;ealib::digital_evolution&lt;lifecycle, ealib::recombination::asexual, ealib::weighted_round_robin&lt;ealib::access::unit_priority&gt;, ealib::multibirth_selfrep_not_ancestor, ealib::empty_facing_neighbor, ealib::dont_stop, ealib::generate_single_ancestor, ealib::null_trait&gt;, permute_n_neighbors, ealib::mutation::operators::no_mutation, subpopulation_propagule, ealib::generational_models::periodic_competition&lt;ealib::generational_models::generational&lt;ealib::selection::tournament&lt;ealib::access::fitness, ealib::comparators::attribute&gt;, ealib::selection::none&gt;, ealib::generational_models::isolated_subpopulations&gt;, ealib::ancestors::default_subpopulation, ealib::dont_stop, ealib::fill_metapopulation, ealib::default_lifecycle, subpop_trait&gt; &gt;::~movie_n_neighbors()"
+                  moduleName = "n_neighbors"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/heathergoldsby/Desktop/research/code/pps/src/movie.h"
+                  timestampString = "497553348.401154"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "188"
+                  endingLineNumber = "188"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ealib::analysis::movie_n_neighbors&lt;ealib::metapopulation&lt;ealib::digital_evolution&lt;lifecycle, ealib::recombination::asexual, ealib::weighted_round_robin&lt;ealib::access::unit_priority&gt;, ealib::multibirth_selfrep_not_ancestor, ealib::empty_facing_neighbor, ealib::dont_stop, ealib::generate_single_ancestor, ealib::null_trait&gt;, permute_n_neighbors, ealib::mutation::operators::no_mutation, subpopulation_propagule, ealib::generational_models::periodic_competition&lt;ealib::generational_models::generational&lt;ealib::selection::tournament&lt;ealib::access::fitness, ealib::comparators::attribute&gt;, ealib::selection::none&gt;, ealib::generational_models::isolated_subpopulations&gt;, ealib::ancestors::default_subpopulation, ealib::dont_stop, ealib::fill_metapopulation, ealib::default_lifecycle, subpop_trait&gt; &gt;::~movie_n_neighbors()"
+                  moduleName = "n_neighbors"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/heathergoldsby/Desktop/research/code/pps/src/movie.h"
+                  timestampString = "497553348.4047"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "188"
+                  endingLineNumber = "188"
+                  offsetFromSymbolStart = "15">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ealib::analysis::movie_n_neighbors&lt;ealib::metapopulation&lt;ealib::digital_evolution&lt;lifecycle, ealib::recombination::asexual, ealib::weighted_round_robin&lt;ealib::access::unit_priority&gt;, ealib::multibirth_selfrep_not_ancestor, ealib::empty_facing_neighbor, ealib::dont_stop, ealib::generate_single_ancestor, ealib::null_trait&gt;, permute_n_neighbors, ealib::mutation::operators::no_mutation, subpopulation_propagule, ealib::generational_models::periodic_competition&lt;ealib::generational_models::generational&lt;ealib::selection::tournament&lt;ealib::access::fitness, ealib::comparators::attribute&gt;, ealib::selection::none&gt;, ealib::generational_models::isolated_subpopulations&gt;, ealib::ancestors::default_subpopulation, ealib::dont_stop, ealib::fill_metapopulation, ealib::default_lifecycle, subpop_trait&gt; &gt;::operator()(ealib::metapopulation&lt;ealib::digital_evolution&lt;lifecycle, ealib::recombination::asexual, ealib::weighted_round_robin&lt;ealib::access::unit_priority&gt;, ealib::multibirth_selfrep_not_ancestor, ealib::empty_facing_neighbor, ealib::dont_stop, ealib::generate_single_ancestor, ealib::null_trait&gt;, permute_n_neighbors, ealib::mutation::operators::no_mutation, subpopulation_propagule, ealib::generational_models::periodic_competition&lt;ealib::generational_models::generational&lt;ealib::selection::tournament&lt;ealib::access::fitness, ealib::comparators::attribute&gt;, ealib::selection::none&gt;, ealib::generational_models::isolated_subpopulations&gt;, ealib::ancestors::default_subpopulation, ealib::dont_stop, ealib::fill_metapopulation, ealib::default_lifecycle, subpop_trait&gt;&amp;)"
+                  moduleName = "n_neighbors"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/heathergoldsby/Desktop/research/code/pps/src/movie.h"
+                  timestampString = "497553348.408024"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "190"
+                  endingLineNumber = "190"
+                  offsetFromSymbolStart = "39">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ealib::analysis::movie_n_neighbors&lt;ealib::metapopulation&lt;ealib::digital_evolution&lt;lifecycle, ealib::recombination::asexual, ealib::weighted_round_robin&lt;ealib::access::unit_priority&gt;, ealib::multibirth_selfrep_not_ancestor, ealib::empty_facing_neighbor, ealib::dont_stop, ealib::generate_single_ancestor, ealib::null_trait&gt;, permute_n_neighbors, ealib::mutation::operators::no_mutation, subpopulation_propagule, ealib::generational_models::periodic_competition&lt;ealib::generational_models::generational&lt;ealib::selection::tournament&lt;ealib::access::fitness, ealib::comparators::attribute&gt;, ealib::selection::none&gt;, ealib::generational_models::isolated_subpopulations&gt;, ealib::ancestors::default_subpopulation, ealib::dont_stop, ealib::fill_metapopulation, ealib::default_lifecycle, subpop_trait&gt; &gt;::~movie_n_neighbors()"
+                  moduleName = "n_neighbors"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/heathergoldsby/Desktop/research/code/pps/src/movie.h"
+                  timestampString = "497553348.411567"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "188"
+                  endingLineNumber = "188"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "src/movie.h"
+            timestampString = "497549748.544682"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "LIBEA_ANALYSIS_TOOL(movie_for_competitions)"
+            landmarkType = "9">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ealib::analysis::movie_n_neighbors&lt;ealib::metapopulation&lt;ealib::digital_evolution&lt;lifecycle, ealib::recombination::asexual, ealib::weighted_round_robin&lt;ealib::access::unit_priority&gt;, ealib::multibirth_selfrep_not_ancestor, ealib::empty_facing_neighbor, ealib::dont_stop, ealib::generate_single_ancestor, ealib::null_trait&gt;, permute_n_neighbors, ealib::mutation::operators::no_mutation, subpopulation_propagule, ealib::generational_models::periodic_competition&lt;ealib::generational_models::generational&lt;ealib::selection::tournament&lt;ealib::access::fitness, ealib::comparators::attribute&gt;, ealib::selection::none&gt;, ealib::generational_models::isolated_subpopulations&gt;, ealib::ancestors::default_subpopulation, ealib::dont_stop, ealib::fill_metapopulation, ealib::default_lifecycle, subpop_trait&gt; &gt;::movie_n_neighbors()"
+                  moduleName = "n_neighbors"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/heathergoldsby/Desktop/research/code/pps/src/movie.h"
+                  timestampString = "497553348.423408"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "188"
+                  endingLineNumber = "188"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ealib::analysis::movie_n_neighbors&lt;ealib::metapopulation&lt;ealib::digital_evolution&lt;lifecycle, ealib::recombination::asexual, ealib::weighted_round_robin&lt;ealib::access::unit_priority&gt;, ealib::multibirth_selfrep_not_ancestor, ealib::empty_facing_neighbor, ealib::dont_stop, ealib::generate_single_ancestor, ealib::null_trait&gt;, permute_n_neighbors, ealib::mutation::operators::no_mutation, subpopulation_propagule, ealib::generational_models::periodic_competition&lt;ealib::generational_models::generational&lt;ealib::selection::tournament&lt;ealib::access::fitness, ealib::comparators::attribute&gt;, ealib::selection::none&gt;, ealib::generational_models::isolated_subpopulations&gt;, ealib::ancestors::default_subpopulation, ealib::dont_stop, ealib::fill_metapopulation, ealib::default_lifecycle, subpop_trait&gt; &gt;::name()"
+                  moduleName = "n_neighbors"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/heathergoldsby/Desktop/research/code/pps/src/movie.h"
+                  timestampString = "497553348.426928"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "188"
+                  endingLineNumber = "188"
+                  offsetFromSymbolStart = "11">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ealib::analysis::movie_n_neighbors&lt;ealib::metapopulation&lt;ealib::digital_evolution&lt;lifecycle, ealib::recombination::asexual, ealib::weighted_round_robin&lt;ealib::access::unit_priority&gt;, ealib::multibirth_selfrep_not_ancestor, ealib::empty_facing_neighbor, ealib::dont_stop, ealib::generate_single_ancestor, ealib::null_trait&gt;, permute_n_neighbors, ealib::mutation::operators::no_mutation, subpopulation_propagule, ealib::generational_models::periodic_competition&lt;ealib::generational_models::generational&lt;ealib::selection::tournament&lt;ealib::access::fitness, ealib::comparators::attribute&gt;, ealib::selection::none&gt;, ealib::generational_models::isolated_subpopulations&gt;, ealib::ancestors::default_subpopulation, ealib::dont_stop, ealib::fill_metapopulation, ealib::default_lifecycle, subpop_trait&gt; &gt;::movie_n_neighbors()"
+                  moduleName = "n_neighbors"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/heathergoldsby/Desktop/research/code/pps/src/movie.h"
+                  timestampString = "497553348.430859"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "188"
+                  endingLineNumber = "188"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ealib::analysis::movie_n_neighbors&lt;ealib::metapopulation&lt;ealib::digital_evolution&lt;lifecycle, ealib::recombination::asexual, ealib::weighted_round_robin&lt;ealib::access::unit_priority&gt;, ealib::multibirth_selfrep_not_ancestor, ealib::empty_facing_neighbor, ealib::dont_stop, ealib::generate_single_ancestor, ealib::null_trait&gt;, permute_n_neighbors, ealib::mutation::operators::no_mutation, subpopulation_propagule, ealib::generational_models::periodic_competition&lt;ealib::generational_models::generational&lt;ealib::selection::tournament&lt;ealib::access::fitness, ealib::comparators::attribute&gt;, ealib::selection::none&gt;, ealib::generational_models::isolated_subpopulations&gt;, ealib::ancestors::default_subpopulation, ealib::dont_stop, ealib::fill_metapopulation, ealib::default_lifecycle, subpop_trait&gt; &gt;::~movie_n_neighbors()"
+                  moduleName = "n_neighbors"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/heathergoldsby/Desktop/research/code/pps/src/movie.h"
+                  timestampString = "497553348.434558"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "188"
+                  endingLineNumber = "188"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ealib::analysis::movie_n_neighbors&lt;ealib::metapopulation&lt;ealib::digital_evolution&lt;lifecycle, ealib::recombination::asexual, ealib::weighted_round_robin&lt;ealib::access::unit_priority&gt;, ealib::multibirth_selfrep_not_ancestor, ealib::empty_facing_neighbor, ealib::dont_stop, ealib::generate_single_ancestor, ealib::null_trait&gt;, permute_n_neighbors, ealib::mutation::operators::no_mutation, subpopulation_propagule, ealib::generational_models::periodic_competition&lt;ealib::generational_models::generational&lt;ealib::selection::tournament&lt;ealib::access::fitness, ealib::comparators::attribute&gt;, ealib::selection::none&gt;, ealib::generational_models::isolated_subpopulations&gt;, ealib::ancestors::default_subpopulation, ealib::dont_stop, ealib::fill_metapopulation, ealib::default_lifecycle, subpop_trait&gt; &gt;::~movie_n_neighbors()"
+                  moduleName = "n_neighbors"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/heathergoldsby/Desktop/research/code/pps/src/movie.h"
+                  timestampString = "497553348.437673"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "188"
+                  endingLineNumber = "188"
+                  offsetFromSymbolStart = "15">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ealib::analysis::movie_n_neighbors&lt;ealib::metapopulation&lt;ealib::digital_evolution&lt;lifecycle, ealib::recombination::asexual, ealib::weighted_round_robin&lt;ealib::access::unit_priority&gt;, ealib::multibirth_selfrep_not_ancestor, ealib::empty_facing_neighbor, ealib::dont_stop, ealib::generate_single_ancestor, ealib::null_trait&gt;, permute_n_neighbors, ealib::mutation::operators::no_mutation, subpopulation_propagule, ealib::generational_models::periodic_competition&lt;ealib::generational_models::generational&lt;ealib::selection::tournament&lt;ealib::access::fitness, ealib::comparators::attribute&gt;, ealib::selection::none&gt;, ealib::generational_models::isolated_subpopulations&gt;, ealib::ancestors::default_subpopulation, ealib::dont_stop, ealib::fill_metapopulation, ealib::default_lifecycle, subpop_trait&gt; &gt;::operator()(ealib::metapopulation&lt;ealib::digital_evolution&lt;lifecycle, ealib::recombination::asexual, ealib::weighted_round_robin&lt;ealib::access::unit_priority&gt;, ealib::multibirth_selfrep_not_ancestor, ealib::empty_facing_neighbor, ealib::dont_stop, ealib::generate_single_ancestor, ealib::null_trait&gt;, permute_n_neighbors, ealib::mutation::operators::no_mutation, subpopulation_propagule, ealib::generational_models::periodic_competition&lt;ealib::generational_models::generational&lt;ealib::selection::tournament&lt;ealib::access::fitness, ealib::comparators::attribute&gt;, ealib::selection::none&gt;, ealib::generational_models::isolated_subpopulations&gt;, ealib::ancestors::default_subpopulation, ealib::dont_stop, ealib::fill_metapopulation, ealib::default_lifecycle, subpop_trait&gt;&amp;)"
+                  moduleName = "n_neighbors"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/heathergoldsby/Desktop/research/code/pps/src/movie.h"
+                  timestampString = "497553348.442759"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "190"
+                  endingLineNumber = "190"
+                  offsetFromSymbolStart = "39">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ealib::analysis::movie_n_neighbors&lt;ealib::metapopulation&lt;ealib::digital_evolution&lt;lifecycle, ealib::recombination::asexual, ealib::weighted_round_robin&lt;ealib::access::unit_priority&gt;, ealib::multibirth_selfrep_not_ancestor, ealib::empty_facing_neighbor, ealib::dont_stop, ealib::generate_single_ancestor, ealib::null_trait&gt;, permute_n_neighbors, ealib::mutation::operators::no_mutation, subpopulation_propagule, ealib::generational_models::periodic_competition&lt;ealib::generational_models::generational&lt;ealib::selection::tournament&lt;ealib::access::fitness, ealib::comparators::attribute&gt;, ealib::selection::none&gt;, ealib::generational_models::isolated_subpopulations&gt;, ealib::ancestors::default_subpopulation, ealib::dont_stop, ealib::fill_metapopulation, ealib::default_lifecycle, subpop_trait&gt; &gt;::~movie_n_neighbors()"
+                  moduleName = "n_neighbors"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/heathergoldsby/Desktop/research/code/pps/src/movie.h"
+                  timestampString = "497553348.446238"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "188"
+                  endingLineNumber = "188"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

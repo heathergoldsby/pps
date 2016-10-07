@@ -65,6 +65,10 @@
       <CommandLineArguments>
          <CommandLineArgument
             argument = "-c stripes.cfg --ea.stripes.n_neighbors=3"
+            isEnabled = "NO">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "-l checkpoint-200000.xml.gz  --analyze movie_n_neighbors"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>
