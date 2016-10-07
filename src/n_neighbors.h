@@ -51,6 +51,8 @@ template <typename EA>
 double eval_n_neighbors(EA& ea) {
     
     double f = 0.0;
+    int n_neighbors = get<N_NEIGHBORS>(ea);
+
     
     for (int x=0; x < get<SPATIAL_X>(ea); ++x) {
         for (int y=0; y<get<SPATIAL_Y>(ea); ++y){
