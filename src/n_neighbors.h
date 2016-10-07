@@ -63,70 +63,54 @@ double eval_n_neighbors(EA& ea) {
 
             int neighbors = 0;
             int ny = y - 1;
+            if (ny < 0) {
+                ny = get<SPATIAL_Y>(ea) - 1;
+            }
             int sy = y + 1;
+            if (sy > get<SPATIAL_Y>(ea)) {
+                sy = 0;
+            }
             int ex = x + 1;
+            if (sy > get<SPATIAL_X>(ea)) {
+                ex = 0;
+            }
             int wx = x - 1;
+            if (wx < 0) {
+                wx = get<SPATIAL_X>(ea) - 1;
+            }
             
             typename EA::environment_type::location_type* n;
 
             // north row
-            if (ny >= 0) {
-                if (ex >= 0) {
-                    n = &ea.env().location(ex, ny);
-                    if (n->occupied()) {
-                        ++neighbors;
-                    }
-                }
+
+            n = &ea.env().location(ex, ny);
+            if (n->occupied()) { ++neighbors; }
+            
+            
                 
-                n = &ea.env().location(x, ny);
-                if (n->occupied()) {
-                    ++neighbors;
-                }
-                
-                if (wx < get<SPATIAL_X>(ea)) {
-                    n = &ea.env().location(wx, ny);
-                    if (n->occupied()) {
-                        ++neighbors;
-                    }
-                }
-            }
+            n = &ea.env().location(x, ny);
+            if (n->occupied()) { ++neighbors; }
+            
+            n = &ea.env().location(wx, ny);
+            if (n->occupied()) { ++neighbors; }
             
             // middle row
-            if (ex >= 0) {
-                n = &ea.env().location(ex, y);
-                if (n->occupied()) {
-                    ++neighbors;
-                }
-            }
-            if (wx < get<SPATIAL_X>(ea)) {
-                n = &ea.env().location(wx, y);
-                if (n->occupied()) {
-                    ++neighbors;
-                }
-            }
+            n = &ea.env().location(ex, y);
+            if (n->occupied()) { ++neighbors; }
+            
+            n = &ea.env().location(wx, y);
+            if (n->occupied()) { ++neighbors; }
             
             // south row
-            if (sy < get<SPATIAL_Y>(ea)) {
-                if (ex >= 0) {
-                    n = &ea.env().location(ex, sy);
-                    if (n->occupied()) {
-                        ++neighbors;
-                    }
-                }
-                
-                n = &ea.env().location(x, sy);
-                if (n->occupied()) {
-                    ++neighbors;
-                }
-                
-                if (wx < get<SPATIAL_X>(ea)) {
-                    n = &ea.env().location(wx, sy);
-                    if (n->occupied()) {
-                        ++neighbors;
-                    }
-                }
-            }
-
+            n = &ea.env().location(ex, sy);
+            if (n->occupied()) { ++neighbors; }
+            
+            n = &ea.env().location(x, sy);
+            if (n->occupied()) { ++neighbors; }
+            
+            n = &ea.env().location(wx, sy);
+            if (n->occupied()) { ++neighbors; }
+            
             f += (1.0 / (fabs(get<N_NEIGHBORS>(ea) - neighbors) + 1.0));
             
         }
