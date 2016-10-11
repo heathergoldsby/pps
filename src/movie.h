@@ -158,11 +158,11 @@ namespace ealib {
                         
                         
                         if (l->occupied()) {
-                            std::string op = get<OPINION>(*(l->inhabitant()),0);
+                            int op = get<OPINION>(*(l->inhabitant()),0);
                             df.write(op);
                             
                         } else {
-                            df.write("-1");
+                            df.write(-1);
                         }
                         
                     }
