@@ -11,7 +11,7 @@
 #include <ea/digital_evolution/utils/task_switching.h>
 
 
-
+#include "unique_number.h"
 /*
  recalculate_fitness(*i, ea);
  fs(static_cast<int>(ealib::fitness(*i,ea)));
