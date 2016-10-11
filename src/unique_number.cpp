@@ -177,7 +177,7 @@ public:
     }
     
     virtual void gather_tools() {
-        add_tool<ealib::analysis::movie_for_competitions>(this);
+        add_tool<ealib::analysis::movie_unique_number>(this);
     }
     
     virtual void gather_events(EA& ea) {
