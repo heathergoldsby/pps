@@ -137,3 +137,14 @@ src/n_neighbors.cpp
 ;
 
 install dist : n_neighbors : <location>$(HOME)/bin ;
+
+
+
+exe unique_number :
+src/unique_number.cpp
+/libea//libea
+/libea//libea_runner
+: <include>./include <link>static
+;
+
+install dist : unique_number.cpp : <location>$(HOME)/bin ;

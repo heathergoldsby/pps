@@ -29,7 +29,7 @@ using namespace ealib;
 
 LIBEA_MD_DECL(N_NEIGHBORS, "ea.stripes.n_neighbors", int); // get desired number of neigbhors
 
-//! Stripe fitness.
+//! fitness.
 struct permute_n_neighbors : public fitness_function<unary_fitness<double> > {
     template <typename EA>
     double eval_permute_n_neighbors(EA& ea) {
