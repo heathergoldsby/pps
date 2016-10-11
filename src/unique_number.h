@@ -60,9 +60,11 @@ double eval_unique_number(EA& ea) {
                 continue;
             }
             
-            s.insert(get<OPINION>(*(l->inhabitant()), 0));
-
+            int op = get<OPINION>(*(l->inhabitant()), 0);
             
+            if (op >= 0 && op <= get<POPULATION_SIZE>(ea)) {
+                s.insert(op);
+            }
             
         }
     }
