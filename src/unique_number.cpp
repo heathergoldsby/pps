@@ -70,13 +70,16 @@ struct lifecycle : public default_lifecycle {
         append_isa<set_opinion>(ea);
         append_isa<inc_opinion>(ea);
         append_isa<dec_opinion>(ea);
-
+        append_isa<bc_op>(ea);
+        append_isa<tx_op>(ea); // 37
         
         
         
         add_event<task_resource_consumption>(ea);
         add_event<task_switching_cost>(ea);
         add_event<ts_birth_event>(ea);
+        add_event<epi_op_birth_event>(ea);
+
         
         typedef typename EA::task_library_type::task_ptr_type task_ptr_type;
         typedef typename EA::resource_ptr_type resource_ptr_type;

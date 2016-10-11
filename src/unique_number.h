@@ -28,6 +28,58 @@ DIGEVO_INSTRUCTION_DECL(dec_opinion) {
     get<OPINION>(*p, 0) -= 1;
 }
 
+//! Send a message with the cell's opinion to the currently-faced neighbor.
+DIGEVO_INSTRUCTION_DECL(tx_op) {
+    typename EA::environment_type::location_type& l=*ea.env().neighbor(p);
+    if(l.occupied()) {
+        l.inhabitant()->hw().deposit_message(get<OPINION>(*p,0), get<OPINION>(*p,0));
+    }
+}
+
+//! Broadcast a message.
+DIGEVO_INSTRUCTION_DECL(bc_op) {
+    int rbx = hw.modifyRegister();
+    int rcx = hw.nextRegister(rbx);
+    
+    typedef typename EA::environment_type::neighborhood_iterator neighborhood_iterator;
+    std::pair<neighborhood_iterator,neighborhood_iterator> ni=ea.env().neighborhood(*p);
+    for(; ni.first!=ni.second; ++ni.first) {
+        typename EA::environment_type::location_type& l=*ni.first;
+        if(l.occupied()) {
+            l.inhabitant()->hw().deposit_message(get<OPINION>(*p,0), get<OPINION>(*p,0));
+        }
+    }
+}
+
+
+
+/*! epigenetic opinions
+ */
+template <typename EA>
+struct epi_op_birth_event : birth_event<EA> {
+    
+    //! Constructor.
+    epi_op_birth_event(EA& ea) : birth_event<EA>(ea) {
+    }
+    
+    //! Destructor.
+    virtual ~epi_op_birth_event() {
+    }
+    
+    /*! Called for every inheritance event.
+     */
+    virtual void operator()(typename EA::individual_type& offspring, // individual offspring
+                            typename EA::individual_type& parent, // individual parent
+                            EA& ea) {
+        //ea.env().face_org(parent, offspring);
+        get<OPINION>(offspring, 0) = get<OPINION>(parent,0);
+        
+    }
+};
+
+
+
+
 
 //! fitness.
 struct permute_unique_number : public fitness_function<unary_fitness<double> > {
