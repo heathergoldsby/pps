@@ -176,6 +176,102 @@ namespace ealib {
         }
         
 
+        LIBEA_ANALYSIS_TOOL(print_dom) {
+            
+            int update_max = get<METAPOP_COMPETITION_PERIOD>(ea);
+            int max_fit = 0;
+            typename EA::individual_type best;
+            
+            for(typename EA::iterator i=ea.begin(); i!=ea.end(); ++i) {
+                typename EA::individual_type tmp(*i->traits().founder());
+                
+                for (int j=0; j<=update_max; ++j) {
+                    tmp.update();
+                }
+                recalculate_fitness(tmp, ea);
+                
+                
+                
+                
+                // Calc fitness for each subpop
+                //                eval_two_stripes(tmp);
+                
+                // copy the stripe fit to the accumulator and also the subpop
+                double sf =get<STRIPE_FIT>(tmp);
+                
+                if (sf > max_fit) {
+                    max_fit = sf;
+                    best = *i;
+                }
+            }
+            
+            
+            datafile df("dominant.dat");
+            
+            // (*j)->genome().begin()
+            
+            typename EA::subpopulation_type::genome_type r((best[0])->genome().begin(),
+                                                            (best[0])->genome().begin()+(best[0])->hw().original_size());
+//            
+//            // iterate through a genome?
+//            for (k = r.begin(); k < r.end(); ++k) {
+//                
+//            }
+//            
+            
+            //(*j)[0]->genome();
+            
+//            df.write(get<SPATIAL_X>(ea));
+//            df.write(get<SPATIAL_Y>(ea));
+//            df.endl();
+            
+            //typename EA::individual_type best_founder(*best.traits().founder());
+            
+//            for (int j=0; j<=update_max; ++j) {
+//                best_founder.update();
+//                df.write(j);
+//                // grab info based on location...
+//                for (int x=0; x < get<SPATIAL_X>(ea); ++x) {
+//                    for (int y=0; y<get<SPATIAL_Y>(ea); ++y){
+//                        
+//                        //typename EA::individual_type::environment_type::location_type* l = &best_founder.traits().founder()->env().location(x,y);
+//                        typename EA::individual_type::environment_type::location_type* l = &best_founder.env().location(x,y);
+//                        
+//                        
+//                        if (l->occupied()) {
+//                            std::string lt = get<LAST_TASK>(*(l->inhabitant()),"");
+//                            
+//                            if(lt == "not") {
+//                                df.write("1");
+//                            }
+//                            if (lt == "nand") {
+//                                df.write("2");
+//                            }
+//                            if (lt == "or") {
+//                                df.write("3");
+//                            }
+//                            if (lt == "ornot") {
+//                                df.write("4");
+//                            }
+//                            if (lt == "") {
+//                                df.write("0");
+//                            }
+//                            
+//                            
+//                        } else {
+//                            df.write("-1");
+//                        }
+//                        
+//                    }
+//                }
+//                df.endl();
+//                
+//            }
+            
+            df.endl();
+            
+        }
+
 
     
 //        /*! lod_movie

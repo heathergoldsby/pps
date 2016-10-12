@@ -72,7 +72,10 @@ struct epi_op_birth_event : birth_event<EA> {
                             typename EA::individual_type& parent, // individual parent
                             EA& ea) {
         //ea.env().face_org(parent, offspring);
+        
         get<OPINION>(offspring, 0) = get<OPINION>(parent,0);
+        
+     
         
     }
 };
