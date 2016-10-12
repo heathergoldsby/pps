@@ -164,7 +164,7 @@ public:
         add_option<TOURNAMENT_SELECTION_N>(this);
         add_option<TOURNAMENT_SELECTION_K>(this);
 
-        
+        add_option<ARCHIVE_OUTPUT>(this);
         
         
     }
