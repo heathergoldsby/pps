@@ -35,6 +35,9 @@ struct lifecycle : public default_lifecycle {
         append_isa<nop_a>(0,ea);
         append_isa<nop_b>(0,ea);
         append_isa<nop_c>(0,ea);
+        append_isa<nop_d>(0,ea);
+        append_isa<nop_e>(0,ea);
+        append_isa<nop_f>(0,ea);
         append_isa<nop_x>(ea);
         append_isa<mov_head>(ea);
         append_isa<if_label>(ea);
@@ -49,9 +52,9 @@ struct lifecycle : public default_lifecycle {
         append_isa<tx_msg>(ea);
         append_isa<rx_msg>(ea);
         append_isa<bc_msg>(ea);
-        append_isa<rotate>(ea);
-        append_isa<rotate_cw>(ea);
-        append_isa<rotate_ccw>(ea);
+        append_isa<rotate_cardinal>(ea);
+        append_isa<rotate_cardinal_cw>(ea);
+        append_isa<rotate_cardinal_ccw>(ea);
         append_isa<if_less>(ea);
         append_isa<h_alloc>(ea);
         append_isa<h_copy>(ea);
@@ -62,7 +65,7 @@ struct lifecycle : public default_lifecycle {
         append_isa<if_equal>(ea);
         append_isa<if_not_equal>(ea);
         append_isa<jump_head>(ea);
-        append_isa<is_neighbor>(ea);
+        append_isa<is_neighbor>(ea); //33
         
         
         add_event<task_resource_consumption>(ea);
