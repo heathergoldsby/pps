@@ -35,9 +35,9 @@ struct lifecycle : public default_lifecycle {
         append_isa<nop_a>(0,ea);
         append_isa<nop_b>(0,ea);
         append_isa<nop_c>(0,ea);
-        append_isa<nop_d>(0,ea);
-        append_isa<nop_e>(0,ea);
-        append_isa<nop_f>(0,ea);
+//        append_isa<nop_d>(0,ea);
+//        append_isa<nop_e>(0,ea);
+//        append_isa<nop_f>(0,ea);
         append_isa<nop_x>(ea);
         append_isa<mov_head>(ea);
         append_isa<if_label>(ea);

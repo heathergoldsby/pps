@@ -44,10 +44,10 @@ struct subpopulation_propagule {
             prop_size = parents[0]->size();
         }
         
-        if (parents[0]->size() <= get<NUM_PROPAGULE_CELL>(mea)) {
-            return;
-        }
-        
+//        if (parents[0]->size() <= get<NUM_PROPAGULE_CELL>(mea)) {
+//            return;
+//        }
+//        
         // get a new subpopulation:
         typename MEA::individual_ptr_type p = mea.make_individual();
         p->initialize(mea.md());
