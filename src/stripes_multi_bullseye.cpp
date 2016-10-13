@@ -65,7 +65,7 @@ struct lifecycle : public default_lifecycle {
         append_isa<if_equal>(ea);
         append_isa<if_not_equal>(ea);
         append_isa<jump_head>(ea);
-        append_isa<is_neighbor>(ea); //33
+        append_isa<is_neighbor>(ea); //34
         
         
         add_event<task_resource_consumption>(ea);
