@@ -254,6 +254,7 @@
 		48F0866F1DA6CD1900D869A6 /* n_neighbors.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = n_neighbors.h; sourceTree = "<group>"; };
 		48F086791DA6CE3100D869A6 /* n_neighbors */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = n_neighbors; sourceTree = BUILT_PRODUCTS_DIR; };
 		48FF4C9219379E17001F0183 /* stripes_multi */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = stripes_multi; sourceTree = BUILT_PRODUCTS_DIR; };
+		48FF65AA1DB13D6000925B69 /* three_stripe_ancestor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = three_stripe_ancestor.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -476,6 +477,7 @@
 				486CA9B01CDCE51A003A113C /* stripes_ep4_copy.cpp */,
 				48CA8EA81CD3D2C7004BDB7E /* meta_moran_process.h */,
 				4849AE851D9AED55003921DA /* multibirth_not_nand_ornot_or_ancestor.h */,
+				48FF65AA1DB13D6000925B69 /* three_stripe_ancestor.h */,
 				48DFF79D1DAFD0C70043FC88 /* multibirth_cardinal_not_ancestor.h */,
 			);
 			path = src;
