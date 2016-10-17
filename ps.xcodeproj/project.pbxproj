@@ -214,6 +214,7 @@
 		482085CA1CCA8CF200406273 /* stripes_multi_evo.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = stripes_multi_evo.cpp; sourceTree = "<group>"; };
 		482C04A81D8B0482001D67C2 /* stripes_epi_control.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = stripes_epi_control.cpp; sourceTree = "<group>"; };
 		482C04B21D8B04D7001D67C2 /* stripes_epi_control */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = stripes_epi_control; sourceTree = BUILT_PRODUCTS_DIR; };
+		482CA51B1DB52C3800D93005 /* subpopulation_propagule_fixed_pos.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = subpopulation_propagule_fixed_pos.h; sourceTree = "<group>"; };
 		482F01361CC42E7C00C88BD8 /* stripes_multi_fps.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = stripes_multi_fps.cpp; sourceTree = "<group>"; };
 		482F01401CC42EF900C88BD8 /* stripes_multi_fps */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = stripes_multi_fps; sourceTree = BUILT_PRODUCTS_DIR; };
 		482F01421CC523B100C88BD8 /* stripes_multi_fps_3.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = stripes_multi_fps_3.cpp; sourceTree = "<group>"; };
@@ -468,6 +469,7 @@
 				482F01361CC42E7C00C88BD8 /* stripes_multi_fps.cpp */,
 				487ACE231934F7C60016340B /* movie.h */,
 				42DF06891945418600C9A364 /* subpopulation_propagule.h */,
+				482CA51B1DB52C3800D93005 /* subpopulation_propagule_fixed_pos.h */,
 				481F84C119DD91AC000EDBE8 /* multibirth_not_nand_prop_ancestor.h */,
 				48CA8E9B1CD3D1B8004BDB7E /* subpopulation_propagule_split.h */,
 				48EBE8191D8984BE003A9019 /* subpopulation_propagule_epi.h */,

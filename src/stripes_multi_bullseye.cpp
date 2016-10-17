@@ -18,6 +18,8 @@ using namespace ealib;
 #include "stripes.h"
 #include "movie.h"
 #include "subpopulation_propagule.h"
+#include "subpopulation_propagule_fixed_pos.h"
+
 #include "multibirth_not_nand_ornot_or_ancestor.h"
 
 
@@ -121,9 +123,9 @@ typedef digital_evolution
 
 typedef metapopulation
 < sea_type
-, permute_bullseye
+, permute_bullseye_fixed
 , mutation::operators::no_mutation
-, subpopulation_propagule
+, subpopulation_propagule_fixed_pos
 , generational_models::periodic_competition< >
 , ancestors::default_subpopulation
 , dont_stop
