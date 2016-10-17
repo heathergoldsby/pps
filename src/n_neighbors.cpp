@@ -19,6 +19,8 @@ using namespace ealib;
 #include "n_neighbors.h"
 #include "movie.h"
 #include "subpopulation_propagule.h"
+#include "subpopulation_propagule_fixed_pos.h"
+
 #include "multibirth_cardinal_not_ancestor.h"
 
 
@@ -122,7 +124,7 @@ typedef metapopulation
 < sea_type
 , permute_n_neighbors
 , mutation::operators::no_mutation
-, subpopulation_propagule
+, subpopulation_propagule_fixed_pos
 , generational_models::periodic_competition< >
 , ancestors::default_subpopulation
 , dont_stop
