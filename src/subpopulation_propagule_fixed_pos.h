@@ -106,6 +106,9 @@ struct subpopulation_propagule_fixed_pos {
             
         }
         
+        std::string pattern = get<PATTERN>(*parents[0], "");
+        put<PARENT_PATTERN>(pattern, *p);
+        
         offspring.insert(offspring.end(),p);
     }
 };

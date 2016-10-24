@@ -40,6 +40,10 @@ LIBEA_MD_DECL(STRIPE_FIT, "ea.stripes.fit", int); // count the number of organis
 LIBEA_MD_DECL(NUM_PROPAGULE_CELL, "ea.stripes.num_propagule_cell", int);
 LIBEA_MD_DECL(PROPAGULE_IDENTICAL, "ea.stripes.prop_identical", int); // 0 NO - different, 1 YES - identical
 LIBEA_MD_DECL(PROPAGULE_COPY, "ea.stripes.prop_copy", int); // 0 NO - move cells, 1 YES - copy cells
+LIBEA_MD_DECL(PARENT_PATTERN, "ea.stripes.parent_pattern", std::string); // strip representation of parent pattern
+LIBEA_MD_DECL(PATTERN, "ea.stripes.pattern", std::string); // strip representation of parent pattern
+LIBEA_MD_DECL(PARENT_WEIGHT, "ea.stripes.parent_weight", double); // 0 - no  parent weight; 1 only sim to parent
+
 
 //LIBEA_MD_DECL(IS_PROPAGULE, "ea.stripes.is_propagule", int); // 0 - no, 1 - cost paid, 2 - transfer
 
@@ -62,6 +66,37 @@ LIBEA_MD_DECL(AGE_AMOUNT, "ea.stripes.age_amount", double);
 
 LIBEA_MD_DECL(TRANS, "ea.stripes.trans", int); // 0 off; 1 on
 LIBEA_MD_DECL(BASE, "ea.stripes.base", double);
+
+
+//
+//
+///*!  transmit parent pattern to offspring.
+// */
+//template <typename EA>
+//struct transmit_pattern_event : birth_event<EA> {
+//    
+//    //! Constructor.
+//    transmit_pattern_event(EA& ea) : birth_event<EA>(ea) {
+//    }
+//    
+//    //! Destructor.
+//    virtual ~transmit_pattern_event() {
+//    }
+//    
+//    /*! Called for every inheritance event.
+//     */
+//    virtual void operator()(typename EA::individual_type& offspring, // individual offspring
+//                            typename EA::individual_type& parent, // individual parent
+//                            EA& ea) {
+//        
+//        
+//        
+//        // sweep through parent. create pattern string. place in offspring
+//        std::string pattern = get<PATTERN>(parent, "");
+//        put<PARENT_PATTERN>(pattern, offspring);
+//        
+//    }
+//};
 
 
 
@@ -594,6 +629,7 @@ double eval_bullseye(EA& ea) {
                             continue;
                         }
                         
+                        
                         // the outer ring.
                         if (check_x == 0 || check_x == 6 || check_y == 0 || check_y == 6) {
                             if(act_lt == "not" ) {
@@ -669,8 +705,7 @@ double eval_bullseye_fixed(EA& ea) {
     int max_x = get<SPATIAL_X>(ea);
     int max_y = get<SPATIAL_Y>(ea);
     
-//    for (int x=0; x < max_x; ++x) {
- //       for (int y=0; y< max_y; ++y){
+    std::string pattern;
     
     int x = 0;
     int y = 0;
@@ -678,9 +713,6 @@ double eval_bullseye_fixed(EA& ea) {
 
     
     std::string lt = get<LAST_TASK>(*(l->inhabitant()),"");
-
-   
-        
         
                 // check the grid.
                 int offset_x = 3 - x;
@@ -691,6 +723,7 @@ double eval_bullseye_fixed(EA& ea) {
                 
                 for (int check_x=0; check_x < max_x; ++check_x) {
                     for (int check_y=0; check_y< max_y; ++check_y){
+                        
                         
                         int act_x = check_x + offset_x;
                         if (act_x >= max_x) {
@@ -710,13 +743,31 @@ double eval_bullseye_fixed(EA& ea) {
                         
                         typename EA::environment_type::location_type* l2 = &ea.env().location(act_x,act_y);
                         if (!l2->occupied()) {
+                            // add on to pattern.
+                            pattern += "9";
                             continue;
                         }
                         
+                        
                         std::string act_lt = get<LAST_TASK>(*(l2->inhabitant()),"");
                         if (act_lt == "") {
+                            pattern += "0";
                             continue;
                         }
+                        
+                        if(lt == "not") {
+                            pattern += "1";
+                        }
+                        if (lt == "nand") {
+                            pattern += "2";
+                        }
+                        if (lt == "or") {
+                            pattern += "3";
+                        }
+                        if (lt == "ornot") {
+                            pattern += "4";
+                        }
+                       
                         
                         // the outer ring.
                         if (check_x == 0 || check_x == 6 || check_y == 0 || check_y == 6) {
@@ -777,7 +828,31 @@ double eval_bullseye_fixed(EA& ea) {
     }
     
     
+    double parent_weight = get<PARENT_WEIGHT>(ea,0);
+    double sim_val = 0;
+    
+    if (parent_weight) {
+        std::string p_string = get<PARENT_PATTERN>(ea,"");
+        // compute similarity
+        
+        if (p_string != "") {
+        
+            for (int i = 0; i < p_string.length(); ++i) {
+                if (p_string[i] == pattern[i]) {
+                    ++sim_val;
+                }
+            }
+        
+            sim_val /= p_string.length();
+        
+            best_fit = best_fit + (sim_val * parent_weight);
+        }
+
+    }
+    
+    
     put<STRIPE_FIT>(best_fit, ea);
+    put<PATTERN>(pattern, ea);
     return (best_fit);
     
     

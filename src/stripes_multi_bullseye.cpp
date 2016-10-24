@@ -73,6 +73,7 @@ struct lifecycle : public default_lifecycle {
         add_event<task_resource_consumption>(ea);
         add_event<task_switching_cost>(ea);
         add_event<ts_birth_event>(ea);
+
         
         typedef typename EA::task_library_type::task_ptr_type task_ptr_type;
         typedef typename EA::resource_ptr_type resource_ptr_type;
@@ -171,6 +172,7 @@ public:
         add_option<TOURNAMENT_SELECTION_N>(this);
         add_option<TOURNAMENT_SELECTION_K>(this);
         
+        add_option<PARENT_WEIGHT>(this);
         
         
         
@@ -185,7 +187,8 @@ public:
     virtual void gather_events(EA& ea) {
         add_event<subpopulation_founder_event>(ea);
         add_event<datafiles::fitness_dat>(ea);
-        
+//        add_event<transmit_pattern_event>(ea);
+
         add_event<task_performed_tracking>(ea);
         //add_event<task_switch_tracking>(ea);
         

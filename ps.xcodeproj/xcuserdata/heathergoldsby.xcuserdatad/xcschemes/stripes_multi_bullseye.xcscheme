@@ -64,7 +64,7 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "-c stripes.cfg"
+            argument = "-c stripes.cfg --ea.stripes.parent_weight=1000"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>
