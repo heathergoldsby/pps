@@ -104,7 +104,7 @@ typedef digital_evolution
 < lifecycle
 , recombination::asexual
 , round_robin
-, three_stripe_ancestor
+, three_stripe_ancestor_2
 , empty_facing_neighbor
 , dont_stop
 , generate_single_ancestor
