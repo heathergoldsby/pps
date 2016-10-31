@@ -21,6 +21,7 @@ using namespace ealib;
 #include "stripes.h"
 #include "movie.h"
 #include "subpopulation_propagule.h"
+#include "subpopulation_propagule_fixed_pos.h"
 
 
 //! Configuration object for an EA.
@@ -118,7 +119,8 @@ typedef metapopulation
 < sea_type
 , permute_three_stripes
 , mutation::operators::no_mutation
-, subpopulation_propagule
+//, subpopulation_propagule
+, subpopulation_propagule_fixed_pos
 , generational_models::periodic_competition< >
 , ancestors::default_subpopulation
 , dont_stop
