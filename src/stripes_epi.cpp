@@ -7,6 +7,8 @@
 #include <ea/datafiles/fitness.h>
 #include <ea/digital_evolution/extra_instruction_sets/matrix.h>
 
+
+
 #include "subpopulation_propagule_epi.h"
 #include "propagule_epi.h"
 
@@ -173,7 +175,9 @@ public:
     virtual void gather_events(EA& ea) {
         add_event<subpopulation_founder_event>(ea);
         add_event<datafiles::fitness_dat>(ea);
-        
+
+        add_event<datafiles::mrca_lineage>(ea);
+
         add_event<task_performed_tracking>(ea);
 //        add_event<datafiles::propagule_dat>(ea);
 //        add_event<datafiles::propagule_size_dat>(ea);
