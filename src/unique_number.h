@@ -75,7 +75,6 @@ struct epi_op_birth_event : birth_event<EA> {
         
         get<OPINION>(offspring, 0) = get<OPINION>(parent,0);
         
-     
         
     }
 };

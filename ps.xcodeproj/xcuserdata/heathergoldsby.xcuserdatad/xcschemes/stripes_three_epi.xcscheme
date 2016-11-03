@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0610"
+   LastUpgradeVersion = "0800"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "48FF4C8419379E17001F0183"
-               BuildableName = "stripes_multi"
-               BlueprintName = "stripes_multi"
+               BlueprintIdentifier = "487A2A941DCAC0700027082B"
+               BuildableName = "stripes_three_epi"
+               BlueprintName = "stripes_three_epi"
                ReferencedContainer = "container:ps.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -32,9 +32,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "48FF4C8419379E17001F0183"
-            BuildableName = "stripes_multi"
-            BlueprintName = "stripes_multi"
+            BlueprintIdentifier = "487A2A941DCAC0700027082B"
+            BuildableName = "stripes_three_epi"
+            BlueprintName = "stripes_three_epi"
             ReferencedContainer = "container:ps.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -56,24 +56,16 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "48FF4C8419379E17001F0183"
-            BuildableName = "stripes_multi"
-            BlueprintName = "stripes_multi"
+            BlueprintIdentifier = "487A2A941DCAC0700027082B"
+            BuildableName = "stripes_three_epi"
+            BlueprintName = "stripes_three_epi"
             ReferencedContainer = "container:ps.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "-c stripes.cfg"
-            isEnabled = "NO">
-         </CommandLineArgument>
-         <CommandLineArgument
-            argument = "-l checkpoint-200000.xml.gz "
+            argument = "-c stripes3.cfg"
             isEnabled = "YES">
-         </CommandLineArgument>
-         <CommandLineArgument
-            argument = "-l checkpoint-200000.xml.gz --analyze movie_for_competitions"
-            isEnabled = "NO">
          </CommandLineArgument>
       </CommandLineArguments>
       <AdditionalOptions>
@@ -89,9 +81,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "48FF4C8419379E17001F0183"
-            BuildableName = "stripes_multi"
-            BlueprintName = "stripes_multi"
+            BlueprintIdentifier = "487A2A941DCAC0700027082B"
+            BuildableName = "stripes_three_epi"
+            BlueprintName = "stripes_three_epi"
             ReferencedContainer = "container:ps.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

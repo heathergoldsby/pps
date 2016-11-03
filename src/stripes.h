@@ -151,6 +151,24 @@ struct permute_three_stripes : public fitness_function<unary_fitness<double> > {
 };
 
 
+//! Stripe fitness.
+struct permute_three_stripes_matrix : public fitness_function<unary_fitness<double> > {
+    template <typename EA>
+    double eval_permute_three_stripes_matrix(EA& ea) {
+        double tmp_fit = eval_three_stripes_matrix(ea);
+        return tmp_fit;
+    }
+    
+    template <typename SubpopulationEA, typename MetapopulationEA>
+    double operator()(SubpopulationEA& sea, MetapopulationEA& mea) {
+        double f = static_cast<double>(eval_permute_three_stripes_matrix(sea));
+        put<STRIPE_FIT>(f,sea);
+        return f;
+    }
+};
+
+
+
 
 //! Square fitness
 struct permute_square : public fitness_function<unary_fitness<double> > {
@@ -349,6 +367,111 @@ double eval_three_stripes(EA& ea) {
     //    put<STRIPE_FIT>(rescaled_fit,ea);
     
 }
+
+
+template <typename EA>
+double eval_three_stripes_matrix(EA& ea) {
+    
+    double num_correct = 0;
+    
+    
+    //    accumulator_set<double, stats<tag::mean, tag::max> > sfit;
+    int num_neighbors = 4;
+    std::vector<double> not_fit(num_neighbors);
+    std::vector<double> nand_fit(num_neighbors);
+    std::vector<double> ornot_fit(num_neighbors);
+    std::vector<double> total_fit(num_neighbors);
+    
+    int max_x = get<SPATIAL_X>(ea);
+    int max_y = get<SPATIAL_Y>(ea);
+    
+    for (int x=0; x < max_x; ++x) {
+        for (int y=0; y< max_y; ++y){
+            typename EA::environment_type::location_type* l = &ea.env().location(x,y);
+            if (!l->occupied()) {
+                continue;
+            }
+            
+            std::string lt = get<LAST_TASK>(*(l->inhabitant()),"");
+            if (lt == "" ) { continue; }
+            
+            std::vector<double> temp_t_fit(num_neighbors);
+            
+            // Get the relevant neighbors...
+            // We only check NW (0) , N (1) , NE (2) , E (3) (the rest are covered as the grid moves)
+            int n = y - 1;
+            int w = x - 1;
+            int e = x + 1;
+           
+            
+            if (n >= 0) {
+                // NW
+                if (w >= 0) {
+                    if (lt == get_last_task(w, n, ea)) { ++temp_t_fit[0]; }
+                }
+            
+                // N
+                if (lt == get_last_task(x, n, ea)) { ++temp_t_fit[1]; }
+            
+                // NE
+                if (e < max_x) {
+                    if (lt == get_last_task(e, n, ea)) { ++temp_t_fit[2]; }
+                }
+            }
+            
+                // E
+            if (e < max_x) {
+                if (lt == get_last_task(e, y, ea)) { ++temp_t_fit[3]; }
+            }
+            
+            if (lt == "not") {
+                not_fit[0] += temp_t_fit[0];
+                not_fit[1] += temp_t_fit[1];
+                not_fit[2] += temp_t_fit[2];
+                not_fit[3] += temp_t_fit[3];
+            } else if (lt == "nand") {
+                nand_fit[0] += temp_t_fit[0];
+                nand_fit[1] += temp_t_fit[1];
+                nand_fit[2] += temp_t_fit[2];
+                nand_fit[3] += temp_t_fit[3];
+            } else if (lt == "ornot") {
+                ornot_fit[0] += temp_t_fit[0];
+                ornot_fit[1] += temp_t_fit[1];
+                ornot_fit[2] += temp_t_fit[2];
+                ornot_fit[3] += temp_t_fit[3];
+            }
+        }
+    }
+    
+    total_fit[0] = (not_fit[0] + 1) * (nand_fit[0] + 1) * (ornot_fit[0] + 1);
+    total_fit[1] = (not_fit[1] + 1) * (nand_fit[1] + 1) * (ornot_fit[1] + 1);
+    total_fit[2] = (not_fit[2] + 1) * (nand_fit[2] + 1) * (ornot_fit[2] + 1);
+    total_fit[3] = (not_fit[3] + 1) * (nand_fit[3] + 1) * (ornot_fit[3] + 1);
+    
+    double min_fit = 1;
+    double max_fit = pow((get<POPULATION_SIZE>(ea) / 3), 3);
+    
+    double tmp_fit = std::max(total_fit[0], total_fit[1]);
+    tmp_fit = std::max(tmp_fit, total_fit[2]);
+    tmp_fit = std::max(tmp_fit, total_fit[3]);
+    
+    if (tmp_fit < min_fit) {
+        tmp_fit = min_fit;
+    }
+    
+    
+    put<STRIPE_FIT>(tmp_fit, ea);
+    return (tmp_fit);
+    //    // rescale fitness!
+    //    double rescaled_fit = (get<FIT_MAX>(ea) - get<FIT_MIN>(ea)) * pow (((tmp_fit - min_fit) / (max_fit - min_fit)), (get<FIT_GAMMA>(ea))) + get<FIT_MIN>(ea);
+    //
+    //
+    //    put<STRIPE_FIT>(rescaled_fit,ea);
+    
+}
+
+
+
 
 
 
@@ -858,6 +981,44 @@ double eval_bullseye_fixed(EA& ea) {
     
 }
 
+
+
+/*! epigenetic opinions
+ */
+template <typename EA>
+struct epi_reg_b_birth_event : birth_event<EA> {
+    
+    //! Constructor.
+    epi_reg_b_birth_event(EA& ea) : birth_event<EA>(ea) {
+    }
+    
+    //! Destructor.
+    virtual ~epi_reg_b_birth_event() {
+    }
+    
+    /*! Called for every inheritance event.
+     */
+    virtual void operator()(typename EA::individual_type& offspring, // individual offspring
+                            typename EA::individual_type& parent, // individual parent
+                            EA& ea) {
+        
+        offspring.hw().setRegValue(EA::individual_type::hardware_type::BX, parent.hw().getRegValue(EA::individual_type::hardware_type::BX));
+        //ea.env().face_org(parent, offspring);
+        
+        //get<OPINION>(offspring, 0) = get<OPINION>(parent,0);
+//        int rbx = hw.modifyRegister();
+//        hw.setRegValue(rbx,hw.age());
+//    }
+    
+    //! Jump the organism's IP head; Move head ?IP? by amount in CX register
+ //   DIGEVO_INSTRUCTION_DECL(jump_head){
+ //       int rbx = hw.modifyRegister();
+ //       int jumpAmt = hw.getRegValue(rbx);
+        
+        
+        
+    }
+};
 
 
 
