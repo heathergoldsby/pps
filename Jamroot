@@ -82,6 +82,16 @@ src/stripes_multi_three.cpp
 
 install dist : stripes_multi_three : <location>$(HOME)/bin ;
 
+exe stripes_multi_three_epi :
+src/stripes_multi_three_epi_matrix.cpp
+/libea//libea
+/libea//libea_runner
+: <include>./include <link>static
+;
+
+install dist : stripes_multi_three_epi : <location>$(HOME)/bin ;
+
+
 
 
 exe stripes_multi_bullseye :
