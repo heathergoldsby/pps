@@ -66,6 +66,8 @@ struct subpopulation_propagule_clump {
         
         configurable_per_site m(get<GERM_MUTATION_PER_SITE_P>(mea));
         std::vector<int> used_pos;
+        std::vector<int> used_pos_with_avail_neighbors;
+
         
         //        std::vector<int> open_pos (s);
         //        for( int n = 0 ; n < s ; ++n ) {
@@ -95,6 +97,7 @@ struct subpopulation_propagule_clump {
             //p->insert(p->end(),q);
             int pos = mea.rng().uniform_integer(0,pop_size);
             used_pos.push_back(pos);
+            used_pos_with_avail_neighbors.push_back(pos);
 
             p->insert_at(p->end(),q, p->env().location(pos).position());
             
@@ -105,36 +108,58 @@ struct subpopulation_propagule_clump {
                 typename MEA::subpopulation_type::individual_ptr_type o(q);
                 
                 bool not_placed = true;
-                int place;
+                int place = -1;
                 
                 while (not_placed) {
-                    int n = mea.rng().uniform_integer(0,used_pos.size());
-                    int neighbor = used_pos[n];
-                    
+                    int n = mea.rng().uniform_integer(0,used_pos_with_avail_neighbors.size());
+                    int neighbor = used_pos_with_avail_neighbors[n];
+                    int dir_try = 0;
                     int dir = mea.rng().uniform_integer(0,3);
                     
-                    // N
-                    if (dir == 0) {
-                        place = neighbor - max_x;
-                        if (place < 0) { continue; }
-                    } else if (dir == 1) { // E
-                        if ((neighbor % max_x) == (max_x -1)) { continue; }
-                        place = neighbor + 1;
-                    } else if (dir == 2) { // S
-                        place = neighbor + max_x;
-                        if (place >= get<POPULATION_SIZE>(mea)) { continue; }
-                    } else if (dir == 3) { // W
-                        if ((neighbor % max_x) == 0) { continue; }
-                        place = neighbor - 1;
+                   
+                    
+                    while (dir_try <= 4) {
+                        
+                        dir = (dir + 1);
+                        if (dir > 3) { dir = 0; }
+                        dir_try++;
+                        
+                        // N
+                        if (dir == 0) {
+                            if ((neighbor - max_x) < 0) { continue; }
+                            place = neighbor - max_x;
+                        } else if (dir == 1) { // E
+                            if ((neighbor % max_x) == (max_x -1)) { continue; }
+                            place = neighbor + 1;
+                        } else if (dir == 2) { // S
+                            if ((neighbor + max_x) >= get<POPULATION_SIZE>(mea)) { continue; }
+                            place = neighbor + max_x;
+                        } else if (dir == 3) { // W
+                            if ((neighbor % max_x) == 0) { continue; }
+                            place = neighbor - 1;
+                        }
+                        
+                        // already used
+                        if (std::find(used_pos.begin(), used_pos.end(), place) != used_pos.end()) {
+                            place = -1;
+                            continue;
+                        } else {
+                            break;
+                        }
+
                     }
                     
-                    // already used
-                    if (std::find(used_pos.begin(), used_pos.end(), place) != used_pos.end()) {
+                    // not placed, then try again
+                    if (place == -1) {
+                        used_pos_with_avail_neighbors.erase(used_pos_with_avail_neighbors.begin()+n);
                         continue;
                     }
+                    
+                   
 
                     p->insert_at(p->end(),q, p->env().location(place).position());
                     used_pos.push_back(place);
+                    used_pos_with_avail_neighbors.push_back(place);
                     not_placed = false;
                 }
                 

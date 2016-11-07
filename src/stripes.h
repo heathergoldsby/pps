@@ -986,14 +986,14 @@ double eval_bullseye_fixed(EA& ea) {
 /*! epigenetic opinions
  */
 template <typename EA>
-struct epi_reg_b_birth_event : birth_event<EA> {
+struct epi_reg_birth_event : birth_event<EA> {
     
     //! Constructor.
-    epi_reg_b_birth_event(EA& ea) : birth_event<EA>(ea) {
+    epi_reg_birth_event(EA& ea) : birth_event<EA>(ea) {
     }
     
     //! Destructor.
-    virtual ~epi_reg_b_birth_event() {
+    virtual ~epi_reg_birth_event() {
     }
     
     /*! Called for every inheritance event.
@@ -1001,8 +1001,13 @@ struct epi_reg_b_birth_event : birth_event<EA> {
     virtual void operator()(typename EA::individual_type& offspring, // individual offspring
                             typename EA::individual_type& parent, // individual parent
                             EA& ea) {
-        
+
+        offspring.hw().setRegValue(EA::individual_type::hardware_type::AX, parent.hw().getRegValue(EA::individual_type::hardware_type::AX));
+
         offspring.hw().setRegValue(EA::individual_type::hardware_type::BX, parent.hw().getRegValue(EA::individual_type::hardware_type::BX));
+        
+        offspring.hw().setRegValue(EA::individual_type::hardware_type::CX, parent.hw().getRegValue(EA::individual_type::hardware_type::CX));
+
         //ea.env().face_org(parent, offspring);
         
         //get<OPINION>(offspring, 0) = get<OPINION>(parent,0);

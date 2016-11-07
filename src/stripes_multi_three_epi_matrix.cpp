@@ -74,7 +74,7 @@ struct lifecycle : public default_lifecycle {
         add_event<task_resource_consumption>(ea);
         add_event<task_switching_cost>(ea);
         add_event<ts_birth_event>(ea);
-        add_event<epi_reg_b_birth_event>(ea);
+        add_event<epi_reg_birth_event>(ea);
         add_event<epi_op_birth_event>(ea);
         
         typedef typename EA::task_library_type::task_ptr_type task_ptr_type;
@@ -114,7 +114,7 @@ typedef digital_evolution
 < lifecycle
 , recombination::asexual
 , round_robin
-, multibirth_selfrep_not_nand_ornot_ancestor
+, multibirth_selfrep_not_ancestor
 , empty_facing_neighbor_matrix
 , dont_stop
 , generate_single_ancestor
