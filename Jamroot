@@ -158,3 +158,28 @@ src/unique_number.cpp
 ;
 
 install dist : unique_number.cpp : <location>$(HOME)/bin ;
+
+
+
+
+exe stripes_multi_clump :
+src/stripes_multi_clump.cpp
+/libea//libea
+/libea//libea_runner
+: <include>./include <link>static
+;
+
+install dist : stripes_multi_clump : <location>$(HOME)/bin ;
+
+
+
+exe stripes_multi_three_clump :
+src/stripes_multi_three_clump.cpp
+/libea//libea
+/libea//libea_runner
+: <include>./include <link>static
+;
+
+install dist : stripes_multi_three_clump : <location>$(HOME)/bin ;
+
+
