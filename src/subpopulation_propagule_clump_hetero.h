@@ -80,12 +80,13 @@ struct subpopulation_propagule_clump_hetero {
 
             
 
-//            //p->insert(p->end(),q);
-//            int pos = mea.rng().uniform_integer(0,pop_size);
-//            used_pos.push_back(pos);
-//            used_pos_with_avail_neighbors.push_back(pos);
-//            
-//            p->insert_at(p->end(),q, p->env().location(pos).position());
+            if (used_pos.size() == 0) {
+                int pos = mea.rng().uniform_integer(0,pop_size);
+                used_pos.push_back(pos);
+                used_pos_with_avail_neighbors.push_back(pos);
+                p->insert_at(p->end(),q, p->env().location(pos).position());
+            } else {
+
 //            
 //            int max_x =get<SPATIAL_X>(mea);
 //            
@@ -149,7 +150,7 @@ struct subpopulation_propagule_clump_hetero {
                 }
                 
             //}
-            
+            }
         }
         
 
