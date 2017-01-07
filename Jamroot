@@ -182,4 +182,24 @@ src/stripes_multi_three_clump.cpp
 
 install dist : stripes_multi_three_clump : <location>$(HOME)/bin ;
 
+exe stripes_multi_clump_hetero :
+src/stripes_multi_clump_hetero.cpp
+/libea//libea
+/libea//libea_runner
+: <include>./include <link>static
+;
+
+install dist : stripes_multi_clump_hetero : <location>$(HOME)/bin ;
+
+
+
+exe stripes_multi_three_clump_hetero :
+src/stripes_multi_three_clump_hetero.cpp
+/libea//libea
+/libea//libea_runner
+: <include>./include <link>static
+;
+
+install dist : stripes_multi_three_clump_hetero : <location>$(HOME)/bin ;
+
 

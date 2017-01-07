@@ -84,6 +84,11 @@
 			<key>orderHint</key>
 			<integer>41</integer>
 		</dict>
+		<key>stripes_multi_clump_hetero.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>42</integer>
+		</dict>
 		<key>stripes_multi_evo.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -293,6 +298,11 @@
 			<true/>
 		</dict>
 		<key>48D0DA6A1E20679800729AB9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>48D0DA771E2069A500729AB9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
