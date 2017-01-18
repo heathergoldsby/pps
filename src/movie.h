@@ -33,6 +33,8 @@ namespace ealib {
             typename EA::individual_type best;
             
             for(typename EA::iterator i=ea.begin(); i!=ea.end(); ++i) {
+                
+                // not preserving location
                 typename EA::individual_type tmp(*i->traits().founder());
                 
                 for (int j=0; j<=update_max; ++j) {
@@ -61,7 +63,8 @@ namespace ealib {
             df.write(get<SPATIAL_Y>(ea));
             df.endl();
 
-            typename EA::individual_type best_founder(*best.traits().founder());
+//            typename EA::individual_type best_founder(*best.traits().founder());
+            typename EA::individual_type best_founder = *best.traits().founder();
 
             for (int j=0; j<=update_max; ++j) {
                 best_founder.update();
