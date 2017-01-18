@@ -203,3 +203,11 @@ src/stripes_multi_three_clump_hetero.cpp
 install dist : stripes_multi_three_clump_hetero : <location>$(HOME)/bin ;
 
 
+exe two_color_control_clump :
+src/two_color_control_clump.cpp
+/libea//libea
+/libea//libea_runner
+: <include>./include <link>static
+;
+
+install dist : two_color_control_clump : <location>$(HOME)/bin ;

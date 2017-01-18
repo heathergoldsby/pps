@@ -268,6 +268,7 @@
 		487A2A9D1DCAC0700027082B /* stripes_three_epi */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = stripes_three_epi; sourceTree = BUILT_PRODUCTS_DIR; };
 		487ACE231934F7C60016340B /* movie.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = movie.h; sourceTree = "<group>"; };
 		4890BB541DCC120C0090765C /* subpopulation_propagule_clump.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = subpopulation_propagule_clump.h; sourceTree = "<group>"; };
+		489F9FEF1E2FFE4A00F55339 /* two_color_control_clump.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = two_color_control_clump.cpp; sourceTree = "<group>"; };
 		48A1E129183F8ED70023C478 /* stripes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = stripes.h; sourceTree = "<group>"; };
 		48AC8AB11937639900DA6945 /* stripes_multi.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = stripes_multi.cpp; sourceTree = "<group>"; };
 		48B25FD51D91963000FDD03B /* stripes_multi_square */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = stripes_multi_square; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -516,11 +517,40 @@
 		42441A81158616AF009863BE /* src */ = {
 			isa = PBXGroup;
 			children = (
+				489F9FEE1E2FFDA700F55339 /* misc */,
 				48D0DA671E2066C900729AB9 /* 2017 */,
 				48CA8EA91CD3D477004BDB7E /* propagule.h */,
-				48EBE8261D898BD2003A9019 /* propagule_epi.h */,
 				48C4E6ED1D830B5700977742 /* propagule_size.h */,
 				48A1E129183F8ED70023C478 /* stripes.h */,
+				487ACE231934F7C60016340B /* movie.h */,
+				42DF06891945418600C9A364 /* subpopulation_propagule.h */,
+				482CA51B1DB52C3800D93005 /* subpopulation_propagule_fixed_pos.h */,
+				4890BB541DCC120C0090765C /* subpopulation_propagule_clump.h */,
+				48D0DA751E2068B800729AB9 /* subpopulation_propagule_clump_hetero.h */,
+				481F84C119DD91AC000EDBE8 /* multibirth_not_nand_prop_ancestor.h */,
+				48CA8E9B1CD3D1B8004BDB7E /* subpopulation_propagule_split.h */,
+				48EBE8191D8984BE003A9019 /* subpopulation_propagule_epi.h */,
+				486CA9AF1CDCD47F003A113C /* subpopulation_propagule_copy.h */,
+				48CA8EA81CD3D2C7004BDB7E /* meta_moran_process.h */,
+				4849AE851D9AED55003921DA /* multibirth_not_nand_ornot_or_ancestor.h */,
+				48FF65AA1DB13D6000925B69 /* three_stripe_ancestor.h */,
+				48DFF79D1DAFD0C70043FC88 /* multibirth_cardinal_not_ancestor.h */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		42441A9515861785009863BE /* lib */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = lib;
+			path = /Users/dk/Documents/repositories/research.hg/src/ocr/../apps;
+			sourceTree = "<absolute>";
+		};
+		489F9FEE1E2FFDA700F55339 /* misc */ = {
+			isa = PBXGroup;
+			children = (
+				48EBE8261D898BD2003A9019 /* propagule_epi.h */,
 				48F0866F1DA6CD1900D869A6 /* n_neighbors.h */,
 				4838ED3E1DAC5E9B001A45C1 /* unique_number.h */,
 				482085C91CCA8BE400406273 /* evo_propagule_ins.h */,
@@ -538,33 +568,12 @@
 				482085BD1CCA7A3000406273 /* stripes_multi_matrix.cpp */,
 				482F01421CC523B100C88BD8 /* stripes_multi_fps_3.cpp */,
 				482F01361CC42E7C00C88BD8 /* stripes_multi_fps.cpp */,
-				487ACE231934F7C60016340B /* movie.h */,
-				42DF06891945418600C9A364 /* subpopulation_propagule.h */,
-				482CA51B1DB52C3800D93005 /* subpopulation_propagule_fixed_pos.h */,
-				4890BB541DCC120C0090765C /* subpopulation_propagule_clump.h */,
-				48D0DA751E2068B800729AB9 /* subpopulation_propagule_clump_hetero.h */,
-				481F84C119DD91AC000EDBE8 /* multibirth_not_nand_prop_ancestor.h */,
-				48CA8E9B1CD3D1B8004BDB7E /* subpopulation_propagule_split.h */,
-				48EBE8191D8984BE003A9019 /* subpopulation_propagule_epi.h */,
-				486CA9AF1CDCD47F003A113C /* subpopulation_propagule_copy.h */,
 				48CA8E9C1CD3D21B004BDB7E /* stripes_ep4.cpp */,
 				486CA9A31CD923BF003A113C /* stripes_ep4_fixed.cpp */,
 				486CA9B01CDCE51A003A113C /* stripes_ep4_copy.cpp */,
-				48CA8EA81CD3D2C7004BDB7E /* meta_moran_process.h */,
-				4849AE851D9AED55003921DA /* multibirth_not_nand_ornot_or_ancestor.h */,
-				48FF65AA1DB13D6000925B69 /* three_stripe_ancestor.h */,
-				48DFF79D1DAFD0C70043FC88 /* multibirth_cardinal_not_ancestor.h */,
 			);
-			path = src;
+			name = misc;
 			sourceTree = "<group>";
-		};
-		42441A9515861785009863BE /* lib */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = lib;
-			path = /Users/dk/Documents/repositories/research.hg/src/ocr/../apps;
-			sourceTree = "<absolute>";
 		};
 		48D0DA671E2066C900729AB9 /* 2017 */ = {
 			isa = PBXGroup;
@@ -572,6 +581,7 @@
 				48D0DA681E2066EF00729AB9 /* stripes_multi_three_clump.cpp */,
 				48D0DA821E206A7C00729AB9 /* stripes_multi_three_clump_hetero.cpp */,
 				48D0DA691E20674D00729AB9 /* stripes_multi_clump.cpp */,
+				489F9FEF1E2FFE4A00F55339 /* two_color_control_clump.cpp */,
 				48D0DA761E20698600729AB9 /* stripes_multi_clump_hetero.cpp */,
 			);
 			name = 2017;
