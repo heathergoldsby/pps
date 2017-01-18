@@ -211,3 +211,12 @@ src/two_color_control_clump.cpp
 ;
 
 install dist : two_color_control_clump : <location>$(HOME)/bin ;
+
+exe solid_control_clump :
+src/solid_control_clump.cpp
+/libea//libea
+/libea//libea_runner
+: <include>./include <link>static
+;
+
+install dist : solid_control_clump : <location>$(HOME)/bin ;
