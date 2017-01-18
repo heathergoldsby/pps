@@ -50,6 +50,8 @@ struct subpopulation_propagule_clump_hetero {
         p->initialize(mea.md());
         p->reset_rng(mea.rng().seed());
         
+        
+        
         // figure out which individuals from the parent comprise the propagule:
         typedef typename MEA::subpopulation_type::population_type propagule_type;
         propagule_type propagule;
@@ -61,6 +63,8 @@ struct subpopulation_propagule_clump_hetero {
         
         int pop_size = get<POPULATION_SIZE>(mea);
         
+        configurable_per_site m(get<GERM_MUTATION_PER_SITE_P>(mea));
+
         std::vector<int> used_pos;
         std::vector<int> used_pos_with_avail_neighbors;
         
@@ -78,7 +82,8 @@ struct subpopulation_propagule_clump_hetero {
             
             inherits_from(**i, *q, *p);
 
-            
+            mutate(*q,m,*p);
+
 
             if (used_pos.size() == 0) {
                 int pos = mea.rng().uniform_integer(0,pop_size);
