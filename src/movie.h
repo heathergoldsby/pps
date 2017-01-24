@@ -41,7 +41,7 @@ namespace ealib {
                                                                     (*j)->genome().begin()+(*j)->hw().original_size());
                     typename EA::subpopulation_type::individual_ptr_type q = p->make_individual(r);
 
-                    
+                    inherits_from(**j, *q, *p);
 
                     p->insert_at(p->end(),q, p->env().location((*j)->position()).position());
 
@@ -88,7 +88,7 @@ namespace ealib {
                                                                (*j)->genome().begin()+(*j)->hw().original_size());
                 typename EA::subpopulation_type::individual_ptr_type q = best_founder->make_individual(r);
                 
-                
+                inherits_from(**j, *q, *best_founder);
                 
                 best_founder->insert_at(best_founder->end(),q, best_founder->env().location((*j)->position()).position());
                 
