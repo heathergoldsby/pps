@@ -496,7 +496,7 @@ double eval_solid_control(EA& ea) {
             if (lt == "" ) { continue; }
             
                         // NW
-            if (lt == "NOT" ) { ++num_correct; }
+            if (lt == "not" ) { ++num_correct; }
         }
     }
         
