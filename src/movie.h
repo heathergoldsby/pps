@@ -74,11 +74,22 @@ namespace ealib {
             df.write(get<SPATIAL_Y>(ea));
             df.endl();
             
+            int pop_size = get<POPULATION_SIZE>(ea);
+            
+            std::vector<int> used_pos;
+            std::vector<int> used_pos_with_avail_neighbors;
+            
             //typename EA::individual_type best_founder = *best.traits().founder();
             // not preserving location
-            typename EA::individual_ptr_type best_founder = ea.make_individual();
-            best_founder->initialize(ea.md());
+            typename EA::individual_ptr_type p = ea.make_individual();
+            p->initialize(ea.md());
             //p->reset_rn(ea.rng().seed());
+            
+            
+            int pos = ea.rng().uniform_integer(0,pop_size);
+            used_pos.push_back(pos);
+            used_pos_with_avail_neighbors.push_back(pos);
+            
             
             //typename EA::individual_type tmp(*i->traits().founder());
             typedef typename EA::subpopulation_type::population_type propagule_type;
@@ -86,24 +97,85 @@ namespace ealib {
                 int pos = 0;
                 typename EA::subpopulation_type::genome_type r((*j)->genome().begin(),
                                                                (*j)->genome().begin()+(*j)->hw().original_size());
-                typename EA::subpopulation_type::individual_ptr_type q = best_founder->make_individual(r);
+                typename EA::subpopulation_type::individual_ptr_type q = p->make_individual(r);
                 
-                inherits_from(**j, *q, *best_founder);
+                inherits_from(**j, *q, *p);
                 
-                best_founder->insert_at(best_founder->end(),q, best_founder->env().location((*j)->position()).position());
+  
+                int max_x =get<SPATIAL_X>(ea);
                 
-            }
+
+                    
+                    bool not_placed = true;
+                    int place = -1;
+                    
+                    while (not_placed) {
+                        int n = ea.rng().uniform_integer(0,used_pos_with_avail_neighbors.size());
+                        int neighbor = used_pos_with_avail_neighbors[n];
+                        int dir_try = 0;
+                        int dir = ea.rng().uniform_integer(0,3);
+                        
+                        
+                        
+                        while (dir_try <= 4) {
+                            
+                            dir = (dir + 1);
+                            if (dir > 3) { dir = 0; }
+                            dir_try++;
+                            
+                            // N
+                            if (dir == 0) {
+                                if ((neighbor - max_x) < 0) { continue; }
+                                place = neighbor - max_x;
+                            } else if (dir == 1) { // E
+                                if ((neighbor % max_x) == (max_x -1)) { continue; }
+                                place = neighbor + 1;
+                            } else if (dir == 2) { // S
+                                if ((neighbor + max_x) >= pop_size) { continue; }
+                                place = neighbor + max_x;
+                            } else if (dir == 3) { // W
+                                if ((neighbor % max_x) == 0) { continue; }
+                                place = neighbor - 1;
+                            }
+                            
+                            // already used
+                            if (std::find(used_pos.begin(), used_pos.end(), place) != used_pos.end()) {
+                                place = -1;
+                                continue;
+                            } else {
+                                break;
+                            }
+                            
+                        }
+                        
+                        // not placed, then try again
+                        if (place == -1) {
+                            used_pos_with_avail_neighbors.erase(used_pos_with_avail_neighbors.begin()+n);
+                            continue;
+                        }
+                        
+                        
+                        
+                        p->insert_at(p->end(),q, p->env().location(place).position());
+                        used_pos.push_back(place);
+                        used_pos_with_avail_neighbors.push_back(place);
+                        not_placed = false;
+                    }
+                    
+                }
+                
+    
 
             
             for (int j=0; j<=update_max; ++j) {
-                best_founder->update();
+                p->update();
                 df.write(j);
                 // grab info based on location...
                 for (int x=0; x < get<SPATIAL_X>(ea); ++x) {
                     for (int y=0; y<get<SPATIAL_Y>(ea); ++y){
                         
                         //typename EA::individual_type::environment_type::location_type* l = &best_founder.traits().founder()->env().location(x,y);
-                        typename EA::individual_type::environment_type::location_type* l = &best_founder->env().location(x,y);
+                        typename EA::individual_type::environment_type::location_type* l = &p->env().location(x,y);
                         
                         
                         if (l->occupied()) {
