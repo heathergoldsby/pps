@@ -4,161 +4,6 @@ local HOME = [ os.environ HOME ] ;
 use-project /libea : ../ealib/libea ;
 
 
-exe stripes_multi :
-    src/stripes_multi.cpp
-    /libea//libea
-    /libea//libea_runner
-    : <include>./include <link>static
-    ;
-
-install dist : stripes_multi : <location>$(HOME)/bin ;
-
-exe stripes_multi_matrix :
-src/stripes_multi_matrix.cpp
-/libea//libea
-/libea//libea_runner
-: <include>./include <link>static
-;
-
-install dist : stripes_multi_matrix : <location>$(HOME)/bin ;
-
-
-exe stripes_ep4_fixed :
-src/stripes_ep4_fixed.cpp
-/libea//libea
-/libea//libea_runner
-: <include>./include <link>static
-;
-
-install dist : stripes_ep4_fixed : <location>$(HOME)/bin ;
-
-
-
-exe stripes_ep4_copy :
-src/stripes_ep4_copy.cpp
-/libea//libea
-/libea//libea_runner
-: <include>./include <link>static
-;
-
-install dist : stripes_ep4_copy : <location>$(HOME)/bin ;
-
-
-exe stripes_ep4 :
-src/stripes_ep4.cpp
-/libea//libea
-/libea//libea_runner
-: <include>./include <link>static
-;
-
-install dist : stripes_ep4 : <location>$(HOME)/bin ;
-
-exe stripes_multi_evo :
-src/stripes_multi_evo.cpp
-/libea//libea
-/libea//libea_runner
-: <include>./include <link>static
-;
-
-install dist : stripes_multi_evo : <location>$(HOME)/bin ;
-
-exe stripes_epi :
-src/stripes_epi.cpp
-/libea//libea
-/libea//libea_runner
-: <include>./include <link>static
-;
-
-install dist : stripes_epi : <location>$(HOME)/bin ;
-
-
-
-exe stripes_multi_three :
-src/stripes_multi_three.cpp
-/libea//libea
-/libea//libea_runner
-: <include>./include <link>static
-;
-
-install dist : stripes_multi_three : <location>$(HOME)/bin ;
-
-exe stripes_multi_three_epi :
-src/stripes_multi_three_epi_matrix.cpp
-/libea//libea
-/libea//libea_runner
-: <include>./include <link>static
-;
-
-install dist : stripes_multi_three_epi : <location>$(HOME)/bin ;
-
-
-
-
-exe stripes_multi_bullseye :
-src/stripes_multi_bullseye.cpp
-/libea//libea
-/libea//libea_runner
-: <include>./include <link>static
-;
-
-install dist : stripes_multi_bullseye : <location>$(HOME)/bin ;
-
-
-
-exe stripes_multi_square :
-src/stripes_multi_square.cpp
-/libea//libea
-/libea//libea_runner
-: <include>./include <link>static
-;
-
-install dist : stripes_multi_square : <location>$(HOME)/bin ;
-
-
-
-exe stripes_epi_control :
-src/stripes_epi_control.cpp
-/libea//libea
-/libea//libea_runner
-: <include>./include <link>static
-;
-
-install dist : stripes_epi_control : <location>$(HOME)/bin ;
-
-
-
-
-exe stripes_epi_two_color_control :
-src/stripes_epi_two_color_control.cpp
-/libea//libea
-/libea//libea_runner
-: <include>./include <link>static
-;
-
-install dist : stripes_epi_two_color_control : <location>$(HOME)/bin ;
-
-
-
-exe n_neighbors :
-src/n_neighbors.cpp
-/libea//libea
-/libea//libea_runner
-: <include>./include <link>static
-;
-
-install dist : n_neighbors : <location>$(HOME)/bin ;
-
-
-
-exe unique_number :
-src/unique_number.cpp
-/libea//libea
-/libea//libea_runner
-: <include>./include <link>static
-;
-
-install dist : unique_number.cpp : <location>$(HOME)/bin ;
-
 
 
 
@@ -220,3 +65,12 @@ src/solid_control_clump.cpp
 ;
 
 install dist : solid_control_clump : <location>$(HOME)/bin ;
+
+exe ts_soft_reset :
+src/ts_soff_reset.cpp
+/libea//libea
+/libea//libea_runner
+: <include>./include <link>static
+;
+
+install dist : ts : <location>$(HOME)/bin ;
