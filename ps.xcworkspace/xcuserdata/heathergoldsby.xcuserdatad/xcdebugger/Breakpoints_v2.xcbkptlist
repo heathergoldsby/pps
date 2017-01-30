@@ -173,7 +173,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "47"
             endingLineNumber = "47"
-            landmarkName = "LIBEA_ANALYSIS_TOOL(movie_for_competitions)"
+            landmarkName = "LIBEA_ANALYSIS_TOOL(movie_for_competitions_spatial)"
             landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>
@@ -189,7 +189,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "45"
             endingLineNumber = "45"
-            landmarkName = "LIBEA_ANALYSIS_TOOL(movie_for_competitions)"
+            landmarkName = "LIBEA_ANALYSIS_TOOL(movie_for_competitions_spatial)"
             landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>

@@ -124,6 +124,11 @@
 			<key>orderHint</key>
 			<integer>40</integer>
 		</dict>
+		<key>ts_hetero.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>43</integer>
+		</dict>
 		<key>unique_number.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -318,6 +323,11 @@
 			<true/>
 		</dict>
 		<key>48E554AA1D80ABB3003D52DE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>48E9A9091E38FB5C00422AC7</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -14,7 +14,7 @@ using namespace ealib;
 #include "stripes.h"
 #include "movie.h"
 #include "subpopulation_propagule_clump_hetero.h"
-
+#include "knockouts.h"
 
 //! Configuration object for an EA.
 struct lifecycle : public default_lifecycle {
@@ -163,11 +163,14 @@ public:
     
     virtual void gather_tools() {
         add_tool<ealib::analysis::movie_for_competitions_spatial>(this);
+        add_tool<ealib::analysis::knockouts_for_competition>(this);
+
     }
     
     virtual void gather_events(EA& ea) {
         add_event<subpopulation_founder_event>(ea);
         add_event<datafiles::fitness_dat>(ea);
+        
         //
         //        add_event<task_performed_tracking>(ea);
         //        add_event<task_switch_tracking>(ea);
