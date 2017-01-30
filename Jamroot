@@ -67,7 +67,7 @@ src/solid_control_clump.cpp
 install dist : solid_control_clump : <location>$(HOME)/bin ;
 
 exe ts_soft_reset :
-src/ts_soff_reset.cpp
+src/ts_soft_reset.cpp
 /libea//libea
 /libea//libea_runner
 : <include>./include <link>static
