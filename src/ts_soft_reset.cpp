@@ -210,6 +210,10 @@ public:
         add_option<NUM_SWITCHES>(this);
         add_option<GERM_MUTATION_PER_SITE_P>(this);
         
+        add_option<NUM_PROPAGULE_GERM>(this);
+        add_option<NUM_PROPAGULE_CELL>(this);
+        
+        
         // initial amount (unit), inflow (unit), outflow (percentage), percent consumed
         add_option<RES_INITIAL_AMOUNT>(this);
         add_option<RES_INFLOW_AMOUNT>(this);
