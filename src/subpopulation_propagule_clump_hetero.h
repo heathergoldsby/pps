@@ -41,7 +41,7 @@ struct subpopulation_propagule_clump_hetero {
         std::size_t prop_size = get<NUM_PROPAGULE_GERM>(mea,1);
 
         // sterility clause
-        if (prop_size == parents[0]->size) {
+        if (prop_size == parents[0]->size()) {
             return;
         }
         
