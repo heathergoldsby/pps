@@ -39,12 +39,12 @@ struct subpopulation_propagule_clump_hetero {
         // the number of parents selected is the propagule size or 1, if
         // the propagule's composition is clonal.
         std::size_t prop_size = get<NUM_PROPAGULE_GERM>(mea,1);
-        assert(prop_size > 0);
-        if (prop_size > parents[0]->size()) {
-            prop_size = parents[0]->size();
+
+        // sterility clause
+        if (prop_size == parents[0]->size) {
+            return;
         }
         
-
         // get a new subpopulation:
         typename MEA::individual_ptr_type p = mea.make_individual();
         p->initialize(mea.md());
