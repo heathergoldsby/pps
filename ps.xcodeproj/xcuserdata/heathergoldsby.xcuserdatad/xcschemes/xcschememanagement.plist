@@ -9,6 +9,11 @@
 			<key>orderHint</key>
 			<integer>37</integer>
 		</dict>
+		<key>solid_color_control.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>44</integer>
+		</dict>
 		<key>stripes.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -288,6 +293,11 @@
 			<true/>
 		</dict>
 		<key>487A2A941DCAC0700027082B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4890E3771E4908A300777D7E</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -45,7 +45,7 @@ struct subpopulation_propagule_clump {
         }
         
         // sterility clause
-        if (get<NUM_PROPAGULE_CELL>(parents[0]) == parents[0]->size()) {
+        if (get<NUM_PROPAGULE_CELL>(mea) == parents[0]->size()) {
             return;
         }
         

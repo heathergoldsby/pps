@@ -17,8 +17,8 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef _EA_DATAFILES_FITNESS_H_
-#define _EA_DATAFILES_FITNESS_H_
+#ifndef _EA_DATAFILES_FITNESS_VARIANCE_H_
+#define _EA_DATAFILES_FITNESS_VARIANCE_H_
 
 #include <boost/accumulators/accumulators.hpp>
 #include <boost/accumulators/statistics/stats.hpp>
