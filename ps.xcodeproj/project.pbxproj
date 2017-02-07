@@ -273,6 +273,8 @@
 		482F01401CC42EF900C88BD8 /* stripes_multi_fps */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = stripes_multi_fps; sourceTree = BUILT_PRODUCTS_DIR; };
 		482F01421CC523B100C88BD8 /* stripes_multi_fps_3.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = stripes_multi_fps_3.cpp; sourceTree = "<group>"; };
 		482F014C1CC5245000C88BD8 /* stripes_multi_fps_3 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = stripes_multi_fps_3; sourceTree = BUILT_PRODUCTS_DIR; };
+		4835AD071E4A5B93003C3D15 /* two_color_control_clump_hetero.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = two_color_control_clump_hetero.cpp; sourceTree = "<group>"; };
+		4835AD081E4A5BBD003C3D15 /* solid_control_clump_hetero.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = solid_control_clump_hetero.cpp; sourceTree = "<group>"; };
 		4838ED3E1DAC5E9B001A45C1 /* unique_number.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = unique_number.h; sourceTree = "<group>"; };
 		4838ED3F1DAC6304001A45C1 /* unique_number.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = unique_number.cpp; sourceTree = "<group>"; };
 		4838ED491DAC6371001A45C1 /* unique_number */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = unique_number; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -631,7 +633,9 @@
 				48D0DA821E206A7C00729AB9 /* stripes_multi_three_clump_hetero.cpp */,
 				48D0DA691E20674D00729AB9 /* stripes_multi_clump.cpp */,
 				489F9FEF1E2FFE4A00F55339 /* two_color_control_clump.cpp */,
+				4835AD071E4A5B93003C3D15 /* two_color_control_clump_hetero.cpp */,
 				489F9FF01E2FFEC500F55339 /* solid_control_clump.cpp */,
+				4835AD081E4A5BBD003C3D15 /* solid_control_clump_hetero.cpp */,
 				48D0DA761E20698600729AB9 /* stripes_multi_clump_hetero.cpp */,
 				48E9A9141E38FBDD00422AC7 /* ts_replication_propagule.h */,
 				4890E3761E49060600777D7E /* fitness_with_variance.h */,

@@ -66,6 +66,26 @@ src/solid_control_clump.cpp
 
 install dist : solid_control_clump : <location>$(HOME)/bin ;
 
+
+exe two_color_control_clump_hetero :
+src/two_color_control_clump_hetero.cpp
+/libea//libea
+/libea//libea_runner
+: <include>./include <link>static
+;
+
+install dist : two_color_control_clump_hetero : <location>$(HOME)/bin ;
+
+exe solid_control_clump_hetero :
+src/solid_control_clump_hetero.cpp
+/libea//libea
+/libea//libea_runner
+: <include>./include <link>static
+;
+
+install dist : solid_control_clump_hetero : <location>$(HOME)/bin ;
+
+
 exe ts_soft_reset :
 src/ts_soft_reset.cpp
 /libea//libea
