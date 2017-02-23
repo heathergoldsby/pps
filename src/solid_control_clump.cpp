@@ -15,7 +15,7 @@ using namespace ealib;
 #include "movie.h"
 #include "subpopulation_propagule_clump.h"
 #include "fitness_with_variance.h"
-
+#include "variance_analysis.h"
 
 //! Configuration object for an EA.
 struct lifecycle : public default_lifecycle {
@@ -164,11 +164,13 @@ public:
     
     virtual void gather_tools() {
         add_tool<ealib::analysis::movie_for_competitions>(this);
+        add_tool<ealib::analysis::variance_analysis>(this);
     }
     
     virtual void gather_events(EA& ea) {
         add_event<subpopulation_founder_event>(ea);
         add_event<datafiles::fitness_variance_dat>(ea);
+        
         //
         //        add_event<task_performed_tracking>(ea);
         //        add_event<task_switch_tracking>(ea);

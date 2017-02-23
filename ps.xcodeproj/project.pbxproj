@@ -297,6 +297,7 @@
 		489F9FEF1E2FFE4A00F55339 /* two_color_control_clump.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = two_color_control_clump.cpp; sourceTree = "<group>"; };
 		489F9FF01E2FFEC500F55339 /* solid_control_clump.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = solid_control_clump.cpp; sourceTree = "<group>"; };
 		48A1E129183F8ED70023C478 /* stripes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = stripes.h; sourceTree = "<group>"; };
+		48A6CE751E5F6171004350BD /* variance_analysis.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = variance_analysis.h; sourceTree = "<group>"; };
 		48AC8AB11937639900DA6945 /* stripes_multi.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = stripes_multi.cpp; sourceTree = "<group>"; };
 		48B25FD51D91963000FDD03B /* stripes_multi_square */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = stripes_multi_square; sourceTree = BUILT_PRODUCTS_DIR; };
 		48B25FD71D91970C00FDD03B /* stripes_multi_square.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = stripes_multi_square.cpp; sourceTree = "<group>"; };
@@ -639,6 +640,7 @@
 				48D0DA761E20698600729AB9 /* stripes_multi_clump_hetero.cpp */,
 				48E9A9141E38FBDD00422AC7 /* ts_replication_propagule.h */,
 				4890E3761E49060600777D7E /* fitness_with_variance.h */,
+				48A6CE751E5F6171004350BD /* variance_analysis.h */,
 			);
 			name = 2017;
 			sourceTree = "<group>";
