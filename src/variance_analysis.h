@@ -69,7 +69,7 @@ namespace ealib {
                 
                 // use different seeds
                 p->rng().reset(rand());
-                ea.rng().reset(rand()); 
+                ea.rng().reset(rand());
                 
                 int pos = ea.rng().uniform_integer(0,pop_size);
                 used_pos.push_back(pos);
