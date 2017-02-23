@@ -16,7 +16,7 @@
 namespace ealib {
     namespace analysis {
         
-        LIBEA_ANALYSIS_TOOL(variance_analysis) {
+        LIBEA_ANALYSIS_TOOL(variance_analysis_random_seed_random_placement) {
             
             int update_max = get<METAPOP_COMPETITION_PERIOD>(ea);
             int max_fit = 0;
@@ -54,7 +54,7 @@ namespace ealib {
             }
             
             
-            datafile df("dominant_fitness_variance.dat");
+            datafile df("variance_analysis_random_seed_random_placement.dat");
             for (int q=0; q < 1000; q++) {
                 
                 int pop_size = get<POPULATION_SIZE>(ea);
@@ -167,6 +167,79 @@ namespace ealib {
             .write(sqrt(variance(fit)));
             df.endl();
         }
+        
+        
+        LIBEA_ANALYSIS_TOOL(variance_analysis_random_seed_fixed_placement) {
+            
+            int update_max = get<METAPOP_COMPETITION_PERIOD>(ea);
+            int max_fit = 0;
+            typename EA::individual_type best;
+            accumulator_set<double, stats<tag::min, tag::mean, tag::max, tag::variance> > fit;
+            
+            for(typename EA::iterator i=ea.begin(); i!=ea.end(); ++i) {
+                
+                // not preserving location
+                typename EA::individual_ptr_type p = ea.make_individual();
+                p->initialize(ea.md());
+                //p->reset_rn(ea.rng().seed());
+                
+                //typename EA::individual_type tmp(*i->traits().founder());
+                typedef typename EA::subpopulation_type::population_type propagule_type;
+                for (typename propagule_type::iterator j=(*i->traits().founder()).population().begin(); j!= (*i->traits().founder()).population().end(); ++j) {
+                    int pos = 0;
+                    typename EA::subpopulation_type::genome_type r((*j)->genome().begin(),
+                                                                   (*j)->genome().begin()+(*j)->hw().original_size());
+                    typename EA::subpopulation_type::individual_ptr_type q = p->make_individual(r);
+                    inherits_from(**j, *q, *p);
+                    p->insert_at(p->end(),q, p->env().location((*j)->position()).position());
+                }
+                
+                for (int j=0; j<=update_max; ++j) {
+                    p->update();
+                }
+                recalculate_fitness(*p, ea);
+                double sf =get<STRIPE_FIT>(*p);
+                
+                if (sf > max_fit) {
+                    max_fit = sf;
+                    best = *i;
+                }
+            }
+            
+            
+            datafile df("variance_analysis_random_seed_fixed_placement.dat");
+            for (int q=0; q < 1000; q++) {
+                
+                typename EA::individual_type p = *best.traits().founder();
+
+                // use different seeds
+                p.rng().reset(rand());
+                ea.rng().reset(rand());
+                
+                
+                
+                for (int j=0; j<=update_max; ++j) {
+                    p.update();
+                }
+                recalculate_fitness(p, ea);
+                
+                double sf =get<STRIPE_FIT>(p);
+                fit(sf);
+                
+                
+                //df.endl();
+                
+            }
+            
+            
+            df.write(mean(fit))
+            .write(max(fit))
+            .write(variance(fit))
+            .write(sqrt(variance(fit)));
+            df.endl();
+        }
+    
+
     }
 }
 #endif
