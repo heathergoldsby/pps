@@ -166,6 +166,7 @@ namespace ealib {
             .write(max(fit))
             .write(variance(fit))
             .write(sqrt(variance(fit)));
+            df.endl();
         }
     }
 }
