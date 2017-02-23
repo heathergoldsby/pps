@@ -67,9 +67,8 @@ namespace ealib {
                 typename EA::individual_ptr_type p = ea.make_individual();
                 p->initialize(ea.md());
                 
-                // is the seed the same or different?
-                
-                //p->reset_rn(ea.rng().seed());
+                // use different seeds
+                p->rng().reset(rand());
                 
                 
                 int pos = ea.rng().uniform_integer(0,pop_size);

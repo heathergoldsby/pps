@@ -218,7 +218,7 @@ namespace ealib {
          - reset it
          - run for competition period
          - save if its fitness is the best!
-         - write the best to a file.
+         - run the best 1000 times... see how different positions / seeds affect results
          */
         LIBEA_ANALYSIS_TOOL(movie_for_competitions) {
             
