@@ -15,6 +15,7 @@ using namespace ealib;
 #include "movie.h"
 #include "subpopulation_propagule_clump_hetero.h"
 #include "fitness_with_variance.h"
+#include "variance_analysis.h"
 
 
 //! Configuration object for an EA.
