@@ -176,6 +176,8 @@ namespace ealib {
             typename EA::individual_type best;
             accumulator_set<double, stats<tag::min, tag::mean, tag::max, tag::variance> > fit;
             
+            int pos_list [25] = {14, 15, 9, 21, 27, 20, 19, 16, 17, 3, 4, 28, 33, 32, 26, 8, 29, 25, 18, 12, 10, 22, 34, 7, 1};
+            
             for(typename EA::iterator i=ea.begin(); i!=ea.end(); ++i) {
                 
                 // not preserving location
@@ -209,13 +211,27 @@ namespace ealib {
             
             datafile df("variance_analysis_random_seed_fixed_placement.dat");
             for (int q=0; q < 1000; q++) {
-                
-                typename EA::individual_type p = *best.traits().founder();
+                typename EA::individual_ptr_type p = ea.make_individual();
 
+                p->initialize(ea.md());
+                
                 // use different seeds
                 p.rng().reset(rand());
                 ea.rng().reset(rand());
-                
+                int count = 0;
+                typedef typename EA::subpopulation_type::population_type propagule_type;
+                for (typename propagule_type::iterator j=(*best.traits().founder()).population().begin(); j!= (*best.traits().founder()).population().end(); ++j) {
+                    int pos = 0;
+                    typename EA::subpopulation_type::genome_type r((*j)->genome().begin(),
+                                                                   (*j)->genome().begin()+(*j)->hw().original_size());
+                    typename EA::subpopulation_type::individual_ptr_type q = p->make_individual(r);
+                    
+                    inherits_from(**j, *q, *p);
+
+                    p->insert_at(p->end(),q, p->env().location(pos_list[count]).position());
+                    count++;
+                                                                        
+                }
                 
                 
                 for (int j=0; j<=update_max; ++j) {
@@ -226,9 +242,7 @@ namespace ealib {
                 double sf =get<STRIPE_FIT>(p);
                 fit(sf);
                 
-                
-                //df.endl();
-                
+                                
             }
             
             
