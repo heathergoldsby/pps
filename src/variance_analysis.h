@@ -216,7 +216,7 @@ namespace ealib {
                 p->initialize(ea.md());
                 
                 // use different seeds
-                p.rng().reset(rand());
+                p->rng().reset(rand());
                 ea.rng().reset(rand());
                 int count = 0;
                 typedef typename EA::subpopulation_type::population_type propagule_type;
@@ -235,14 +235,14 @@ namespace ealib {
                 
                 
                 for (int j=0; j<=update_max; ++j) {
-                    p.update();
+                    p->update();
                 }
-                recalculate_fitness(p, ea);
+                recalculate_fitness(*p, ea);
                 
-                double sf =get<STRIPE_FIT>(p);
+                double sf =get<STRIPE_FIT>(*p);
                 fit(sf);
                 
-                                
+                
             }
             
             
