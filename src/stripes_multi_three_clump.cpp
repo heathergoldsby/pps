@@ -22,6 +22,7 @@ using namespace ealib;
 #include "movie.h"
 #include "subpopulation_propagule_clump.h"
 #include "knockouts.h"
+#include "fitness_with_variance.h"
 #include "variance_analysis.h"
 
 
