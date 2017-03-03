@@ -21,6 +21,7 @@ using namespace ealib;
 #include "stripes.h"
 #include "movie.h"
 #include "subpopulation_propagule_clump_hetero.h"
+#include "variance_analysis.h"
 
 
 //! Configuration object for an EA.
@@ -173,11 +174,16 @@ public:
     virtual void gather_tools() {
         //add_tool<ealib::analysis::movie_for_three_stripe_competitions>(this);
         add_tool<ealib::analysis::archive_dominant>(this);
+        add_tool<ealib::analysis::variance_analysis_random_seed_random_placement>(this);
+        add_tool<ealib::analysis::variance_analysis_random_seed_fixed_placement>(this);
+
     }
     
     virtual void gather_events(EA& ea) {
         add_event<subpopulation_founder_event>(ea);
-        add_event<datafiles::fitness_dat>(ea);
+//        add_event<datafiles::fitness_dat>(ea);
+        add_event<datafiles::fitness_variance_dat>(ea);
+
         
         //add_event<task_performed_tracking>(ea);
         //add_event<task_switch_tracking>(ea);
