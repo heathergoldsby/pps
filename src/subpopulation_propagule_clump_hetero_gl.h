@@ -95,9 +95,9 @@ struct subpopulation_propagule_clump_hetero_gl {
             for(typename propagule_type::iterator i=parents[0]->population().begin(); i!=parents[0]->population().end(); ++i) {
 
             // go through cells... add those in this division round...
-                int dr = get<DIVISION_ROUND>(*i,0);
+                int dr = get<DIVISION_ROUND>(**i,0);
                 if (dr == round_of_picks) {
-                    propagule->insert(*i);
+                    propagule.insert(propagule.end(), *i);
                 }
                 if (propagule.size() == prop_size) {
                     break;

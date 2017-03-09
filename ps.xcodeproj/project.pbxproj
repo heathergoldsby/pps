@@ -46,7 +46,7 @@
 		48D17AEC1D902533000F00AB /* libea.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DC570A1940C99D005044F1 /* libea.a */; };
 		48D17AF31D9025EB000F00AB /* stripes_epi_two_color_control.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48D17AF21D902556000F00AB /* stripes_epi_two_color_control.cpp */; };
 		48D23ADE1E71A2D2008E8BDF /* libea.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DC570A1940C99D005044F1 /* libea.a */; };
-		48D23AE41E71A2DF008E8BDF /* subpopulation_propagule_clump_hetero_gl.h in Sources */ = {isa = PBXBuildFile; fileRef = 48D23AD81E719B88008E8BDF /* subpopulation_propagule_clump_hetero_gl.h */; };
+		48D23AE51E71BF2B008E8BDF /* stripes_multi_three_clump_hetero_gl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48D23AD91E71A29A008E8BDF /* stripes_multi_three_clump_hetero_gl.cpp */; };
 		48E554AE1D80ABB3003D52DE /* libea.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DC570A1940C99D005044F1 /* libea.a */; };
 		48E554B41D80ABBE003D52DE /* stripes_multi_evo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 482085CA1CCA8CF200406273 /* stripes_multi_evo.cpp */; };
 		48E9A90D1E38FB5C00422AC7 /* libea.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DC570A1940C99D005044F1 /* libea.a */; };
@@ -1346,7 +1346,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48D23AE41E71A2DF008E8BDF /* subpopulation_propagule_clump_hetero_gl.h in Sources */,
+				48D23AE51E71BF2B008E8BDF /* stripes_multi_three_clump_hetero_gl.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
