@@ -95,12 +95,12 @@ src/ts_soft_reset.cpp
 
 install dist : ts : <location>$(HOME)/bin ;
 
-exe stripes_multi_clump_hetero_gl :
-src/stripes_multi_clump_hetero_gl.cpp
+exe stripes_multi_three_clump_hetero_gl :
+src/stripes_multi_three_clump_hetero_gl
 /libea//libea
 /libea//libea_runner
 : <include>./include <link>static
 ;
 
-install dist : stripes_multi_clump_hetero_gl : <location>$(HOME)/bin ;
+install dist : stripes_multi_three_clump_hetero_gl : <location>$(HOME)/bin ;
 
