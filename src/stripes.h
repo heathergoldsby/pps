@@ -43,7 +43,7 @@ LIBEA_MD_DECL(PROPAGULE_COPY, "ea.stripes.prop_copy", int); // 0 NO - move cells
 LIBEA_MD_DECL(PARENT_PATTERN, "ea.stripes.parent_pattern", std::string); // strip representation of parent pattern
 LIBEA_MD_DECL(PATTERN, "ea.stripes.pattern", std::string); // strip representation of parent pattern
 LIBEA_MD_DECL(PARENT_WEIGHT, "ea.stripes.parent_weight", double); // 0 - no  parent weight; 1 only sim to parent
-
+LIBEA_MD_DECL(DIVISION_ROUND, "ea.stripes.div_round", int); 
 
 //LIBEA_MD_DECL(IS_PROPAGULE, "ea.stripes.is_propagule", int); // 0 - no, 1 - cost paid, 2 - transfer
 

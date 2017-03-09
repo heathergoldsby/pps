@@ -67,7 +67,7 @@
 		<key>stripes_evo_ps.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>16</integer>
+			<integer>17</integer>
 		</dict>
 		<key>stripes_evo_ps_plane.xcscheme</key>
 		<dict>
@@ -128,6 +128,11 @@
 		<dict>
 			<key>orderHint</key>
 			<integer>46</integer>
+		</dict>
+		<key>stripes_multi_three_clump_hetero_gl.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>47</integer>
 		</dict>
 		<key>stripes_three.xcscheme</key>
 		<dict>
@@ -343,6 +348,11 @@
 			<true/>
 		</dict>
 		<key>48D17AE81D902533000F00AB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>48D23ADA1E71A2D2008E8BDF</key>
 		<dict>
 			<key>primary</key>
 			<true/>

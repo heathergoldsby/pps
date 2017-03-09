@@ -20,8 +20,7 @@ using namespace ealib;
 
 #include "stripes.h"
 #include "movie.h"
-#include "subpopulation_propagule_clump.h"
-#include "knockouts.h"
+#include "subpopulation_propagule_clump_hetero_gl.h"
 #include "fitness_with_variance.h"
 #include "variance_analysis.h"
 
@@ -73,6 +72,7 @@ struct lifecycle : public default_lifecycle {
         add_event<task_resource_consumption>(ea);
         add_event<task_switching_cost>(ea);
         add_event<ts_birth_event>(ea);
+        add_event<gl_birth_event>(ea);
         
         typedef typename EA::task_library_type::task_ptr_type task_ptr_type;
         typedef typename EA::resource_ptr_type resource_ptr_type;
@@ -122,7 +122,7 @@ typedef metapopulation
 , permute_three_stripes
 , mutation::operators::no_mutation
 //, subpopulation_propagule
-, subpopulation_propagule_clump
+, subpopulation_propagule_clump_hetero_gl
 , generational_models::periodic_competition< >
 , ancestors::default_subpopulation
 , dont_stop
@@ -174,18 +174,18 @@ public:
     }
     
     virtual void gather_tools() {
-        add_tool<ealib::analysis::movie_for_competitions_spatial>(this);
-        add_tool<ealib::analysis::knockouts_for_competition>(this);
+        //add_tool<ealib::analysis::movie_for_three_stripe_competitions>(this);
         add_tool<ealib::analysis::archive_dominant>(this);
         add_tool<ealib::analysis::variance_analysis_random_seed_random_placement>(this);
         add_tool<ealib::analysis::variance_analysis_random_seed_fixed_placement>(this);
+        
     }
     
     virtual void gather_events(EA& ea) {
         add_event<subpopulation_founder_event>(ea);
-//        add_event<datafiles::fitness_dat>(ea);
+        //        add_event<datafiles::fitness_dat>(ea);
         add_event<datafiles::fitness_variance_dat>(ea);
-
+        
         
         //add_event<task_performed_tracking>(ea);
         //add_event<task_switch_tracking>(ea);
