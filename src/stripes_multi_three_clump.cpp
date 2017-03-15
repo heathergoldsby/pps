@@ -12,7 +12,7 @@
 #include <ea/generational_models/moran_process.h>
 #include <ea/datafiles/fitness.h>
 #include <ea/analysis/archive.h>
-//#include <ea/digital_evolution/extra_instruction_sets/matrix.h>
+#include <ea/digital_evolution/extra_instruction_sets/matrix.h>
 
 
 
@@ -175,7 +175,7 @@ public:
     
     virtual void gather_tools() {
         add_tool<ealib::analysis::movie_for_competitions_spatial>(this);
-        add_tool<ealib::analysis::knockouts_for_competition>(this);
+        //add_tool<ealib::analysis::knockouts_for_competition>(this);
         add_tool<ealib::analysis::archive_dominant>(this);
         add_tool<ealib::analysis::variance_analysis_random_seed_random_placement>(this);
         add_tool<ealib::analysis::variance_analysis_random_seed_fixed_placement>(this);

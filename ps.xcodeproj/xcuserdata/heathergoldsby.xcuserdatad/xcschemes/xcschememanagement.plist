@@ -89,6 +89,11 @@
 			<key>orderHint</key>
 			<integer>36</integer>
 		</dict>
+		<key>stripes_multi_clump copy.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>48</integer>
+		</dict>
 		<key>stripes_multi_clump.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -258,6 +263,11 @@
 			<true/>
 		</dict>
 		<key>482F01431CC5245000C88BD8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>483524701E79A83B00BB086D</key>
 		<dict>
 			<key>primary</key>
 			<true/>

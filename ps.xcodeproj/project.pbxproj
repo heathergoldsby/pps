@@ -17,6 +17,8 @@
 		482F01411CC42F0B00C88BD8 /* stripes_multi_fps.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 482F01361CC42E7C00C88BD8 /* stripes_multi_fps.cpp */; };
 		482F01471CC5245000C88BD8 /* libea.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DC570A1940C99D005044F1 /* libea.a */; };
 		482F014D1CC5245900C88BD8 /* stripes_multi_fps_3.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 482F01421CC523B100C88BD8 /* stripes_multi_fps_3.cpp */; };
+		483524741E79A83B00BB086D /* libea.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DC570A1940C99D005044F1 /* libea.a */; };
+		4835247A1E79A84D00BB086D /* stripes_multi_three_clump.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48D0DA681E2066EF00729AB9 /* stripes_multi_three_clump.cpp */; };
 		4838ED441DAC6371001A45C1 /* libea.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DC570A1940C99D005044F1 /* libea.a */; };
 		4838ED4A1DAC637B001A45C1 /* unique_number.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4838ED3F1DAC6304001A45C1 /* unique_number.cpp */; };
 		484529B61D8A271A00062B6A /* libea.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DC570A1940C99D005044F1 /* libea.a */; };
@@ -96,6 +98,15 @@
 			runOnlyForDeploymentPostprocessing = 1;
 		};
 		482F01481CC5245000C88BD8 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		483524751E79A83B00BB086D /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -307,6 +318,7 @@
 		482F01421CC523B100C88BD8 /* stripes_multi_fps_3.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = stripes_multi_fps_3.cpp; sourceTree = "<group>"; };
 		482F014C1CC5245000C88BD8 /* stripes_multi_fps_3 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = stripes_multi_fps_3; sourceTree = BUILT_PRODUCTS_DIR; };
 		4835246F1E79A6D200BB086D /* stripes_multi_three_clump_grid.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = stripes_multi_three_clump_grid.cpp; sourceTree = "<group>"; };
+		483524791E79A83B00BB086D /* stripes_multi_three_clump */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = stripes_multi_three_clump; sourceTree = BUILT_PRODUCTS_DIR; };
 		4835AD071E4A5B93003C3D15 /* two_color_control_clump_hetero.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = two_color_control_clump_hetero.cpp; sourceTree = "<group>"; };
 		4835AD081E4A5BBD003C3D15 /* solid_control_clump_hetero.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = solid_control_clump_hetero.cpp; sourceTree = "<group>"; };
 		4838ED3E1DAC5E9B001A45C1 /* unique_number.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = unique_number.h; sourceTree = "<group>"; };
@@ -410,6 +422,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				482F01471CC5245000C88BD8 /* libea.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		483524731E79A83B00BB086D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				483524741E79A83B00BB086D /* libea.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -616,6 +636,7 @@
 				48A6CE7F1E5F717B004350BD /* two_color_control */,
 				48B54B0E1E69D3F300DE9229 /* stripes_multi_three_clump_hetero */,
 				48D23AE31E71A2D2008E8BDF /* stripes_multi_three_clump_hetero_gl */,
+				483524791E79A83B00BB086D /* stripes_multi_three_clump */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -800,6 +821,23 @@
 			name = stripes_multi_fps_3;
 			productName = ealife;
 			productReference = 482F014C1CC5245000C88BD8 /* stripes_multi_fps_3 */;
+			productType = "com.apple.product-type.tool";
+		};
+		483524701E79A83B00BB086D /* stripes_multi_three_clump */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 483524761E79A83B00BB086D /* Build configuration list for PBXNativeTarget "stripes_multi_three_clump" */;
+			buildPhases = (
+				483524711E79A83B00BB086D /* Sources */,
+				483524731E79A83B00BB086D /* Frameworks */,
+				483524751E79A83B00BB086D /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = stripes_multi_three_clump;
+			productName = ealife;
+			productReference = 483524791E79A83B00BB086D /* stripes_multi_three_clump */;
 			productType = "com.apple.product-type.tool";
 		};
 		4838ED401DAC6371001A45C1 /* unique_number */ = {
@@ -1188,6 +1226,7 @@
 				48A6CE761E5F717B004350BD /* two_color_control */,
 				48B54B051E69D3F300DE9229 /* stripes_multi_three_clump_hetero */,
 				48D23ADA1E71A2D2008E8BDF /* stripes_multi_three_clump_hetero_gl */,
+				483524701E79A83B00BB086D /* stripes_multi_three_clump */,
 			);
 		};
 /* End PBXProject section */
@@ -1229,6 +1268,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				482F014D1CC5245900C88BD8 /* stripes_multi_fps_3.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		483524711E79A83B00BB086D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4835247A1E79A84D00BB086D /* stripes_multi_three_clump.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1514,6 +1561,28 @@
 			name = Debug;
 		};
 		482F014B1CC5245000C88BD8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/dk/Documents/repositories/research.hg/src/DerivedData/research/Build/Products/Debug,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		483524771E79A83B00BB086D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/dk/Documents/repositories/research.hg/src/DerivedData/research/Build/Products/Debug,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		483524781E79A83B00BB086D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				LIBRARY_SEARCH_PATHS = (
@@ -2017,6 +2086,15 @@
 			buildConfigurations = (
 				482F014A1CC5245000C88BD8 /* Debug */,
 				482F014B1CC5245000C88BD8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		483524761E79A83B00BB086D /* Build configuration list for PBXNativeTarget "stripes_multi_three_clump" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				483524771E79A83B00BB086D /* Debug */,
+				483524781E79A83B00BB086D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
