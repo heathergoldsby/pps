@@ -104,3 +104,12 @@ src/stripes_multi_three_clump_hetero_gl.cpp
 
 install dist : stripes_multi_three_clump_hetero_gl : <location>$(HOME)/bin ;
 
+
+exe stripes_multi_three_clump_grid :
+src/stripes_multi_three_clump_grid.cpp
+/libea//libea
+/libea//libea_runner
+: <include>./include <link>static
+;
+
+install dist : stripes_multi_three_clump_grid : <location>$(HOME)/bin ;
